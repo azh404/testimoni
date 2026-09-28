@@ -9,10 +9,10 @@ const COMPANY = {
   namaPendek: "Agri Diesel",
   tagline:    "Distributor Alat Berat & Mesin Pertanian",
 
-  // ⚠️ SEMENTARA — ganti bila nomor resmi sudah ada
-  // Format: 62 + nomor tanpa angka 0 di depan
-  whatsapp:   "628176602023",
-  telepon:    "0817-6602-023",
+  // Nomor boleh ditulis bebas (0811-..., +62 811..., 62811...);
+  // untuk link WhatsApp otomatis diubah ke format 62811...
+  whatsapp:   "0811-1660-2926",
+  telepon:    "0811-1660-2926",
   email:      "info@dieselagriss.com",
 
   alamat: {
@@ -37,9 +37,16 @@ const COMPANY = {
 const WA_PESAN_DEFAULT =
   "Halo PT Diesel Agri Sukses Sejahtera, saya ingin bertanya mengenai produk Anda";
 
+/* Helper: nomor WhatsApp dalam format internasional (628xxx).
+   wa.me hanya menerima angka, tanpa 0 di depan, strip, atau spasi. */
+function nomorWA() {
+  const angka = COMPANY.whatsapp.replace(/\D/g, '');
+  return angka.startsWith('0') ? '62' + angka.slice(1) : angka;
+}
+
 /* Helper: menghasilkan link WhatsApp lengkap */
 function waLink(pesan = WA_PESAN_DEFAULT) {
-  return `https://wa.me/${COMPANY.whatsapp}?text=${encodeURIComponent(pesan)}`;
+  return `https://wa.me/${nomorWA()}?text=${encodeURIComponent(pesan)}`;
 }
 
 /* Helper: alamat dalam satu baris */
