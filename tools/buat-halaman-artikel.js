@@ -132,6 +132,7 @@ ${JSON.stringify(jsonLd, null, 2)}
 
           <span class="artikel-card__badge">${kategori}</span>
           <h1 class="artikel-detail__judul">${a.judul}</h1>
+          <p class="artikel-halaman__subjudul">${a.ringkas}</p>
           <p class="artikel-detail__meta">${formatTanggal(a.tanggal)} &middot; ${a.penulis || ''}</p>
 ${adaGambar ? `
           <div class="artikel-detail__media">

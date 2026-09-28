@@ -823,6 +823,12 @@ a.artikel-card { color: inherit; text-decoration: none; }
 /* Halaman artikel tersendiri (artikel/*.html) */
 .artikel-halaman { max-width: 780px; margin-inline: auto; }
 .artikel-halaman .artikel-detail__judul { font-size: var(--fs-3xl); margin-top: var(--sp-3); }
+.artikel-halaman__subjudul {
+  font-size: var(--fs-lg);
+  line-height: 1.6;
+  color: var(--color-muted);
+  margin-bottom: var(--sp-4);
+}
 .artikel-halaman .artikel-detail__media {
   border-radius: var(--radius-lg);
   margin-bottom: var(--sp-6);
