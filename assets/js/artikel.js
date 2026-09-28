@@ -18,30 +18,30 @@ function formatTanggal(iso) {
 }
 
 function namaKategoriArtikel(id) {
-  return KATEGORI_ARTIKEL.find(k => k.id === id)?.nama || '';
+  const k = KATEGORI_ARTIKEL.find(x => x.id === id);
+  if (!k) return '';
+  return (BAHASA !== 'id' && k[BAHASA]) || k.nama;
 }
 
-/* '## ' = sub-judul, '### ' = sub-sub-judul, '---' = garis pemisah */
-function bagianIsi(teks) {
-  if (teks === '---')          return '<hr>';
-  if (teks.startsWith('### ')) return `<h4>${teks.slice(4)}</h4>`;
-  if (teks.startsWith('## '))  return `<h3>${teks.slice(3)}</h3>`;
-  return `<p>${teks}</p>`;
+/* Judul/ringkasan artikel sesuai bahasa aktif (lihat artikel-terjemahan.js) */
+function teksArtikel(a, kolom) {
+  const tr = (typeof ARTIKEL_TERJEMAHAN !== 'undefined') && ARTIKEL_TERJEMAHAN[a.id];
+  return (BAHASA !== 'id' && tr && tr[BAHASA] && tr[BAHASA][kolom]) || a[kolom];
 }
 
 function kartuArtikel(a, base, i = 0) {
   return `
-    <article class="artikel-card" data-artikel="${a.id}" style="animation-delay:${i * 60}ms">
+    <a href="${base}artikel/${a.id}.html" class="artikel-card" style="animation-delay:${i * 60}ms">
       <div class="artikel-card__media">
-        <img src="${base}${a.gambar}" alt="${a.judul}" loading="lazy" onerror="this.style.visibility='hidden'">
+        <img src="${base}${a.gambar}" alt="${teksArtikel(a, 'judul')}" loading="lazy" onerror="this.style.visibility='hidden'">
       </div>
       <div class="artikel-card__body">
         <span class="artikel-card__badge">${namaKategoriArtikel(a.kategori)}</span>
-        <h3 class="artikel-card__judul">${a.judul}</h3>
-        <p class="artikel-card__ringkas">${a.ringkas}</p>
+        <h3 class="artikel-card__judul">${teksArtikel(a, 'judul')}</h3>
+        <p class="artikel-card__ringkas">${teksArtikel(a, 'ringkas')}</p>
         <span class="artikel-card__tanggal">${formatTanggal(a.tanggal)}</span>
       </div>
-    </article>`;
+    </a>`;
 }
 
 function initHalamanArtikel() {
@@ -61,11 +61,11 @@ function initHalamanArtikel() {
   if (wrapFilter) {
     wrapFilter.innerHTML = `
       <button class="filter-btn is-active" data-kategori="all">
-        Semua <span>${semua.length}</span>
+        ${t('artikel.semua')} <span>${semua.length}</span>
       </button>
       ${kategoriAktif.map(k => {
         const n = semua.filter(a => a.kategori === k.id).length;
-        return `<button class="filter-btn" data-kategori="${k.id}">${k.nama} <span>${n}</span></button>`;
+        return `<button class="filter-btn" data-kategori="${k.id}">${namaKategoriArtikel(k.id)} <span>${n}</span></button>`;
       }).join('')}
     `;
 
@@ -85,59 +85,10 @@ function initHalamanArtikel() {
 
     wrapGrid.innerHTML = items.length
       ? items.map((a, i) => kartuArtikel(a, base, i)).join('')
-      : `<p class="produk-empty">Belum ada artikel.</p>`;
+      : `<p class="produk-empty">${t('artikel.kosong')}</p>`;
 
     if (typeof initImageFallback === 'function') initImageFallback();
   }
 
   render('all');
-}
-
-/* =========================================
-   MODAL ARTIKEL
-   ========================================= */
-function initModalArtikel() {
-  const modal = document.getElementById('modalArtikel');
-  if (!modal) return;
-
-  const base = document.body.dataset.base || '';
-  const box  = modal.querySelector('.modal__box');
-
-  function buka(id) {
-    const a = ARTIKEL.find(x => x.id === id);
-    if (!a) return;
-
-    box.innerHTML = `
-      <button class="modal__close" data-tutup aria-label="Tutup">&times;</button>
-      <div class="artikel-detail">
-        <div class="artikel-detail__media">
-          <img src="${base}${a.gambar}" alt="${a.judul}" onerror="this.style.visibility='hidden'">
-        </div>
-        <div class="artikel-detail__body">
-          <span class="artikel-card__badge">${namaKategoriArtikel(a.kategori)}</span>
-          <h2 class="artikel-detail__judul">${a.judul}</h2>
-          <p class="artikel-detail__meta">${formatTanggal(a.tanggal)} &middot; ${a.penulis || ''}</p>
-          ${a.isi.map(bagianIsi).join('')}
-        </div>
-      </div>`;
-
-    modal.classList.add('is-open');
-    document.body.style.overflow = 'hidden';
-    if (typeof initImageFallback === 'function') initImageFallback();
-  }
-
-  function tutup() {
-    modal.classList.remove('is-open');
-    document.body.style.overflow = '';
-  }
-
-  document.addEventListener('click', e => {
-    const kartu = e.target.closest('[data-artikel]');
-    if (kartu) { buka(kartu.dataset.artikel); return; }
-    if (e.target.closest('[data-tutup]') || e.target === modal) tutup();
-  });
-
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') tutup();
-  });
 }

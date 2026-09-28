@@ -15,6 +15,15 @@
    ===================================================================== */
 const TEKS = {
 
+  /* ===== JUDUL TAB BROWSER (bahasa Indonesia = <title> asli halaman) ===== */
+  'judul.beranda':   { en: 'Tractor & Agricultural Machinery Distributor in Jakarta | PT Diesel Agri Sukses Sejahtera', zh: '雅加达拖拉机与农业机械经销商 | PT Diesel Agri Sukses Sejahtera' },
+  'judul.tentang':   { en: 'About Us | PT Diesel Agri Sukses Sejahtera',                  zh: '关于我们 | PT Diesel Agri Sukses Sejahtera' },
+  'judul.kontak':    { en: 'Contact & Address | PT Diesel Agri Sukses Sejahtera Jakarta', zh: '联系方式与地址 | PT Diesel Agri Sukses Sejahtera 雅加达' },
+  'judul.artikel':   { en: 'Agricultural Machinery News & Articles | PT Diesel Agri Sukses Sejahtera', zh: '农业机械新闻与文章 | PT Diesel Agri Sukses Sejahtera' },
+  'judul.zoomlion':  { en: 'Zoomlion Tractors & Agricultural Machinery | Authorised Distributor in Indonesia', zh: '中联重科拖拉机与农业机械 | 印尼授权经销商' },
+  'judul.eavision':  { en: 'EAVision Agricultural Spray Drones | Authorised Distributor in Indonesia', zh: 'EAVision农业植保无人机 | 印尼授权经销商' },
+  'judul.vectoragr': { en: 'VectorAgr Agricultural Drones | Authorised Distributor in Indonesia',  zh: 'VectorAgr农业无人机 | 印尼授权经销商' },
+
   /* ===== NAVBAR ===== */
   'nav.beranda': { id: 'Beranda',          en: 'Home',            zh: '首页' },
   'nav.tentang': { id: 'Tentang Kami',     en: 'About Us',        zh: '关于我们' },
@@ -148,6 +157,9 @@ const TEKS = {
   'detail.ctaDesc':    { id: 'Tim kami siap membantu memilih unit yang sesuai kebutuhan lahan Anda.', en: 'Our team is ready to help you choose the right unit for your land.', zh: '我们的团队随时帮助您选择适合您土地的机型。' },
   'detail.lainnya':    { id: 'Produk Lainnya',     en: 'Other Products',   zh: '其他产品' },
   'detail.semua':      { id: 'Lihat semua produk', en: 'View all products', zh: '查看全部产品' },
+  'detail.diagramJudul': { id: 'Bagian & Dimensi Unit', en: 'Unit Parts & Dimensions', zh: '整机部件与尺寸' },
+  'detail.diagramKlik':  { id: 'Klik gambar untuk melihat ukuran penuh.', en: 'Click the image to view it full size.', zh: '点击图片查看大图。' },
+  'detail.diagramZoom':  { id: 'Lihat ukuran penuh', en: 'View full size', zh: '查看大图' },
 
   /* ===== HALAMAN BRAND (UMUM) ===== */
   'brand.semuaProduk': { id: 'Semua Produk',               en: 'All Products',        zh: '全部产品' },
@@ -190,6 +202,9 @@ const TEKS = {
     en: 'Maintenance tips, product information, and our latest news',
     zh: '保养技巧、产品信息与最新动态'
   },
+  'artikel.semua':   { id: 'Semua',                       en: 'All',                          zh: '全部' },
+  'artikel.kosong':  { id: 'Belum ada artikel.',          en: 'No articles yet.',             zh: '暂无文章。' },
+  'artikel.sumber':  { id: 'Sumber:',                     en: 'Sources:',                     zh: '资料来源：' },
 
   /* ===== HALAMAN KONTAK ===== */
   'kontak.eyebrow': { id: 'Hubungi Kami',             en: 'Contact Us',            zh: '联系我们' },
@@ -203,6 +218,8 @@ const TEKS = {
   'kontak.telepon':   { id: 'Telepon',         en: 'Phone',           zh: '电话' },
   'kontak.email':     { id: 'Email',           en: 'Email',           zh: '电子邮箱' },
   'kontak.jam':       { id: 'Jam Operasional', en: 'Operating Hours', zh: '营业时间' },
+  /* Isi jam operasional; versi Indonesia diambil dari config.js */
+  'kontak.jamIsi':    { en: 'Monday – Friday, 08:00 – 17:00 WIB (UTC+7)', zh: '周一至周五 08:00–17:00（印尼西部时间）' },
   'kontak.formJudul': { id: 'Kirim Pesan',     en: 'Send a Message',  zh: '发送消息' },
   'kontak.formNote': {
     id: 'Isi keterangan di bawah, lalu pesan akan diteruskan ke WhatsApp kami',
@@ -218,6 +235,11 @@ const TEKS = {
   'form.minat':      { id: 'Produk yang Diminati',  en: 'Product of Interest',    zh: '感兴趣的产品' },
   'form.pesan':      { id: 'Pesan',                 en: 'Message',                zh: '留言' },
   'form.kirim':      { id: 'Kirim via WhatsApp',    en: 'Send via WhatsApp',      zh: '通过 WhatsApp 发送' },
+  'form.phNama':     { id: 'Nama Anda',             en: 'Your name',              zh: '您的姓名' },
+  'form.phOpsional': { id: 'Opsional',              en: 'Optional',               zh: '选填' },
+  'form.phPesan':    { id: 'Sampaikan kebutuhan Anda', en: 'Tell us what you need', zh: '请描述您的需求' },
+  'form.pilih':      { id: '— Pilih —',             en: '— Select —',             zh: '— 请选择 —' },
+  'form.servis':     { id: 'Layanan Servis',        en: 'Service',                zh: '维修服务' },
 
   /* ===== HALAMAN TENTANG KAMI ===== */
   'tt.eyebrow': { id: 'Tentang Kami', en: 'About Us', zh: '关于我们' },
@@ -306,6 +328,7 @@ const KATEGORI_TEKS = {
   'sprayer-drone': { id: 'Sprayer Drone', en: 'Sprayer Drone', zh: '植保无人机' },
 
   /* --- VectorAgr --- */
+  'va-drone':    { id: 'Agricultural Drone',   en: 'Agricultural Drone',   zh: '农业无人机' },
   'va-steering': { id: 'Auto Steering System', en: 'Auto Steering System', zh: '自动驾驶系统' },
   'va-rover':    { id: 'Agricultural Rover',   en: 'Agricultural Rover',   zh: '农业机器人' },
   'va-digital':  { id: 'Digital Ag Solution',  en: 'Digital Ag Solution',  zh: '数字农业解决方案' }

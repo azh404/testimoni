@@ -23,7 +23,7 @@ const COMPANY = {
     negara:   "Indonesia"
   },
 
-  jamOperasional: "Senin – Jumat, 08.00 – 17.00 WIB",
+  jamOperasional: "Senin – Jumat, 08.00 – 17.00 WIB",  /* versi EN/ZH: kontak.jamIsi di lang.js */
 
   sosmed: {
     instagram: "https://www.instagram.com",
