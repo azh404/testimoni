@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /katalog.html
+
+Sitemap: https://dass.co.id/sitemap.xml
