@@ -1,0 +1,55 @@
+<header class="header" id="header">
+  <div class="container header__inner">
+
+    <a href="{{base}}index.html" class="brand">
+      <img src="{{base}}assets/images/logo/logo.png"
+           alt="PT Diesel Agri Sukses Sejahtera"
+           class="brand__logo">
+    </a>
+
+    <nav class="nav" id="mainNav">
+      <ul class="nav__list">
+
+        <li class="nav__item">
+          <a href="{{base}}index.html" class="nav__link" data-page="beranda" data-i18n="nav.beranda">Beranda</a>
+        </li>
+
+        <li class="nav__item">
+          <a href="{{base}}tentang.html" class="nav__link" data-page="tentang" data-i18n="nav.tentang">Tentang Kami</a>
+        </li>
+
+        <li class="nav__item nav__item--has-drop">
+          <a href="{{base}}pages/produk/zoomlion.html" class="nav__link" data-page="produk">
+            <span data-i18n="nav.produk">Produk</span> <span class="nav__toggle-icon">&#9660;</span>
+          </a>
+          <ul class="dropdown">
+            <li><a href="{{base}}pages/produk/zoomlion.html" class="dropdown__link">
+              Zoomlion<small data-i18n="nav.zoomlionSub">Alat berat &amp; mesin pertanian</small></a></li>
+            <li><a href="{{base}}pages/produk/eavision.html" class="dropdown__link">
+              EAVision<small data-i18n="nav.eavisionSub">Drone sprayer pertanian</small></a></li>
+            <li><a href="{{base}}pages/produk/vectoragr.html" class="dropdown__link">
+              VectorAgr<small data-i18n="nav.vectoragrSub">Drone pertanian</small></a></li>
+          </ul>
+ 
+        <li class="nav__item">
+          <a href="{{base}}artikel.html" class="nav__link" data-page="artikel" data-i18n="nav.artikel">Berita &amp; Artikel</a>
+        </li>
+
+        <li class="nav__item">
+          <a href="{{base}}kontak.html" class="nav__link" data-page="kontak" data-i18n="nav.kontak">Kontak</a>
+        </li>
+
+        <!-- Menu bahasa dibangun oleh i18n.js -->
+        <li class="nav__item nav__item--lang" id="langSlot"></li>
+
+      </ul>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+  </div>
+</header>
+
+<div class="nav-overlay" id="navOverlay"></div>

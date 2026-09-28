@@ -1,0 +1,11 @@
+CARA PASANG
+1. Ekstrak zip ini ke dalam folder DASS-WEB (pilih "Replace" kalau ditanya).
+2. Cek di Live Server: buka pages/produk/zoomlion.html, klik satu produk,
+   lalu klik "Lihat Halaman Lengkap".
+3. Upload ke Hostinger dengan cara yang sama seperti biasa
+   (centang "Overwrite existing files" saat Extract).
+4. Google Search Console > Sitemap > kirim ulang: sitemap.xml
+
+KALAU NANTI MENAMBAH PRODUK
+Halaman detailnya belum ada otomatis. Kirim lagi folder assets/js
+ke Claude untuk dibuatkan ulang.

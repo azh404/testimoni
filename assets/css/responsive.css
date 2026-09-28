@@ -1,0 +1,249 @@
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+/* ===== TABLET & MOBILE (≤ 992px) ===== */
+@media (max-width: 992px) {
+
+  :root { --header-height: 68px; }
+
+  /* --- Navbar --- */
+  /* PENTING: header dinaikkan di atas overlay,
+     karena panel menu berada di dalamnya. */
+  .header { z-index: var(--z-modal); }
+
+  .nav-toggle { display: flex; }
+
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: min(320px, 85vw);
+    height: 100dvh;
+    max-height: 100dvh;
+    background-color: #FFFFFF;
+    padding: calc(var(--header-height) + var(--sp-5)) var(--sp-5) var(--sp-8);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    box-shadow: var(--shadow-lg);
+    transition: right var(--transition);
+    z-index: 1;
+  }
+  .nav.is-open { right: 0; }
+
+  .nav__list {
+    flex-direction: column;
+    align-items: stretch;
+    gap: var(--sp-1);
+    width: 100%;
+  }
+  .nav__link { padding: var(--sp-4); font-size: var(--fs-base); }
+
+  .dropdown {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    border-left: 2px solid var(--color-border);
+    border-radius: 0;
+    margin-left: var(--sp-4);
+    padding: 0;
+  }
+  .nav__toggle-icon { display: none; }
+  .brand__tagline { display: none; }
+
+  /* --- Pilihan bahasa: dipindah ke paling atas --- */
+  .nav__item--lang {
+    order: -1;
+    margin-top: 0;
+    margin-bottom: var(--sp-4);
+  }
+
+  /* Patokan posisi untuk daftar bahasa yang melayang */
+  .lang-drop {
+    position: relative;
+    margin-left: 0;
+    padding-left: 0;
+    padding-top: 0;
+    padding-bottom: var(--sp-4);
+    border-left: none;
+    border-top: none;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .lang-trigger { width: 100%; justify-content: center; }
+
+  /* Melayang menutupi menu di bawahnya, bukan mendorongnya.
+     Kalau position dibuat static, tombol bendera akan
+     terdorong keluar layar saat daftar dibuka. */
+  .lang-menu {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    min-width: 0;
+    padding: var(--sp-2);
+    background-color: #FFFFFF;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+    z-index: 5;
+    display: none;
+  }
+  .lang-drop.is-open .lang-menu { display: block; }
+
+  /* --- Layout umum --- */
+  .hero { min-height: 560px; }
+  .section { padding-block: var(--sp-8); }
+
+  .grid--3, .grid--4 { grid-template-columns: repeat(2, 1fr); }
+  .grid--keunggulan, .grid--sektor { grid-template-columns: repeat(2, 1fr); }
+
+  /* --- Hero brand --- */
+  .brand-hero { padding-block: var(--sp-8); }
+  .brand-hero__grid { grid-template-columns: 1fr; gap: var(--sp-6); }
+  .brand-hero p { max-width: none; }
+
+  /* --- Slider hero brand --- */
+  .brand-slider__stage { height: 300px; }
+  .brand-slider__item img { max-height: 230px; }
+
+  /* --- Halaman tentang & kontak --- */
+  .visi-misi   { grid-template-columns: 1fr; gap: var(--sp-5); }
+  .kontak-grid { grid-template-columns: 1fr; gap: var(--sp-6); }
+
+  /* --- Artikel --- */
+  .artikel-grid { grid-template-columns: repeat(2, 1fr); }
+
+  /* --- Produk --- */
+  .produk-grid { grid-template-columns: repeat(3, 1fr); }
+  body[data-brand="vectoragr"] .produk-grid,
+  body[data-brand="eavision"] .produk-grid {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: none;
+  }
+
+  /* --- Footer --- */
+  .footer__grid { grid-template-columns: 1fr; gap: var(--sp-6); }
+  .footer__col--center { text-align: left; }
+  .footer__icons { justify-content: flex-start; }
+
+  /* --- Modal --- */
+  .modal__media { padding: var(--sp-5); }
+  .modal__media img { max-height: 220px; }
+}
+
+/* ===== MOBILE (≤ 640px) ===== */
+@media (max-width: 640px) {
+
+  :root {
+    --fs-4xl: 2rem;
+    --fs-3xl: 1.625rem;
+    --fs-2xl: 1.375rem;
+  }
+
+  /* --- Cegah geser horizontal --- */
+  .container { padding-inline: var(--sp-4); }
+  .partner::after,
+  .brand-hero::after { display: none; }
+
+  /* --- Semua grid jadi satu kolom --- */
+  .grid--2, .grid--3, .grid--4,
+  .grid--keunggulan,
+  .grid--sektor,
+  .brand-cards,
+  .visi-misi,
+  .kontak-grid,
+  .artikel-grid { grid-template-columns: 1fr; }
+
+  /* --- Navbar --- */
+  .brand__logo { height: 46px; }
+  .brand__name { font-size: var(--fs-xs); max-width: 180px; }
+
+  /* --- Hero --- */
+  .hero__content { padding-block: var(--sp-7); }
+
+  /* --- Hero brand --- */
+  .brand-hero h1 { font-size: clamp(1.75rem, 8vw, 2.25rem); }
+  .brand-hero__meta { gap: var(--sp-3); }
+  .brand-hero__meta div { padding: var(--sp-3) var(--sp-4); }
+
+  /* --- Slider hero brand --- */
+  .brand-slider__stage { height: 240px; }
+  .brand-slider__item img { max-height: 180px; }
+  .brand-slider__label { font-size: var(--fs-sm); }
+  .brand-slider__dots { gap: 6px; }
+
+  /* --- Produk --- */
+  .produk-grid { grid-template-columns: repeat(2, 1fr); gap: var(--sp-3); }
+  body[data-brand="vectoragr"] .produk-grid,
+  body[data-brand="eavision"] .produk-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-3);
+    max-width: none;
+  }
+
+  .produk-card__brand { height: 50px; padding-top: var(--sp-3); }
+  .produk-card__brand img { max-height: 28px; max-width: 110px; }
+  .produk-card__body { padding: var(--sp-3); }
+  .produk-card__nama { font-size: var(--fs-sm); }
+
+  /* Filter kategori Zoomlion ada 8 tombol — biar bisa digeser */
+  .filter-bar {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-bottom: var(--sp-2);
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .filter-bar::-webkit-scrollbar { display: none; }
+  .filter-btn {
+    font-size: var(--fs-xs);
+    padding: 8px 14px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .kategori-heading h2 { font-size: var(--fs-lg); white-space: normal; }
+
+  /* --- Modal --- */
+  .modal { padding: var(--sp-2); }
+  .modal__box { max-width: 100%; max-height: 94vh; }
+  .modal__body { padding: var(--sp-5) var(--sp-4); }
+  .modal__media { padding: var(--sp-4); }
+  .modal__media img { max-height: 200px; }
+  .modal__actions { flex-direction: column; }
+  .modal__actions .btn { width: 100%; }
+
+  /* Keunggulan dan spesifikasi jadi satu kolom */
+  .modal__col:first-child .check-list { columns: 1; }
+  .modal__box .spec-table { columns: 1; }
+  .modal__box .spec-table td { font-size: var(--fs-xs); }
+  .modal__title { font-size: var(--fs-xl); }
+
+  /* --- Halaman tentang --- */
+  .visi-card,
+  .misi-card { padding: var(--sp-5) var(--sp-4); }
+
+  /* --- Halaman kontak --- */
+  .kontak-form { padding: var(--sp-5) var(--sp-4); }
+  .kontak-peta iframe { height: 300px; }
+
+  /* --- Mitra --- */
+  .partner { padding: var(--sp-7) var(--sp-5); }
+  .partner__action { width: 100%; }
+  .partner__action .btn { width: 100%; }
+
+  /* --- Artikel --- */
+  .artikel-detail__body { padding: var(--sp-5) var(--sp-4); }
+
+  /* --- Tombol WA --- */
+  .wa-float { width: 50px; height: 50px; right: 16px; bottom: 16px; }
+  .wa-float svg { width: 26px; height: 26px; }
+}
