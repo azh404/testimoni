@@ -20,20 +20,52 @@ const BULAN  = ['Januari','Februari','Maret','April','Mei','Juni','Juli',
 const sandbox = {};
 vm.createContext(sandbox);
 vm.runInContext(
-  fs.readFileSync(path.join(ROOT, 'assets/js/data/artikel.js'), 'utf8') +
-  '\nthis.ARTIKEL = ARTIKEL; this.KATEGORI_ARTIKEL = KATEGORI_ARTIKEL;',
+  fs.readFileSync(path.join(ROOT, 'assets/js/data/artikel.js'), 'utf8') + '\n' +
+  fs.readFileSync(path.join(ROOT, 'assets/js/data/artikel-terjemahan.js'), 'utf8') +
+  '\nthis.ARTIKEL = ARTIKEL; this.KATEGORI_ARTIKEL = KATEGORI_ARTIKEL;' +
+  '\nthis.ARTIKEL_TERJEMAHAN = ARTIKEL_TERJEMAHAN;',
   sandbox
 );
-const { ARTIKEL, KATEGORI_ARTIKEL } = sandbox;
+const { ARTIKEL, KATEGORI_ARTIKEL, ARTIKEL_TERJEMAHAN } = sandbox;
+
+/* --- Teks antarmuka per bahasa --- */
+const BAHASA_HALAMAN = ['id', 'en', 'zh'];
+const LABEL = {
+  id: { sumber: 'Sumber:',   kembali: 'Kembali ke Berita &amp; Artikel', bulan: BULAN },
+  en: { sumber: 'Sources:',  kembali: 'Back to News &amp; Articles',
+        bulan: ['January','February','March','April','May','June','July',
+                'August','September','October','November','December'] },
+  zh: { sumber: '资料来源：', kembali: '返回新闻与文章', bulan: null }
+};
+const PENULIS = {
+  'Redaksi DASS':    { en: 'DASS Editorial',      zh: 'DASS编辑部' },
+  'Tim Teknis DASS': { en: 'DASS Technical Team', zh: 'DASS技术团队' }
+};
 
 /* --- Pembantu --- */
 const escAttr = s => String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;')
                               .replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const tanpaTag = s => String(s).replace(/<[^>]+>/g, '');
 
-function formatTanggal(iso) {
+function formatTanggal(iso, bahasa = 'id') {
   const d = new Date(iso);
-  return `${d.getDate()} ${BULAN[d.getMonth()]} ${d.getFullYear()}`;
+  if (bahasa === 'zh') return `${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日`;
+  const bulan = LABEL[bahasa].bulan[d.getMonth()];
+  return bahasa === 'en' ? `${bulan} ${d.getDate()}, ${d.getFullYear()}`
+                         : `${d.getDate()} ${bulan} ${d.getFullYear()}`;
+}
+
+/* Isi artikel dalam satu bahasa. Terjemahan bernilai null memakai
+   teks Indonesia; label "Sumber:" ikut diterjemahkan. */
+function versi(a, bahasa) {
+  const tr = bahasa !== 'id' && ARTIKEL_TERJEMAHAN[a.id] && ARTIKEL_TERJEMAHAN[a.id][bahasa];
+  if (!tr) return { judul: a.judul, ringkas: a.ringkas, isi: a.isi };
+  const isi = a.isi.map((asli, i) => {
+    const teks = tr.isi[i];
+    if (teks !== null && teks !== undefined) return teks;
+    return asli.startsWith('Sumber: ') ? `${LABEL[bahasa].sumber} ${asli.slice(8)}` : asli;
+  });
+  return { judul: tr.judul, ringkas: tr.ringkas, isi };
 }
 
 /* Link relatif di isi artikel ditulis dari folder utama (mis. "kontak.html");
@@ -53,7 +85,7 @@ function halaman(a) {
   const url       = `${DOMAIN}/artikel/${a.id}.html`;
   const judulSeo  = `${a.seoJudul || a.judul} | DASS`;
   const deskripsi = a.metaDeskripsi || tanpaTag(a.ringkas);
-  const kategori  = KATEGORI_ARTIKEL.find(k => k.id === a.kategori)?.nama || '';
+  const kat       = KATEGORI_ARTIKEL.find(k => k.id === a.kategori) || {};
   const adaGambar = a.gambar && fs.existsSync(path.join(ROOT, a.gambar));
   const gambarUrl = `${DOMAIN}/${adaGambar ? a.gambar : 'assets/images/logo/logo.png'}`;
 
@@ -124,26 +156,31 @@ ${JSON.stringify(jsonLd, null, 2)}
       <div class="container">
         <article class="artikel-halaman">
 
-          <nav class="detail-crumb" aria-label="Breadcrumb">
-            <a href="../index.html" data-i18n="nav.beranda">Beranda</a> ›
-            <a href="../artikel.html" data-i18n="nav.artikel">Berita &amp; Artikel</a> ›
-            <span aria-current="page">${a.judul}</span>
-          </nav>
+${BAHASA_HALAMAN.map(b => { const v = versi(a, b); return `
+          <div data-bahasa="${b}"${b === 'id' ? '' : ' hidden'}>
+            <nav class="detail-crumb" aria-label="Breadcrumb">
+              <a href="../index.html" data-i18n="nav.beranda">Beranda</a> ›
+              <a href="../artikel.html" data-i18n="nav.artikel">Berita &amp; Artikel</a> ›
+              <span aria-current="page">${v.judul}</span>
+            </nav>
 
-          <span class="artikel-card__badge">${kategori}</span>
-          <h1 class="artikel-detail__judul">${a.judul}</h1>
-          <p class="artikel-halaman__subjudul">${a.ringkas}</p>
-          <p class="artikel-detail__meta">${formatTanggal(a.tanggal)} &middot; ${a.penulis || ''}</p>
+            <span class="artikel-card__badge">${(b !== 'id' && kat[b]) || kat.nama || ''}</span>
+            <h1 class="artikel-detail__judul">${v.judul}</h1>
+            <p class="artikel-halaman__subjudul">${v.ringkas}</p>
+            <p class="artikel-detail__meta">${formatTanggal(a.tanggal, b)} &middot; ${(b !== 'id' && PENULIS[a.penulis] && PENULIS[a.penulis][b]) || a.penulis || ''}</p>
+          </div>`; }).join('\n')}
 ${adaGambar ? `
           <div class="artikel-detail__media">
             <img src="../${a.gambar}" alt="${escAttr(a.judul)}">
           </div>
-` : ''}
-          <div class="artikel-detail__body">
-            ${a.isi.map(bagianIsi).join('\n            ')}
-          </div>
+` : ''}${BAHASA_HALAMAN.map(b => `
+          <div data-bahasa="${b}"${b === 'id' ? '' : ' hidden'}>
+            <div class="artikel-detail__body">
+              ${versi(a, b).isi.map(bagianIsi).join('\n              ')}
+            </div>
 
-          <a href="../artikel.html" class="artikel-kembali">&larr; Kembali ke Berita &amp; Artikel</a>
+            <a href="../artikel.html" class="artikel-kembali">&larr; ${LABEL[b].kembali}</a>
+          </div>`).join('\n')}
 
         </article>
       </div>
@@ -157,6 +194,7 @@ ${adaGambar ? `
   <script src="../assets/js/data/lang.js"></script>
   <script src="../assets/js/i18n.js"></script>
   <script src="../assets/js/navbar.js"></script>
+  <script src="../assets/js/artikel-halaman.js"></script>
   <script src="../assets/js/main.js"></script>
 </body>
 </html>

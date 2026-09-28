@@ -4,14 +4,15 @@
    Isi: '## Judul' = sub-judul, '### Judul' = sub-sub-judul,
    '---' = garis pemisah, selain itu paragraf biasa.
    seoJudul, metaDeskripsi, keyword = opsional, untuk Google.
+   Terjemahan English & 中文 ada di artikel-terjemahan.js.
    Setelah mengubah file ini, jalankan: node tools/buat-halaman-artikel.js
    ========================================= */
 
 const KATEGORI_ARTIKEL = [
-  { id: 'tips',    nama: 'Tips & Perawatan' },
-  { id: 'berita',  nama: 'Berita Perusahaan' },
-  { id: 'produk',  nama: 'Info Produk' },
-  { id: 'industri', nama: 'Berita Industri' }
+  { id: 'tips',     nama: 'Tips & Perawatan',  en: 'Tips & Maintenance', zh: '技巧与保养' },
+  { id: 'berita',   nama: 'Berita Perusahaan', en: 'Company News',       zh: '公司新闻' },
+  { id: 'produk',   nama: 'Info Produk',       en: 'Product Info',       zh: '产品资讯' },
+  { id: 'industri', nama: 'Berita Industri',   en: 'Industry News',      zh: '行业新闻' }
 ];
 
 const ARTIKEL = [

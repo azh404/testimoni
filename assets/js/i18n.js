@@ -7,6 +7,7 @@
    punya pilihan tersimpan) melihat teks Indonesia, sesuai
    kata kunci yang dicari orang di Indonesia. */
 let BAHASA = 'id';
+let JUDUL_ASLI = null;   /* <title> bawaan halaman (bahasa Indonesia) */
 try { BAHASA = localStorage.getItem('bahasa') || 'id'; } catch (e) { BAHASA = 'id'; }
 
 /* --- Definisi bahasa + bendera --- */
@@ -52,6 +53,15 @@ function t(kunci) {
   return item[BAHASA] || item.id || '';
 }
 
+/* Angka di data spesifikasi ditulis gaya Indonesia (2.100 / 4,6).
+   Untuk EN & ZH diubah ke gaya internasional (2,100 / 4.6). */
+function formatAngka(teks) {
+  return teks
+    .replace(/(\d)\.(?=\d{3}(?!\d))/g, '$1\u0000')
+    .replace(/(\d),(?=\d)/g, '$1.')
+    .replace(/\u0000/g, ',');
+}
+
 /* Nama kategori produk */
 function tKategori(id) {
   const item = KATEGORI_TEKS[id];
@@ -76,7 +86,7 @@ function tNilai(nilai) {
   NILAI_KATA.forEach(k => {
     hasil = hasil.replace(k.cari, BAHASA === 'zh' ? k.zh : k.en);
   });
-  return hasil.replace(/\s{2,}/g, ' ').trim();
+  return formatAngka(hasil.replace(/\s{2,}/g, ' ').trim());
 }
 
 /* Teks yang bisa berupa string biasa atau objek {id, en, zh} */
@@ -131,7 +141,19 @@ function terapkanBahasa() {
     if (teks) el.textContent = teks;
   });
 
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const teks = t(el.dataset.i18nPlaceholder);
+    if (teks) el.placeholder = teks;
+  });
+
   document.documentElement.lang = BAHASA === 'zh' ? 'zh-CN' : BAHASA;
+
+  /* Judul tab browser. Halaman produk dan artikel mengatur judulnya sendiri. */
+  if (JUDUL_ASLI === null) JUDUL_ASLI = document.title;
+  const d = document.body.dataset;
+  if (!d.produkId && !document.querySelector('[data-bahasa]')) {
+    document.title = (BAHASA !== 'id' && t('judul.' + (d.brand || d.page))) || JUDUL_ASLI;
+  }
 }
 
 /* Ganti bahasa */
@@ -150,6 +172,8 @@ function gantiBahasa(kode) {
   if (typeof initBrandGallery  === 'function') initBrandGallery();
   if (typeof initHalamanArtikel === 'function') initHalamanArtikel();
   if (typeof initHalamanDetail  === 'function') initHalamanDetail();
+  if (typeof initArtikelHalaman === 'function') initArtikelHalaman();
+  if (typeof isiDataPerusahaan  === 'function') isiDataPerusahaan();
 }
 
 /* Event buka/tutup dropdown */

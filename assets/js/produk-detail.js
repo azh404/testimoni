@@ -36,9 +36,24 @@ function initHalamanDetail() {
   const p = PRODUK.find(x => x.id === id);
   if (!p) return;
 
+  /* Judul tab browser: nama produk untuk EN & ZH */
+  const h1 = document.querySelector('.detail-info h1');
+  if (JUDUL_ASLI === null) JUDUL_ASLI = document.title;
+  document.title = (BAHASA === 'id' || !h1) ? JUDUL_ASLI : `${h1.textContent.trim()} | DASS`;
+
   /* Kategori (bisa muncul di beberapa tempat) */
   const kat = labelKategoriDetail(p);
   document.querySelectorAll('[data-detail="kategori"]').forEach(el => { el.textContent = kat; });
+
+  /* Kategori di kartu "Produk Lainnya" ditulis dalam bahasa Indonesia */
+  document.querySelectorAll('.produk-card__kategori').forEach(el => {
+    if (!el.dataset.kategori) {
+      const label = el.textContent.trim();
+      el.dataset.kategori = Object.keys(LABEL_KATEGORI_ID).find(k => LABEL_KATEGORI_ID[k] === label) || '';
+    }
+    const id = el.dataset.kategori;
+    if (id) el.textContent = labelKategoriDetail({ kategori: id, brand: p.brand });
+  });
 
   /* Ringkasan */
   const ringkas = document.querySelector('[data-detail="ringkas"]');

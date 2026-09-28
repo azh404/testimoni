@@ -28,7 +28,7 @@ function isiDataPerusahaan() {
     'telepon': COMPANY.telepon,
     'email':   COMPANY.email,
     'alamat':  alamatLengkap(),
-    'jam':     COMPANY.jamOperasional
+    'jam':     (BAHASA !== 'id' && t('kontak.jamIsi')) || COMPANY.jamOperasional
   };
 
   document.querySelectorAll('[data-company]').forEach(el => {
@@ -70,6 +70,7 @@ function tandaiMenuAktif() {
 /* --- Jalankan --- */
 document.addEventListener('DOMContentLoaded', async () => {
     if (typeof initHalamanArtikel === 'function') initHalamanArtikel();
+  if (typeof initArtikelHalaman === 'function') initArtikelHalaman();
   await loadPartial('#site-header', 'navbar.html');
   await loadPartial('#site-footer', 'footer.html');
 
