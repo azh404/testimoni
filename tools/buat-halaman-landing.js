@@ -274,7 +274,7 @@ function kartu(p) {
   return `
           <a href="${urlProduk(p)}" class="produk-card" data-produk="${p.id}">
             <div class="produk-card__brand"><img src="${brand.logo}" alt="${esc(brand.nama)}" loading="lazy"></div>
-            <div class="produk-card__media"><img src="${p.gambar}" alt="${esc(p.nama)}" loading="lazy"></div>
+            <div class="produk-card__media"><img src="${p.gambar.replace(/\.png$/, '.webp')}" alt="${esc(p.nama)}" loading="lazy"></div>
             <div class="produk-card__body">
               <p class="produk-card__seri mb-0">${esc(p.seri || '')}</p>
               <h3 class="produk-card__nama">${esc(p.nama)}</h3>

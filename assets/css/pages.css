@@ -836,6 +836,9 @@
 .landing__artikel a { color: var(--color-primary); font-weight: var(--fw-semibold); }
 .landing__cta { margin-top: var(--sp-7); text-align: center; }
 .brand-hero .btn { margin-top: var(--sp-2); }
+/* Teks tombol panjang boleh turun baris di layar HP */
+.brand-hero .btn,
+.landing__cta .btn { white-space: normal; text-align: center; max-width: 100%; }
 
 .faq {
   border: 1px solid var(--color-border);
