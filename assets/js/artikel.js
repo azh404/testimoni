@@ -21,11 +21,19 @@ function namaKategoriArtikel(id) {
   return KATEGORI_ARTIKEL.find(k => k.id === id)?.nama || '';
 }
 
+/* '## ' = sub-judul, '### ' = sub-sub-judul, '---' = garis pemisah */
+function bagianIsi(teks) {
+  if (teks === '---')          return '<hr>';
+  if (teks.startsWith('### ')) return `<h4>${teks.slice(4)}</h4>`;
+  if (teks.startsWith('## '))  return `<h3>${teks.slice(3)}</h3>`;
+  return `<p>${teks}</p>`;
+}
+
 function kartuArtikel(a, base, i = 0) {
   return `
     <article class="artikel-card" data-artikel="${a.id}" style="animation-delay:${i * 60}ms">
       <div class="artikel-card__media">
-        <img src="${base}${a.gambar}" alt="${a.judul}" loading="lazy">
+        <img src="${base}${a.gambar}" alt="${a.judul}" loading="lazy" onerror="this.style.visibility='hidden'">
       </div>
       <div class="artikel-card__body">
         <span class="artikel-card__badge">${namaKategoriArtikel(a.kategori)}</span>
@@ -103,13 +111,13 @@ function initModalArtikel() {
       <button class="modal__close" data-tutup aria-label="Tutup">&times;</button>
       <div class="artikel-detail">
         <div class="artikel-detail__media">
-          <img src="${base}${a.gambar}" alt="${a.judul}">
+          <img src="${base}${a.gambar}" alt="${a.judul}" onerror="this.style.visibility='hidden'">
         </div>
         <div class="artikel-detail__body">
           <span class="artikel-card__badge">${namaKategoriArtikel(a.kategori)}</span>
           <h2 class="artikel-detail__judul">${a.judul}</h2>
           <p class="artikel-detail__meta">${formatTanggal(a.tanggal)} &middot; ${a.penulis || ''}</p>
-          ${a.isi.map(p => `<p>${p}</p>`).join('')}
+          ${a.isi.map(bagianIsi).join('')}
         </div>
       </div>`;
 

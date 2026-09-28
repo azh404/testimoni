@@ -808,6 +808,14 @@
   border-bottom: 1px solid var(--color-border);
 }
 .artikel-detail__body p { font-size: var(--fs-sm); line-height: 1.85; }
+.artikel-detail__body h3 { font-size: var(--fs-xl); margin: var(--sp-7) 0 var(--sp-3); }
+.artikel-detail__body h4 { font-size: var(--fs-base); margin: var(--sp-5) 0 var(--sp-2); }
+.artikel-detail__body hr {
+  border: 0;
+  border-top: 1px solid var(--color-border);
+  margin: var(--sp-6) 0;
+}
+.artikel-detail__body a { color: var(--color-primary); font-weight: var(--fw-semibold); }
 
 /* =========================================
    HALAMAN TENTANG KAMI
