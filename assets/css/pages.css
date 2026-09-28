@@ -325,6 +325,15 @@
   margin-bottom: var(--sp-4);
   letter-spacing: -0.03em;
 }
+.brand-hero__h1-sub {
+  display: block;
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0;
+  line-height: 1.4;
+  margin-top: var(--sp-2);
+  opacity: 0.9;
+}
 
 .brand-hero p {
   font-size: var(--fs-sm);
@@ -816,6 +825,35 @@
   margin: var(--sp-6) 0;
 }
 .artikel-detail__body a { color: var(--color-primary); font-weight: var(--fw-semibold); }
+
+/* Halaman kata kunci (jual-*-jakarta.html) */
+.landing { max-width: 880px; margin-inline: auto; }
+.landing__intro p { font-size: var(--fs-base); line-height: 1.85; }
+.landing__judul { font-size: var(--fs-2xl); margin: var(--sp-7) 0 var(--sp-5); }
+.landing__unggul { gap: var(--sp-4); }
+.landing__artikel { padding-left: 1.2em; }
+.landing__artikel li { margin-bottom: var(--sp-2); }
+.landing__artikel a { color: var(--color-primary); font-weight: var(--fw-semibold); }
+.landing__cta { margin-top: var(--sp-7); text-align: center; }
+.brand-hero .btn { margin-top: var(--sp-2); }
+/* Teks tombol panjang boleh turun baris di layar HP */
+.brand-hero .btn,
+.landing__cta .btn { white-space: normal; text-align: center; max-width: 100%; }
+
+.faq {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--sp-3);
+  background-color: var(--color-white);
+}
+.faq summary {
+  cursor: pointer;
+  padding: var(--sp-4) var(--sp-5);
+  font-weight: var(--fw-semibold);
+  color: var(--color-dark);
+}
+.faq[open] summary { border-bottom: 1px solid var(--color-border); }
+.faq p { padding: var(--sp-4) var(--sp-5); margin: 0; line-height: 1.8; }
 
 /* Kartu artikel berupa tautan <a> ke halaman artikel */
 a.artikel-card { color: inherit; text-decoration: none; }

@@ -71,6 +71,12 @@ const KATEGORI_URL = {
   'va-digital':    'pertanian-digital'
 };
 
+/* Gambar produk ditampilkan dalam WebP (lebih ringan). Data tetap
+   menunjuk ke PNG karena dipakai brosur PDF dan pratinjau link. */
+function gambarWeb(src) {
+  return String(src).replace(/\.png$/, '.webp');
+}
+
 function slugTeks(teks) {
   return String(teks)
     .toLowerCase()
@@ -94,7 +100,7 @@ function kartuProduk(p, brand, base, i = 0) {
         <img src="${base}${brand.logo}" alt="${brand.nama}" loading="lazy">
       </div>
       <div class="produk-card__media">
-        <img src="${base}${p.gambar}" alt="${p.nama}" loading="lazy">
+        <img src="${base}${gambarWeb(p.gambar)}" alt="${p.nama}" onerror="this.style.visibility='hidden'" loading="lazy">
       </div>
       <div class="produk-card__body">
         <p class="produk-card__seri mb-0">${p.seri || ''}</p>
@@ -117,6 +123,22 @@ function namaKategori(id, brandId) {
     if (found) return found.nama;
   }
   return '';
+}
+
+/* =========================================
+   HALAMAN KATA KUNCI (jual-*-jakarta.html)
+   Kartu sudah ditulis di HTML (bahasa Indonesia, terbaca Google);
+   di sini dirender ulang supaya ikut bahasa yang dipilih.
+   ========================================= */
+function initHalamanLanding() {
+  const base = document.body.dataset.base || '';
+  document.querySelectorAll('[data-landing-kategori]').forEach(wrap => {
+    const items = wrap.dataset.landingKategori.split(',')
+      .flatMap(k => PRODUK.filter(p => p.kategori === k));
+    wrap.innerHTML = items
+      .map((p, i) => kartuProduk(p, BRANDS.find(b => b.id === p.brand), base, i))
+      .join('');
+  });
 }
 
 /* =========================================
@@ -222,7 +244,7 @@ function initBrandGallery() {
       <div class="brand-slider__stage">
         ${pilih.map((p, i) => `
           <div class="brand-slider__item${i === 0 ? ' is-active' : ''}">
-            <img src="${base}${p.gambar}" alt="${p.nama}" loading="lazy">
+            <img src="${base}${gambarWeb(p.gambar)}" alt="${p.nama}" onerror="this.style.visibility='hidden'" loading="lazy">
             <span class="brand-slider__label">${p.nama}</span>
           </div>
         `).join('')}
@@ -341,7 +363,7 @@ function initModalProduk() {
       <div class="modal__grid">
 
         <div class="modal__media">
-          <img src="${base}${p.gambar}" alt="${p.nama}">
+          <img src="${base}${gambarWeb(p.gambar)}" alt="${p.nama}" onerror="this.style.visibility='hidden'">
         </div>
 
         <div class="modal__body">

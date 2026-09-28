@@ -71,6 +71,7 @@ function tandaiMenuAktif() {
 document.addEventListener('DOMContentLoaded', async () => {
     if (typeof initHalamanArtikel === 'function') initHalamanArtikel();
   if (typeof initArtikelHalaman === 'function') initArtikelHalaman();
+  if (typeof initHalamanLanding === 'function') initHalamanLanding();
   await loadPartial('#site-header', 'navbar.html');
   await loadPartial('#site-footer', 'footer.html');
 
