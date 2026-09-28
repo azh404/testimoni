@@ -3,6 +3,8 @@
    Tambah artikel = tambah objek di array.
    Isi: '## Judul' = sub-judul, '### Judul' = sub-sub-judul,
    '---' = garis pemisah, selain itu paragraf biasa.
+   seoJudul, metaDeskripsi, keyword = opsional, untuk Google.
+   Setelah mengubah file ini, jalankan: node tools/buat-halaman-artikel.js
    ========================================= */
 
 const KATEGORI_ARTIKEL = [
@@ -20,6 +22,7 @@ const ARTIKEL = [
     penulis: 'Tim Teknis DASS',
     gambar: 'assets/images/artikel/ban-traktor.jpg',
     ringkas: 'Pemilihan ban yang tepat dapat membantu meningkatkan daya cengkeram, dan penggunaan yang efektif.',
+    seoJudul: 'Kenali Jenis-Jenis dan Cara Pilih Ban Traktor yang Tepat',
     metaDeskripsi: 'Temukan cara memilih ban traktor yang tepat sesuai kebutuhan lahan dan beban kerja. Ketahui jenis-jenis ban traktor dan tips memilih ban traktor.',
     keyword: ['traktor', 'traktor pertanian', 'dass agriculture', 'distributor traktor pertanian'],
     isi: [

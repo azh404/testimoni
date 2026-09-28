@@ -21,17 +21,9 @@ function namaKategoriArtikel(id) {
   return KATEGORI_ARTIKEL.find(k => k.id === id)?.nama || '';
 }
 
-/* '## ' = sub-judul, '### ' = sub-sub-judul, '---' = garis pemisah */
-function bagianIsi(teks) {
-  if (teks === '---')          return '<hr>';
-  if (teks.startsWith('### ')) return `<h4>${teks.slice(4)}</h4>`;
-  if (teks.startsWith('## '))  return `<h3>${teks.slice(3)}</h3>`;
-  return `<p>${teks}</p>`;
-}
-
 function kartuArtikel(a, base, i = 0) {
   return `
-    <article class="artikel-card" data-artikel="${a.id}" style="animation-delay:${i * 60}ms">
+    <a href="${base}artikel/${a.id}.html" class="artikel-card" style="animation-delay:${i * 60}ms">
       <div class="artikel-card__media">
         <img src="${base}${a.gambar}" alt="${a.judul}" loading="lazy" onerror="this.style.visibility='hidden'">
       </div>
@@ -41,7 +33,7 @@ function kartuArtikel(a, base, i = 0) {
         <p class="artikel-card__ringkas">${a.ringkas}</p>
         <span class="artikel-card__tanggal">${formatTanggal(a.tanggal)}</span>
       </div>
-    </article>`;
+    </a>`;
 }
 
 function initHalamanArtikel() {
@@ -91,53 +83,4 @@ function initHalamanArtikel() {
   }
 
   render('all');
-}
-
-/* =========================================
-   MODAL ARTIKEL
-   ========================================= */
-function initModalArtikel() {
-  const modal = document.getElementById('modalArtikel');
-  if (!modal) return;
-
-  const base = document.body.dataset.base || '';
-  const box  = modal.querySelector('.modal__box');
-
-  function buka(id) {
-    const a = ARTIKEL.find(x => x.id === id);
-    if (!a) return;
-
-    box.innerHTML = `
-      <button class="modal__close" data-tutup aria-label="Tutup">&times;</button>
-      <div class="artikel-detail">
-        <div class="artikel-detail__media">
-          <img src="${base}${a.gambar}" alt="${a.judul}" onerror="this.style.visibility='hidden'">
-        </div>
-        <div class="artikel-detail__body">
-          <span class="artikel-card__badge">${namaKategoriArtikel(a.kategori)}</span>
-          <h2 class="artikel-detail__judul">${a.judul}</h2>
-          <p class="artikel-detail__meta">${formatTanggal(a.tanggal)} &middot; ${a.penulis || ''}</p>
-          ${a.isi.map(bagianIsi).join('')}
-        </div>
-      </div>`;
-
-    modal.classList.add('is-open');
-    document.body.style.overflow = 'hidden';
-    if (typeof initImageFallback === 'function') initImageFallback();
-  }
-
-  function tutup() {
-    modal.classList.remove('is-open');
-    document.body.style.overflow = '';
-  }
-
-  document.addEventListener('click', e => {
-    const kartu = e.target.closest('[data-artikel]');
-    if (kartu) { buka(kartu.dataset.artikel); return; }
-    if (e.target.closest('[data-tutup]') || e.target === modal) tutup();
-  });
-
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') tutup();
-  });
 }

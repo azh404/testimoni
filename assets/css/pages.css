@@ -808,14 +808,34 @@
   border-bottom: 1px solid var(--color-border);
 }
 .artikel-detail__body p { font-size: var(--fs-sm); line-height: 1.85; }
-.artikel-detail__body h3 { font-size: var(--fs-xl); margin: var(--sp-7) 0 var(--sp-3); }
-.artikel-detail__body h4 { font-size: var(--fs-base); margin: var(--sp-5) 0 var(--sp-2); }
+.artikel-detail__body h2 { font-size: var(--fs-xl); margin: var(--sp-7) 0 var(--sp-3); }
+.artikel-detail__body h3 { font-size: var(--fs-base); margin: var(--sp-5) 0 var(--sp-2); }
 .artikel-detail__body hr {
   border: 0;
   border-top: 1px solid var(--color-border);
   margin: var(--sp-6) 0;
 }
 .artikel-detail__body a { color: var(--color-primary); font-weight: var(--fw-semibold); }
+
+/* Kartu artikel berupa tautan <a> ke halaman artikel */
+a.artikel-card { color: inherit; text-decoration: none; }
+
+/* Halaman artikel tersendiri (artikel/*.html) */
+.artikel-halaman { max-width: 780px; margin-inline: auto; }
+.artikel-halaman .artikel-detail__judul { font-size: var(--fs-3xl); margin-top: var(--sp-3); }
+.artikel-halaman .artikel-detail__media {
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--sp-6);
+}
+.artikel-halaman .artikel-detail__body { padding: 0; }
+.artikel-halaman .artikel-detail__body p { font-size: var(--fs-base); }
+.artikel-kembali {
+  display: inline-block;
+  margin-top: var(--sp-7);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--color-primary);
+}
 
 /* =========================================
    HALAMAN TENTANG KAMI
