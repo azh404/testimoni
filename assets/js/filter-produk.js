@@ -132,9 +132,10 @@ function namaKategori(id, brandId) {
    ========================================= */
 function initHalamanLanding() {
   const base = document.body.dataset.base || '';
-  document.querySelectorAll('[data-landing-kategori]').forEach(wrap => {
-    const items = wrap.dataset.landingKategori.split(',')
-      .flatMap(k => PRODUK.filter(p => p.kategori === k));
+  document.querySelectorAll('[data-landing-kategori], [data-landing-produk]').forEach(wrap => {
+    const items = wrap.dataset.landingProduk
+      ? wrap.dataset.landingProduk.split(',').map(id => PRODUK.find(p => p.id === id)).filter(Boolean)
+      : wrap.dataset.landingKategori.split(',').flatMap(k => PRODUK.filter(p => p.kategori === k));
     wrap.innerHTML = items
       .map((p, i) => kartuProduk(p, BRANDS.find(b => b.id === p.brand), base, i))
       .join('');
