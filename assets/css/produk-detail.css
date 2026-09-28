@@ -237,9 +237,3 @@ a.produk-card { color: inherit; text-decoration: none; }
     padding: 6px 10px;
   }
 }
-/* Sementara: cegah gambar kecil melar melebihi ukuran aslinya.
-   Hapus aturan ini kalau foto resolusi tinggi sudah didapat. */
-.detail-media img {
-  max-width: 450px;
-  width: auto;
-}

@@ -987,10 +987,4 @@ body[data-brand="vectoragr"] .produk-card__brand img { max-height: 38px; max-wid
    ========================================= */
 body[data-brand="eavision"] .produk-grid {
   grid-template-columns: repeat(4, 1fr);
-body[data-brand="vectoragr"] .produk-card__media {
-  aspect-ratio: 4 / 3;
-  padding: var(--sp-4);
-}
-body[data-brand="vectoragr"] .produk-card__brand { height: 62px; padding-top: var(--sp-4); }
-body[data-brand="vectoragr"] .produk-card__brand img { max-height: 38px; max-width: 150px; }
 }
