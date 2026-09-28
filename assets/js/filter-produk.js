@@ -120,6 +120,22 @@ function namaKategori(id, brandId) {
 }
 
 /* =========================================
+   HALAMAN KATA KUNCI (jual-*-jakarta.html)
+   Kartu sudah ditulis di HTML (bahasa Indonesia, terbaca Google);
+   di sini dirender ulang supaya ikut bahasa yang dipilih.
+   ========================================= */
+function initHalamanLanding() {
+  const base = document.body.dataset.base || '';
+  document.querySelectorAll('[data-landing-kategori]').forEach(wrap => {
+    const items = wrap.dataset.landingKategori.split(',')
+      .flatMap(k => PRODUK.filter(p => p.kategori === k));
+    wrap.innerHTML = items
+      .map((p, i) => kartuProduk(p, BRANDS.find(b => b.id === p.brand), base, i))
+      .join('');
+  });
+}
+
+/* =========================================
    HALAMAN BRAND — filter kategori
    ========================================= */
 function initHalamanBrand() {

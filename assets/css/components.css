@@ -294,6 +294,17 @@
   color: rgba(255, 255, 255, 0.6);
 }
 
+/* Tautan ke halaman kata kunci (jual-*-jakarta.html) */
+.footer__seo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--sp-2) var(--sp-5);
+  margin-bottom: var(--sp-2);
+}
+.footer__seo a { color: rgba(255, 255, 255, 0.75); }
+.footer__seo a:hover { color: var(--color-white); }
+
 /* =========================================
    TOMBOL WA MENGAMBANG
    ========================================= */
