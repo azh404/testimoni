@@ -1212,3 +1212,25 @@ body[data-brand="eavision"] .produk-grid {
 .kamus dt { font-size: var(--fs-lg); font-weight: var(--fw-bold); color: var(--color-dark); margin-bottom: var(--sp-2); }
 .kamus dd { margin: 0; line-height: 1.8; }
 .kamus dd a { color: var(--color-primary); font-weight: var(--fw-semibold); white-space: nowrap; }
+
+/* =========================================
+   KALKULATOR MINI DI HALAMAN PRODUK
+   ========================================= */
+.kalk-mini {
+  background: var(--color-white); border: 1px solid var(--color-border); border-radius: 16px;
+  padding: var(--sp-6); box-shadow: 0 6px 24px rgba(18, 58, 107, .06);
+}
+.kalk-mini__kepala h2 { font-size: var(--fs-2xl); margin: 0 0 var(--sp-2); }
+.kalk-mini__kepala p { margin: 0 0 var(--sp-5); color: var(--color-muted); }
+.kalk-mini__lengkap { color: var(--color-primary); font-weight: var(--fw-semibold); text-decoration: underline; }
+.kalk-mini__cocok { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: var(--sp-3); }
+.kalk-mini__cocok li {
+  display: grid; gap: var(--sp-1); padding: var(--sp-4); border-radius: 12px;
+  background: var(--color-primary-soft); font-size: var(--fs-sm);
+}
+.kalk-mini__cocok strong { font-size: var(--fs-lg); color: var(--color-accent); }
+@media (max-width: 768px) {
+  .kalk-mini { padding: var(--sp-5) var(--sp-4); }
+  .kalk-mini__kepala h2 { font-size: var(--fs-xl); }
+}
+.section--flush-top { padding-top: 0; }
