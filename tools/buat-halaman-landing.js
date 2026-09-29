@@ -30,9 +30,9 @@ const TELEPON = COMPANY.telepon;
    TEKS ANTARMUKA
    ========================================= */
 const UI = {
-  id: { faq: 'Pertanyaan yang Sering Diajukan', artikel: 'Baca Juga', semua: 'Lihat semua produk', terkait: 'Lihat Juga', kalk: 'Kalkulator Biaya Semprot Drone & Pilih Traktor' },
-  en: { faq: 'Frequently Asked Questions',       artikel: 'Read Also', semua: 'View all products', terkait: 'See Also', kalk: 'Drone Spraying Cost & Tractor Selection Calculator' },
-  zh: { faq: '常见问题',                          artikel: '延伸阅读',  semua: '查看全部产品',        terkait: '另请参阅', kalk: '无人机喷洒成本与拖拉机选型计算器' }
+  id: { faq: 'Pertanyaan yang Sering Diajukan', artikel: 'Baca Juga', semua: 'Lihat semua produk', terkait: 'Lihat Juga', kalk: 'Kalkulator Semprot Drone & Pilih Traktor' },
+  en: { faq: 'Frequently Asked Questions',       artikel: 'Read Also', semua: 'View all products', terkait: 'See Also', kalk: 'Drone Spraying & Tractor Selection Calculator' },
+  zh: { faq: '常见问题',                          artikel: '延伸阅读',  semua: '查看全部产品',        terkait: '另请参阅', kalk: '无人机喷洒与拖拉机选型计算器' }
 };
 
 /* Keunggulan yang sama untuk semua halaman */
