@@ -317,6 +317,18 @@ const TEKS = {
     zh: '为印尼农业的可持续发展与进步作出贡献'
   },
 
+  /* ===== MENU WHATSAPP & TOMBOL BAGIKAN ===== */
+  'wa.judul':          { id: 'Ada yang bisa kami bantu?', en: 'How can we help?', zh: '需要什么帮助？' },
+  'wa.harga':          { id: 'Tanya harga & ketersediaan', en: 'Ask about price & availability', zh: '咨询价格与库存' },
+  'wa.konsultasi':     { id: 'Konsultasi memilih unit', en: 'Help choosing a unit', zh: '选型咨询' },
+  'wa.brosur':         { id: 'Minta brosur / katalog', en: 'Request a brochure / catalogue', zh: '索取宣传册/产品目录' },
+  'wa.lain':           { id: 'Pertanyaan lain', en: 'Other questions', zh: '其他问题' },
+  'wa.tutup':          { id: 'Tutup', en: 'Close', zh: '关闭' },
+  'bagikan.label':     { id: 'Bagikan:', en: 'Share:', zh: '分享：' },
+  'bagikan.bagikan':   { id: 'Bagikan', en: 'Share', zh: '分享' },
+  'bagikan.salin':     { id: 'Salin link', en: 'Copy link', zh: '复制链接' },
+  'bagikan.tersalin':  { id: 'Link tersalin!', en: 'Link copied!', zh: '链接已复制！' },
+
   /* ===== BANDINGKAN PRODUK (bandingkan.html) ===== */
   'banding.langkah1':  { id: '1. Pilih kategori', en: '1. Choose a category', zh: '1. 选择类别' },
   'banding.langkah2':  { id: '2. Pilih unit yang ingin dibandingkan', en: '2. Choose the units to compare', zh: '2. 选择要对比的机型' },

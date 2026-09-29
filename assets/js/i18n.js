@@ -177,6 +177,7 @@ function gantiBahasa(kode) {
   if (typeof initKalkulator     === 'function') initKalkulator();
   if (typeof initBandingkan     === 'function') initBandingkan();
   if (typeof isiDataPerusahaan  === 'function') isiDataPerusahaan();
+  if (typeof initWaMenu         === 'function') initWaMenu();
 }
 
 /* Event buka/tutup dropdown */
