@@ -91,4 +91,5 @@ document.addEventListener('DOMContentLoaded', async () => {
   if (typeof initHalamanDetail === 'function') initHalamanDetail();
   if (typeof initImageFallback === 'function') initImageFallback();
     if (typeof initFormKontak === 'function') initFormKontak();
+  if (typeof initKalkulator    === 'function') initKalkulator();
 });

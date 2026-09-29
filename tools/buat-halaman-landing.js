@@ -23,16 +23,16 @@ for (const f of ['config.js', 'data/brands.js', 'data/produk-zoomlion.js', 'data
                  'data/produk-vectoragr.js', 'data/lang.js', 'data/artikel.js', 'data/artikel-terjemahan.js']) {
   vm.runInContext(fs.readFileSync(path.join(ROOT, 'assets/js', f), 'utf8').replace(/^(const|let) /mg, 'var '), ctx);
 }
-const { COMPANY, BRANDS, PRODUK, KATEGORI_TEKS, ARTIKEL, ARTIKEL_TERJEMAHAN } = ctx;
+const { COMPANY, BRANDS, PRODUK, KATEGORI_TEKS, ALT_KATEGORI, ARTIKEL, ARTIKEL_TERJEMAHAN } = ctx;
 const TELEPON = COMPANY.telepon;
 
 /* =========================================
    TEKS ANTARMUKA
    ========================================= */
 const UI = {
-  id: { faq: 'Pertanyaan yang Sering Diajukan', artikel: 'Baca Juga', semua: 'Lihat semua produk', terkait: 'Lihat Juga' },
-  en: { faq: 'Frequently Asked Questions',       artikel: 'Read Also', semua: 'View all products', terkait: 'See Also' },
-  zh: { faq: '常见问题',                          artikel: '延伸阅读',  semua: '查看全部产品',        terkait: '另请参阅' }
+  id: { faq: 'Pertanyaan yang Sering Diajukan', artikel: 'Baca Juga', semua: 'Lihat semua produk', terkait: 'Lihat Juga', kalk: 'Kalkulator Biaya Semprot Drone & Pilih Traktor' },
+  en: { faq: 'Frequently Asked Questions',       artikel: 'Read Also', semua: 'View all products', terkait: 'See Also', kalk: 'Drone Spraying Cost & Tractor Selection Calculator' },
+  zh: { faq: '常见问题',                          artikel: '延伸阅读',  semua: '查看全部产品',        terkait: '另请参阅', kalk: '无人机喷洒成本与拖拉机选型计算器' }
 };
 
 /* Keunggulan yang sama untuk semua halaman */
@@ -549,7 +549,7 @@ function kartu(p) {
   return `
           <a href="${urlProduk(p)}" class="produk-card" data-produk="${p.id}">
             <div class="produk-card__brand"><img src="${brand.logo}" alt="${esc(brand.nama)}" loading="lazy"></div>
-            <div class="produk-card__media"><img src="${p.gambar.replace(/\.png$/, '.webp')}" alt="${esc(p.nama)}" loading="lazy"></div>
+            <div class="produk-card__media"><img src="${p.gambar.replace(/\.png$/, '.webp')}" alt="${esc([ALT_KATEGORI[p.kategori], brand.nama, p.nama].filter(Boolean).join(' '))}" loading="lazy"></div>
             <div class="produk-card__body">
               <p class="produk-card__seri mb-0">${esc(p.seri || '')}</p>
               <h3 class="produk-card__nama">${esc(p.nama)}</h3>
@@ -695,6 +695,7 @@ ${BAHASA.map(b => `        ${blok(b, `
           <h2 class="landing__judul">${UI[b].terkait}</h2>
           <ul class="landing__artikel">
             ${HALAMAN.filter(x => x !== h).map(x => `<li><a href="${x.file}">${x[b].h1}</a></li>`).join('\n            ')}
+            <li><a href="kalkulator.html">${esc(UI[b].kalk)}</a></li>
           </ul>
 
           <p class="landing__cta">

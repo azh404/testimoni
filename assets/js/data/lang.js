@@ -23,6 +23,7 @@ const TEKS = {
   'judul.zoomlion':  { en: 'Zoomlion Tractors & Agricultural Machinery | Authorised Distributor in Indonesia', zh: '中联重科拖拉机与农业机械 | 印尼授权经销商' },
   'judul.eavision':  { en: 'EAVision Agricultural Spray Drones | Authorised Distributor in Indonesia', zh: 'EAVision农业植保无人机 | 印尼授权经销商' },
   'judul.vectoragr': { en: 'VectorAgr Agricultural Drones | Authorised Distributor in Indonesia',  zh: 'VectorAgr农业无人机 | 印尼授权经销商' },
+  'judul.kalkulator': { en: 'Agricultural Calculator: Drone Spraying Cost & Tractor Selection | DASS', zh: '农业计算器：无人机喷洒成本与拖拉机选型 | DASS' },
 
   /* ===== NAVBAR ===== */
   'nav.beranda': { id: 'Beranda',          en: 'Home',            zh: '首页' },
@@ -31,6 +32,7 @@ const TEKS = {
   'nav.layanan': { id: 'Layanan',          en: 'Services',        zh: '服务' },
   'nav.artikel': { id: 'Berita & Artikel', en: 'News & Articles', zh: '新闻与文章' },
   'nav.kontak':  { id: 'Kontak',           en: 'Contact',         zh: '联系我们' },
+  'nav.kalkulator': { id: 'Kalkulator',    en: 'Calculator',      zh: '计算器' },
 
   'nav.zoomlionSub':  { id: 'Alat berat & mesin pertanian', en: 'Heavy & agricultural machinery', zh: '重型农业机械' },
   'nav.eavisionSub':  { id: 'Drone sprayer pertanian',      en: 'Agricultural sprayer drones',    zh: '农业植保无人机' },
@@ -146,6 +148,7 @@ const TEKS = {
   'footer.jualTraktor': { id: 'Jual Traktor Jakarta',         en: 'Tractors for Sale in Jakarta',       zh: '雅加达拖拉机销售' },
   'footer.jualDrone':   { id: 'Jual Drone Pertanian Jakarta', en: 'Agricultural Drones in Jakarta',     zh: '雅加达农业无人机销售' },
   'footer.jualMesin':   { id: 'Jual Mesin Pertanian Jakarta', en: 'Agricultural Machinery in Jakarta',  zh: '雅加达农业机械销售' },
+  'footer.kalkulator':  { id: 'Kalkulator Pertanian',         en: 'Agricultural Calculator',            zh: '农业计算器' },
 
   /* ===== MODAL PRODUK ===== */
   'modal.kegunaan':    { id: 'Keunggulan',         en: 'Key Features',     zh: '产品优势' },
@@ -312,7 +315,47 @@ const TEKS = {
     id: 'Berkontribusi pada keberlanjutan dan kemajuan sektor pertanian Indonesia',
     en: 'Contributing to the sustainability and advancement of Indonesia\u2019s agricultural sector',
     zh: '为印尼农业的可持续发展与进步作出贡献'
-  }
+  },
+
+  /* ===== KALKULATOR (kalkulator.html) ===== */
+  'kalk.droneJudul':   { id: 'Kalkulator Biaya Semprot Drone', en: 'Drone Spraying Cost Calculator', zh: '无人机喷洒成本计算器' },
+  'kalk.droneDesk':    { id: 'Bandingkan waktu, air, dan biaya semprot drone dengan penyemprotan manual.', en: 'Compare drone spraying time, water, and cost with manual spraying.', zh: '比较无人机喷洒与人工喷洒的时间、用水和成本。' },
+  'kalk.traktorJudul': { id: 'Kalkulator Pilih Traktor', en: 'Tractor Selection Calculator', zh: '拖拉机选型计算器' },
+  'kalk.traktorDesk':  { id: 'Temukan kelas tenaga traktor yang sesuai luas dan jenis lahan Anda.', en: 'Find the tractor power class that suits your land size and type.', zh: '根据您的土地面积和类型找到合适的拖拉机马力等级。' },
+  'kalk.luas':         { id: 'Luas lahan (hektar)', en: 'Land area (hectares)', zh: '土地面积（公顷）' },
+  'kalk.drone':        { id: 'Pilih drone', en: 'Choose a drone', zh: '选择无人机' },
+  'kalk.dosis':        { id: 'Volume semprot drone (liter/ha)', en: 'Drone spray volume (litres/ha)', zh: '无人机喷洒量（升/公顷）' },
+  'kalk.dosisInfo':    { id: 'Umumnya 10–20 L/ha, tergantung tanaman dan pestisida.', en: 'Usually 10–20 L/ha, depending on the crop and pesticide.', zh: '一般为10–20升/公顷，视作物和农药而定。' },
+  'kalk.upah':         { id: 'Upah semprot manual (Rp/ha)', en: 'Manual spraying wage (IDR/ha)', zh: '人工喷洒工资（印尼盾/公顷）' },
+  'kalk.tarif':        { id: 'Tarif jasa semprot drone (Rp/ha)', en: 'Drone spraying service rate (IDR/ha)', zh: '无人机喷洒服务费（印尼盾/公顷）' },
+  'kalk.biayaInfo':    { id: 'Isi sesuai harga di daerah Anda. Kosongkan bila tidak perlu.', en: 'Enter the rates in your area. Leave blank if not needed.', zh: '请按当地价格填写，不需要可留空。' },
+  'kalk.lahan':        { id: 'Jenis lahan', en: 'Land type', zh: '土地类型' },
+  'kalk.lahan.sawah':  { id: 'Sawah (padi)', en: 'Rice field (paddy)', zh: '水田（水稻）' },
+  'kalk.lahan.kering': { id: 'Lahan kering / tegalan (jagung, palawija)', en: 'Dryland (corn, secondary crops)', zh: '旱地（玉米、杂粮）' },
+  'kalk.lahan.kebun':  { id: 'Perkebunan (sawit, karet)', en: 'Plantation (oil palm, rubber)', zh: '种植园（油棕、橡胶）' },
+  'kalk.lahan.tebu':   { id: 'Kebun tebu', en: 'Sugarcane', zh: '甘蔗园' },
+  'kalk.hasil':        { id: 'Hasil Estimasi', en: 'Estimated Result', zh: '估算结果' },
+  'kalk.isiDulu':      { id: 'Isi luas lahan untuk melihat hasil.', en: 'Enter the land area to see the result.', zh: '请输入土地面积以查看结果。' },
+  'kalk.kapasitas':    { id: 'Kapasitas kerja drone', en: 'Drone work rate', zh: '无人机作业效率' },
+  'kalk.waktuDrone':   { id: 'Waktu semprot dengan drone', en: 'Spraying time by drone', zh: '无人机喷洒时间' },
+  'kalk.isiUlang':     { id: 'Isi ulang tangki', en: 'Tank refills', zh: '药箱加注次数' },
+  'kalk.airDrone':     { id: 'Kebutuhan air drone', en: 'Water needed (drone)', zh: '无人机用水量' },
+  'kalk.waktuManual':  { id: 'Waktu semprot manual', en: 'Manual spraying time', zh: '人工喷洒时间' },
+  'kalk.hariOrang':    { id: 'hari kerja (1 orang)', en: 'work days (1 person)', zh: '个工作日（1人）' },
+  'kalk.airManual':    { id: 'Kebutuhan air manual', en: 'Water needed (manual)', zh: '人工用水量' },
+  'kalk.airHemat':     { id: 'Air yang dihemat', en: 'Water saved', zh: '节约用水' },
+  'kalk.biayaManual':  { id: 'Biaya semprot manual', en: 'Manual spraying cost', zh: '人工喷洒成本' },
+  'kalk.biayaDrone':   { id: 'Biaya jasa drone', en: 'Drone service cost', zh: '无人机服务成本' },
+  'kalk.hemat':        { id: 'Penghematan', en: 'Savings', zh: '节省' },
+  'kalk.selisih':      { id: 'Selisih biaya (drone lebih mahal)', en: 'Cost difference (drone costs more)', zh: '成本差额（无人机更贵）' },
+  'kalk.jam':          { id: 'jam', en: 'h', zh: '小时' },
+  'kalk.menit':        { id: 'menit', en: 'min', zh: '分钟' },
+  'kalk.kelasHP':      { id: 'Kelas tenaga yang disarankan', en: 'Recommended power class', zh: '建议马力等级' },
+  'kalk.catatanTraktor': { id: 'Traktor Zoomlion di kelas tenaga ini:', en: 'Zoomlion tractors in this power class:', zh: '该马力等级的中联重科拖拉机：' },
+  'kalk.ctaDrone':     { id: 'Konsultasi Drone via WhatsApp', en: 'Ask About Drones on WhatsApp', zh: '通过WhatsApp咨询无人机' },
+  'kalk.ctaTraktor':   { id: 'Konsultasi Traktor via WhatsApp', en: 'Ask About Tractors on WhatsApp', zh: '通过WhatsApp咨询拖拉机' },
+  'kalk.asumsi':       { id: 'Asumsi: drone terbang 5 m/detik dengan efisiensi kerja 50% (belok, isi ulang, ganti baterai); semprot manual 300 L/ha dan 1 ha per orang per hari. Hasil adalah estimasi umum, bukan penawaran resmi.', en: 'Assumptions: drone flies at 5 m/s with 50% working efficiency (turns, refills, battery swaps); manual spraying uses 300 L/ha and covers 1 ha per person per day. Results are general estimates, not an official quotation.', zh: '假设：无人机飞行速度5米/秒，作业效率50%（转弯、加药、换电池）；人工喷洒每公顷300升，每人每天1公顷。结果仅为一般估算，并非正式报价。' },
+  'kalk.asumsiTraktor': { id: 'Rekomendasi bersifat umum. Kebutuhan sebenarnya juga dipengaruhi kondisi tanah, implement yang dipakai, dan target waktu kerja. Konsultasikan dengan tim kami.', en: 'Recommendations are general. Actual needs also depend on soil conditions, the implements used, and target work time. Consult our team.', zh: '建议仅供参考。实际需求还取决于土壤条件、所用农具和作业时间目标，请咨询我们的团队。' },
 };
 
 
