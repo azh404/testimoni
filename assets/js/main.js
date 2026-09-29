@@ -81,9 +81,12 @@ function initAnalitik() {
   document.addEventListener('click', e => {
     const el = e.target.closest('a, button');
     if (!el) return;
+    /* Tombol hijau hanya membuka menu; yang dihitung adalah pilihan di menu */
+    if (el.classList.contains('wa-float') && document.getElementById('waMenu')) return;
     const href = el.getAttribute('href') || '';
     const onclick = el.getAttribute('onclick') || '';
     const jenis =
+      el.dataset.bagikan             ? 'bagikan'       :
       /wa\.me|whatsapp/i.test(href) ? 'klik_whatsapp' :
       href.startsWith('tel:')        ? 'klik_telepon'  :
       href.startsWith('mailto:')     ? 'klik_email'    :
@@ -92,9 +95,71 @@ function initAnalitik() {
     gtag('event', jenis, {
       halaman: location.pathname,
       tombol: (el.textContent || el.getAttribute('aria-label') || '').trim().slice(0, 80),
-      produk: document.body.dataset.produkId || ''
+      produk: document.body.dataset.produkId || '',
+      topik: el.dataset.waTopik || el.dataset.bagikan || ''
     });
   });
+}
+
+/* =========================================
+   TOMBOL WHATSAPP PINTAR
+   Tombol hijau melayang membuka menu pilihan tujuan chat,
+   supaya pesan yang masuk langsung jelas maksudnya.
+   (Tanpa JavaScript tetap berfungsi sebagai link WA biasa.)
+   ========================================= */
+function produkSaatIni() {
+  const id = document.body.dataset.produkId;
+  const p = id && typeof PRODUK !== 'undefined' && PRODUK.find(x => x.id === id);
+  if (!p) return '';
+  const brand = (typeof BRANDS !== 'undefined' && BRANDS.find(b => b.id === p.brand)) || {};
+  return `${brand.nama || ''} ${p.nama}`.trim();
+}
+
+function pilihanWA() {
+  const produk = produkSaatIni();
+  const tentang = produk ? ` ${produk}` : '';
+  return [
+    { topik: 'harga',      label: t('wa.harga'),      pesan: `Halo, saya ingin menanyakan harga dan ketersediaan${tentang || ' unit'}.` },
+    { topik: 'konsultasi', label: t('wa.konsultasi'), pesan: `Halo, saya ingin konsultasi memilih unit yang sesuai untuk lahan saya.${produk ? ` Saya tertarik dengan ${produk}.` : ''}` },
+    { topik: 'brosur',     label: t('wa.brosur'),     pesan: `Halo, saya ingin meminta brosur/katalog${tentang}.` },
+    { topik: 'lain',       label: t('wa.lain'),       pesan: WA_PESAN_DEFAULT }
+  ];
+}
+
+function initWaMenu() {
+  const tombol = document.querySelector('.wa-float');
+  if (!tombol) return;
+
+  let menu = document.getElementById('waMenu');
+  if (!menu) {
+    menu = document.createElement('div');
+    menu.id = 'waMenu';
+    menu.className = 'wa-menu';
+    menu.hidden = true;
+    document.body.appendChild(menu);
+
+    tombol.setAttribute('aria-haspopup', 'true');
+    tombol.setAttribute('aria-expanded', 'false');
+    tombol.setAttribute('aria-controls', 'waMenu');
+
+    const tutup = () => { menu.hidden = true; tombol.setAttribute('aria-expanded', 'false'); };
+    tombol.addEventListener('click', e => {
+      e.preventDefault();
+      menu.hidden = !menu.hidden;
+      tombol.setAttribute('aria-expanded', String(!menu.hidden));
+      if (!menu.hidden) menu.querySelector('a')?.focus();
+    });
+    menu.addEventListener('click', e => { if (e.target.closest('a, [data-wa-tutup]')) tutup(); });
+    document.addEventListener('click', e => { if (!menu.hidden && !menu.contains(e.target) && !tombol.contains(e.target)) tutup(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && !menu.hidden) { tutup(); tombol.focus(); } });
+  }
+
+  menu.innerHTML = `
+    <div class="wa-menu__kepala">
+      <strong>${t('wa.judul')}</strong>
+      <button type="button" class="wa-menu__tutup" data-wa-tutup aria-label="${t('wa.tutup')}">&times;</button>
+    </div>
+    ${pilihanWA().map(o => `<a href="${waLink(o.pesan)}" target="_blank" rel="noopener" data-wa-topik="${o.topik}">${o.label}</a>`).join('')}`;
 }
 
 /* --- Menandai menu aktif --- */
@@ -115,6 +180,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   isiDataPerusahaan();
   tandaiMenuAktif();
+  initWaMenu();
   initAnalitik();
   initNavbar();
 
