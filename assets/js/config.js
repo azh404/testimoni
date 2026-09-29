@@ -27,7 +27,7 @@ const COMPANY = {
 
   /* ID Google Analytics 4 (format "G-XXXXXXXXXX").
      Kosongkan ("") untuk mematikan pelacakan. */
-  googleAnalytics: "",
+  googleAnalytics: "G-1XWSJJDZMF",
 
   sosmed: {
     instagram: "https://www.instagram.com/dass.agriculture",
