@@ -4,12 +4,36 @@ RewriteEngine On
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
+# Jangan tampilkan daftar isi folder
+Options -Indexes
+
+# Halaman "tidak ditemukan" bergaya DASS
+ErrorDocument 404 /404.html
+
+# Kunci file & folder internal (alat, catatan, git) walau ikut ter-upload
+RewriteRule ^(tools|DASS-WEB|\.git)(/.*)?$ - [F,L]
+RewriteRule (^|/)(PETUNJUK\.txt|README\.md|\.gitignore)$ - [F,L]
+RewriteRule \.(py|md|sh|log|bak)$ - [F,L]
+
 # Kompres teks (HTML, CSS, JS, XML) sebelum dikirim — ukuran turun ±70%
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/xml application/javascript text/javascript application/json image/svg+xml
 </IfModule>
 
 <IfModule mod_headers.c>
+  # --- Keamanan browser ---
+  # Selalu pakai HTTPS (1 tahun)
+  Header always set Strict-Transport-Security "max-age=31536000"
+  # Website tidak boleh ditampilkan di dalam website lain (cegah clickjacking)
+  Header always set X-Frame-Options "SAMEORIGIN"
+  # Browser tidak boleh menebak-nebak jenis file
+  Header always set X-Content-Type-Options "nosniff"
+  # Alamat lengkap halaman tidak dibagikan ke website lain
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  # Matikan akses kamera, mikrofon, dan lokasi (tidak dipakai website ini)
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+
+  # --- Cache ---
   # CSS, JS, dan HTML: browser boleh menyimpan, tapi selalu cek ke server
   # apakah ada versi baru (kalau tidak berubah, tidak diunduh ulang)
   <FilesMatch "\.(css|js|html)$">
