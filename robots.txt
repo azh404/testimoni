@@ -3,3 +3,4 @@ Allow: /
 Disallow: /katalog.html
 
 Sitemap: https://dass.co.id/sitemap.xml
+Sitemap: https://dass.co.id/sitemap-gambar.xml

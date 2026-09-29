@@ -174,6 +174,7 @@ function gantiBahasa(kode) {
   if (typeof initHalamanDetail  === 'function') initHalamanDetail();
   if (typeof initArtikelHalaman === 'function') initArtikelHalaman();
   if (typeof initHalamanLanding === 'function') initHalamanLanding();
+  if (typeof initKalkulator     === 'function') initKalkulator();
   if (typeof isiDataPerusahaan  === 'function') isiDataPerusahaan();
 }
 

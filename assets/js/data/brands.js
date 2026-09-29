@@ -64,6 +64,24 @@ const KATEGORI = {
 
 const KATEGORI_ZOOMLION = KATEGORI.zoomlion;
 
+/* Jenis unit dalam bahasa Indonesia untuk teks alt gambar
+   (mis. "Traktor Zoomlion RK504"), supaya foto mudah ditemukan di Google Gambar */
+const ALT_KATEGORI = {
+  'hybrid':        'Traktor Hybrid',
+  'tractor':       'Traktor',
+  'planter':       'Mesin Tanam Padi',
+  'harvester':     'Combine Harvester',
+  'sugarcane':     'Mesin Panen Tebu',
+  'dryer':         'Mesin Pengering Gabah',
+  'baler':         'Mesin Baler',
+  'implement':     'Implement Traktor',
+  'sprayer-drone': 'Drone Sprayer Pertanian',
+  'va-drone':      'Drone Pertanian',
+  'va-steering':   'Auto Steering Traktor',
+  'va-rover':      'Robot Pertanian',
+  'va-digital':    'Solusi Pertanian Digital'
+};
+
 /* =========================================
    WADAH PRODUK
    Diisi oleh file produk-*.js

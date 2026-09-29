@@ -77,6 +77,15 @@ function gambarWeb(src) {
   return String(src).replace(/\.png$/, '.webp');
 }
 
+/* Teks alt gambar produk, mis. "Traktor Zoomlion RK504" */
+function altProduk(p) {
+  const brand = (BRANDS.find(b => b.id === p.brand) || {}).nama || '';
+  const jenis = (typeof BAHASA === 'undefined' || BAHASA === 'id')
+    ? ALT_KATEGORI[p.kategori]
+    : namaKategori(p.kategori, p.brand);
+  return [jenis, brand, p.nama].filter(Boolean).join(' ').replace(/"/g, '&quot;');
+}
+
 function slugTeks(teks) {
   return String(teks)
     .toLowerCase()
@@ -100,7 +109,7 @@ function kartuProduk(p, brand, base, i = 0) {
         <img src="${base}${brand.logo}" alt="${brand.nama}" loading="lazy">
       </div>
       <div class="produk-card__media">
-        <img src="${base}${gambarWeb(p.gambar)}" alt="${p.nama}" onerror="this.style.visibility='hidden'" loading="lazy">
+        <img src="${base}${gambarWeb(p.gambar)}" alt="${altProduk(p)}" onerror="this.style.visibility='hidden'" loading="lazy">
       </div>
       <div class="produk-card__body">
         <p class="produk-card__seri mb-0">${p.seri || ''}</p>
@@ -245,7 +254,7 @@ function initBrandGallery() {
       <div class="brand-slider__stage">
         ${pilih.map((p, i) => `
           <div class="brand-slider__item${i === 0 ? ' is-active' : ''}">
-            <img src="${base}${gambarWeb(p.gambar)}" alt="${p.nama}" onerror="this.style.visibility='hidden'" loading="lazy">
+            <img src="${base}${gambarWeb(p.gambar)}" alt="${altProduk(p)}" onerror="this.style.visibility='hidden'" loading="lazy">
             <span class="brand-slider__label">${p.nama}</span>
           </div>
         `).join('')}
@@ -364,7 +373,7 @@ function initModalProduk() {
       <div class="modal__grid">
 
         <div class="modal__media">
-          <img src="${base}${gambarWeb(p.gambar)}" alt="${p.nama}" onerror="this.style.visibility='hidden'">
+          <img src="${base}${gambarWeb(p.gambar)}" alt="${altProduk(p)}" onerror="this.style.visibility='hidden'">
         </div>
 
         <div class="modal__body">
