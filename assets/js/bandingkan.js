@@ -21,9 +21,7 @@ function kategoriBanding() {
 
 function labelKategoriBanding(k) {
   const p = PRODUK.find(x => x.kategori === k);
-  const brand = (BRANDS.find(b => b.id === p.brand) || {}).nama || '';
-  const nama = BAHASA === 'id' ? (ALT_KATEGORI[k] || k) : namaKategori(k, p.brand);
-  return `${nama} (${brand})`;
+  return BAHASA === 'id' ? (ALT_KATEGORI[k] || k) : namaKategori(k, p.brand);
 }
 
 /* --- Baca & simpan pilihan di alamat halaman --- */
@@ -57,10 +55,20 @@ function simpanPilihanUrl() {
 
 /* --- Tampilan --- */
 function renderPilihan() {
-  const katSel = document.getElementById('bdKategori');
-  katSel.innerHTML = kategoriBanding()
-    .map(k => `<option value="${k}">${labelKategoriBanding(k)}</option>`).join('');
-  katSel.value = bandingState.kategori;
+  /* Tombol kategori, dikelompokkan per merek */
+  const kategori = kategoriBanding();
+  document.getElementById('bdKategori').innerHTML = BRANDS.map(b => {
+    const milik = kategori.filter(k => PRODUK.find(p => p.kategori === k).brand === b.id);
+    if (!milik.length) return '';
+    return `
+      <div class="banding__merek">
+        <img src="${document.body.dataset.base || ''}${b.logo}" alt="${b.nama}" class="banding__logo">
+        <div class="banding__chips">
+          ${milik.map(k => `<button type="button" class="filter-btn${k === bandingState.kategori ? ' is-active' : ''}"
+            data-kategori="${k}" aria-pressed="${k === bandingState.kategori}">${labelKategoriBanding(k)} <span>${produkKategori(k).length}</span></button>`).join('')}
+        </div>
+      </div>`;
+  }).join('');
 
   const daftar = produkKategori(bandingState.kategori);
   document.querySelectorAll('[data-bd-slot]').forEach(sel => {
@@ -135,8 +143,10 @@ function initBandingkan() {
     katSel.dataset.siap = '1';
     bacaPilihanUrl();
 
-    katSel.addEventListener('change', () => {
-      bandingState.kategori = katSel.value;
+    katSel.addEventListener('click', e => {
+      const btn = e.target.closest('[data-kategori]');
+      if (!btn || btn.dataset.kategori === bandingState.kategori) return;
+      bandingState.kategori = btn.dataset.kategori;
       bandingState.pilih = [];
       isiPilihanKosong();
       renderBanding();

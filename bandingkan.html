@@ -64,11 +64,13 @@
     <section class="section">
       <div class="container banding">
 
+        <div class="banding__langkah">
+          <span class="banding__label" data-i18n="banding.langkah1">1. Pilih kategori</span>
+          <div id="bdKategori" class="banding__kategori" role="group"></div>
+        </div>
+
+        <span class="banding__label" data-i18n="banding.langkah2">2. Pilih unit yang ingin dibandingkan</span>
         <form class="banding__pilih" onsubmit="return false">
-          <label class="kalk__field banding__kategori">
-            <span data-i18n="banding.kategori">Kategori</span>
-            <select id="bdKategori"></select>
-          </label>
           <label class="kalk__field">
             <span data-i18n="banding.unit1">Unit 1</span>
             <select data-bd-slot="0"></select>
