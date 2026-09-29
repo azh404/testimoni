@@ -139,10 +139,13 @@ function pesanWA(jenis, detail) {
    INISIALISASI (dipanggil ulang saat bahasa diganti)
    ========================================= */
 function initKalkulator() {
+  initKalkMini();
   const pilihDrone = document.getElementById('kdDrone');
   if (!pilihDrone) return;
 
-  const dipilih = pilihDrone.value || 'ea-j100';
+  /* ?drone=ea-j150 dari tautan "kalkulator lengkap" di halaman produk */
+  const dariUrl = new URLSearchParams(location.search).get('drone');
+  const dipilih = pilihDrone.value || (daftarDrone().some(d => d.p.id === dariUrl) ? dariUrl : 'ea-j100');
   pilihDrone.innerHTML = daftarDrone().map(d => {
     const brand = (BRANDS.find(b => b.id === d.p.brand) || {}).nama || '';
     return `<option value="${d.p.id}">${brand} ${d.p.nama} — ${fmtAngka(d.tangki)} L, ${fmtAngka(d.lebar, 1)} m</option>`;
@@ -163,4 +166,124 @@ function initKalkulator() {
   }
   hitungDrone();
   hitungTraktor();
+}
+
+/* =========================================
+   KALKULATOR MINI DI HALAMAN PRODUK (produk/*.html)
+   - Drone  : hitung kebutuhan semprot untuk drone ini
+   - Traktor: "Cocok untuk lahan" berdasarkan kelas tenaga
+   Wadah: <div data-kalk-mini></div>
+   ========================================= */
+
+/* Tenaga (HP) untuk halaman traktor: dari "Daya Motor" (kW) bila ada,
+   selain itu dari nama model (RK504 → 50 HP) */
+function tenagaProduk(p) {
+  const s = (p.spesifikasi || []).find(x => /daya motor/i.test(x.label) && /kW/.test(x.nilai));
+  if (s) {
+    const kw = String(s.nilai).replace(/(\d)\.(\d{3})/g, '$1$2').replace(/(\d),(\d)/g, '$1.$2')
+      .match(/\d+(\.\d+)?(?=\s*kW)/g).map(Number);
+    return [Math.round(Math.min(...kw) * 1.341), Math.round(Math.max(...kw) * 1.341)];
+  }
+  return tenagaTraktor(p);
+}
+
+/* Rentang luas per jenis lahan yang sesuai dengan tenaga traktor */
+function cocokUntuk(hp) {
+  return Object.entries(ATURAN_TRAKTOR).map(([lahan, aturan]) => {
+    let dari = null, sampai = null, bawah = 0;
+    aturan.forEach(([batas, min, max]) => {
+      if (hp[1] >= min && hp[0] <= max) {
+        if (dari === null) dari = bawah;
+        sampai = batas;
+      }
+      bawah = batas;
+    });
+    return dari === null ? null : { lahan, dari, sampai };
+  }).filter(Boolean);
+}
+
+function teksRentang({ dari, sampai }) {
+  if (!dari && sampai === Infinity) return t('kalk.semuaLuas');
+  if (!dari) return t('kalk.hingga').replace('{b}', fmtAngka(sampai));
+  if (sampai === Infinity) return t('kalk.diAtas').replace('{a}', fmtAngka(dari));
+  return `${fmtAngka(dari)}–${fmtAngka(sampai)} ha`;
+}
+
+function hitungDroneMini(wrap, d) {
+  const luas = parseFloat(String(wrap.querySelector('[name="luas"]').value).replace(',', '.')) || 0;
+  const dosis = parseFloat(String(wrap.querySelector('[name="dosis"]').value).replace(',', '.')) || 0;
+  const hasil = wrap.querySelector('.kalk-mini__hasil');
+  if (!luas || !dosis) { hasil.innerHTML = `<p class="kalk-hasil__kosong">${t('kalk.isiDulu')}</p>`; return; }
+
+  const haPerJam  = d.lebar * ASUMSI_DRONE.kecepatan * 3600 / 10000 * ASUMSI_DRONE.efisiensi;
+  const haPerHari = haPerJam * ASUMSI_DRONE.jamPerHari;
+  const airDrone  = luas * dosis;
+  hasil.innerHTML = `
+    ${baris(t('kalk.waktuDrone'), fmtJam(luas / haPerJam), true)}
+    ${baris(t('kalk.isiUlang'), `${fmtAngka(Math.ceil(airDrone / d.tangki))}× (${fmtAngka(d.tangki)} L)`)}
+    ${baris(t('kalk.haPerHari'), `± ${fmtAngka(haPerHari)} ha`)}
+    ${baris(t('kalk.setara'), `± ${fmtAngka(haPerHari / ASUMSI_DRONE.haManualPerHari)} ${t('kalk.pekerja')}`, true)}
+    ${baris(t('kalk.airHemat'), `${fmtAngka(Math.max(luas * ASUMSI_DRONE.airManual - airDrone, 0))} L`)}
+    <a href="#" class="btn btn--accent btn--block kalk-hasil__cta" data-wa-link
+       data-wa-pesan="${pesanWA('drone', `${d.p.nama}, ${fmtAngka(luas, 1)} ha`)}">${t('kalk.ctaDrone')}</a>`;
+  if (typeof isiDataPerusahaan === 'function') isiDataPerusahaan();
+}
+
+function initKalkMini() {
+  const wrap = document.querySelector('[data-kalk-mini]');
+  const id = document.body.dataset.produkId;
+  const p = wrap && PRODUK.find(x => x.id === id);
+  if (!p) return;
+  const base = document.body.dataset.base || '';
+
+  /* --- Drone --- */
+  const d = daftarDrone().find(x => x.p.id === id);
+  if (d) {
+    const luas  = wrap.querySelector('[name="luas"]')?.value  || '10';
+    const dosis = wrap.querySelector('[name="dosis"]')?.value || '15';
+    wrap.innerHTML = `
+      <div class="kalk-mini">
+        <div class="kalk-mini__kepala">
+          <h2>${t('kalk.miniJudul')} ${p.nama}</h2>
+          <p>${t('kalk.miniDesk')}</p>
+        </div>
+        <div class="kalk__isi">
+          <form class="kalk__form" onsubmit="return false">
+            <label class="kalk__field">
+              <span>${t('kalk.luas')}</span>
+              <input type="number" name="luas" min="0" step="0.1" value="${luas}" inputmode="decimal">
+            </label>
+            <label class="kalk__field">
+              <span>${t('kalk.dosis')}</span>
+              <input type="number" name="dosis" min="0" step="1" value="${dosis}" inputmode="decimal">
+              <small>${t('kalk.dosisInfo')}</small>
+            </label>
+            <a class="kalk-mini__lengkap" href="${base}kalkulator.html?drone=${p.id}#drone">${t('kalk.lengkap')} &rarr;</a>
+          </form>
+          <div class="kalk-hasil kalk-mini__hasil" aria-live="polite"></div>
+        </div>
+        <p class="kalk__asumsi">${t('kalk.asumsi')}</p>
+      </div>`;
+    wrap.querySelector('form').addEventListener('input', () => hitungDroneMini(wrap, d));
+    hitungDroneMini(wrap, d);
+    return;
+  }
+
+  /* --- Traktor --- */
+  const hp = (p.kategori === 'tractor' || p.kategori === 'hybrid') && tenagaProduk(p);
+  const cocok = hp ? cocokUntuk(hp) : [];
+  if (!cocok.length) { (wrap.closest('section') || wrap).hidden = true; return; }
+  const kelas = hp[0] === hp[1] ? `± ${hp[0]} HP` : `± ${hp[0]}–${hp[1]} HP`;
+  wrap.innerHTML = `
+    <div class="kalk-mini kalk-mini--traktor">
+      <div class="kalk-mini__kepala">
+        <h2>${t('kalk.cocokJudul')}</h2>
+        <p>${t('kalk.cocokDesk').replace('{nama}', p.nama).replace('{hp}', kelas)}</p>
+      </div>
+      <ul class="kalk-mini__cocok">
+        ${cocok.map(c => `<li><span>${t('kalk.lahan.' + c.lahan)}</span><strong>${teksRentang(c)}</strong></li>`).join('')}
+      </ul>
+      <p class="kalk__asumsi">${t('kalk.asumsiTraktor')}
+        <a class="kalk-mini__lengkap" href="${base}kalkulator.html#traktor">${t('kalk.lengkapTraktor')} &rarr;</a></p>
+    </div>`;
 }
