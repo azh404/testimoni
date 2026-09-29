@@ -86,6 +86,11 @@ function altProduk(p) {
   return [jenis, brand, p.nama].filter(Boolean).join(' ').replace(/"/g, '&quot;');
 }
 
+/* Versi kecil 600x450 untuk kartu produk (dibuat tools/optimasi-gambar.py) */
+function gambarKecil(src) {
+  return String(src).replace(/\.png$/, '-kecil.webp');
+}
+
 function slugTeks(teks) {
   return String(teks)
     .toLowerCase()
@@ -109,7 +114,7 @@ function kartuProduk(p, brand, base, i = 0) {
         <img src="${base}${brand.logo}" alt="${brand.nama}" loading="lazy">
       </div>
       <div class="produk-card__media">
-        <img src="${base}${gambarWeb(p.gambar)}" alt="${altProduk(p)}" onerror="this.style.visibility='hidden'" loading="lazy">
+        <img src="${base}${gambarKecil(p.gambar)}" alt="${altProduk(p)}" onerror="this.style.visibility='hidden'" loading="lazy" decoding="async">
       </div>
       <div class="produk-card__body">
         <p class="produk-card__seri mb-0">${p.seri || ''}</p>

@@ -4,15 +4,16 @@ RewriteEngine On
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-<IfModule mod_headers.c>
-  # CSS dan JS selalu ambil versi terbaru
-  <FilesMatch "\.(css|js)$">
-    Header set Cache-Control "no-cache, no-store, must-revalidate"
-  </FilesMatch>
+# Kompres teks (HTML, CSS, JS, XML) sebelum dikirim — ukuran turun ±70%
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/xml application/javascript text/javascript application/json image/svg+xml
+</IfModule>
 
-  # HTML juga
-  <FilesMatch "\.html$">
-    Header set Cache-Control "no-cache, must-revalidate"
+<IfModule mod_headers.c>
+  # CSS, JS, dan HTML: browser boleh menyimpan, tapi selalu cek ke server
+  # apakah ada versi baru (kalau tidak berubah, tidak diunduh ulang)
+  <FilesMatch "\.(css|js|html)$">
+    Header set Cache-Control "no-cache"
   </FilesMatch>
 
   # Gambar boleh di-cache seminggu

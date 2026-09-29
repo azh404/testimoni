@@ -70,6 +70,8 @@ const urlAset = (src, file) => {
   return new URL(src, urlHalaman(file).replace(/[^/]*$/, '')).href;
 };
 const bolehMasuk = url => url.startsWith(DOMAIN) && /\/assets\/images\//.test(url) && !/\/logo\//.test(url);
+/* Versi kecil & pratinjau link diganti foto ukuran penuh untuk Google Gambar */
+const fotoPenuh = url => url.replace(/-(kecil\.webp|og\.jpg)$/, '.webp');
 
 /* Foto yang dirender JavaScript (tidak tertulis di HTML) */
 function gambarTambahan(rel) {
@@ -94,7 +96,7 @@ const entri = halaman.sort().map(file => {
     ...[...html.matchAll(/<meta property="og:image" content="([^"]+)"/g)].map(m => m[1]),
     ...gambarTambahan(rel).map(g => `${DOMAIN}/${g}`)
   ];
-  const unik = [...new Set(src)].filter(bolehMasuk)
+  const unik = [...new Set(src.map(fotoPenuh))].filter(bolehMasuk)
     .filter(u => fs.existsSync(path.join(ROOT, decodeURI(u.slice(DOMAIN.length + 1)))));
   if (!unik.length) return '';
   total += unik.length;
