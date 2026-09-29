@@ -126,6 +126,17 @@ function pilihanWA() {
   ];
 }
 
+/* Apakah sekarang jam kerja (waktu Jakarta)? */
+function sedangJamKerja() {
+  const j = COMPANY.jamKerja;
+  if (!j) return null;
+  const bagian = new Intl.DateTimeFormat('en-GB', { timeZone: 'Asia/Jakarta', weekday: 'short', hour: 'numeric', minute: 'numeric', hourCycle: 'h23' })
+    .formatToParts(new Date()).reduce((o, x) => (o[x.type] = x.value, o), {});
+  const hari = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].indexOf(bagian.weekday) + 1;
+  const jam = Number(bagian.hour) + Number(bagian.minute) / 60;
+  return j.hari.includes(hari) && jam >= j.buka && jam < j.tutup;
+}
+
 function initWaMenu() {
   const tombol = document.querySelector('.wa-float');
   if (!tombol) return;
@@ -145,6 +156,7 @@ function initWaMenu() {
     const tutup = () => { menu.hidden = true; tombol.setAttribute('aria-expanded', 'false'); };
     tombol.addEventListener('click', e => {
       e.preventDefault();
+      if (menu.hidden) initWaMenu();   /* perbarui status online */
       menu.hidden = !menu.hidden;
       tombol.setAttribute('aria-expanded', String(!menu.hidden));
       if (!menu.hidden) menu.querySelector('a')?.focus();
@@ -154,9 +166,13 @@ function initWaMenu() {
     document.addEventListener('keydown', e => { if (e.key === 'Escape' && !menu.hidden) { tutup(); tombol.focus(); } });
   }
 
+  const online = sedangJamKerja();
   menu.innerHTML = `
     <div class="wa-menu__kepala">
-      <strong>${t('wa.judul')}</strong>
+      <div>
+        <strong>${t('wa.judul')}</strong>
+        ${online === null ? '' : `<span class="wa-menu__status${online ? ' is-online' : ''}">${t(online ? 'wa.online' : 'wa.offline')}</span>`}
+      </div>
       <button type="button" class="wa-menu__tutup" data-wa-tutup aria-label="${t('wa.tutup')}">&times;</button>
     </div>
     ${pilihanWA().map(o => `<a href="${waLink(o.pesan)}" target="_blank" rel="noopener" data-wa-topik="${o.topik}">${o.label}</a>`).join('')}`;
@@ -196,6 +212,11 @@ document.addEventListener('DOMContentLoaded', async () => {
   if (typeof initHalamanDetail === 'function') initHalamanDetail();
   if (typeof initImageFallback === 'function') initImageFallback();
     if (typeof initFormKontak === 'function') initFormKontak();
+
+  /* Pencarian, "terakhir dilihat", tombol bagikan */
+  const fitur = document.createElement('script');
+  fitur.src = `${BASE}assets/js/fitur.js`;
+  document.body.appendChild(fitur);
   if (typeof initKalkulator    === 'function') initKalkulator();
   if (typeof initBandingkan    === 'function') initBandingkan();
 });

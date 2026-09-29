@@ -27,6 +27,10 @@ const COMPANY = {
 
   jamOperasional: "Senin – Jumat, 08.00 – 17.00 WIB",  /* versi EN/ZH: kontak.jamIsi di lang.js */
 
+  /* Untuk status "online" di menu WhatsApp (waktu Jakarta).
+     hari: 1 = Senin ... 7 = Minggu; jam dalam format 24 jam. */
+  jamKerja: { hari: [1, 2, 3, 4, 5], buka: 8, tutup: 17 },
+
   /* ID Google Analytics 4 (format "G-XXXXXXXXXX").
      Kosongkan ("") untuk mematikan pelacakan. */
   googleAnalytics: "G-1XWSJJDZMF",
