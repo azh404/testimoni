@@ -371,6 +371,8 @@ const TEKS = {
   'kalk.hingga':       { id: 'hingga {b} ha', en: 'up to {b} ha', zh: '{b}公顷以内' },
   'kalk.semuaLuas':    { id: 'semua luas lahan', en: 'all land sizes', zh: '各种面积' },
   'kalk.diAtas':       { id: 'di atas {a} ha', en: 'over {a} ha', zh: '{a}公顷以上' },
+  'kalk.produkCocok':  { id: '✓ {nama} termasuk dalam kelas tenaga ini.', en: '✓ The {nama} is in this power class.', zh: '✓ {nama}属于该马力等级。' },
+  'kalk.produkKurang': { id: '{nama} kurang sesuai untuk lahan ini. Lihat unit yang lebih cocok di bawah.', en: 'The {nama} is less suited to this land. See better-matched units below.', zh: '{nama}不太适合该土地，请参考下方更合适的机型。' },
   'kalk.jam':          { id: 'jam', en: 'h', zh: '小时' },
   'kalk.menit':        { id: 'menit', en: 'min', zh: '分钟' },
   'kalk.kelasHP':      { id: 'Kelas tenaga yang disarankan', en: 'Recommended power class', zh: '建议马力等级' },

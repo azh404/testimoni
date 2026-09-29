@@ -118,6 +118,7 @@ function hitungTraktor() {
   hasil.innerHTML = `
     <h3 class="kalk-hasil__judul">${t('kalk.hasil')}</h3>
     ${baris(t('kalk.kelasHP'), `${min}–${max} HP`, true)}
+    ${catatanProdukIni(min, max)}
     <p class="kalk-hasil__catatan">${t('kalk.catatanTraktor')}</p>
     <div class="produk-grid kalk-hasil__grid">
       ${traktor.map((x, i) => kartuProduk(x.p, BRANDS.find(b => b.id === x.p.brand), base, i)).join('')}
@@ -125,6 +126,16 @@ function hitungTraktor() {
     <a href="#" class="btn btn--accent btn--block kalk-hasil__cta" data-wa-link
        data-wa-pesan="${pesanWA('traktor', `${t('kalk.lahan.' + lahan)}, ${fmtAngka(luas, 1)} ha`)}">${t('kalk.ctaTraktor')}</a>`;
   if (typeof isiDataPerusahaan === 'function') isiDataPerusahaan();
+}
+
+/* Di halaman traktor: beri tahu apakah unit yang sedang dilihat masuk kelas ini */
+function catatanProdukIni(min, max) {
+  const p = PRODUK.find(x => x.id === document.body.dataset.produkId);
+  const hp = p && (p.kategori === 'tractor' || p.kategori === 'hybrid') && tenagaProduk(p);
+  if (!hp) return '';
+  const cocok = hp[1] >= min && hp[0] <= max;
+  return `<p class="kalk-hasil__status ${cocok ? 'is-cocok' : 'is-kurang'}">${
+    t(cocok ? 'kalk.produkCocok' : 'kalk.produkKurang').replace('{nama}', p.nama)}</p>`;
 }
 
 /* Pesan WhatsApp selalu dalam bahasa Indonesia untuk tim sales */
@@ -140,6 +151,9 @@ function pesanWA(jenis, detail) {
    ========================================= */
 function initKalkulator() {
   initKalkMini();
+  initKalkTraktorProduk();
+  initFormTraktor();
+
   const pilihDrone = document.getElementById('kdDrone');
   if (!pilihDrone) return;
 
@@ -152,20 +166,57 @@ function initKalkulator() {
   }).join('');
   pilihDrone.value = dipilih;
 
+  if (!pilihDrone.dataset.siap) {
+    pilihDrone.dataset.siap = '1';
+    document.getElementById('formDrone').addEventListener('input', hitungDrone);
+    document.getElementById('formDrone').addEventListener('submit', e => e.preventDefault());
+  }
+  hitungDrone();
+}
+
+/* Form "Pilih Traktor" — dipakai di kalkulator.html dan halaman produk Zoomlion */
+function initFormTraktor() {
   const pilihLahan = document.getElementById('ktLahan');
+  if (!pilihLahan) return;
   const lahan = pilihLahan.value || 'sawah';
   pilihLahan.innerHTML = Object.keys(ATURAN_TRAKTOR)
     .map(k => `<option value="${k}">${t('kalk.lahan.' + k)}</option>`).join('');
   pilihLahan.value = lahan;
 
-  if (!pilihDrone.dataset.siap) {
-    pilihDrone.dataset.siap = '1';
-    document.getElementById('formDrone').addEventListener('input', hitungDrone);
-    document.getElementById('formTraktor').addEventListener('input', hitungTraktor);
-    document.querySelectorAll('.kalk form').forEach(f => f.addEventListener('submit', e => e.preventDefault()));
+  const form = document.getElementById('formTraktor');
+  if (!form.dataset.siap) {
+    form.dataset.siap = '1';
+    form.addEventListener('input', hitungTraktor);
+    form.addEventListener('submit', e => e.preventDefault());
   }
-  hitungDrone();
   hitungTraktor();
+}
+
+/* Kalkulator Pilih Traktor di halaman produk Zoomlion: <div data-kalk-traktor></div> */
+function initKalkTraktorProduk() {
+  const wrap = document.querySelector('[data-kalk-traktor]');
+  if (!wrap) return;
+  const lahan = document.getElementById('ktLahan')?.value || 'sawah';
+  const luas  = document.getElementById('ktLuas')?.value  || '10';
+  wrap.innerHTML = `
+    <div class="kalk-mini" id="traktor">
+      <div class="kalk-mini__kepala">
+        <h2>${t('kalk.traktorJudul')}</h2>
+        <p>${t('kalk.traktorDesk')}</p>
+      </div>
+      <form class="kalk__form kalk__form--baris" id="formTraktor">
+        <label class="kalk__field">
+          <span>${t('kalk.lahan')}</span>
+          <select id="ktLahan"><option value="${lahan}"></option></select>
+        </label>
+        <label class="kalk__field">
+          <span>${t('kalk.luas')}</span>
+          <input type="number" id="ktLuas" min="0" step="0.5" value="${luas}" inputmode="decimal">
+        </label>
+      </form>
+      <div class="kalk-hasil" id="hasilTraktor" aria-live="polite"></div>
+      <p class="kalk__asumsi">${t('kalk.asumsiTraktor')}</p>
+    </div>`;
 }
 
 /* =========================================
@@ -272,7 +323,7 @@ function initKalkMini() {
   /* --- Traktor --- */
   const hp = (p.kategori === 'tractor' || p.kategori === 'hybrid') && tenagaProduk(p);
   const cocok = hp ? cocokUntuk(hp) : [];
-  if (!cocok.length) { (wrap.closest('section') || wrap).hidden = true; return; }
+  if (!cocok.length) { wrap.hidden = true; return; }
   const kelas = hp[0] === hp[1] ? `± ${hp[0]} HP` : `± ${hp[0]}–${hp[1]} HP`;
   wrap.innerHTML = `
     <div class="kalk-mini kalk-mini--traktor">

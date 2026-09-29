@@ -1234,3 +1234,7 @@ body[data-brand="eavision"] .produk-grid {
   .kalk-mini__kepala h2 { font-size: var(--fs-xl); }
 }
 .section--flush-top { padding-top: 0; }
+.kalk-hasil__status { margin: var(--sp-4) 0 0; padding: var(--sp-3) var(--sp-4); border-radius: 10px; font-weight: var(--fw-semibold); font-size: var(--fs-sm); }
+.kalk-hasil__status.is-cocok { background: #e3f1e4; color: var(--color-accent-dark); }
+.kalk-hasil__status.is-kurang { background: #fff4e0; color: #8a5a00; }
+.kalk-mini + .kalk-mini, [data-kalk-mini] + [data-kalk-traktor] { margin-top: var(--sp-6); }
