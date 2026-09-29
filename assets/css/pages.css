@@ -1136,25 +1136,52 @@ body[data-brand="eavision"] .produk-grid {
 .banding__merek + .banding__merek { border-top: 1px solid var(--color-border); padding-top: var(--sp-3); }
 .banding__logo { max-width: 110px; max-height: 32px; object-fit: contain; }
 .banding__chips { display: flex; flex-wrap: wrap; gap: var(--sp-2); }
-.banding__pilih { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--sp-4); }
-.banding__beda { display: inline-flex; align-items: center; gap: var(--sp-2); margin: var(--sp-5) 0; font-weight: var(--fw-semibold); color: var(--color-dark); cursor: pointer; }
+.banding__beda { display: inline-flex; align-items: center; gap: var(--sp-2); margin: 0 0 var(--sp-5); font-weight: var(--fw-semibold); color: var(--color-dark); cursor: pointer; }
 .banding__beda input { width: 18px; height: 18px; accent-color: var(--color-accent); }
-.banding__scroll { overflow-x: auto; border: 1px solid var(--color-border); border-radius: 12px; background: var(--color-white); }
-.banding__tabel { width: 100%; border-collapse: collapse; font-size: var(--fs-sm); min-width: 520px; }
-.banding__tabel th,
-.banding__tabel td { padding: .7rem 1rem; border-bottom: 1px solid var(--color-border); text-align: left; vertical-align: top; }
-.banding__tabel tbody th {
-  position: sticky; left: 0; z-index: 1;
-  background: var(--color-surface); color: var(--color-dark); font-weight: var(--fw-semibold);
-  width: 26%; min-width: 130px;
+
+/* Pilih unit: kartu foto */
+.banding__petunjuk { margin: calc(-1 * var(--sp-2)) 0 var(--sp-3); font-size: var(--fs-sm); color: var(--color-muted); }
+.banding__unit { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: var(--sp-3); }
+.banding__kartu {
+  position: relative; display: grid; justify-items: center; gap: var(--sp-1);
+  padding: var(--sp-3) var(--sp-2); border: 2px solid var(--color-border); border-radius: 12px;
+  background: var(--color-white); cursor: pointer; font: inherit; font-size: var(--fs-sm);
+  font-weight: var(--fw-bold); color: var(--color-dark); transition: border-color .15s, box-shadow .15s, opacity .15s;
 }
-.banding__tabel thead th { background: var(--color-white); vertical-align: bottom; }
+.banding__kartu img { width: 100%; aspect-ratio: 4 / 3; object-fit: contain; }
+.banding__kartu:hover:not(:disabled) { border-color: var(--color-primary-light); }
+.banding__kartu.is-dipilih { border-color: var(--color-primary); box-shadow: 0 0 0 3px var(--color-primary-soft); }
+.banding__kartu:disabled { opacity: .45; cursor: not-allowed; }
+.banding__nomor {
+  position: absolute; top: 6px; left: 6px; width: 24px; height: 24px; border-radius: 50%;
+  display: grid; place-items: center; background: var(--color-primary); color: var(--color-white); font-size: var(--fs-xs);
+}
+.banding__kosong { padding: var(--sp-6); text-align: center; color: var(--color-muted); background: var(--color-surface); border-radius: 12px; }
+
+/* Tabel: tanpa geser samping; baris nama menempel di bawah navbar */
+.banding__bingkai { border: 1px solid var(--color-border); border-radius: 12px; background: var(--color-white); }
+.banding__tabel { width: 100%; border-collapse: separate; border-spacing: 0; table-layout: fixed; font-size: var(--fs-sm); }
+.banding__tabel th,
+.banding__tabel td { padding: .7rem 1rem; border-bottom: 1px solid var(--color-border); text-align: left; vertical-align: top; overflow-wrap: anywhere; }
+.banding__tabel thead th:first-child, .banding__tabel thead td:first-child { width: 28%; }
+.banding__tabel tbody th { background: var(--color-surface); color: var(--color-dark); font-weight: var(--fw-semibold); }
 .banding__tabel tbody tr.is-beda td { background: var(--color-primary-soft); }
 .banding__tabel tbody tr.is-beda th { background: #dce6f2; }
+.banding__foto td { border-bottom: 0; text-align: center; padding-bottom: 0; }
+.banding__foto img { width: 100%; max-width: 180px; aspect-ratio: 4 / 3; object-fit: contain; }
+.banding__nama th {
+  position: sticky; top: var(--header-height); z-index: 2;
+  background: var(--color-white); text-align: center;
+  font-size: var(--fs-base); box-shadow: 0 2px 0 var(--color-border);
+}
+.banding__nama th a { color: var(--color-primary); font-weight: var(--fw-bold); }
+.banding__hapus {
+  margin-left: var(--sp-2); width: 22px; height: 22px; border-radius: 50%; border: 0; cursor: pointer;
+  background: var(--color-surface); color: var(--color-muted); font-size: 16px; line-height: 22px; vertical-align: middle;
+}
+.banding__hapus:hover { background: var(--color-danger); color: var(--color-white); }
 .banding__tabel tfoot td, .banding__tabel tfoot th { border-bottom: 0; }
-.banding__tabel tfoot .btn { white-space: normal; text-align: center; }
-.banding__produk { display: grid; justify-items: center; gap: var(--sp-2); text-align: center; color: var(--color-primary); font-weight: var(--fw-bold); font-size: var(--fs-base); }
-.banding__produk img { width: 100%; max-width: 180px; aspect-ratio: 4 / 3; object-fit: contain; }
+.banding__tabel tfoot .btn { white-space: normal; text-align: center; padding-inline: var(--sp-3); }
 
 /* Tombol "Bandingkan" di halaman detail produk */
 .detail-banding { margin-top: var(--sp-3); display: inline-block; color: var(--color-primary); font-weight: var(--fw-semibold); text-decoration: underline; }
@@ -1162,8 +1189,12 @@ body[data-brand="eavision"] .produk-grid {
 @media (max-width: 700px) {
   .banding__merek { grid-template-columns: 1fr; gap: var(--sp-2); }
 }
-@media (max-width: 520px) {
-  .banding__pilih { grid-template-columns: 1fr; }
+@media (max-width: 640px) {
+  .banding__unit { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: var(--sp-2); }
+  .banding__kartu { flex: 0 0 116px; scroll-snap-align: start; }
+  .banding__tabel th, .banding__tabel td { padding: .6rem .55rem; font-size: var(--fs-xs); }
+  .banding__tabel thead th:first-child, .banding__tabel thead td:first-child { width: 32%; }
+  .banding__nama th { font-size: var(--fs-sm); }
 }
 
 /* =========================================

@@ -320,10 +320,9 @@ const TEKS = {
   /* ===== BANDINGKAN PRODUK (bandingkan.html) ===== */
   'banding.langkah1':  { id: '1. Pilih kategori', en: '1. Choose a category', zh: '1. 选择类别' },
   'banding.langkah2':  { id: '2. Pilih unit yang ingin dibandingkan', en: '2. Choose the units to compare', zh: '2. 选择要对比的机型' },
-  'banding.unit1':     { id: 'Unit 1', en: 'Unit 1', zh: '机型1' },
-  'banding.unit2':     { id: 'Unit 2', en: 'Unit 2', zh: '机型2' },
-  'banding.unit3':     { id: 'Unit 3 (opsional)', en: 'Unit 3 (optional)', zh: '机型3（可选）' },
-  'banding.tambah':    { id: '— Tambah unit ketiga —', en: '— Add a third unit —', zh: '— 添加第三台 —' },
+  'banding.petunjuk':  { id: 'Ketuk foto untuk memilih atau membatalkan. Maksimal {n} unit.', en: 'Tap a photo to select or deselect. Up to {n} units.', zh: '点击图片选择或取消，最多{n}台。' },
+  'banding.minimal':   { id: 'Pilih minimal 2 unit untuk mulai membandingkan.', en: 'Select at least 2 units to start comparing.', zh: '请至少选择2台开始对比。' },
+  'banding.hapus':     { id: 'Hapus dari perbandingan', en: 'Remove from comparison', zh: '从对比中移除' },
   'banding.hanyaBeda': { id: 'Tampilkan hanya yang berbeda', en: 'Show differences only', zh: '仅显示不同项' },
   'banding.spek':      { id: 'Spesifikasi', en: 'Specification', zh: '规格' },
   'banding.samaSemua': { id: 'Semua spesifikasi yang tercatat sama.', en: 'All recorded specifications are the same.', zh: '所有已记录的规格均相同。' },
