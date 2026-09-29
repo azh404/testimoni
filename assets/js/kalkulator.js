@@ -1,6 +1,6 @@
 /* =========================================
    KALKULATOR PERTANIAN (kalkulator.html)
-   1. Drone semprot  : waktu kerja, isi ulang tangki, air & biaya
+   1. Drone semprot  : waktu kerja, isi ulang tangki, air & tenaga kerja
    2. Pilih traktor  : kelas tenaga (HP) sesuai luas & jenis lahan
    Semua angka adalah estimasi umum, bukan penawaran resmi.
    ========================================= */
@@ -10,7 +10,8 @@ const ASUMSI_DRONE = {
   kecepatan: 5,        // m/detik saat menyemprot
   efisiensi: 0.5,      // porsi waktu efektif (belok, isi ulang, ganti baterai)
   airManual: 300,      // liter/ha dengan knapsack sprayer
-  haManualPerHari: 1   // ha yang bisa disemprot 1 orang per hari
+  haManualPerHari: 1,  // ha yang bisa disemprot 1 orang per hari
+  jamPerHari: 8        // jam kerja drone per hari
 };
 
 /* Rekomendasi kelas tenaga [luas maksimum (ha), HP min, HP max] per jenis lahan */
@@ -49,7 +50,6 @@ function fmtAngka(n, desimal = 0) {
   const lokal = BAHASA === 'id' ? 'id-ID' : 'en-US';
   return n.toLocaleString(lokal, { maximumFractionDigits: desimal, minimumFractionDigits: 0 });
 }
-function fmtRupiah(n) { return 'Rp ' + fmtAngka(Math.round(n)); }
 function fmtJam(jam) {
   const j = Math.floor(jam), m = Math.round((jam - j) * 60);
   return j ? `${j} ${t('kalk.jam')} ${m} ${t('kalk.menit')}` : `${Math.max(m, 1)} ${t('kalk.menit')}`;
@@ -77,9 +77,8 @@ function hitungDrone() {
   const isiUlang   = Math.ceil(airDrone / d.tangki);
   const airManual  = luas * ASUMSI_DRONE.airManual;
   const hariOrang  = luas / ASUMSI_DRONE.haManualPerHari;
-  const biayaManual = luas * nilaiInput('kdUpah');
-  const biayaDrone  = luas * nilaiInput('kdTarif');
-  const hemat = biayaManual - biayaDrone;
+  const haPerHari  = haPerJam * ASUMSI_DRONE.jamPerHari;
+  const setaraOrang = haPerHari / ASUMSI_DRONE.haManualPerHari;
 
   hasil.innerHTML = `
     <h3 class="kalk-hasil__judul">${t('kalk.hasil')} — ${d.p.nama}</h3>
@@ -91,10 +90,9 @@ function hitungDrone() {
     ${baris(t('kalk.waktuManual'), `± ${fmtAngka(hariOrang, 1)} ${t('kalk.hariOrang')}`)}
     ${baris(t('kalk.airManual'), `${fmtAngka(airManual)} L`)}
     ${baris(t('kalk.airHemat'), `${fmtAngka(Math.max(airManual - airDrone, 0))} L`, true)}
-    ${biayaManual && biayaDrone ? `<hr>
-    ${baris(t('kalk.biayaManual'), fmtRupiah(biayaManual))}
-    ${baris(t('kalk.biayaDrone'), fmtRupiah(biayaDrone))}
-    ${baris(hemat >= 0 ? t('kalk.hemat') : t('kalk.selisih'), fmtRupiah(Math.abs(hemat)), true)}` : ''}
+    <hr>
+    ${baris(t('kalk.haPerHari'), `± ${fmtAngka(haPerHari)} ha`)}
+    ${baris(t('kalk.setara'), `± ${fmtAngka(setaraOrang)} ${t('kalk.pekerja')}`, true)}
     <a href="#" class="btn btn--accent btn--block kalk-hasil__cta" data-wa-link
        data-wa-pesan="${pesanWA('drone', `${d.p.nama}, ${fmtAngka(luas, 1)} ha`)}">${t('kalk.ctaDrone')}</a>`;
   if (typeof isiDataPerusahaan === 'function') isiDataPerusahaan();

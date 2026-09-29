@@ -1120,4 +1120,5 @@ body[data-brand="eavision"] .produk-grid {
   .kalk__isi, .kalk__form--baris { grid-template-columns: 1fr; }
   .kalk__judul { font-size: var(--fs-xl); }
 }
-.kalk-hasil__baris.is-kuat strong { white-space: nowrap; }
+.kalk-hasil__baris span { flex: 1 1 auto; min-width: 0; }
+.kalk-hasil__baris strong { flex: 0 1 auto; min-width: 0; overflow-wrap: anywhere; }
