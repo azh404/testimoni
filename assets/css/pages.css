@@ -1122,3 +1122,37 @@ body[data-brand="eavision"] .produk-grid {
 }
 .kalk-hasil__baris span { flex: 1 1 auto; min-width: 0; }
 .kalk-hasil__baris strong { flex: 0 1 auto; min-width: 0; overflow-wrap: anywhere; }
+
+/* =========================================
+   BANDINGKAN PRODUK
+   ========================================= */
+.banding__pilih { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--sp-4); }
+.banding__beda { display: inline-flex; align-items: center; gap: var(--sp-2); margin: var(--sp-5) 0; font-weight: var(--fw-semibold); color: var(--color-dark); cursor: pointer; }
+.banding__beda input { width: 18px; height: 18px; accent-color: var(--color-accent); }
+.banding__scroll { overflow-x: auto; border: 1px solid var(--color-border); border-radius: 12px; background: var(--color-white); }
+.banding__tabel { width: 100%; border-collapse: collapse; font-size: var(--fs-sm); min-width: 520px; }
+.banding__tabel th,
+.banding__tabel td { padding: .7rem 1rem; border-bottom: 1px solid var(--color-border); text-align: left; vertical-align: top; }
+.banding__tabel tbody th {
+  position: sticky; left: 0; z-index: 1;
+  background: var(--color-surface); color: var(--color-dark); font-weight: var(--fw-semibold);
+  width: 26%; min-width: 130px;
+}
+.banding__tabel thead th { background: var(--color-white); vertical-align: bottom; }
+.banding__tabel tbody tr.is-beda td { background: var(--color-primary-soft); }
+.banding__tabel tbody tr.is-beda th { background: #dce6f2; }
+.banding__tabel tfoot td, .banding__tabel tfoot th { border-bottom: 0; }
+.banding__tabel tfoot .btn { white-space: normal; text-align: center; }
+.banding__produk { display: grid; justify-items: center; gap: var(--sp-2); text-align: center; color: var(--color-primary); font-weight: var(--fw-bold); font-size: var(--fs-base); }
+.banding__produk img { width: 100%; max-width: 180px; aspect-ratio: 4 / 3; object-fit: contain; }
+
+/* Tombol "Bandingkan" di halaman detail produk */
+.detail-banding { margin-top: var(--sp-3); display: inline-block; color: var(--color-primary); font-weight: var(--fw-semibold); text-decoration: underline; }
+
+@media (max-width: 900px) {
+  .banding__pilih { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .banding__kategori { grid-column: 1 / -1; }
+}
+@media (max-width: 520px) {
+  .banding__pilih { grid-template-columns: 1fr; }
+}

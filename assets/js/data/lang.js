@@ -317,6 +317,23 @@ const TEKS = {
     zh: '为印尼农业的可持续发展与进步作出贡献'
   },
 
+  /* ===== BANDINGKAN PRODUK (bandingkan.html) ===== */
+  'banding.kategori':  { id: 'Kategori', en: 'Category', zh: '类别' },
+  'banding.unit1':     { id: 'Unit 1', en: 'Unit 1', zh: '机型1' },
+  'banding.unit2':     { id: 'Unit 2', en: 'Unit 2', zh: '机型2' },
+  'banding.unit3':     { id: 'Unit 3 (opsional)', en: 'Unit 3 (optional)', zh: '机型3（可选）' },
+  'banding.tambah':    { id: '— Tambah unit ketiga —', en: '— Add a third unit —', zh: '— 添加第三台 —' },
+  'banding.hanyaBeda': { id: 'Tampilkan hanya yang berbeda', en: 'Show differences only', zh: '仅显示不同项' },
+  'banding.spek':      { id: 'Spesifikasi', en: 'Specification', zh: '规格' },
+  'banding.samaSemua': { id: 'Semua spesifikasi yang tercatat sama.', en: 'All recorded specifications are the same.', zh: '所有已记录的规格均相同。' },
+  'banding.tanya':     { id: 'Tanya Harga', en: 'Ask for Price', zh: '询价' },
+  'banding.detail':    { id: 'Bandingkan dengan unit lain →', en: 'Compare with other units →', zh: '与其他机型对比 →' },
+  'banding.tombol':    { id: 'Bandingkan', en: 'Compare', zh: '对比' },
+  'banding.catatan':   { id: 'Baris yang disorot menandakan spesifikasi yang berbeda. Spesifikasi dapat berubah sesuai kebijakan pabrikan; hubungi kami untuk data terbaru.', en: 'Highlighted rows mark specifications that differ. Specifications may change according to the manufacturer; contact us for the latest data.', zh: '高亮行表示规格不同。规格可能根据厂商政策变更，请联系我们获取最新数据。' },
+  'nav.bandingkanSub': { id: 'Spesifikasi berdampingan', en: 'Side-by-side specs', zh: '规格并排对比' },
+  'footer.bandingkan': { id: 'Bandingkan Produk', en: 'Compare Products', zh: '产品对比' },
+  'judul.bandingkan':  { en: 'Compare Tractors & Agricultural Drones | DASS', zh: '拖拉机与农业无人机对比 | DASS' },
+
   /* ===== KALKULATOR (kalkulator.html) ===== */
   'kalk.droneJudul':   { id: 'Kalkulator Semprot Drone', en: 'Drone Spraying Calculator', zh: '无人机喷洒计算器' },
   'kalk.droneDesk':    { id: 'Bandingkan waktu, air, dan tenaga kerja semprot drone dengan penyemprotan manual.', en: 'Compare drone spraying time, water, and labour with manual spraying.', zh: '比较无人机喷洒与人工喷洒的时间、用水和人工。' },

@@ -92,4 +92,5 @@ document.addEventListener('DOMContentLoaded', async () => {
   if (typeof initImageFallback === 'function') initImageFallback();
     if (typeof initFormKontak === 'function') initFormKontak();
   if (typeof initKalkulator    === 'function') initKalkulator();
+  if (typeof initBandingkan    === 'function') initBandingkan();
 });
