@@ -80,6 +80,9 @@ function initHalamanDetail() {
   const tbody = document.querySelector('[data-detail="spesifikasi"]');
   if (tbody && p.spesifikasi && p.spesifikasi.length) {
     tbody.textContent = '';
+    /* Dua kolom di layar lebar (lihat .is-dua-kolom di produk-detail.css) */
+    tbody.closest('table').classList.toggle('is-dua-kolom', p.spesifikasi.length >= 6);
+    tbody.style.setProperty('--baris', Math.ceil(p.spesifikasi.length / 2));
     p.spesifikasi.forEach(s => {
       const tr = document.createElement('tr');
       const th = document.createElement('th');
