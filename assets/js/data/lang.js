@@ -318,7 +318,8 @@ const TEKS = {
   },
 
   /* ===== BANDINGKAN PRODUK (bandingkan.html) ===== */
-  'banding.kategori':  { id: 'Kategori', en: 'Category', zh: '类别' },
+  'banding.langkah1':  { id: '1. Pilih kategori', en: '1. Choose a category', zh: '1. 选择类别' },
+  'banding.langkah2':  { id: '2. Pilih unit yang ingin dibandingkan', en: '2. Choose the units to compare', zh: '2. 选择要对比的机型' },
   'banding.unit1':     { id: 'Unit 1', en: 'Unit 1', zh: '机型1' },
   'banding.unit2':     { id: 'Unit 2', en: 'Unit 2', zh: '机型2' },
   'banding.unit3':     { id: 'Unit 3 (opsional)', en: 'Unit 3 (optional)', zh: '机型3（可选）' },
