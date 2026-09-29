@@ -65,7 +65,7 @@ const HALAMAN = [
     file: 'jual-traktor-jakarta.html',
     kategori: ['tractor', 'hybrid', 'implement'],
     brand: 'pages/produk/zoomlion.html',
-    gambar: 'assets/images/hero/hero-tractor.png',
+    gambar: 'assets/images/hero/hero-tractor-og.jpg',
     artikel: ['cara-pilih-ban-traktor', 'perawatan-traktor-jelang-musim-hujan',
               'traktor-hybrid-zoomlion-hemat-solar', 'auto-steering-traktor-perkebunan'],
     waPesan: 'Halo, saya ingin menanyakan harga traktor Zoomlion.',
@@ -128,7 +128,7 @@ const HALAMAN = [
     file: 'jual-drone-pertanian-jakarta.html',
     kategori: ['sprayer-drone', 'va-drone'],
     brand: 'pages/produk/eavision.html',
-    gambar: 'assets/images/hero/hero-eavision.png',
+    gambar: 'assets/images/hero/hero-eavision-og.jpg',
     artikel: ['drone-tabur-benih-pupuk', 'perawatan-drone-sprayer-musim-kemarau',
               'eavision-j150-agrishow-2026', 'sni-drone-pertanian-kemenperin'],
     waPesan: 'Halo, saya ingin menanyakan harga drone pertanian.',
@@ -191,7 +191,7 @@ const HALAMAN = [
     file: 'jual-mesin-pertanian-jakarta.html',
     kategori: ['harvester', 'planter', 'sugarcane', 'dryer', 'baler'],
     brand: 'pages/produk/zoomlion.html',
-    gambar: 'assets/images/hero/hero-combine-hasverter.png',
+    gambar: 'assets/images/hero/hero-combine-hasverter-og.jpg',
     artikel: ['alsintan-2026-pilih-mesin-sesuai-lahan', 'perawatan-combine-harvester-setelah-panen',
               'mesin-pengering-gabah-musim-hujan', 'swasembada-gula-mekanisasi-panen-tebu'],
     waPesan: 'Halo, saya ingin menanyakan harga mesin pertanian Zoomlion.',
@@ -256,7 +256,7 @@ const HALAMAN = [
     file: 'traktor-kebun-sawit.html',
     kategori: ['tractor', 'implement', 'va-steering'],
     brand: 'pages/produk/zoomlion.html',
-    gambar: 'assets/images/hero/hero-tractor.png',
+    gambar: 'assets/images/hero/hero-tractor-og.jpg',
     artikel: ['auto-steering-traktor-perkebunan', 'cara-pilih-ban-traktor',
               'perawatan-traktor-jelang-musim-hujan', 'traktor-hybrid-zoomlion-hemat-solar'],
     waPesan: 'Halo, saya ingin konsultasi traktor untuk kebun sawit.',
@@ -342,7 +342,7 @@ const HALAMAN = [
     file: 'combine-harvester-padi.html',
     produkId: ['zl-zl88', 'zl-zl105', 'zl-zl125', 'zl-zl145'],
     brand: 'pages/produk/zoomlion.html',
-    gambar: 'assets/images/hero/hero-combine-hasverter.png',
+    gambar: 'assets/images/hero/hero-combine-hasverter-og.jpg',
     artikel: ['perawatan-combine-harvester-setelah-panen', 'alsintan-2026-pilih-mesin-sesuai-lahan',
               'mesin-pengering-gabah-musim-hujan'],
     waPesan: 'Halo, saya ingin menanyakan harga combine harvester padi Zoomlion.',
@@ -428,7 +428,7 @@ const HALAMAN = [
     file: 'drone-pertanian-sawah.html',
     kategori: ['sprayer-drone', 'va-drone'],
     brand: 'pages/produk/eavision.html',
-    gambar: 'assets/images/hero/hero-eavision.png',
+    gambar: 'assets/images/hero/hero-eavision-og.jpg',
     artikel: ['drone-tabur-benih-pupuk', 'perawatan-drone-sprayer-musim-kemarau',
               'semprot-malam-eavision-ea-30x', 'sni-drone-pertanian-kemenperin'],
     waPesan: 'Halo, saya ingin konsultasi drone pertanian untuk sawah.',
@@ -549,7 +549,7 @@ function kartu(p) {
   return `
           <a href="${urlProduk(p)}" class="produk-card" data-produk="${p.id}">
             <div class="produk-card__brand"><img src="${brand.logo}" alt="${esc(brand.nama)}" loading="lazy"></div>
-            <div class="produk-card__media"><img src="${p.gambar.replace(/\.png$/, '.webp')}" alt="${esc([ALT_KATEGORI[p.kategori], brand.nama, p.nama].filter(Boolean).join(' '))}" loading="lazy"></div>
+            <div class="produk-card__media"><img src="${p.gambar.replace(/\.png$/, '-kecil.webp')}" alt="${esc([ALT_KATEGORI[p.kategori], brand.nama, p.nama].filter(Boolean).join(' '))}" loading="lazy" decoding="async"></div>
             <div class="produk-card__body">
               <p class="produk-card__seri mb-0">${esc(p.seri || '')}</p>
               <h3 class="produk-card__nama">${esc(p.nama)}</h3>

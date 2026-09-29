@@ -4,7 +4,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://dass.co.id/artikel.html</loc>
-    <image:image><image:loc>https://dass.co.id/assets/images/hero/hero-tractor.png</image:loc></image:image>
+    <image:image><image:loc>https://dass.co.id/assets/images/hero/hero-tractor.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/artikel/perawatan-traktor.jpg</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/artikel/perawatan-drone.jpg</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/artikel/perawatan-combine.jpg</image:loc></image:image>
@@ -72,12 +72,16 @@
     <image:image><image:loc>https://dass.co.id/assets/images/artikel/traktor-hybrid-zoomlion.jpg</image:loc></image:image>
   </url>
   <url>
+    <loc>https://dass.co.id/bandingkan.html</loc>
+    <image:image><image:loc>https://dass.co.id/assets/images/hero/hero-tractor.webp</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://dass.co.id/combine-harvester-padi.html</loc>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/combine-harvester-zl88.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/combine-harvester-zl105.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/combine-harvester-zl125.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/combine-harvester-zl145.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/hero/hero-combine-hasverter.png</image:loc></image:image>
+    <image:image><image:loc>https://dass.co.id/assets/images/hero/hero-combine-hasverter.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/drone-pertanian-sawah.html</loc>
@@ -90,16 +94,15 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/vectoragr/drone-vectoragr-hd540.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/vectoragr/drone-vectoragr-v80.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/vectoragr/drone-vectoragr-v180.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/hero/hero-eavision.png</image:loc></image:image>
+    <image:image><image:loc>https://dass.co.id/assets/images/hero/hero-eavision.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/</loc>
-    <image:image><image:loc>https://dass.co.id/assets/images/hero/hero-tractor.png</image:loc></image:image>
+    <image:image><image:loc>https://dass.co.id/assets/images/hero/hero-tractor.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/hero/hero-combine-hasverter.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/hero/hero-drying-machine.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/hero/hero-eavision.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/hero/hero-sugarcane-hasverter.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/hero/hero-tractor.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/hero/hero-vectoragr.webp</image:loc></image:image>
   </url>
   <url>
@@ -113,7 +116,7 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/vectoragr/drone-vectoragr-hd540.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/vectoragr/drone-vectoragr-v80.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/vectoragr/drone-vectoragr-v180.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/hero/hero-eavision.png</image:loc></image:image>
+    <image:image><image:loc>https://dass.co.id/assets/images/hero/hero-eavision.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/jual-mesin-pertanian-jakarta.html</loc>
@@ -137,7 +140,7 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/baler-9yf-2200.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/baler-9yy-2200.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/baler-9yz-2200fb.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/hero/hero-combine-hasverter.png</image:loc></image:image>
+    <image:image><image:loc>https://dass.co.id/assets/images/hero/hero-combine-hasverter.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/jual-traktor-jakarta.html</loc>
@@ -169,19 +172,19 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/implement-1lf-550t-to-1350t-series-reversible-plow.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/implement-1lf-q450t-q550t-reversible-plow.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/implement-2bmxm-series-precision-seeder.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/hero/hero-tractor.png</image:loc></image:image>
+    <image:image><image:loc>https://dass.co.id/assets/images/hero/hero-tractor.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/kalkulator.html</loc>
-    <image:image><image:loc>https://dass.co.id/assets/images/hero/hero-eavision.png</image:loc></image:image>
+    <image:image><image:loc>https://dass.co.id/assets/images/hero/hero-eavision.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/kontak.html</loc>
-    <image:image><image:loc>https://dass.co.id/assets/images/hero/hero-tractor.png</image:loc></image:image>
+    <image:image><image:loc>https://dass.co.id/assets/images/hero/hero-tractor.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/pages/produk/eavision.html</loc>
-    <image:image><image:loc>https://dass.co.id/assets/images/hero/hero-eavision.png</image:loc></image:image>
+    <image:image><image:loc>https://dass.co.id/assets/images/hero/hero-eavision.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/eavision/ea-j150.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/eavision/ea-j100.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/eavision/ea-j70.webp</image:loc></image:image>
@@ -190,7 +193,7 @@
   </url>
   <url>
     <loc>https://dass.co.id/pages/produk/vectoragr.html</loc>
-    <image:image><image:loc>https://dass.co.id/assets/images/hero/hero-vectoragr.png</image:loc></image:image>
+    <image:image><image:loc>https://dass.co.id/assets/images/hero/hero-vectoragr.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/vectoragr/drone-vectoragr-hd525.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/vectoragr/drone-vectoragr-hd540.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/vectoragr/drone-vectoragr-v80.webp</image:loc></image:image>
@@ -203,7 +206,7 @@
   </url>
   <url>
     <loc>https://dass.co.id/pages/produk/zoomlion.html</loc>
-    <image:image><image:loc>https://dass.co.id/assets/images/hero/hero-tractor.png</image:loc></image:image>
+    <image:image><image:loc>https://dass.co.id/assets/images/hero/hero-tractor.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/hybrid-product-dl2004.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/hybrid-product-dg2204.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/hybrid-product-dqseries.webp</image:loc></image:image>
@@ -260,7 +263,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/vectoragr/auto-steering-system-hd818.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/vectoragr/drone-vectoragr-hd525.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/vectoragr/drone-vectoragr-hd540.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/vectoragr/auto-steering-system-hd408.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/auto-steering-vectoragr-hd812.html</loc>
@@ -269,7 +271,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/vectoragr/auto-steering-system-hd818.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/vectoragr/drone-vectoragr-hd525.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/vectoragr/drone-vectoragr-hd540.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/vectoragr/auto-steering-system-hd812.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/auto-steering-vectoragr-hd818.html</loc>
@@ -278,7 +279,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/vectoragr/auto-steering-system-hd812.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/vectoragr/drone-vectoragr-hd525.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/vectoragr/drone-vectoragr-hd540.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/vectoragr/auto-steering-system-hd818.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/combine-harvester-zoomlion-f6-3000.html</loc>
@@ -287,7 +287,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/combine-harvester-zl105.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/combine-harvester-h8-5500.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/combine-harvester-h7-4500.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/combine-harvester-f6-3000.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/combine-harvester-zoomlion-h7-4500.html</loc>
@@ -296,7 +295,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/combine-harvester-zl105.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/combine-harvester-h8-5500.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/combine-harvester-f6-3000.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/combine-harvester-h7-4500.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/combine-harvester-zoomlion-h8-5500.html</loc>
@@ -305,7 +303,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/combine-harvester-zl105.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/combine-harvester-f6-3000.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/combine-harvester-h7-4500.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/combine-harvester-h8-5500.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/combine-harvester-zoomlion-te100.html</loc>
@@ -314,7 +311,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/combine-harvester-h8-5500.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/combine-harvester-f6-3000.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/combine-harvester-h7-4500.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/combine-harvester-te100.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/combine-harvester-zoomlion-zl105.html</loc>
@@ -323,7 +319,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/combine-harvester-h8-5500.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/combine-harvester-f6-3000.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/combine-harvester-h7-4500.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/combine-harvester-zl105.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/combine-harvester-zoomlion-zl125.html</loc>
@@ -332,7 +327,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/combine-harvester-zl105.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/combine-harvester-h8-5500.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/combine-harvester-f6-3000.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/combine-harvester-zl125.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/combine-harvester-zoomlion-zl145.html</loc>
@@ -341,7 +335,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/combine-harvester-zl105.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/combine-harvester-h8-5500.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/combine-harvester-f6-3000.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/combine-harvester-zl145.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/combine-harvester-zoomlion-zl88.html</loc>
@@ -350,7 +343,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/combine-harvester-zl105.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/combine-harvester-h8-5500.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/combine-harvester-f6-3000.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/combine-harvester-zl88.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/drone-pertanian-vectoragr-hd525.html</loc>
@@ -359,7 +351,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/vectoragr/drone-vectoragr-v80.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/vectoragr/drone-vectoragr-v180.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/vectoragr/auto-steering-system-hd408.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/vectoragr/drone-vectoragr-hd525.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/drone-pertanian-vectoragr-hd540s.html</loc>
@@ -368,7 +359,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/vectoragr/drone-vectoragr-v80.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/vectoragr/drone-vectoragr-v180.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/vectoragr/auto-steering-system-hd408.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/vectoragr/drone-vectoragr-hd540.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/drone-pertanian-vectoragr-v180.html</loc>
@@ -377,7 +367,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/vectoragr/drone-vectoragr-hd540.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/vectoragr/drone-vectoragr-v80.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/vectoragr/auto-steering-system-hd408.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/vectoragr/drone-vectoragr-v180.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/drone-pertanian-vectoragr-v80.html</loc>
@@ -386,7 +375,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/vectoragr/drone-vectoragr-hd540.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/vectoragr/drone-vectoragr-v180.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/vectoragr/auto-steering-system-hd408.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/vectoragr/drone-vectoragr-v80.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/drone-sprayer-eavision-ea-30x.html</loc>
@@ -395,7 +383,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/eavision/ea-j100.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/eavision/ea-j70.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/eavision/ea-30xp.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/eavision/ea-30x.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/drone-sprayer-eavision-ea-30xp.html</loc>
@@ -404,7 +391,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/eavision/ea-j100.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/eavision/ea-j70.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/eavision/ea-30x.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/eavision/ea-30xp.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/drone-sprayer-eavision-j100.html</loc>
@@ -413,7 +399,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/eavision/ea-j70.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/eavision/ea-30x.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/eavision/ea-30xp.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/eavision/ea-j100.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/drone-sprayer-eavision-j150.html</loc>
@@ -422,7 +407,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/eavision/ea-j70.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/eavision/ea-30x.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/eavision/ea-30xp.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/eavision/ea-j150.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/drone-sprayer-eavision-j70.html</loc>
@@ -431,7 +415,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/eavision/ea-j100.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/eavision/ea-30x.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/eavision/ea-30xp.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/eavision/ea-j70.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/implement-traktor-zoomlion-precision-seeder-2bmxm-series.html</loc>
@@ -440,7 +423,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/implement-1lf-q450t-q550t-reversible-plow.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/hybrid-product-dl2004.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/hybrid-product-dg2204.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/implement-2bmxm-series-precision-seeder.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/implement-traktor-zoomlion-reversible-plow-1lf-550t-1350t.html</loc>
@@ -449,7 +431,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/implement-2bmxm-series-precision-seeder.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/hybrid-product-dl2004.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/hybrid-product-dg2204.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/implement-1lf-550t-to-1350t-series-reversible-plow.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/implement-traktor-zoomlion-reversible-plow-1lf-q450t-q550t.html</loc>
@@ -458,7 +439,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/implement-2bmxm-series-precision-seeder.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/hybrid-product-dl2004.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/hybrid-product-dg2204.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/implement-1lf-q450t-q550t-reversible-plow.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/mesin-baler-zoomlion-crawler-self-propelled-baler-9yz-2200fb.html</loc>
@@ -467,7 +447,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/baler-9yy-2200.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/hybrid-product-dl2004.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/hybrid-product-dg2204.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/baler-9yz-2200fb.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/mesin-baler-zoomlion-round-baler-9yy-2200.html</loc>
@@ -476,7 +455,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/baler-9yz-2200fb.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/hybrid-product-dl2004.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/hybrid-product-dg2204.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/baler-9yy-2200.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/mesin-baler-zoomlion-square-baler-9yf-2200.html</loc>
@@ -485,7 +463,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/baler-9yz-2200fb.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/hybrid-product-dl2004.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/hybrid-product-dg2204.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/baler-9yf-2200.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/mesin-panen-tebu-zoomlion-c600.html</loc>
@@ -494,7 +471,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/sugarcane-hasverter-c620.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/hybrid-product-dl2004.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/hybrid-product-dg2204.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/sugarcane-hasverter-c600.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/mesin-panen-tebu-zoomlion-c610.html</loc>
@@ -503,7 +479,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/sugarcane-hasverter-c620.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/hybrid-product-dl2004.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/hybrid-product-dg2204.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/sugarcane-hasverter-c610.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/mesin-panen-tebu-zoomlion-c620.html</loc>
@@ -512,7 +487,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/sugarcane-hasverter-c610.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/hybrid-product-dl2004.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/hybrid-product-dg2204.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/sugarcane-hasverter-c620.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/mesin-pengering-gabah-zoomlion-grain-dryer-10-15-ton.html</loc>
@@ -521,7 +495,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/dryer-5hxg-30e.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/dryer-5hxg-30c1.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/dryer-5hxg-20-30w.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/dryer-5hxg-10-15w.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/mesin-pengering-gabah-zoomlion-grain-dryer-20-30-ton.html</loc>
@@ -530,7 +503,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/dryer-5hxg-30e.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/dryer-5hxg-30c1.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/dryer-5hxg-10-15w.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/dryer-5hxg-20-30w.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/mesin-pengering-gabah-zoomlion-grain-dryer-5hxg-30c1.html</loc>
@@ -539,7 +511,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/dryer-5hxg-30e.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/dryer-5hxg-10-15w.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/dryer-5hxg-20-30w.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/dryer-5hxg-30c1.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/mesin-pengering-gabah-zoomlion-grain-dryer-5hxg-30e.html</loc>
@@ -548,7 +519,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/dryer-5hxg-30c1.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/dryer-5hxg-10-15w.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/dryer-5hxg-20-30w.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/dryer-5hxg-30e.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/mesin-pengering-gabah-zoomlion-grain-dryer-5hxh-30.html</loc>
@@ -557,7 +527,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/dryer-5hxg-30c1.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/dryer-5hxg-10-15w.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/dryer-5hxg-20-30w.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/dryer-5hxh-30.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/pertanian-digital-vectoragr-digital-ag-solution.html</loc>
@@ -566,7 +535,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/vectoragr/drone-vectoragr-hd540.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/vectoragr/drone-vectoragr-v80.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/vectoragr/drone-vectoragr-v180.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/vectoragr/digital-ag-solution.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/rice-transplanter-zoomlion-g630-g825-g830.html</loc>
@@ -575,7 +543,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/hybrid-product-dg2204.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/hybrid-product-dqseries.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/hybrid-product-dv3504.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/rice-transplanter-g630-g825-g830.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/robot-pertanian-vectoragr-vh300.html</loc>
@@ -584,7 +551,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/vectoragr/drone-vectoragr-hd540.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/vectoragr/drone-vectoragr-v80.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/vectoragr/drone-vectoragr-v180.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/vectoragr/vh300-intelligent-agricultural-rover.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/traktor-hybrid-zoomlion-dg2204.html</loc>
@@ -593,7 +559,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/hybrid-product-dqseries.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/hybrid-product-dv3504.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/hybrid-product-dx7004.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/hybrid-product-dg2204.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/traktor-hybrid-zoomlion-dh7-6000.html</loc>
@@ -602,7 +567,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/hybrid-product-dg2204.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/hybrid-product-dqseries.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/hybrid-product-dv3504.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/hybrid-product-dh7-6000.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/traktor-hybrid-zoomlion-dl2004.html</loc>
@@ -611,7 +575,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/hybrid-product-dqseries.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/hybrid-product-dv3504.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/hybrid-product-dx7004.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/hybrid-product-dl2004.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/traktor-hybrid-zoomlion-dq-series.html</loc>
@@ -620,7 +583,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/hybrid-product-dg2204.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/hybrid-product-dv3504.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/hybrid-product-dx7004.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/hybrid-product-dqseries.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/traktor-hybrid-zoomlion-dv3504.html</loc>
@@ -629,7 +591,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/hybrid-product-dg2204.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/hybrid-product-dqseries.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/hybrid-product-dx7004.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/hybrid-product-dv3504.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/traktor-hybrid-zoomlion-dx7004.html</loc>
@@ -638,7 +599,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/hybrid-product-dg2204.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/hybrid-product-dqseries.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/hybrid-product-dv3504.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/hybrid-product-dx7004.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/traktor-hybrid-zoomlion-te100-dh.html</loc>
@@ -647,7 +607,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/hybrid-product-dg2204.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/hybrid-product-dqseries.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/hybrid-product-dv3504.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/hybrid-product-te100-dh.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/traktor-zoomlion-cn1104.html</loc>
@@ -656,7 +615,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-pg2004.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-rk504.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-rk704.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-cn1104.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/traktor-zoomlion-pg2004.html</loc>
@@ -665,7 +623,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-rk504.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-rk704.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-rk754.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-pg2004.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/traktor-zoomlion-pl1604.html</loc>
@@ -674,7 +631,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-pg2004.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-rk504.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-rk704.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-pl1604.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/traktor-zoomlion-pl2304.html</loc>
@@ -683,7 +639,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-pg2004.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-rk504.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-rk704.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-pl2304.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/traktor-zoomlion-pq-series.html</loc>
@@ -692,7 +647,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-pg2004.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-rk504.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-rk704.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-pqseries.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/traktor-zoomlion-pv3204.html</loc>
@@ -701,7 +655,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-pg2004.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-rk504.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-rk704.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-pv3204.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/traktor-zoomlion-rc1104.html</loc>
@@ -710,7 +663,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-pg2004.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-rk504.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-rk704.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-rc1104.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/traktor-zoomlion-rc904.html</loc>
@@ -719,7 +671,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-pg2004.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-rk504.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-rk704.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-rc904.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/traktor-zoomlion-rg-series.html</loc>
@@ -729,7 +680,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-pg2004.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-rk504.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-rk704.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-rgseries.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/traktor-zoomlion-rk504.html</loc>
@@ -738,7 +688,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-pg2004.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-rk704.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-rk754.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-rk504.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/traktor-zoomlion-rk704.html</loc>
@@ -747,7 +696,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-pg2004.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-rk504.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-rk754.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-rk704.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/traktor-zoomlion-rk754.html</loc>
@@ -756,7 +704,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-pg2004.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-rk504.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-rk704.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-rk754.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/traktor-zoomlion-rl1604.html</loc>
@@ -765,7 +712,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-pg2004.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-rk504.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-rk704.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-rl1604.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/traktor-zoomlion-rm804.html</loc>
@@ -774,7 +720,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-pg2004.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-rk504.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-rk704.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-rm804.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/traktor-zoomlion-rm904-rm1104.html</loc>
@@ -783,7 +728,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-pg2004.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-rk504.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-rk704.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-rm904-1104.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/traktor-zoomlion-rn1104-1.html</loc>
@@ -792,7 +736,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-pg2004.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-rk504.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-rk704.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-rn1104-1.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/traktor-zoomlion-rn904-1.html</loc>
@@ -801,7 +744,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-pg2004.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-rk504.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-rk704.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-rn904-1.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/produk/traktor-zoomlion-rs1304-rs1604.html</loc>
@@ -810,11 +752,10 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-rk504.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-rk704.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-rk754.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/produk/zoomlion/tractor-rs1304-1604.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/tentang.html</loc>
-    <image:image><image:loc>https://dass.co.id/assets/images/hero/hero-tractor.png</image:loc></image:image>
+    <image:image><image:loc>https://dass.co.id/assets/images/hero/hero-tractor.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/traktor-kebun-sawit.html</loc>
@@ -842,6 +783,6 @@
     <image:image><image:loc>https://dass.co.id/assets/images/produk/vectoragr/auto-steering-system-hd408.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/vectoragr/auto-steering-system-hd812.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/produk/vectoragr/auto-steering-system-hd818.webp</image:loc></image:image>
-    <image:image><image:loc>https://dass.co.id/assets/images/hero/hero-tractor.png</image:loc></image:image>
+    <image:image><image:loc>https://dass.co.id/assets/images/hero/hero-tractor.webp</image:loc></image:image>
   </url>
 </urlset>

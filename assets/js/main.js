@@ -59,6 +59,44 @@ function isiDataPerusahaan() {
   if (tahun) tahun.textContent = new Date().getFullYear();
 }
 
+/* =========================================
+   GOOGLE ANALYTICS — mencatat kunjungan dan klik penting
+   (WhatsApp, telepon, email, unduh brosur) supaya terlihat
+   halaman mana yang paling banyak mendatangkan calon pembeli.
+   Aktif hanya bila COMPANY.googleAnalytics diisi.
+   ========================================= */
+function initAnalitik() {
+  const id = COMPANY.googleAnalytics;
+  if (!id || !/^G-[A-Z0-9]+$/i.test(id)) return;
+
+  const s = document.createElement('script');
+  s.async = true;
+  s.src = `https://www.googletagmanager.com/gtag/js?id=${id}`;
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function () { dataLayer.push(arguments); };
+  gtag('js', new Date());
+  gtag('config', id);
+
+  document.addEventListener('click', e => {
+    const el = e.target.closest('a, button');
+    if (!el) return;
+    const href = el.getAttribute('href') || '';
+    const onclick = el.getAttribute('onclick') || '';
+    const jenis =
+      /wa\.me|whatsapp/i.test(href) ? 'klik_whatsapp' :
+      href.startsWith('tel:')        ? 'klik_telepon'  :
+      href.startsWith('mailto:')     ? 'klik_email'    :
+      onclick.includes('unduhBrosur') ? 'unduh_brosur' : '';
+    if (!jenis) return;
+    gtag('event', jenis, {
+      halaman: location.pathname,
+      tombol: (el.textContent || el.getAttribute('aria-label') || '').trim().slice(0, 80),
+      produk: document.body.dataset.produkId || ''
+    });
+  });
+}
+
 /* --- Menandai menu aktif --- */
 function tandaiMenuAktif() {
   const halaman = document.body.dataset.page;
@@ -77,6 +115,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   isiDataPerusahaan();
   tandaiMenuAktif();
+  initAnalitik();
   initNavbar();
 
   if (typeof initBahasa === 'function') initBahasa();
@@ -92,4 +131,5 @@ document.addEventListener('DOMContentLoaded', async () => {
   if (typeof initImageFallback === 'function') initImageFallback();
     if (typeof initFormKontak === 'function') initFormKontak();
   if (typeof initKalkulator    === 'function') initKalkulator();
+  if (typeof initBandingkan    === 'function') initBandingkan();
 });

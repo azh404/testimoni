@@ -25,6 +25,10 @@ const COMPANY = {
 
   jamOperasional: "Senin – Jumat, 08.00 – 17.00 WIB",  /* versi EN/ZH: kontak.jamIsi di lang.js */
 
+  /* ID Google Analytics 4 (format "G-XXXXXXXXXX").
+     Kosongkan ("") untuk mematikan pelacakan. */
+  googleAnalytics: "",
+
   sosmed: {
     instagram: "https://www.instagram.com/dass.agriculture",
     facebook:  "#",

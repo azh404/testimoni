@@ -12,8 +12,21 @@ function initHeroSlider() {
   let timer = null;
   const DURASI = 6000;
 
+  /* Gambar slide selain yang pertama dimuat belakangan (data-bg),
+     supaya halaman awal lebih cepat terbuka */
+  const muat = (s) => {
+    if (!s || !s.dataset.bg) return;
+    s.style.backgroundImage = `url('${s.dataset.bg}')`;
+    delete s.dataset.bg;
+  };
+  const muatBerikut = (n) => muat(slides[(n + 1) % slides.length]);
+  if (document.readyState === 'complete') muatBerikut(0);
+  else window.addEventListener('load', () => muatBerikut(0), { once: true });
+
   const tampilkan = (i) => {
     const n = (i + slides.length) % slides.length;
+    muat(slides[n]);
+    muatBerikut(n);
     slides.forEach((s, k) => s.classList.toggle('is-active', k === n));
     dots.forEach((d, k) => d.classList.toggle('is-active', k === n));
     index = n;
