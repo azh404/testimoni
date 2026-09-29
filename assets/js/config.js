@@ -13,7 +13,9 @@ const COMPANY = {
   // untuk link WhatsApp otomatis diubah ke format 62811...
   whatsapp:   "0811-1660-2926",
   telepon:    "0811-1660-2926",
-  email:      "info@dieselagriss.com",
+  /* Ditulis terpisah (nama, domain) supaya tidak mudah diambil bot
+     pengumpul email untuk spam. Tampil normal bagi pengunjung. */
+  email:      ["info", "dieselagriss.com"].join("@"),
 
   alamat: {
     jalan:    "Jalan River Garden Boulevard No. 19B Blok B2, RW. 7",
