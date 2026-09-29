@@ -97,6 +97,10 @@
     <image:image><image:loc>https://dass.co.id/assets/images/hero/hero-eavision.webp</image:loc></image:image>
   </url>
   <url>
+    <loc>https://dass.co.id/faq.html</loc>
+    <image:image><image:loc>https://dass.co.id/assets/images/hero/hero-tractor.webp</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://dass.co.id/</loc>
     <image:image><image:loc>https://dass.co.id/assets/images/hero/hero-tractor.webp</image:loc></image:image>
     <image:image><image:loc>https://dass.co.id/assets/images/hero/hero-combine-hasverter.webp</image:loc></image:image>
@@ -177,6 +181,10 @@
   <url>
     <loc>https://dass.co.id/kalkulator.html</loc>
     <image:image><image:loc>https://dass.co.id/assets/images/hero/hero-eavision.webp</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://dass.co.id/kamus-pertanian.html</loc>
+    <image:image><image:loc>https://dass.co.id/assets/images/hero/hero-tractor.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://dass.co.id/kontak.html</loc>
