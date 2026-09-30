@@ -96,7 +96,8 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   permintaan pengguna — jangan ditambah lagi. Animasi mati bila perangkat "reduce motion".
   Video hero: `assets/videos/hero-*.mp4` (dari Gemini/Veo, 10 dtk, 720p, tanpa suara, dikompres
   ffmpeg crf 20 "HD" 3–5 MB, Kling 1920px, Gemini 1280px (resolusi asli); file asli ada di riwayat git
-  (commit f0b0826, 55b80a4, 83b7eda); ffmpeg dari `pip install imageio-ffmpeg`). Pasang lewat atribut
+  (commit f0b0826, 55b80a4, 83b7eda); ffmpeg dari `pip install imageio-ffmpeg`). Tiap video punya versi HP `*-hp.mp4` (960px crf 26, 0,6–1,3 MB) yang
+  dipakai otomatis di layar ≤768px (slider.js). Pasang lewat atribut
   `data-video` di `.hero__slide`; slide video juga 5 dtk (DURASI_VIDEO), foto tetap cadangan
   (hemat data / reduce motion / gagal muat). Semua 6 slide sudah video: mesin pengering (Gemini, versi ke-2
   kamera diam + truk datang), traktor (Gemini), EAVision (Gemini); pemanen tebu, combine,
@@ -119,6 +120,7 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   Uji: jsPDF dari npm (cdnjs diblokir) lewat page.route, PDF dibaca dengan `pip install pymupdf`.
 - Foto utama di halaman detail produk tanpa kotak/latar (`.detail-media` transparan + drop-shadow);
   semua foto utama produk sudah transparan.
+- Menu HP: `.nav-toggle` z-index 2 agar tombol ✕ tampil di atas panel menu.
 - CAPTCHA tidak dipasang (tidak ada form yang mengirim ke server; form kontak membuka WA).
 
 ## Belum selesai / menunggu pengguna
