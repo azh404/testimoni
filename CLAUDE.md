@@ -112,6 +112,10 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   Jangan pasang backdrop-filter/transform di `.header` langsung — merusak menu HP (position: fixed).
 - Watermark logo DASS super transparan (opacity 0,045, abu-abu) di latar seluruh halaman:
   `body::before` fixed di base.css. `.section--soft` dibuat semi-transparan agar watermark tembus.
+- Brosur PDF (`brosur-pdf.js`) mengikuti bahasa aktif (BAHASA): teks tetap di `BROSUR_TEKS`,
+  isi pakai tList/tSpec/tNilai/tKategori, nama file diberi akhiran `-en`/`-zh`. Huruf Mandarin
+  digambar lewat canvas (fungsi `tulis`/`pecah`) karena Helvetica jsPDF tak punya huruf CJK.
+  Uji: jsPDF dari npm (cdnjs diblokir) lewat page.route, PDF dibaca dengan `pip install pymupdf`.
 - CAPTCHA tidak dipasang (tidak ada form yang mengirim ke server; form kontak membuka WA).
 
 ## Belum selesai / menunggu pengguna
