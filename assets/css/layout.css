@@ -10,7 +10,8 @@
 /* ===== SECTION ===== */
 .section { padding-block: var(--sp-9); }
 .section--sm  { padding-block: var(--sp-7); }
-.section--soft { background-color: var(--color-surface); }
+/* Semi-transparan agar watermark logo DASS di latar tetap samar terlihat */
+.section--soft { background-color: rgba(236, 239, 242, 0.55); }
 .section--dark {
   background-color: var(--color-dark);
   color: rgba(255, 255, 255, 0.75);
