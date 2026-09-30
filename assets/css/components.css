@@ -284,26 +284,42 @@
 .footer__icons a:hover { transform: translateY(-3px); }
 .footer__icons svg { width: 100%; height: 100%; display: block; }
 
-/* --- Bar bawah --- */
+/* --- Bar bawah: tautan cepat + hak cipta --- */
 .footer__bottom {
   background-color: rgba(0, 0, 0, 0.3);
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding-block: var(--sp-3);
-  text-align: center;
+  padding-block: var(--sp-5);
   font-size: var(--fs-xs);
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.55);
+}
+.footer__bottom-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-4);
 }
 
-/* Tautan ke halaman kata kunci (jual-*-jakarta.html) */
+/* Tautan ke halaman kata kunci & alat bantu */
 .footer__seo {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: var(--sp-2) var(--sp-5);
-  margin-bottom: var(--sp-2);
+  gap: var(--sp-2) var(--sp-6);
 }
-.footer__seo a { color: rgba(255, 255, 255, 0.75); }
+.footer__seo a {
+  color: rgba(255, 255, 255, 0.75);
+  white-space: nowrap;
+  transition: color var(--transition);
+}
 .footer__seo a:hover { color: var(--color-white); }
+
+.footer__copy {
+  margin: 0;
+  padding-top: var(--sp-4);
+  width: 100%;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
 
 /* =========================================
    TOMBOL WA MENGAMBANG

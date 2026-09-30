@@ -140,6 +140,16 @@
 
 /* ===== MOBILE (≤ 640px) ===== */
 @media (max-width: 640px) {
+  /* --- Footer bawah: tautan jadi 2 kolom, beri ruang untuk tombol WA --- */
+  .footer__bottom { padding-bottom: 96px; }
+  .footer__seo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-3) var(--sp-4);
+    width: 100%;
+  }
+  .footer__seo a { white-space: normal; }
+
 
   :root {
     --fs-4xl: 2rem;
