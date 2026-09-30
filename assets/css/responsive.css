@@ -147,7 +147,6 @@
   .footer__text { line-height: 1.5; margin-bottom: 0; }
   .footer__grid { grid-template-columns: 1fr 1fr; column-gap: var(--sp-4); }
   .footer__grid > .footer__col:nth-child(-n+2) { grid-column: 1 / -1; }
-  .footer__label--jarak { margin-top: var(--sp-3); }
   .footer__seo { gap: var(--sp-2); font-size: var(--fs-xs); line-height: 1.4; }
   /* Ruang bawah agar hak cipta tidak tertutup tombol WA */
   .footer__bottom { padding-block: var(--sp-3) 84px; }
