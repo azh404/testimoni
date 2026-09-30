@@ -14,16 +14,33 @@
 
 .hero__slides { position: absolute; inset: 0; }
 
+/* Animasi foto latar (efek "Ken Burns"): slide aktif perlahan membesar
+   sambil bergeser. Saat slide berganti, posisi baru di-reset setelah
+   slide selesai memudar (delay 1.2s) supaya tidak terlihat meloncat. */
 .hero__slide {
   position: absolute;
   inset: 0;
   background-size: cover;
   background-position: center;
   opacity: 0;
-  transform: scale(1.08);
-  transition: opacity 1.2s ease, transform 6s ease;
+  transform: scale(1.02) translate(0, 0);
+  transition: opacity 1.2s ease, transform 0s linear 1.2s;
+  will-change: transform, opacity;
 }
-.hero__slide.is-active { opacity: 1; transform: scale(1); }
+.hero__slide.is-active {
+  opacity: 1;
+  transition: opacity 1.2s ease, transform 7.5s linear;
+}
+/* hero--siap dipasang slider.js sesaat setelah halaman tampil,
+   supaya slide pertama juga ikut bergerak */
+.hero--siap .hero__slide.is-active {
+  transform: scale(1.14) translate(var(--geser-x, -1.5%), var(--geser-y, -1%));
+}
+.hero__slide:nth-child(2) { --geser-x: 1.5%;  --geser-y: -1%; }
+.hero__slide:nth-child(3) { --geser-x: -1.5%; --geser-y: 1%; }
+.hero__slide:nth-child(4) { --geser-x: 1.5%;  --geser-y: 1%; }
+.hero__slide:nth-child(5) { --geser-x: 0%;    --geser-y: -1.5%; }
+.hero__slide:nth-child(6) { --geser-x: -1%;   --geser-y: 0%; }
 
 .hero__overlay {
   position: absolute;
@@ -60,6 +77,15 @@
   text-shadow: 0 2px 20px rgba(0, 0, 0, 0.7);
 }
 
+/* Judul & teks muncul naik saat halaman dibuka */
+@keyframes heroMasuk {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero__title { animation: heroMasuk 0.9s cubic-bezier(.2, .7, .2, 1) 0.15s both; }
+.hero__desc  { animation: heroMasuk 0.9s cubic-bezier(.2, .7, .2, 1) 0.45s both; }
+.hero__dots  { animation: heroMasuk 0.9s cubic-bezier(.2, .7, .2, 1) 0.75s both; }
+
 .hero__dots {
   position: absolute;
   left: 0; right: 0; bottom: var(--sp-6);
@@ -68,12 +94,38 @@
   gap: var(--sp-2);
 }
 .hero__dot {
+  position: relative;
+  overflow: hidden;
   width: 32px; height: 4px;
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: var(--radius-full);
-  transition: background-color var(--transition);
+  transition: width var(--transition), background-color var(--transition);
 }
-.hero__dot.is-active { background-color: var(--color-accent); }
+.hero__dot:hover { background-color: rgba(255, 255, 255, 0.5); }
+/* Garis aktif lebih panjang dan terisi hijau seperti progress bar
+   (durasi = DURASI di slider.js) */
+.hero__dot.is-active { width: 56px; }
+.hero__dot::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-accent);
+  border-radius: inherit;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+@keyframes heroProgres { to { transform: scaleX(1); } }
+.hero__dot.is-jalan::after { animation: heroProgres 6s linear forwards; }
+.hero--jeda .hero__dot.is-jalan::after { animation-play-state: paused; }
+
+/* Pengunjung yang mematikan animasi di perangkatnya: tampil diam */
+@media (prefers-reduced-motion: reduce) {
+  .hero__slide,
+  .hero__slide.is-active,
+  .hero--siap .hero__slide.is-active { transform: none; transition: opacity 0.6s ease; }
+  .hero__title, .hero__desc, .hero__dots { animation: none; }
+  .hero__dot.is-jalan::after { animation: none; transform: scaleX(1); }
+}
 
 /* =========================================
    CHECK LIST
