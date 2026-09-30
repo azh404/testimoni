@@ -283,19 +283,44 @@ function jalankanSlider(wrap) {
   const dots   = wrap.querySelectorAll('.brand-slider__dot');
   if (!stage || slides.length < 2) return;
 
+  const slider = wrap.querySelector('.brand-slider');
   let index = 0;
   let timer = null;
-  const DURASI = 3500;
+  const DURASI = 3000; /* samakan dengan animasi .brand-slider__dot (pages.css) */
+
+  /* Garis progres di indikator aktif diulang dari nol */
+  const ulangProgres = () => {
+    dots.forEach(d => d.classList.remove('is-jalan'));
+    const aktif = dots[index];
+    if (!aktif) return;
+    void aktif.offsetWidth; /* paksa browser mengulang animasi */
+    aktif.classList.add('is-jalan');
+  };
 
   const tampilkan = (i) => {
     const n = (i + slides.length) % slides.length;
+    if (n !== index) {
+      /* Produk lama keluar ke kiri, lalu dikembalikan diam-diam ke kanan */
+      const lama = slides[index];
+      lama.classList.add('is-keluar');
+      setTimeout(() => lama.classList.remove('is-keluar'), 650);
+    }
     slides.forEach((s, k) => s.classList.toggle('is-active', k === n));
     dots.forEach((d, k) => d.classList.toggle('is-active', k === n));
     index = n;
+    ulangProgres();
   };
 
-  const henti = () => clearInterval(timer);
-  const mulai = () => { henti(); timer = setInterval(() => tampilkan(index + 1), DURASI); };
+  const henti = () => {
+    clearInterval(timer);
+    if (slider) slider.classList.add('is-jeda');
+  };
+  const mulai = () => {
+    henti();
+    if (slider) slider.classList.remove('is-jeda');
+    ulangProgres();
+    timer = setInterval(() => tampilkan(index + 1), DURASI);
+  };
 
   dots.forEach((dot, i) => {
     dot.addEventListener('click', () => { henti(); tampilkan(i); mulai(); });
@@ -349,6 +374,7 @@ function jalankanSlider(wrap) {
 
   tampilkan(0);
   mulai();
+  if (slider) requestAnimationFrame(() => requestAnimationFrame(() => slider.classList.add('is-siap')));
 }
 
 /* =========================================
