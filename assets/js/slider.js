@@ -10,8 +10,8 @@ function initHeroSlider() {
 
   let index = 0;
   let timer = null;
-  const DURASI = 3000;        /* slide foto */
-  const DURASI_VIDEO = 6000;  /* slide video (video 10 detik, lanjut dari posisi terakhir) */
+  const DURASI = 5000;        /* slide foto */
+  const DURASI_VIDEO = 5000;  /* slide video (lanjut dari posisi terakhir) */
 
   /* --- Video latar ---
      Tidak dimuat bila pengunjung memilih "kurangi gerakan" atau mode hemat data */
