@@ -29,7 +29,7 @@
 }
 .hero__slide.is-active {
   opacity: 1;
-  transition: opacity 1.2s ease, transform 7.5s linear;
+  transition: opacity 1.2s ease, transform 4.5s linear;
 }
 /* hero--siap dipasang slider.js sesaat setelah halaman tampil,
    supaya slide pertama juga ikut bergerak */
@@ -115,7 +115,7 @@
   transform-origin: left;
 }
 @keyframes heroProgres { to { transform: scaleX(1); } }
-.hero__dot.is-jalan::after { animation: heroProgres 6s linear forwards; }
+.hero__dot.is-jalan::after { animation: heroProgres 3s linear forwards; }
 .hero--jeda .hero__dot.is-jalan::after { animation-play-state: paused; }
 
 /* Pengunjung yang mematikan animasi di perangkatnya: tampil diam */
