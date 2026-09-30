@@ -57,6 +57,9 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
 - Pesan WhatsApp ke tim selalu bahasa Indonesia.
 - Foto produk: PNG 1200×900 transparan (asli, untuk PDF) + `.webp` + `-kecil.webp` +
   `-og.jpg`. Foto baru dari pengguna dikirim lewat folder `foto-baru/` (git push).
+  Foto HD 1448×1086 (11 foto Zoomlion, Sep 2026): PNG disimpan HD, .webp 1200×900 q80.
+  Bila latar foto berupa pola kotak-kotak palsu, hapus dengan `pip install "rembg[cpu]"` model
+  isnet-general-use (cara berbasis warna merusak velg/logo putih). PL2304: pola samar tersisa di kaca kabin.
 - Logo DASS di navbar: `logo-dass.png` (transparan, tanpa kotak putih; dibuat dari `logo.png`).
   `logo.png` (gaya ikon kotak) tetap untuk favicon & schema; brosur PDF pakai `logo-dass.png`.
 - Logo `assets/images/logo/z.png` (Zoomlion, tulisan hijau #8DC63F, transparan) dan
