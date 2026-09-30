@@ -53,10 +53,6 @@
           </a>
 
         </div>
-        <p class="footer__label footer__label--jarak" data-i18n="footer.telepon">Telepon / WhatsApp</p>
-        <a href="#" class="footer__text footer__tel" data-wa-link data-company="telepon"></a>
-        <p class="footer__label footer__label--jarak" data-i18n="kontak.jam">Jam Operasional</p>
-        <p class="footer__text" data-company="jam"></p>
       </div>
 
       <!-- Kolom 3: Jelajahi (halaman jual) -->

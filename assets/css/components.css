@@ -265,9 +265,6 @@
   margin-bottom: var(--sp-4);
 }
 
-.footer__label--jarak { margin-top: var(--sp-4); margin-bottom: var(--sp-1); }
-.footer__tel { display: inline-block; margin-bottom: 0; }
-.footer__tel:hover { color: var(--color-white); }
 
 /* --- Ikon kontak --- */
 .footer__icons {
