@@ -356,6 +356,8 @@ const TEKS = {
   'nav.bandingkanSub': { id: 'Spesifikasi berdampingan', en: 'Side-by-side specs', zh: '规格并排对比' },
   'footer.faq':        { id: 'FAQ', en: 'FAQ', zh: '常见问题' },
   'footer.tautan':     { id: 'Jelajahi', en: 'Explore', zh: '浏览' },
+  'footer.panduan':    { id: 'Panduan', en: 'Guides', zh: '指南' },
+  'footer.telepon':    { id: 'Telepon / WhatsApp', en: 'Phone / WhatsApp', zh: '电话 / WhatsApp' },
   'footer.kamus':      { id: 'Kamus Istilah Pertanian', en: 'Agricultural Glossary', zh: '农业术语词典' },
   'footer.bandingkan': { id: 'Bandingkan Produk', en: 'Compare Products', zh: '产品对比' },
   'judul.bandingkan':  { en: 'Compare Tractors & Agricultural Drones | DASS', zh: '拖拉机与农业无人机对比 | DASS' },

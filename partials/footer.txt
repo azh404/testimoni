@@ -11,7 +11,7 @@
       </div>
 
       <!-- Kolom 2: Hubungi Kami -->
-      <div class="footer__col footer__col--center">
+      <div class="footer__col">
         <h4 class="footer__title" data-i18n="footer.kontak">Hubungi Kami</h4>
         <div class="footer__icons">
 
@@ -53,15 +53,26 @@
           </a>
 
         </div>
+        <p class="footer__label footer__label--jarak" data-i18n="footer.telepon">Telepon / WhatsApp</p>
+        <a href="#" class="footer__text footer__tel" data-wa-link data-company="telepon"></a>
+        <p class="footer__label footer__label--jarak" data-i18n="kontak.jam">Jam Operasional</p>
+        <p class="footer__text" data-company="jam"></p>
       </div>
 
-      <!-- Kolom 3: Jelajahi (menempel ke kanan) -->
-      <div class="footer__col footer__col--kanan">
+      <!-- Kolom 3: Jelajahi (halaman jual) -->
+      <div class="footer__col">
         <h4 class="footer__title" data-i18n="footer.tautan">Jelajahi</h4>
         <nav class="footer__seo" aria-label="Jelajahi">
           <a href="{{base}}jual-traktor-jakarta.html" data-i18n="footer.jualTraktor">Jual Traktor Jakarta</a>
           <a href="{{base}}jual-drone-pertanian-jakarta.html" data-i18n="footer.jualDrone">Jual Drone Pertanian Jakarta</a>
           <a href="{{base}}jual-mesin-pertanian-jakarta.html" data-i18n="footer.jualMesin">Jual Mesin Pertanian Jakarta</a>
+        </nav>
+      </div>
+
+      <!-- Kolom 4: Panduan (alat bantu) -->
+      <div class="footer__col">
+        <h4 class="footer__title" data-i18n="footer.panduan">Panduan</h4>
+        <nav class="footer__seo" aria-label="Panduan">
           <a href="{{base}}kalkulator.html" data-i18n="footer.kalkulator">Kalkulator Pertanian</a>
           <a href="{{base}}bandingkan.html" data-i18n="footer.bandingkan">Bandingkan Produk</a>
           <a href="{{base}}kamus-pertanian.html" data-i18n="footer.kamus">Kamus Istilah Pertanian</a>
