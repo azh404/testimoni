@@ -36,7 +36,7 @@ const ARTIKEL_TERJEMAHAN = {
         `## Conclusion`,
         `Set aside a day or two to inspect your tractor before planting season. Always follow the maintenance schedule in the manual and use genuine spare parts to keep your tractor running for years.`,
         null,
-        `<strong>Need tractor servicing or spare parts?</strong> PT Diesel Agri Sukses Sejahtera supplies genuine spare parts and maintenance services for <a href="pages/produk/zoomlion.html">Zoomlion tractors</a>.`,
+        `<strong>Looking for a new tractor?</strong> PT Diesel Agri Sukses Sejahtera is the authorised distributor of <a href="pages/produk/zoomlion.html">Zoomlion tractors</a>. Contact us for advice and a quotation.`,
         `Need advice? <a href="kontak.html">Contact us</a>.`,
         null
       ]
@@ -67,7 +67,7 @@ const ARTIKEL_TERJEMAHAN = {
         `## 结论`,
         `在播种季前抽出一两天时间检查拖拉机。请始终遵循使用手册中的保养周期，并使用原厂配件，让拖拉机经久耐用。`,
         null,
-        `<strong>需要拖拉机维修或配件？</strong> PT Diesel Agri Sukses Sejahtera 为<a href="pages/produk/zoomlion.html">中联重科拖拉机</a>提供原厂配件和保养服务。`,
+        `<strong>正在寻找新拖拉机？</strong> PT Diesel Agri Sukses Sejahtera 是<a href="pages/produk/zoomlion.html">中联重科拖拉机</a>的授权经销商。欢迎联系我们获取咨询和报价。`,
         `需要建议？<a href="kontak.html">联系我们</a>。`,
         null
       ]
@@ -104,7 +104,7 @@ const ARTIKEL_TERJEMAHAN = {
         `## Conclusion`,
         `A long dry season calls for more disciplined drone care. Well-maintained batteries last longer, and a clean spray system keeps application even.`,
         null,
-        `<strong>Need batteries, spare parts, or drone servicing?</strong> PT Diesel Agri Sukses Sejahtera is the authorised distributor of <a href="pages/produk/eavision.html">EAVision</a> and <a href="pages/produk/vectoragr.html">VectorAgr</a> drones.`,
+        `<strong>Looking for an agricultural drone?</strong> PT Diesel Agri Sukses Sejahtera is the authorised distributor of <a href="pages/produk/eavision.html">EAVision</a> and <a href="pages/produk/vectoragr.html">VectorAgr</a> drones.`,
         `Need advice? <a href="kontak.html">Contact us</a>.`,
         null
       ]
@@ -137,7 +137,7 @@ const ARTIKEL_TERJEMAHAN = {
         `## 结论`,
         `漫长的旱季需要更严格的无人机保养。电池保养得当寿命更长，喷洒系统清洁则能保证喷洒均匀。`,
         null,
-        `<strong>需要电池、配件或无人机维修？</strong> PT Diesel Agri Sukses Sejahtera 是<a href="pages/produk/eavision.html">EAVision</a>和<a href="pages/produk/vectoragr.html">VectorAgr</a>无人机的授权经销商。`,
+        `<strong>正在寻找农业无人机？</strong> PT Diesel Agri Sukses Sejahtera 是<a href="pages/produk/eavision.html">EAVision</a>和<a href="pages/produk/vectoragr.html">VectorAgr</a>无人机的授权经销商。`,
         `需要建议？<a href="kontak.html">联系我们</a>。`,
         null
       ]
@@ -169,7 +169,7 @@ const ARTIKEL_TERJEMAHAN = {
         `## Conclusion`,
         `The more often a combine harvester is used, the more important routine maintenance becomes. A few minutes of cleaning and inspection after work costs far less than a breakdown mid-harvest.`,
         null,
-        `<strong>Need combine harvester parts or servicing?</strong> PT Diesel Agri Sukses Sejahtera provides genuine spare parts and maintenance for Zoomlion combine harvesters such as the <a href="produk/combine-harvester-zoomlion-zl88.html">ZL88</a> and <a href="produk/combine-harvester-zoomlion-zl105.html">ZL105</a>.`,
+        `<strong>Looking for a combine harvester?</strong> PT Diesel Agri Sukses Sejahtera is the authorised distributor of Zoomlion combine harvesters such as the <a href="produk/combine-harvester-zoomlion-zl88.html">ZL88</a> and <a href="produk/combine-harvester-zoomlion-zl105.html">ZL105</a>.`,
         `Need advice? <a href="kontak.html">Contact us</a>.`,
         null
       ]
@@ -197,7 +197,7 @@ const ARTIKEL_TERJEMAHAN = {
         `## 结论`,
         `联合收割机使用越频繁，定期保养就越重要。作业后花几分钟清洁和检查，远比收获季中途停机的损失小得多。`,
         null,
-        `<strong>需要联合收割机配件或维修？</strong> PT Diesel Agri Sukses Sejahtera 为<a href="produk/combine-harvester-zoomlion-zl88.html">ZL88</a>、<a href="produk/combine-harvester-zoomlion-zl105.html">ZL105</a>等中联重科联合收割机提供原厂配件和保养服务。`,
+        `<strong>正在寻找联合收割机？</strong> PT Diesel Agri Sukses Sejahtera 是<a href="produk/combine-harvester-zoomlion-zl88.html">ZL88</a>、<a href="produk/combine-harvester-zoomlion-zl105.html">ZL105</a>等中联重科联合收割机的授权经销商。`,
         `需要建议？<a href="kontak.html">联系我们</a>。`,
         null
       ]
@@ -358,7 +358,7 @@ const ARTIKEL_TERJEMAHAN = {
         `## Conclusion`,
         `Sugar self-sufficiency requires higher productivity at every stage, from seed cane to harvest. With cane cutters in short supply, sugarcane harvesters are an increasingly relevant investment for plantations and sugar mills.`,
         null,
-        `<strong>Planning to mechanise your cane harvest?</strong> PT Diesel Agri Sukses Sejahtera is the authorised Zoomlion distributor, with full spare parts and service support.`,
+        `<strong>Planning to mechanise your cane harvest?</strong> PT Diesel Agri Sukses Sejahtera is the authorised Zoomlion distributor. Contact us for advice and a quotation.`,
         `Need advice? <a href="kontak.html">Contact us</a>.`,
         null
       ]
@@ -389,7 +389,7 @@ const ARTIKEL_TERJEMAHAN = {
         `## 结论`,
         `实现食糖自给需要从蔗种到收获各环节全面提高生产力。在砍蔗工短缺的情况下，甘蔗收获机对种植园和糖厂而言是越来越值得的投资。`,
         null,
-        `<strong>正在规划甘蔗机械化收获？</strong> PT Diesel Agri Sukses Sejahtera 是中联重科授权经销商，提供完善的配件和维修支持。`,
+        `<strong>正在规划甘蔗机械化收获？</strong> PT Diesel Agri Sukses Sejahtera 是中联重科授权经销商。欢迎联系我们获取咨询和报价。`,
         `需要建议？<a href="kontak.html">联系我们</a>。`,
         null
       ]
@@ -759,7 +759,7 @@ const ARTIKEL_TERJEMAHAN = {
         `## Conclusion`,
         `The push for SNI certification shows that agricultural drones are now seen as essential work tools, not experimental technology. For farmers and plantation companies, now is the time to choose drones more carefully.`,
         null,
-        `<strong>Looking for an agricultural drone?</strong> PT Diesel Agri Sukses Sejahtera is the authorised distributor of <a href="pages/produk/eavision.html">EAVision</a> and <a href="pages/produk/vectoragr.html">VectorAgr</a> drones, with full spare parts and service support.`,
+        `<strong>Looking for an agricultural drone?</strong> PT Diesel Agri Sukses Sejahtera is the authorised distributor of <a href="pages/produk/eavision.html">EAVision</a> and <a href="pages/produk/vectoragr.html">VectorAgr</a> drones. Contact us for advice and a quotation.`,
         `Need advice? <a href="kontak.html">Contact us</a>.`,
         null
       ]
@@ -793,7 +793,7 @@ const ARTIKEL_TERJEMAHAN = {
         `## 结论`,
         `推动SNI认证表明，农业无人机已被视为重要的作业工具，而不再是试验性技术。对于农民和种植园企业来说，现在正是更加审慎地选择无人机的时候。`,
         null,
-        `<strong>正在寻找农业无人机？</strong> PT Diesel Agri Sukses Sejahtera 是<a href="pages/produk/eavision.html">EAVision</a>和<a href="pages/produk/vectoragr.html">VectorAgr</a>无人机的授权经销商，提供完善的配件和维修支持。`,
+        `<strong>正在寻找农业无人机？</strong> PT Diesel Agri Sukses Sejahtera 是<a href="pages/produk/eavision.html">EAVision</a>和<a href="pages/produk/vectoragr.html">VectorAgr</a>无人机的授权经销商。欢迎联系我们获取咨询和报价。`,
         `需要建议？<a href="kontak.html">联系我们</a>。`,
         null
       ]
@@ -834,8 +834,8 @@ const ARTIKEL_TERJEMAHAN = {
         `## Conclusion`,
         `Choosing the right tractor tyres is not just about price, but also about suiting the terrain and your operational needs. With the right tyres, your tractor will work more efficiently, last longer, and stay safe in all conditions.`,
         null,
-        `<strong>Need heavy equipment backed by quality spare parts?</strong> Diesel Agri Sukses Sejahtera has it all.`,
-        `We are the authorised distributor of Zoomlion agricultural machinery, offering a wide range of equipment plus maintenance, spare parts, and full machine inspections.`,
+        `<strong>Need the right machine for your land?</strong> Ask Diesel Agri Sukses Sejahtera.`,
+        `We are the authorised distributor of Zoomlion agricultural machinery, offering tractors, combine harvesters, transplanters, and dryers. Our team is ready to help you choose the right unit.`,
         `Need advice? <a href="kontak.html">Contact us</a>.`
       ]
     },
@@ -871,8 +871,8 @@ const ARTIKEL_TERJEMAHAN = {
         `## 结论`,
         `选择拖拉机轮胎不仅要看价格，还要考虑是否适合地形和作业需求。选对轮胎，拖拉机才能更高效、更耐用，并在各种条件下安全作业。`,
         null,
-        `<strong>需要配有优质配件的重型设备？</strong> Diesel Agri Sukses Sejahtera 一应俱全。`,
-        `我们是中联重科农业机械授权经销商，提供各类设备，以及保养、配件和整机检测服务。`,
+        `<strong>需要适合您土地的农机？</strong> 欢迎咨询 Diesel Agri Sukses Sejahtera。`,
+        `我们是中联重科农业机械授权经销商，提供拖拉机、联合收割机、插秧机和烘干机等设备。我们的团队随时帮助您选择合适的机型。`,
         `需要建议？<a href="kontak.html">联系我们</a>。`
       ]
     }

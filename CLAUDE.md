@@ -79,14 +79,14 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   unit (2 di HP), baris nama menempel saat scroll.
 - Menu WA pintar: harga / konsultasi / brosur / lain + status jam kerja
   (`COMPANY.jamKerja`). **Tidak ada pilihan servis/sparepart.**
+- **Perusahaan TIDAK menyediakan servis/sparepart** (dikonfirmasi pengguna). Semua klaim
+  servis/sparepart/purna jual sudah dihapus (beranda, landing, kontak, footer, artikel, meta).
+  Penggantinya: "Distributor Resmi", "Spesifikasi Lengkap", "Tanya Cepat via WhatsApp".
+  Jangan menulis klaim servis/sparepart lagi. Tips umum di artikel ("pastikan suku cadang
+  mudah didapat") boleh tetap.
 - CAPTCHA tidak dipasang (tidak ada form yang mengirim ke server; form kontak membuka WA).
 
 ## Belum selesai / menunggu pengguna
-- **Klaim servis & sparepart**: perusahaan belum menyediakan layanan servis/sparepart,
-  tetapi beranda (kotak "Layanan Servis", "Sparepart Tersedia"), 6 halaman kata kunci,
-  form kontak (opsi Sparepart/Layanan Servis), footer ("dukungan purna jual"), dan
-  beberapa meta description masih menyebutnya. Menunggu jawaban: hapus/ganti atau
-  layanannya sebenarnya ada.
 - FAQ: jawaban pengiriman ke luar Jakarta masih netral — menunggu kebijakan perusahaan.
 - Ide yang ditawarkan tapi belum dikerjakan: Kebijakan Privasi (UU PDP, perlu cek legal),
   galeri pengiriman unit/testimoni (perlu foto sales), Google Merchant Center (perlu
