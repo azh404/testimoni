@@ -92,10 +92,11 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
 - Hero beranda beranimasi: foto memudar TANPA zoom (pengguna tidak mau zoom), judul/teks muncul naik saat
   dibuka, indikator bawah terisi seperti progress bar (5 detik = DURASI di slider.js).
   Slider produk di halaman merek (filter-produk.js) sama: 3 detik, masuk dari kanan, zoom pelan,
-  indikator progres. Hero beranda juga punya efek sinematik CSS (.hero__cahaya, .hero__partikel,
-  vignette, foto baru muncul dari buram di laptop). Semua mati bila perangkat "reduce motion".
+  indikator progres. Efek sinematik (partikel, cahaya, vignette, buram) SUDAH DIHAPUS atas
+  permintaan pengguna — jangan ditambah lagi. Animasi mati bila perangkat "reduce motion".
   Video hero: `assets/videos/hero-*.mp4` (dari Gemini/Veo, 10 dtk, 720p, tanpa suara, dikompres
-  ffmpeg crf 27 ±1–1,6 MB; ffmpeg dari `pip install imageio-ffmpeg`). Pasang lewat atribut
+  ffmpeg crf 20 "HD" 3–5 MB, Kling 1920px, Gemini 1280px (resolusi asli); file asli ada di riwayat git
+  (commit f0b0826, 55b80a4, 83b7eda); ffmpeg dari `pip install imageio-ffmpeg`). Pasang lewat atribut
   `data-video` di `.hero__slide`; slide video juga 5 dtk (DURASI_VIDEO), foto tetap cadangan
   (hemat data / reduce motion / gagal muat). Semua 6 slide sudah video: mesin pengering (Gemini, versi ke-2
   kamera diam + truk datang), traktor (Gemini), EAVision (Gemini); pemanen tebu, combine,
@@ -103,7 +104,7 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   permintaan pengguna; jangan dipotong/ditutup, ganti bila ada versi bersih. Chromium sandbox tak bisa H.264 — uji
   pakai salinan .webm lewat page.route.
 - Hero beranda di layar ≤768px: video/foto utuh 16:9 di atas (tidak terpotong), judul & teks di
-  bawahnya (responsive.css bagian akhir); efek cahaya dimatikan di layar kecil.
+  bawahnya (responsive.css bagian akhir).
 - CAPTCHA tidak dipasang (tidak ada form yang mengirim ke server; form kontak membuka WA).
 
 ## Belum selesai / menunggu pengguna
