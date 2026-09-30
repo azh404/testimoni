@@ -238,9 +238,7 @@ async function unduhBrosur(idProduk, tombol) {
     y += 6;
     const atasY = y, tinggiFoto = 76, lebarFoto = 92;
 
-    doc.setFillColor(244, 246, 249).setDrawColor(224, 229, 236).setLineWidth(0.2);
-    doc.rect(M, atasY, lebarFoto, tinggiFoto, 'FD');
-
+    /* Foto produk (PNG transparan) langsung di atas halaman, tanpa kotak latar */
     if (fotoProduk) {
       const g = pasKotak(fotoProduk, M + 3, atasY + 3, lebarFoto - 6, tinggiFoto - 6);
       const jenis = /\.jpe?g$/i.test(p.gambar) ? 'JPEG' : 'PNG';
