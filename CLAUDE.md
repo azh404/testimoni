@@ -109,6 +109,8 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
 - Hero beranda di layar ≤768px: video/foto utuh 16:9, indikator di bawah video.
 - Navbar: putih di atas, kaca buram transparan saat di-scroll (`.header::before` + backdrop-filter).
   Jangan pasang backdrop-filter/transform di `.header` langsung — merusak menu HP (position: fixed).
+- Watermark logo DASS super transparan (opacity 0,045, abu-abu) di latar seluruh halaman:
+  `body::before` fixed di base.css. `.section--soft` dibuat semi-transparan agar watermark tembus.
 - CAPTCHA tidak dipasang (tidak ada form yang mengirim ke server; form kontak membuka WA).
 
 ## Belum selesai / menunggu pengguna
