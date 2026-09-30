@@ -173,7 +173,7 @@
   .artikel-grid { grid-template-columns: 1fr; }
 
   /* --- Navbar --- */
-  .brand__logo { height: 46px; }
+  .brand__logo { height: 38px; }
   .brand__name { font-size: var(--fs-xs); max-width: 180px; }
 
   /* --- Hero --- */

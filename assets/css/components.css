@@ -87,7 +87,7 @@
 
 /* --- Logo --- */
 .brand { display: flex; align-items: center; gap: var(--sp-3); }
-.brand__logo { height: 70px; width: auto; }
+.brand__logo { height: 52px; width: auto; }
 .brand__text { display: flex; flex-direction: column; line-height: 1.2; }
 .brand__name {
   font-size: var(--fs-sm);

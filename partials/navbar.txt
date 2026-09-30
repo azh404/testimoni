@@ -2,7 +2,7 @@
   <div class="container header__inner">
 
     <a href="{{base}}index.html" class="brand">
-      <img src="{{base}}assets/images/logo/logo.png"
+      <img src="{{base}}assets/images/logo/logo-dass.png"
            alt="PT Diesel Agri Sukses Sejahtera"
            class="brand__logo">
     </a>
