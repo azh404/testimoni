@@ -439,13 +439,15 @@
   grid-template-rows: 1fr auto;
   gap: var(--sp-3);
   opacity: 0;
-  transform: scale(.94);
-  transition: opacity .5s ease, transform .5s ease;
+  /* Produk berikutnya masuk dari kanan, yang lama keluar ke kiri */
+  transform: translateX(48px) scale(.96);
+  transition: opacity .6s ease, transform .6s cubic-bezier(.2, .7, .2, 1);
   pointer-events: none;
 }
+.brand-slider__item.is-keluar { transform: translateX(-48px) scale(.96); }
 .brand-slider__item.is-active {
   opacity: 1;
-  transform: scale(1);
+  transform: none;
   pointer-events: auto;
 }
 
@@ -456,6 +458,14 @@
   object-fit: contain;
   pointer-events: none;
   filter: drop-shadow(0 12px 28px rgba(0, 0, 0, .35));
+  transform: scale(1);
+  transition: transform 0s linear .6s;
+}
+/* Foto produk aktif perlahan membesar selama tampil
+   (is-siap dipasang JS sesaat setelah slider tampil, agar foto pertama ikut bergerak) */
+.brand-slider.is-siap .brand-slider__item.is-active img {
+  transform: scale(1.07);
+  transition: transform 3.6s linear;
 }
 
 .brand-slider__label {
@@ -464,6 +474,14 @@
   color: var(--color-white);
   text-align: center;
   text-shadow: 0 2px 12px rgba(0, 0, 0, .5);
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity .4s ease, transform .4s ease;
+}
+.brand-slider__item.is-active .brand-slider__label {
+  opacity: 1;
+  transform: none;
+  transition-delay: .25s;
 }
 
 .brand-slider__dots {
@@ -473,17 +491,45 @@
   margin-top: var(--sp-5);
   flex-wrap: wrap;
 }
+/* Indikator berbentuk garis; yang aktif terisi hijau seperti progress bar
+   (durasi = DURASI di jalankanSlider, filter-produk.js) */
 .brand-slider__dot {
-  width: 8px;
-  height: 8px;
+  position: relative;
+  overflow: hidden;
+  width: 20px;
+  height: 4px;
   border-radius: var(--radius-full);
   background-color: rgba(255, 255, 255, .3);
-  transition: all var(--transition);
+  transition: width var(--transition), background-color var(--transition);
   cursor: pointer;
 }
-.brand-slider__dot.is-active {
-  width: 24px;
-  background-color: var(--color-white);
+.brand-slider__dot:hover { background-color: rgba(255, 255, 255, .5); }
+.brand-slider__dot.is-active { width: 40px; }
+.brand-slider__dot::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-accent);
+  border-radius: inherit;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+.brand-slider__dot.is-jalan::after { animation: heroProgres 3s linear forwards; }
+.brand-slider.is-jeda .brand-slider__dot.is-jalan::after { animation-play-state: paused; }
+
+/* Teks di hero halaman merek muncul naik saat dibuka */
+.brand-hero:has(.brand-slider) .brand-hero__left > * { animation: heroMasuk .9s cubic-bezier(.2, .7, .2, 1) both; }
+.brand-hero:has(.brand-slider) .brand-hero__left > :nth-child(2) { animation-delay: .15s; }
+.brand-hero:has(.brand-slider) .brand-hero__left > :nth-child(3) { animation-delay: .3s; }
+.brand-hero:has(.brand-slider) .brand-hero__left > :nth-child(n+4) { animation-delay: .45s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-slider__item,
+  .brand-slider__item.is-keluar,
+  .brand-slider__item img,
+  .brand-slider.is-siap .brand-slider__item.is-active img { transform: none; }
+  .brand-slider__dot.is-jalan::after { animation: none; transform: scaleX(1); }
+  .brand-hero .brand-hero__left > * { animation: none !important; }
 }
 
 /* =========================================
