@@ -70,12 +70,34 @@
   position: fixed;
   inset: 0 0 auto 0;
   height: var(--header-height);
-  background-color: var(--color-white);
   border-bottom: 1px solid var(--color-border);
   z-index: var(--z-header);
-  transition: box-shadow var(--transition);
+  transition: box-shadow var(--transition), border-color var(--transition);
 }
-.header.is-scrolled { box-shadow: var(--shadow-sm); }
+/* Latar navbar di lapisan terpisah: putih di atas, kaca buram (blur transparan)
+   saat halaman di-scroll. Blur SENGAJA tidak dipasang di .header langsung,
+   karena backdrop-filter di .header akan merusak posisi menu HP (position: fixed). */
+.header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-color: var(--color-white);
+  transition: background-color var(--transition);
+}
+.header.is-scrolled {
+  box-shadow: 0 4px 20px rgba(10, 22, 40, 0.08);
+  border-bottom-color: rgba(255, 255, 255, 0.4);
+}
+.header.is-scrolled::before {
+  background-color: rgba(255, 255, 255, 0.72);
+  -webkit-backdrop-filter: saturate(180%) blur(14px);
+  backdrop-filter: saturate(180%) blur(14px);
+}
+/* Browser tanpa dukungan blur: tetap hampir putih agar menu terbaca */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .header.is-scrolled::before { background-color: rgba(255, 255, 255, 0.96); }
+}
 
 .header__inner {
   display: flex;
