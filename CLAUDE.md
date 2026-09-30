@@ -31,6 +31,8 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   `bandingkan`, `kamus-pertanian`, `faq`, `404`, 6 halaman kata kunci `jual-*`,
   `traktor-kebun-sawit`, `combine-harvester-padi`, `drone-pertanian-sawah`),
   `produk/*.html` (62 halaman detail), `artikel/*.html`, `pages/produk/<brand>.html`.
+- Footer 4 kolom: Perusahaan+alamat | Hubungi Kami (ikon, telepon, jam) | Jelajahi (jual-*) |
+  Panduan (kalkulator, bandingkan, kamus, FAQ); bar bawah hanya "© tahun PT DASS" di tengah.
 - `partials/navbar.txt` & `footer.txt` (isi HTML) dimuat oleh `main.js` (`{{base}}` = `data-base`).
   Sengaja `.txt`: Live Server VS Code menyisipkan script ke file `.html` dan memotong akhirnya.
 - `assets/js/config.js` — data perusahaan (satu sumber: nomor, email, jam kerja, GA).
