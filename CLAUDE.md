@@ -95,9 +95,10 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   Video hero: `assets/videos/hero-*.mp4` (dari Gemini/Veo, 10 dtk, 720p, tanpa suara, dikompres
   ffmpeg crf 27 ±1–1,6 MB; ffmpeg dari `pip install imageio-ffmpeg`). Pasang lewat atribut
   `data-video` di `.hero__slide`; slide video tampil 6 dtk (DURASI_VIDEO), foto tetap cadangan
-  (hemat data / reduce motion / gagal muat). Baru ada: mesin pengering & traktor (Gemini), pemanen tebu (Kling,
-  5 dtk, ADA watermark "KlingAI 3.0" — dipasang apa adanya atas permintaan pengguna; jangan
-  dipotong/ditutup, ganti bila ada versi bersih); 3 lainnya menunggu pengguna (prompt Gemini sudah diberikan). Chromium sandbox tak bisa H.264 — uji
+  (hemat data / reduce motion / gagal muat). Semua 6 slide sudah video: mesin pengering (Gemini, versi ke-2
+  kamera diam + truk datang), traktor (Gemini), EAVision (Gemini); pemanen tebu, combine,
+  VectorAgr dari Kling 5 dtk dengan watermark "KlingAI 3.0" — dipasang apa adanya atas
+  permintaan pengguna; jangan dipotong/ditutup, ganti bila ada versi bersih. Chromium sandbox tak bisa H.264 — uji
   pakai salinan .webm lewat page.route.
 - Hero beranda di layar ≤768px: video/foto utuh 16:9 di atas (tidak terpotong), judul & teks di
   bawahnya (responsive.css bagian akhir); efek cahaya dimatikan di layar kecil.
