@@ -193,9 +193,6 @@ function initHeroSlider() {
 
   tampilkan(0);
   mulai();
-
-  /* Mulai gerakan foto latar setelah halaman tampil */
-  if (hero) requestAnimationFrame(() => requestAnimationFrame(() => hero.classList.add('hero--siap')));
 }
 
 /* =========================================

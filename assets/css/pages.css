@@ -14,33 +14,17 @@
 
 .hero__slides { position: absolute; inset: 0; }
 
-/* Animasi foto latar (efek "Ken Burns"): slide aktif perlahan membesar
-   sambil bergeser. Saat slide berganti, posisi baru di-reset setelah
-   slide selesai memudar (delay 1.2s) supaya tidak terlihat meloncat. */
+/* Foto latar berganti dengan memudar (tanpa zoom) */
 .hero__slide {
   position: absolute;
   inset: 0;
   background-size: cover;
   background-position: center;
   opacity: 0;
-  transform: scale(1.02) translate(0, 0);
-  transition: opacity 1.2s ease, transform 0s linear 1.2s;
-  will-change: transform, opacity;
+  transition: opacity 1.2s ease;
+  will-change: opacity;
 }
-.hero__slide.is-active {
-  opacity: 1;
-  transition: opacity 1.2s ease, transform 4.5s linear;
-}
-/* hero--siap dipasang slider.js sesaat setelah halaman tampil,
-   supaya slide pertama juga ikut bergerak */
-.hero--siap .hero__slide.is-active {
-  transform: scale(1.14) translate(var(--geser-x, -1.5%), var(--geser-y, -1%));
-}
-.hero__slide:nth-child(2) { --geser-x: 1.5%;  --geser-y: -1%; }
-.hero__slide:nth-child(3) { --geser-x: -1.5%; --geser-y: 1%; }
-.hero__slide:nth-child(4) { --geser-x: 1.5%;  --geser-y: 1%; }
-.hero__slide:nth-child(5) { --geser-x: 0%;    --geser-y: -1.5%; }
-.hero__slide:nth-child(6) { --geser-x: -1%;   --geser-y: 0%; }
+.hero__slide.is-active { opacity: 1; }
 
 .hero__overlay {
   position: absolute;
@@ -66,8 +50,7 @@
   pointer-events: none;
 }
 .hero__slide.ada-video .hero__video { opacity: 1; }
-.hero--siap .hero__slide.ada-video.is-active,
-.hero__slide.ada-video { transform: none; filter: none; }
+.hero__slide.ada-video { filter: none; }
 
 /* Vignette: tepi gambar sedikit gelap seperti film */
 .hero__overlay::after {
@@ -171,7 +154,7 @@
   .hero__slide { filter: blur(6px) brightness(1.25); }
   .hero__slide.is-active {
     filter: none;
-    transition: opacity 1.2s ease, filter 1.4s ease, transform 4.5s linear;
+    transition: opacity 1.2s ease, filter 1.4s ease;
   }
 }
 
@@ -222,8 +205,7 @@
   .hero__partikel, .hero__partikel::after { animation: none; }
   .hero__slide { filter: none !important; }
   .hero__slide,
-  .hero__slide.is-active,
-  .hero--siap .hero__slide.is-active { transform: none; transition: opacity 0.6s ease; }
+  .hero__slide.is-active { transition: opacity 0.6s ease; }
   .hero__title, .hero__desc, .hero__dots { animation: none; }
   .hero__dot.is-jalan::after { animation: none; transform: scaleX(1); }
 }
