@@ -55,8 +55,8 @@
         </div>
       </div>
 
-      <!-- Kolom 3: Tautan cepat -->
-      <div class="footer__col">
+      <!-- Kolom 3: Jelajahi (menempel ke kanan) -->
+      <div class="footer__col footer__col--kanan">
         <h4 class="footer__title" data-i18n="footer.tautan">Jelajahi</h4>
         <nav class="footer__seo" aria-label="Jelajahi">
           <a href="{{base}}jual-traktor-jakarta.html" data-i18n="footer.jualTraktor">Jual Traktor Jakarta</a>
@@ -75,8 +75,7 @@
   <div class="footer__bottom">
     <div class="container">
       <p class="footer__copy">
-        &copy; <span id="tahunSekarang"></span> PT Diesel Agri Sukses Sejahtera.
-        <span data-i18n="footer.hak">Hak cipta dilindungi.</span>
+        &copy; <span id="tahunSekarang"></span> PT Diesel Agri Sukses Sejahtera
       </p>
     </div>
   </div>
