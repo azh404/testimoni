@@ -30,7 +30,12 @@ function initHeroSlider() {
     v.setAttribute('playsinline', '');
     v.setAttribute('aria-hidden', 'true');
     v.preload = 'auto';
-    v.src = s.dataset.video;
+    /* Layar ≤768px (HP/tablet tegak) memakai versi ringan: nama file + "-hp"
+       (mis. hero-tractor-hp.mp4, 960px ±1 MB). Laptop tetap versi HD. */
+    const layarKecil = window.matchMedia('(max-width: 768px)').matches;
+    v.src = layarKecil
+      ? s.dataset.video.replace(/\.mp4(\?|$)/, '-hp.mp4$1')
+      : s.dataset.video;
     /* Video baru terlihat setelah benar-benar berjalan; sampai itu foto yang tampil */
     v.addEventListener('playing', () => s.classList.add('ada-video'));
     v.addEventListener('error', () => v.remove());
