@@ -105,9 +105,9 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   pakai salinan .webm lewat page.route.
 - Judul hero beranda (H1 "Distributor Traktor & Drone Pertanian di Jakarta") DISEMBUNYIKAN
   dari tampilan dengan `.sr-only`; kalimat "Distributor resmi Zoomlion…" TAMPIL di kiri bawah video
-  (HP: di bawah video) atas permintaan pengguna (tetap di HTML untuk
+  (HP: juga di atas video, kiri bawah) atas permintaan pengguna (tetap di HTML untuk
   SEO/aksesibilitas; risiko kecil "teks tersembunyi" sudah dijelaskan). Jangan dihapus dari HTML.
-- Hero beranda di layar ≤768px: video/foto utuh 16:9, indikator di bawah video.
+- Hero beranda di layar ≤768px: kotak 16:9 (video utuh), kalimat + indikator di kiri bawah video.
 - Navbar: putih di atas, kaca buram transparan saat di-scroll (`.header::before` + backdrop-filter).
   Jangan pasang backdrop-filter/transform di `.header` langsung — merusak menu HP (position: fixed).
 - Watermark logo DASS super transparan (opacity 0,045, abu-abu) di latar seluruh halaman:

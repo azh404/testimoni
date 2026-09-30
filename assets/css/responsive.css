@@ -260,22 +260,29 @@
 }
 
 /* ===== HERO BERANDA DI HP / TABLET TEGAK (≤ 768px) =====
-   Video/foto tampil utuh 16:9 (tidak terpotong); indikator di bagian bawah video. */
+   Hero berbentuk 16:9 (video utuh, tidak terpotong); kalimat di kiri bawah video
+   di atas gradasi, indikator di bawahnya — sejajar dengan teks. */
 @media (max-width: 768px) {
   .hero {
-    display: block;
     min-height: 0;
-  }
-  .hero__slides {
-    position: relative;
-    inset: auto;
-    width: 100%;
     aspect-ratio: 16 / 9;
-    overflow: hidden;
+    align-items: flex-end;
   }
-  /* Kalimat hero di bawah video, di atas latar gelap */
-  .hero__content { max-width: none; padding-block: var(--sp-4) var(--sp-5); }
-  .hero__desc { font-size: var(--fs-base); padding-left: var(--sp-3); }
-  .hero__dots  { top: calc(56.25vw - var(--sp-5)); bottom: auto; }
+  .hero__overlay {
+    background: linear-gradient(180deg, rgba(10, 22, 40, 0) 35%, rgba(10, 22, 40, 0.78) 100%);
+  }
+  .hero__content {
+    max-width: 92%;
+    padding-block: 0 calc(var(--sp-3) + 16px);
+  }
+  .hero__desc {
+    font-size: 0.875rem;
+    line-height: 1.45;
+    padding-left: var(--sp-2);
+    border-left-width: 2px;
+    text-wrap: balance;
+  }
+  .hero__dots { bottom: var(--sp-3); }
+  .hero__dot { width: 22px; height: 3px; }
+  .hero__dot.is-active { width: 40px; }
 }
-
