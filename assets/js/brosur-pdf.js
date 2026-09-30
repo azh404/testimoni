@@ -28,6 +28,95 @@ const BROSUR_SLUG = {
   'va-digital':'pertanian-digital'
 };
 
+/* Teks tetap di brosur, mengikuti bendera (bahasa) yang dipilih pengunjung */
+const BROSUR_TEKS = {
+  tagline:  { id: 'Distributor Alat Berat & Mesin Pertanian', en: 'Heavy & Agricultural Machinery Distributor', zh: '重型及农业机械经销商' },
+  seri:     { id: 'Seri', en: 'Series', zh: '系列' },
+  guna:     { id: 'KEGUNAAN', en: 'KEY FEATURES', zh: '产品优势' },
+  spek:     { id: 'SPESIFIKASI TEKNIS', en: 'TECHNICAL SPECIFICATIONS', zh: '技术参数' },
+  tanya:    { id: 'Tanya harga & ketersediaan unit', en: 'Ask for price & unit availability', zh: '咨询价格与现货情况' },
+  catatan:  { id: 'Spesifikasi dapat berubah sewaktu-waktu tanpa pemberitahuan terlebih dahulu. Diterbitkan oleh ',
+              en: 'Specifications are subject to change without prior notice. Published by ',
+              zh: '规格如有变更，恕不另行通知。发布方：' },
+  siapkan:  { id: 'Menyiapkan...', en: 'Preparing...', zh: '正在生成...' },
+  gagal:    { id: 'Maaf, brosur gagal dibuat. Periksa koneksi internet lalu coba lagi.',
+              en: 'Sorry, the brochure could not be created. Please check your internet connection and try again.',
+              zh: '抱歉，宣传册生成失败。请检查网络连接后重试。' }
+};
+
+function bahasaBrosur() {
+  return (typeof BAHASA !== 'undefined' && BROSUR_TEKS.seri[BAHASA]) ? BAHASA : 'id';
+}
+function tb(kunci) {
+  const item = BROSUR_TEKS[kunci];
+  return item[bahasaBrosur()] || item.id;
+}
+
+/* ---------- HURUF MANDARIN ----------
+   Font bawaan jsPDF (Helvetica) tidak punya huruf Mandarin. Teks yang mengandung
+   huruf Mandarin digambar ke canvas memakai font Mandarin milik perangkat
+   pengunjung, lalu ditempel ke PDF sebagai gambar beresolusi tinggi. */
+const FONT_CJK = '"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans CJK SC","Noto Sans SC","Source Han Sans SC","WenQuanYi Micro Hei","WenQuanYi Zen Hei",sans-serif';
+const PX_PER_MM = 11;          // ketajaman gambar teks (±280 dpi)
+const PT_KE_MM = 0.3528;
+const JARAK_BARIS = 1.15;      // sama dengan jarak baris bawaan jsPDF
+const kanvasUkur = document.createElement('canvas').getContext('2d');
+
+function adaCJK(teks) { return /[\u2E80-\u9FFF\uF900-\uFAFF\uFF00-\uFFEF\u3000-\u303F]/.test(teks); }
+
+function fontCJK(pt, tebal, skala) {
+  return (tebal ? '700 ' : '400 ') + (pt * PT_KE_MM * skala) + 'px ' + FONT_CJK;
+}
+
+/* Pecah teks menjadi beberapa baris sesuai lebar (mm) */
+function pecah(doc, teks, lebar, pt, tebal) {
+  teks = String(teks);
+  if (!adaCJK(teks)) return doc.splitTextToSize(teks, lebar);
+  kanvasUkur.font = fontCJK(pt, tebal, 1);
+  const potong = teks.match(/[\u2E80-\u9FFF\uF900-\uFAFF\uFF00-\uFFEF\u3000-\u303F]|[^\s\u2E80-\u9FFF\uF900-\uFAFF\uFF00-\uFFEF\u3000-\u303F]+|\s+/g) || [];
+  const baris = [];
+  let kini = '';
+  potong.forEach(k => {
+    const coba = kini + k;
+    if (kini && kanvasUkur.measureText(coba).width > lebar) {
+      baris.push(kini.trim());
+      kini = k.trim() ? k : '';
+    } else {
+      kini = coba;
+    }
+  });
+  if (kini.trim()) baris.push(kini.trim());
+  return baris;
+}
+
+/* Tulis teks (string atau array baris). y = garis dasar baris pertama,
+   sama seperti doc.text. warna = [r,g,b]. */
+function tulis(doc, teks, x, y, pt, tebal, warna) {
+  const baris = Array.isArray(teks) ? teks : [String(teks)];
+  if (!baris.some(adaCJK)) {
+    doc.setFont('helvetica', tebal ? 'bold' : 'normal').setFontSize(pt).setTextColor(...warna);
+    doc.text(baris.length === 1 ? baris[0] : baris, x, y);
+    return;
+  }
+  const tinggiHuruf = pt * PT_KE_MM;
+  baris.forEach((b, i) => {
+    if (!b) return;
+    const yDasar = y + i * tinggiHuruf * JARAK_BARIS;
+    kanvasUkur.font = fontCJK(pt, tebal, 1);
+    const lebar = kanvasUkur.measureText(b).width;
+    const kanvas = document.createElement('canvas');
+    kanvas.width  = Math.ceil((lebar + 1) * PX_PER_MM);
+    kanvas.height = Math.ceil(tinggiHuruf * 1.4 * PX_PER_MM);
+    const ctx = kanvas.getContext('2d');
+    ctx.font = fontCJK(pt, tebal, PX_PER_MM);
+    ctx.fillStyle = 'rgb(' + warna.join(',') + ')';
+    ctx.textBaseline = 'alphabetic';
+    ctx.fillText(b, 0, tinggiHuruf * 1.08 * PX_PER_MM);
+    doc.addImage(kanvas, 'PNG', x, yDasar - tinggiHuruf * 1.08,
+                 kanvas.width / PX_PER_MM, kanvas.height / PX_PER_MM, undefined, 'FAST');
+  });
+}
+
 const NAVY  = [18, 58, 107];
 const HIJAU = [46, 125, 50];
 const ABU   = [110, 118, 129];
@@ -84,7 +173,7 @@ async function unduhBrosur(idProduk, tombol) {
   const base  = document.body.dataset.base || '';
 
   const teksAsli = tombol ? tombol.textContent : '';
-  if (tombol) { tombol.disabled = true; tombol.textContent = 'Menyiapkan...'; }
+  if (tombol) { tombol.disabled = true; tombol.textContent = tb('siapkan'); }
 
   try {
     await muatJsPDF();
@@ -112,8 +201,7 @@ async function unduhBrosur(idProduk, tombol) {
 
     doc.setFont('helvetica', 'bold').setFontSize(8).setTextColor(...NAVY);
     doc.text(bersih(COMPANY.nama), xTeks, y + 5);
-    doc.setFont('helvetica', 'normal').setFontSize(7).setTextColor(...ABU);
-    doc.text(bersih(COMPANY.tagline), xTeks, y + 9);
+    tulis(doc, bersih(tb('tagline')), xTeks, y + 9, 7, false, ABU);
 
     if (logoBrand) {
       const g = pasKotak(logoBrand, 210 - M - 24, y + 1, 24, 9);
@@ -125,11 +213,15 @@ async function unduhBrosur(idProduk, tombol) {
 
     /* ---------- LABEL KATEGORI ---------- */
     y += 7;
-    const labelKat = bersih(BROSUR_LABEL[p.kategori] || p.kategori).toUpperCase();
+    const bhs = bahasaBrosur();
+    const namaKat = (bhs !== 'id' && typeof tKategori === 'function' && tKategori(p.kategori))
+      || BROSUR_LABEL[p.kategori] || p.kategori;
+    const labelKat = bersih(namaKat).toUpperCase();
     doc.setFont('helvetica', 'bold').setFontSize(6.5);
-    const lebarTag = doc.getTextWidth(labelKat) + 5;
+    if (adaCJK(labelKat)) kanvasUkur.font = fontCJK(6.5, true, 1);
+    const lebarTag = (adaCJK(labelKat) ? kanvasUkur.measureText(labelKat).width : doc.getTextWidth(labelKat)) + 5;
     doc.setFillColor(...HIJAU).rect(M, y - 3.2, lebarTag, 4.8, 'F');
-    doc.setTextColor(255, 255, 255).text(labelKat, M + 2.5, y);
+    tulis(doc, labelKat, M + 2.5, y, 6.5, true, [255, 255, 255]);
 
     /* ---------- JUDUL ---------- */
       y += 11;
@@ -137,8 +229,7 @@ async function unduhBrosur(idProduk, tombol) {
     doc.text(bersih(p.nama), M, y);
 
     y += 6;
-    doc.setFont('helvetica', 'normal').setFontSize(9.5).setTextColor(...ABU);
-    doc.text('Seri ' + bersih(p.seri) + (brand ? '  |  ' + brand.nama : ''), M, y);
+    tulis(doc, tb('seri') + ' ' + bersih(p.seri) + (brand ? '  |  ' + brand.nama : ''), M, y, 9.5, false, ABU);
 
     /* ---------- FOTO + KEGUNAAN ---------- */
     y += 6;
@@ -157,33 +248,42 @@ async function unduhBrosur(idProduk, tombol) {
     const lebarGuna = 210 - M - xGuna;
     let yGuna = atasY + 4;
 
-    doc.setFont('helvetica', 'bold').setFontSize(9).setTextColor(...NAVY);
-    doc.text('KEGUNAAN', xGuna, yGuna);
+    tulis(doc, tb('guna'), xGuna, yGuna, 9, true, NAVY);
     doc.setDrawColor(221, 227, 234).setLineWidth(0.2);
     doc.line(xGuna, yGuna + 1.5, 210 - M, yGuna + 1.5);
     yGuna += 6;
 
-    const guna = (typeof teksList === 'function')
-      ? teksList(p.kegunaan) : (p.kegunaan?.id || []);
+    /* tList (i18n.js) selalu ada di semua halaman; teksList hanya di halaman
+       yang memuat filter-produk.js */
+    const guna = (typeof tList === 'function') ? tList(p.kegunaan)
+      : (typeof teksList === 'function') ? teksList(p.kegunaan)
+      : (p.kegunaan?.id || []);
 
     doc.setFont('helvetica', 'normal').setFontSize(8.2).setTextColor(40, 40, 40);
+    let gunaPenuh = false;
     guna.forEach(g => {
-      const baris = doc.splitTextToSize(bersih(g), lebarGuna - 4);
-      if (yGuna + baris.length * 3.6 > atasY + tinggiFoto) return;
+      if (gunaPenuh) return;
+      const baris = pecah(doc, bersih(g), lebarGuna - 4, 8.2, false);
+      if (yGuna + baris.length * 3.6 > atasY + tinggiFoto) { gunaPenuh = true; return; }
+      doc.setFont('helvetica', 'normal').setFontSize(8.2);
       doc.setTextColor(...HIJAU).text('•', xGuna, yGuna);
-      doc.setTextColor(40, 40, 40).text(baris, xGuna + 3.5, yGuna);
+      tulis(doc, baris, xGuna + 3.5, yGuna, 8.2, false, [40, 40, 40]);
       yGuna += baris.length * 3.6 + 1.6;
     });
 
     /* ---------- SPESIFIKASI ---------- */
     y = atasY + tinggiFoto + 9;
 
-    doc.setFont('helvetica', 'bold').setFontSize(9.5).setTextColor(...NAVY);
-    doc.text('SPESIFIKASI TEKNIS', M, y);
+    tulis(doc, tb('spek'), M, y, 9.5, true, NAVY);
     doc.setDrawColor(221, 227, 234).line(M, y + 1.5, 210 - M, y + 1.5);
     y += 6;
 
-    const spek   = p.spesifikasi || [];
+    /* Label & nilai spesifikasi diterjemahkan sama seperti di halaman produk */
+    const spek = (p.spesifikasi || []).map(sp => ({
+      label: (typeof tSpec === 'function') ? tSpec(sp.label) : sp.label,
+      nilai: (typeof tNilai === 'function' && typeof tField === 'function')
+        ? tNilai(tField(sp.nilai)) : (sp.nilai?.id || sp.nilai)
+    }));
     const tengah = Math.ceil(spek.length / 2);
     const kolom  = [spek.slice(0, tengah), spek.slice(tengah)];
 
@@ -197,7 +297,9 @@ async function unduhBrosur(idProduk, tombol) {
     /* Hitung tinggi minimum tiap baris dulu */
     doc.setFontSize(7.6);
     const tinggiDasar = kolom.map(isi => isi.map(s =>
-      Math.max(5.4, doc.splitTextToSize(bersih(s.nilai), lebarNilai).length * 3.4 + 2)
+      Math.max(5.4, Math.max(
+        pecah(doc, bersih(s.nilai), lebarNilai, 7.6, true).length,
+        pecah(doc, bersih(s.label), lebarLabel - 2, 7.6, false).length) * 3.4 + 2)
     ));
 
     /* Sisa ruang dibagi rata ke semua baris supaya tabel
@@ -212,7 +314,7 @@ async function unduhBrosur(idProduk, tombol) {
       let yk = y;
 
       isi.forEach((s, i) => {
-        const barisNilai = doc.splitTextToSize(bersih(s.nilai), lebarNilai);
+        const barisNilai = pecah(doc, bersih(s.nilai), lebarNilai, 7.6, true);
         const tinggi = tinggiDasar[k][i] + tambahan;
         const yTeks = yk + tinggi / 2 - (barisNilai.length - 1) * 1.7 + 1;
 
@@ -220,11 +322,8 @@ async function unduhBrosur(idProduk, tombol) {
           doc.setFillColor(248, 250, 252).rect(x, yk, lebarKolom, tinggi, 'F');
         }
 
-        doc.setFont('helvetica', 'normal').setFontSize(7.6).setTextColor(90, 98, 110);
-        doc.text(doc.splitTextToSize(bersih(s.label), lebarLabel - 2), x + 2, yTeks);
-
-        doc.setFont('helvetica', 'bold').setTextColor(30, 30, 30);
-        doc.text(barisNilai, x + lebarLabel + 1, yTeks);
+        tulis(doc, pecah(doc, bersih(s.label), lebarLabel - 2, 7.6, false), x + 2, yTeks, 7.6, false, [90, 98, 110]);
+        tulis(doc, barisNilai, x + lebarLabel + 1, yTeks, 7.6, true, [30, 30, 30]);
 
         doc.setDrawColor(230, 234, 239).setLineWidth(0.1);
         doc.line(x, yk + tinggi, x + lebarKolom, yk + tinggi);
@@ -237,28 +336,28 @@ async function unduhBrosur(idProduk, tombol) {
     const a = COMPANY.alamat;
     doc.setFillColor(...NAVY).rect(M, yKontak, LEBAR, 23, 'F');
 
-    doc.setFont('helvetica', 'bold').setFontSize(11).setTextColor(255, 255, 255);
-    doc.text('Tanya harga & ketersediaan unit', M + 5, yKontak + 7);
+    tulis(doc, tb('tanya'), M + 5, yKontak + 7, 11, true, [255, 255, 255]);
 
-    doc.setFont('helvetica', 'normal').setFontSize(7.6);
+    doc.setFont('helvetica', 'normal').setFontSize(7.6).setTextColor(255, 255, 255);
     doc.text('WhatsApp ' + COMPANY.telepon + '   |   ' + COMPANY.email, M + 5, yKontak + 12.5);
     doc.text(bersih(`${a.jalan}, ${a.kelurahan}, ${a.kota}, ${a.provinsi}`), M + 5, yKontak + 16.8);
-    doc.text(bersih(COMPANY.jamOperasional), M + 5, yKontak + 21);
+    const jam = (bhs !== 'id' && typeof t === 'function' && t('kontak.jamIsi')) || COMPANY.jamOperasional;
+    tulis(doc, bersih(jam), M + 5, yKontak + 21, 7.6, false, [255, 255, 255]);
 
     /* ---------- CATATAN ---------- */
-    doc.setFontSize(6).setTextColor(150, 155, 162);
-    doc.text(doc.splitTextToSize(
-      'Spesifikasi dapat berubah sewaktu-waktu tanpa pemberitahuan terlebih dahulu. ' +
-      'Diterbitkan oleh ' + bersih(COMPANY.nama) + '.', LEBAR), M, yKontak + 28);
+    doc.setFont('helvetica', 'normal').setFontSize(6);
+    tulis(doc, pecah(doc, tb('catatan') + bersih(COMPANY.nama) + '.', LEBAR, 6, false),
+          M, yKontak + 28, 6, false, [150, 155, 162]);
 
     /* ---------- SIMPAN ---------- */
     doc.save('brosur-' +
       (BROSUR_SLUG[p.kategori] || slugBrosur(p.kategori)) + '-' +
-      slugBrosur(p.brand) + '-' + slugBrosur(p.seri) + '.pdf');
+      slugBrosur(p.brand) + '-' + slugBrosur(p.seri) +
+      (bhs !== 'id' ? '-' + bhs : '') + '.pdf');
 
   } catch (err) {
     console.error('Gagal membuat brosur:', err);
-    alert('Maaf, brosur gagal dibuat. Periksa koneksi internet lalu coba lagi.');
+    alert(tb('gagal'));
 
   } finally {
     if (tombol) { tombol.disabled = false; tombol.textContent = teksAsli; }
