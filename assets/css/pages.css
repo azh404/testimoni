@@ -189,6 +189,9 @@
   object-fit: contain;
   transition: transform var(--transition);
 }
+/* Logo EAVision lebih tinggi (ada gambar burung), jadi diperkecil
+   agar tinggi hurufnya setara logo Zoomlion & VectorAgr */
+.brand-card-link__logo img[src*="eavision"] { max-height: 42px; }
 .brand-card-link:hover .brand-card-link__logo img { transform: scale(1.05); }
 
 .brand-card-link__desc {
