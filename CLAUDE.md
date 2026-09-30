@@ -87,7 +87,7 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   Penggantinya: "Distributor Resmi", "Spesifikasi Lengkap", "Tanya Cepat via WhatsApp".
   Jangan menulis klaim servis/sparepart lagi. Tips umum di artikel ("pastikan suku cadang
   mudah didapat") boleh tetap.
-- Hero beranda beranimasi: foto zoom+geser pelan (Ken Burns), judul/teks muncul naik saat
+- Hero beranda beranimasi: foto memudar TANPA zoom (pengguna tidak mau zoom), judul/teks muncul naik saat
   dibuka, indikator bawah terisi seperti progress bar (3 detik = DURASI di slider.js, samakan dengan heroProgres di pages.css).
   Slider produk di halaman merek (filter-produk.js) sama: 3 detik, masuk dari kanan, zoom pelan,
   indikator progres. Hero beranda juga punya efek sinematik CSS (.hero__cahaya, .hero__partikel,
