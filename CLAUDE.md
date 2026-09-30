@@ -99,6 +99,8 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   5 dtk, ADA watermark "KlingAI 3.0" — dipasang apa adanya atas permintaan pengguna; jangan
   dipotong/ditutup, ganti bila ada versi bersih); 3 lainnya menunggu pengguna (prompt Gemini sudah diberikan). Chromium sandbox tak bisa H.264 — uji
   pakai salinan .webm lewat page.route.
+- Hero beranda di layar ≤768px: video/foto utuh 16:9 di atas (tidak terpotong), judul & teks di
+  bawahnya (responsive.css bagian akhir); efek cahaya dimatikan di layar kecil.
 - CAPTCHA tidak dipasang (tidak ada form yang mengirim ke server; form kontak membuka WA).
 
 ## Belum selesai / menunggu pengguna
