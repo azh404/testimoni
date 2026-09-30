@@ -280,11 +280,9 @@
     aspect-ratio: 16 / 9;
     height: auto;
   }
-  .hero__cahaya { display: none; }
   .hero__overlay {
     background: linear-gradient(180deg, rgba(10, 22, 40, 0) 55%, var(--color-dark) 100%);
   }
-  .hero__overlay::after { display: none; }
   .hero__content {
     max-width: none;
     padding-block: var(--sp-5) var(--sp-5);
