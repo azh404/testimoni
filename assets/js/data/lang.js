@@ -355,6 +355,7 @@ const TEKS = {
   'banding.catatan':   { id: 'Baris yang disorot menandakan spesifikasi yang berbeda. Spesifikasi dapat berubah sesuai kebijakan pabrikan; hubungi kami untuk data terbaru.', en: 'Highlighted rows mark specifications that differ. Specifications may change according to the manufacturer; contact us for the latest data.', zh: '高亮行表示规格不同。规格可能根据厂商政策变更，请联系我们获取最新数据。' },
   'nav.bandingkanSub': { id: 'Spesifikasi berdampingan', en: 'Side-by-side specs', zh: '规格并排对比' },
   'footer.faq':        { id: 'FAQ', en: 'FAQ', zh: '常见问题' },
+  'footer.tautan':     { id: 'Tautan Cepat', en: 'Quick Links', zh: '快速链接' },
   'footer.hak':        { id: 'Hak cipta dilindungi.', en: 'All rights reserved.', zh: '版权所有。' },
   'footer.kamus':      { id: 'Kamus Istilah Pertanian', en: 'Agricultural Glossary', zh: '农业术语词典' },
   'footer.bandingkan': { id: 'Bandingkan Produk', en: 'Compare Products', zh: '产品对比' },

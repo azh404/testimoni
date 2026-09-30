@@ -55,33 +55,25 @@
         </div>
       </div>
 
-      <!-- Kolom 3: Kontak cepat -->
+      <!-- Kolom 3: Tautan cepat -->
       <div class="footer__col">
-        <h4 class="footer__title" data-i18n="footer.tanya">Punya Pertanyaan?</h4>
-        <p class="footer__text" data-i18n="footer.tanyaDesc">
-          Sampaikan kebutuhan unit Anda kepada tim kami. Kami siap membantu dari
-          pemilihan spesifikasi hingga penawaran harga.
-        </p>
-        <a href="#" class="btn btn--accent" data-wa-link data-i18n="footer.btnTanya"
-           data-wa-pesan="Halo, saya ingin bertanya mengenai produk mesin pertanian.">
-          Hubungi via WhatsApp
-        </a>
+        <h4 class="footer__title" data-i18n="footer.tautan">Tautan Cepat</h4>
+        <nav class="footer__seo" aria-label="Tautan cepat">
+          <a href="{{base}}jual-traktor-jakarta.html" data-i18n="footer.jualTraktor">Jual Traktor Jakarta</a>
+          <a href="{{base}}jual-drone-pertanian-jakarta.html" data-i18n="footer.jualDrone">Jual Drone Pertanian Jakarta</a>
+          <a href="{{base}}jual-mesin-pertanian-jakarta.html" data-i18n="footer.jualMesin">Jual Mesin Pertanian Jakarta</a>
+          <a href="{{base}}kalkulator.html" data-i18n="footer.kalkulator">Kalkulator Pertanian</a>
+          <a href="{{base}}bandingkan.html" data-i18n="footer.bandingkan">Bandingkan Produk</a>
+          <a href="{{base}}kamus-pertanian.html" data-i18n="footer.kamus">Kamus Istilah Pertanian</a>
+          <a href="{{base}}faq.html" data-i18n="footer.faq">FAQ</a>
+        </nav>
       </div>
 
     </div>
   </div>
 
   <div class="footer__bottom">
-    <div class="container footer__bottom-inner">
-      <nav class="footer__seo" aria-label="Tautan cepat">
-        <a href="{{base}}jual-traktor-jakarta.html" data-i18n="footer.jualTraktor">Jual Traktor Jakarta</a>
-        <a href="{{base}}jual-drone-pertanian-jakarta.html" data-i18n="footer.jualDrone">Jual Drone Pertanian Jakarta</a>
-        <a href="{{base}}jual-mesin-pertanian-jakarta.html" data-i18n="footer.jualMesin">Jual Mesin Pertanian Jakarta</a>
-        <a href="{{base}}kalkulator.html" data-i18n="footer.kalkulator">Kalkulator Pertanian</a>
-        <a href="{{base}}bandingkan.html" data-i18n="footer.bandingkan">Bandingkan Produk</a>
-        <a href="{{base}}kamus-pertanian.html" data-i18n="footer.kamus">Kamus Istilah Pertanian</a>
-        <a href="{{base}}faq.html" data-i18n="footer.faq">FAQ</a>
-      </nav>
+    <div class="container">
       <p class="footer__copy">
         &copy; <span id="tahunSekarang"></span> PT Diesel Agri Sukses Sejahtera.
         <span data-i18n="footer.hak">Hak cipta dilindungi.</span>

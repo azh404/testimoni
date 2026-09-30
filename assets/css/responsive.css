@@ -132,7 +132,6 @@
   .footer__grid { grid-template-columns: 1fr; gap: var(--sp-6); }
   .footer__col--center { text-align: left; }
   .footer__icons { justify-content: flex-start; }
-  .footer__seo { grid-template-columns: repeat(3, 1fr); }
 
   /* --- Modal --- */
   .modal__media { padding: var(--sp-5); }
@@ -141,16 +140,9 @@
 
 /* ===== MOBILE (≤ 640px) ===== */
 @media (max-width: 640px) {
-  /* --- Footer bawah: tautan jadi 2 kolom, beri ruang untuk tombol WA --- */
+  /* --- Footer bawah: beri ruang untuk tombol WA --- */
   .footer__bottom { padding-bottom: 96px; }
-  .footer__seo {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--sp-3) var(--sp-4);
-    width: 100%;
-  }
-  .footer__seo a { white-space: normal; }
-  .footer__copy { text-align: center; }
+  .footer__seo { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--sp-3) var(--sp-5); }
 
 
   :root {
