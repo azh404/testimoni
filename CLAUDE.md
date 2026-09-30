@@ -31,7 +31,8 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   `bandingkan`, `kamus-pertanian`, `faq`, `404`, 6 halaman kata kunci `jual-*`,
   `traktor-kebun-sawit`, `combine-harvester-padi`, `drone-pertanian-sawah`),
   `produk/*.html` (62 halaman detail), `artikel/*.html`, `pages/produk/<brand>.html`.
-- `partials/navbar.html` & `footer.html` dimuat oleh `main.js` (`{{base}}` = `data-base`).
+- `partials/navbar.txt` & `footer.txt` (isi HTML) dimuat oleh `main.js` (`{{base}}` = `data-base`).
+  Sengaja `.txt`: Live Server VS Code menyisipkan script ke file `.html` dan memotong akhirnya.
 - `assets/js/config.js` — data perusahaan (satu sumber: nomor, email, jam kerja, GA).
 - `assets/js/data/` — `brands.js` (BRANDS, KATEGORI, ALT_KATEGORI, `PRODUK = []`),
   `produk-{zoomlion,eavision,vectoragr}.js`, `lang.js` (semua teks ID/EN/ZH),
