@@ -6,7 +6,7 @@
 const JSPDF_CDN =
   'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
 
-const BROSUR_LOGO = 'assets/images/logo/logo.png';
+const BROSUR_LOGO = 'assets/images/logo/logo-dass.png';   // transparan, tanpa kotak
 /* Watermark super transparan di tengah halaman brosur */
 const BROSUR_WATERMARK = 'assets/images/logo/logo-dass.png';
 
