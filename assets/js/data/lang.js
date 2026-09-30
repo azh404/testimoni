@@ -58,9 +58,9 @@ const TEKS = {
     zh: '农业领域的可信赖伙伴'
   },
   'tentang.paragraf': {
-    id: 'Berbasis di Jakarta Timur, kami berfokus pada penyediaan alat berat dan mesin pertanian berkualitas. Kami tidak berhenti pada penjualan unit — dukungan purna jual adalah bagian utama dari layanan kami',
-    en: 'Based in East Jakarta, we focus on supplying quality heavy and agricultural machinery. Our role does not end at the sale — after-sales support is central to what we offer',
-    zh: '公司位于东雅加达，专注于提供优质的重型及农业机械。我们的服务不止于销售，售后支持同样是我们的核心'
+    id: 'Berbasis di Jakarta Timur, kami berfokus pada penyediaan alat berat dan mesin pertanian berkualitas. Kami tidak sekadar menjual unit — kami membantu Anda memilih mesin yang benar-benar sesuai kebutuhan lahan',
+    en: 'Based in East Jakarta, we focus on supplying quality heavy and agricultural machinery. We do more than sell machines — we help you choose the one that truly fits your land',
+    zh: '公司位于东雅加达，专注于提供优质的重型及农业机械。我们不仅销售机械，更帮助您选择真正适合您土地的机型'
   },
   'tentang.poin1': {
     id: 'Produk dari prinsipal berskala global dengan standar mutu internasional',
@@ -68,14 +68,14 @@ const TEKS = {
     zh: '来自全球厂商、符合国际质量标准的产品'
   },
   'tentang.poin2': {
-    id: 'Ketersediaan sparepart asli dan jaringan pasokan yang terjaga',
-    en: 'Genuine spare parts with a reliable supply network',
-    zh: '原厂备件供应，供应链稳定可靠'
+    id: 'Distributor resmi Zoomlion, EAVision, dan VectorAgr di Jakarta',
+    en: 'Authorised distributor of Zoomlion, EAVision, and VectorAgr in Jakarta',
+    zh: '雅加达中联重科、EAVision 和 VectorAgr 授权经销商'
   },
   'tentang.poin3': {
-    id: 'Tim teknisi terlatih untuk instalasi, perawatan, dan perbaikan',
-    en: 'Trained technicians for installation, maintenance, and repair',
-    zh: '专业技师团队，提供安装、保养与维修服务'
+    id: 'Brosur dan spesifikasi teknis lengkap untuk setiap unit',
+    en: 'Brochures and full technical specifications for every unit',
+    zh: '每款机型均提供宣传册和完整技术参数'
   },
   'tentang.poin4': {
     id: 'Konsultasi kebutuhan unit sesuai skala dan jenis lahan',
@@ -105,10 +105,10 @@ const TEKS = {
 
   'unggul.1.judul': { id: 'Produk Bergaransi', en: 'Warranted Products', zh: '正品保修' },
   'unggul.1.teks':  { id: 'Unit resmi dari prinsipal, disertai garansi dan dokumen lengkap', en: 'Official units from the principal, with warranty and complete documentation', zh: '厂商正品机型，配备保修与完整文件' },
-  'unggul.2.judul': { id: 'Layanan Servis', en: 'Service Support', zh: '维修服务' },
-  'unggul.2.teks':  { id: 'Teknisi siap menangani perawatan berkala hingga perbaikan di lokasi', en: 'Technicians ready for scheduled maintenance and on-site repairs', zh: '技师提供定期保养及现场维修' },
-  'unggul.3.judul': { id: 'Sparepart Tersedia', en: 'Spare Parts Available', zh: '备件供应' },
-  'unggul.3.teks':  { id: 'Stok suku cadang asli untuk meminimalkan waktu unit berhenti operasi', en: 'Genuine parts in stock to minimise machine downtime', zh: '原厂备件库存充足，减少停机时间' },
+  'unggul.2.judul': { id: 'Distributor Resmi', en: 'Authorised Distributor', zh: '授权经销商' },
+  'unggul.2.teks':  { id: 'Unit asli dari Zoomlion, EAVision, dan VectorAgr, dijual langsung oleh distributor resminya', en: 'Genuine Zoomlion, EAVision, and VectorAgr units, sold directly by their authorised distributor', zh: '中联重科、EAVision 和 VectorAgr 正品机型，由授权经销商直接销售' },
+  'unggul.3.judul': { id: 'Spesifikasi Lengkap', en: 'Full Specifications', zh: '参数齐全' },
+  'unggul.3.teks':  { id: 'Data teknis, brosur PDF, dan fitur bandingkan unit tersedia langsung di website', en: 'Technical data, PDF brochures, and a unit comparison tool right on our website', zh: '网站直接提供技术参数、PDF 宣传册和机型对比功能' },
   'unggul.4.judul': { id: 'Konsultasi Teknis', en: 'Technical Consultation', zh: '技术咨询' },
   'unggul.4.teks':  { id: 'Kami bantu menentukan unit yang sesuai luas lahan dan jenis pekerjaan', en: 'We help you choose the right unit for your land size and job type', zh: '协助您根据地块面积与作业类型选择合适机型' },
 
@@ -140,9 +140,9 @@ const TEKS = {
   'footer.kontak':      { id: 'Hubungi Kami',      en: 'Contact Us',       zh: '联系我们' },
   'footer.tanya':       { id: 'Punya Pertanyaan?', en: 'Have a Question?', zh: '有疑问吗？' },
   'footer.tanyaDesc': {
-    id: 'Sampaikan kebutuhan unit Anda kepada tim kami. Kami siap membantu dari pemilihan spesifikasi hingga dukungan purna jual',
-    en: 'Tell our team what you need. We can help from specification selection through to after-sales support',
-    zh: '请告知我们您的需求。从选型到售后，我们全程为您提供支持'
+    id: 'Sampaikan kebutuhan unit Anda kepada tim kami. Kami siap membantu dari pemilihan spesifikasi hingga penawaran harga',
+    en: 'Tell our team what you need. We can help from choosing specifications through to a price quotation',
+    zh: '请告知我们您的需求。从选型到报价，我们全程为您提供支持'
   },
   'footer.btnTanya': { id: 'Hubungi via WhatsApp', en: 'Contact via WhatsApp', zh: '通过 WhatsApp 联系' },
   'footer.jualTraktor': { id: 'Jual Traktor Jakarta',         en: 'Tractors for Sale in Jakarta',       zh: '雅加达拖拉机销售' },
@@ -178,9 +178,9 @@ const TEKS = {
   'zl.eyebrow': { id: 'Agriculture Machinery', en: 'Agriculture Machinery', zh: '农业机械' },
   'zl.h1':      { id: 'Traktor & Mesin Pertanian di Jakarta', en: 'Tractors & Agricultural Machinery in Jakarta', zh: '雅加达拖拉机与农业机械' },
   'zl.hero': {
-    id: 'Lini lengkap mesin pertanian Zoomlion — dari traktor hybrid, combine harvester, mesin tanam padi, pemanen tebu, mesin pengering, hingga baler dan implement. Didukung ketersediaan sparepart dan layanan servis',
-    en: 'The complete Zoomlion agricultural machinery line — from hybrid tractors and combine harvesters to rice transplanters, sugarcane harvesters, dryers, balers and implements. Backed by spare part availability and service support',
-    zh: '中联重科农业机械全系列产品——从混合动力拖拉机、联合收割机到水稻插秧机、甘蔗收割机、烘干机、打捆机及农机具。提供备件与维修支持'
+    id: 'Lini lengkap mesin pertanian Zoomlion — dari traktor hybrid, combine harvester, mesin tanam padi, pemanen tebu, mesin pengering, hingga baler dan implement. Dijual langsung oleh distributor resmi',
+    en: 'The complete Zoomlion agricultural machinery line — from hybrid tractors and combine harvesters to rice transplanters, sugarcane harvesters, dryers, balers and implements. Sold directly by the authorised distributor',
+    zh: '中联重科农业机械全系列产品——从混合动力拖拉机、联合收割机到水稻插秧机、甘蔗收割机、烘干机、打捆机及农机具。由授权经销商直接销售'
   },
   'zl.tipeUnit': { id: 'Tipe Unit', en: 'Machine Types', zh: '机型' },
   'zl.kategori': { id: 'Kategori',  en: 'Categories',    zh: '类别' },
@@ -219,9 +219,9 @@ const TEKS = {
   'kontak.eyebrow': { id: 'Hubungi Kami',             en: 'Contact Us',            zh: '联系我们' },
   'kontak.judul':   { id: 'Sampaikan Kebutuhan Anda', en: 'Tell Us What You Need', zh: '告诉我们您的需求' },
   'kontak.desc': {
-    id: 'Tim kami siap membantu dari pemilihan spesifikasi unit, penawaran harga, hingga dukungan purna jual',
-    en: 'Our team is ready to help from specification selection and quotation through to after-sales support',
-    zh: '我们的团队将为您提供从选型、报价到售后的全程支持'
+    id: 'Tim kami siap membantu dari pemilihan spesifikasi unit, brosur, hingga penawaran harga',
+    en: 'Our team is ready to help from specification selection and brochures through to a price quotation',
+    zh: '我们的团队将为您提供从选型、宣传册到报价的全程支持'
   },
   'kontak.alamat':    { id: 'Alamat Kantor',   en: 'Office Address',  zh: '办公地址' },
   'kontak.telepon':   { id: 'Telepon',         en: 'Phone',           zh: '电话' },
@@ -248,7 +248,7 @@ const TEKS = {
   'form.phOpsional': { id: 'Opsional',              en: 'Optional',               zh: '选填' },
   'form.phPesan':    { id: 'Sampaikan kebutuhan Anda', en: 'Tell us what you need', zh: '请描述您的需求' },
   'form.pilih':      { id: '— Pilih —',             en: '— Select —',             zh: '— 请选择 —' },
-  'form.servis':     { id: 'Layanan Servis',        en: 'Service',                zh: '维修服务' },
+  'form.lain':       { id: 'Lainnya',               en: 'Other',                  zh: '其他' },
 
   /* ===== HALAMAN TENTANG KAMI ===== */
   'tt.eyebrow': { id: 'Tentang Kami', en: 'About Us', zh: '关于我们' },

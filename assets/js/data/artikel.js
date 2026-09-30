@@ -50,7 +50,7 @@ const ARTIKEL = [
       '## Kesimpulan',
       'Luangkan satu atau dua hari untuk memeriksa traktor sebelum musim tanam. Selalu ikuti jadwal perawatan di buku manual dan gunakan suku cadang asli agar traktor tetap awet.',
       '---',
-      '<strong>Butuh servis atau suku cadang traktor?</strong> PT Diesel Agri Sukses Sejahtera menyediakan suku cadang asli dan layanan perawatan untuk <a href="pages/produk/zoomlion.html">traktor Zoomlion</a>.',
+      '<strong>Sedang mencari traktor baru?</strong> PT Diesel Agri Sukses Sejahtera adalah distributor resmi <a href="pages/produk/zoomlion.html">traktor Zoomlion</a>. Hubungi kami untuk konsultasi dan penawaran harga.',
       'Butuh saran? <a href="kontak.html">Hubungi kami</a>.',
       'Sumber: <a href="https://www.cnnindonesia.com/teknologi/20260814073522-641-1392105/bmkg-prediksi-musim-hujan-2026-dimulai-pada-oktober" target="_blank" rel="noopener">CNN Indonesia</a>, <a href="https://www.idntimes.com/news/indonesia/bmkg-awal-musim-hujan-terjadi-secara-bertahap-mulai-november-2026-00-jkxzp-bslt00" target="_blank" rel="noopener">IDN Times</a>, <a href="https://ekonomi.republika.co.id/berita/tgehpp368/jaga-produksi-padi-kementan-gencarkan-percepatan-tanam-di-10-provinsi-sentra" target="_blank" rel="noopener">Republika</a>, <a href="https://www.pertanian.go.id/home/?show=news&act=view&id=7865" target="_blank" rel="noopener">Kementerian Pertanian</a>.'
     ]
@@ -91,7 +91,7 @@ const ARTIKEL = [
       '## Kesimpulan',
       'Kemarau panjang menuntut perawatan drone yang lebih disiplin. Baterai yang dirawat dengan baik lebih awet, dan sistem semprot yang bersih membuat hasil penyemprotan tetap merata.',
       '---',
-      '<strong>Butuh baterai, suku cadang, atau servis drone?</strong> PT Diesel Agri Sukses Sejahtera adalah distributor resmi drone <a href="pages/produk/eavision.html">EAVision</a> dan <a href="pages/produk/vectoragr.html">VectorAgr</a>.',
+      '<strong>Sedang mencari drone pertanian?</strong> PT Diesel Agri Sukses Sejahtera adalah distributor resmi drone <a href="pages/produk/eavision.html">EAVision</a> dan <a href="pages/produk/vectoragr.html">VectorAgr</a>.',
       'Butuh saran? <a href="kontak.html">Hubungi kami</a>.',
       'Sumber: <a href="https://www.bmkg.go.id/siaran-pers/bmkg-puncak-musim-kemarau-agustus-2026-perkuat-kesiapan-hadapi-dampak-el-nino" target="_blank" rel="noopener">BMKG</a>, <a href="https://www.kompas.tv/info-publik/678860/bmkg-kemarau-2026-lebih-panjang-dan-kering-akibat-el-nino-puncaknya-agustus-september" target="_blank" rel="noopener">Kompas TV</a>, <a href="https://jsp.co.id/5-tips-cara-merawat-baterai-drone/" target="_blank" rel="noopener">Jakarta School of Photography</a>, <a href="https://dorangadget.com/merawat-drone-pertanian/" target="_blank" rel="noopener">Doran Gadget</a>, <a href="https://jalatani.id/waktu-terbaik-penyemprotan-padi/" target="_blank" rel="noopener">Jalatani</a>, <a href="https://mplk.politanikoe.ac.id/index.php/pestisida-aplikasinya/147-perlintan/pestisida-pertanian/1053-waktu-aplikasi-pestisida" target="_blank" rel="noopener">Politeknik Pertanian Negeri Kupang</a>.'
     ]
@@ -127,7 +127,7 @@ const ARTIKEL = [
       '## Kesimpulan',
       'Semakin sering combine harvester dipakai, semakin penting perawatan rutinnya. Beberapa menit untuk membersihkan dan memeriksa mesin setelah bekerja jauh lebih murah daripada kerusakan di tengah musim panen.',
       '---',
-      '<strong>Butuh suku cadang atau servis combine harvester?</strong> PT Diesel Agri Sukses Sejahtera melayani suku cadang asli dan perawatan combine harvester Zoomlion seperti <a href="produk/combine-harvester-zoomlion-zl88.html">ZL88</a> dan <a href="produk/combine-harvester-zoomlion-zl105.html">ZL105</a>.',
+      '<strong>Sedang mencari combine harvester?</strong> PT Diesel Agri Sukses Sejahtera adalah distributor resmi combine harvester Zoomlion seperti <a href="produk/combine-harvester-zoomlion-zl88.html">ZL88</a> dan <a href="produk/combine-harvester-zoomlion-zl105.html">ZL105</a>.',
       'Butuh saran? <a href="kontak.html">Hubungi kami</a>.',
       'Sumber: <a href="https://ekonomi.republika.co.id/berita/tgehpp368/jaga-produksi-padi-kementan-gencarkan-percepatan-tanam-di-10-provinsi-sentra" target="_blank" rel="noopener">Republika</a>, <a href="https://www.pertanian.go.id/home/?show=news&act=view&id=7865" target="_blank" rel="noopener">Kementerian Pertanian</a>, <a href="https://pustaka.setjen.pertanian.go.id/info-literasi/info-teknolgi-combine-harvester-mesin-panen-padi-multifungsi" target="_blank" rel="noopener">Pustaka Kementan</a>, <a href="https://niagakita.id/2020/10/09/fungsi-dan-cara-merawat-combine-harvester/" target="_blank" rel="noopener">Niagakita</a>, <a href="https://www.nongyoumachinery.com/id/blog/maintenance-and-care-for-soybean-harvesters-how-to-extend-machine-lifespan" target="_blank" rel="noopener">Nongyou Machinery</a>.'
     ]
@@ -241,7 +241,7 @@ const ARTIKEL = [
       '## Kesimpulan',
       'Target swasembada gula membutuhkan peningkatan produktivitas di semua tahap, dari benih hingga panen. Di tengah keterbatasan tenaga tebang, mesin panen tebu menjadi investasi yang semakin relevan bagi perkebunan dan pabrik gula.',
       '---',
-      '<strong>Sedang merencanakan mekanisasi panen tebu?</strong> PT Diesel Agri Sukses Sejahtera adalah distributor resmi Zoomlion, lengkap dengan dukungan suku cadang dan servis.',
+      '<strong>Sedang merencanakan mekanisasi panen tebu?</strong> PT Diesel Agri Sukses Sejahtera adalah distributor resmi Zoomlion. Hubungi kami untuk konsultasi dan penawaran harga.',
       'Butuh saran? <a href="kontak.html">Hubungi kami</a>.',
       'Sumber: <a href="https://www.antaranews.com/berita/5524912/mentan-upayakan-peremajaan-tebu-100-ribu-hektare-per-tahun" target="_blank" rel="noopener">ANTARA News</a>, <a href="https://pertanian.go.id/?act=view&id=8098&show=news" target="_blank" rel="noopener">Kementerian Pertanian</a>, <a href="https://investortrust.id/macro/70432/panen-raya-tebu-di-banyuwangi-jadi-momentum-gibran-wujudkan-swasembada-gula-2026" target="_blank" rel="noopener">Investortrust</a>, <a href="https://timesindonesia.co.id/peristiwa-nasional/585117/antara-ambisi-swasembada-gula-dan-pahitnya-ketergantungan-impor" target="_blank" rel="noopener">TIMES Indonesia</a>, <a href="https://www.prnewswire.com/news-releases/zoomlion-accelerates-global-agricultural-machinery-deployment-with-hybrid-and-intelligent-product-advances-302785424.html" target="_blank" rel="noopener">PR Newswire</a>.'
     ]
@@ -479,7 +479,7 @@ const ARTIKEL = [
       '## Kesimpulan',
       'Dorongan sertifikasi SNI menunjukkan bahwa drone pertanian sudah dianggap alat kerja utama, bukan sekadar teknologi percobaan. Bagi petani dan perusahaan perkebunan, ini saat yang tepat untuk memilih drone dengan lebih cermat.',
       '---',
-      '<strong>Sedang mencari drone pertanian?</strong> PT Diesel Agri Sukses Sejahtera adalah distributor resmi drone <a href="pages/produk/eavision.html">EAVision</a> dan <a href="pages/produk/vectoragr.html">VectorAgr</a>, lengkap dengan dukungan suku cadang dan servis.',
+      '<strong>Sedang mencari drone pertanian?</strong> PT Diesel Agri Sukses Sejahtera adalah distributor resmi drone <a href="pages/produk/eavision.html">EAVision</a> dan <a href="pages/produk/vectoragr.html">VectorAgr</a>. Hubungi kami untuk konsultasi dan penawaran harga.',
       'Butuh saran? <a href="kontak.html">Hubungi kami</a>.',
       'Sumber: <a href="https://koran-jakarta.com/2026-04-20/kemenperin-perkuat-standar-drone-pertanian" target="_blank" rel="noopener">Koran Jakarta</a>, <a href="https://mcinews.id/2026/04/20/kemenperin-dorong-standarisasi-drone-pertanian-berbasis-sni/" target="_blank" rel="noopener">MCINEWS.ID</a>, <a href="https://exhibition.jiexpo.com/inagritech-2026-tampilkan-ragam-alat-dan-teknologi-pertanian-termutakhir/" target="_blank" rel="noopener">JIExpo</a>, <a href="https://matakita.co/2026/07/26/didukung-kementerian-pertanian-drone-inovasi-unhas-mulai-diperluas-untuk-modernisasi-pertanian-nasional/" target="_blank" rel="noopener">MataKita</a>.'
     ]
@@ -524,8 +524,8 @@ const ARTIKEL = [
       '## Kesimpulan',
       'Memilih ban traktor yang tepat bukan hanya soal harga, tapi juga kesesuaian dengan jenis lahan dan kebutuhan operasional. Dengan pemilihan ban yang tepat, traktor akan bekerja lebih efisien, tahan lama, dan aman digunakan di segala kondisi.',
       '---',
-      '<strong>Butuh alat berat dengan suku cadang berkualitas?</strong> Di Diesel Agri Sukses Sejahtera semua ada.',
-      'Kami merupakan distributor resmi alat berat pertanian Zoomlion yang menyediakan berbagai produk alat berat, mulai dari perawatan, suku cadang, hingga inspeksi mesin lengkap.',
+      '<strong>Butuh mesin pertanian yang tepat untuk lahan Anda?</strong> Tanyakan ke Diesel Agri Sukses Sejahtera.',
+      'Kami merupakan distributor resmi alat berat pertanian Zoomlion dengan pilihan traktor, combine harvester, mesin tanam, hingga mesin pengering. Tim kami siap membantu memilih unit yang sesuai.',
       'Butuh saran? <a href="kontak.html">Hubungi kami</a>.'
     ]
   }

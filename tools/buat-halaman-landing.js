@@ -39,20 +39,20 @@ const UI = {
 const KEUNGGULAN = {
   id: [
     ['Distributor Resmi', 'Unit resmi dari prinsipal, disertai garansi dan dokumen lengkap.'],
-    ['Sparepart Tersedia', 'Stok suku cadang asli untuk meminimalkan waktu unit berhenti operasi.'],
-    ['Layanan Servis', 'Teknisi siap menangani perawatan berkala hingga perbaikan di lokasi.'],
+    ['Spesifikasi Lengkap', 'Data teknis, brosur PDF, dan fitur bandingkan unit tersedia langsung di website.'],
+    ['Tanya Cepat via WhatsApp', 'Tanya harga, minta brosur, atau konsultasi langsung dengan tim kami.'],
     ['Konsultasi Teknis', 'Kami bantu menentukan unit yang sesuai luas lahan dan jenis pekerjaan.']
   ],
   en: [
     ['Authorised Distributor', 'Genuine units from the principal, with warranty and complete documents.'],
-    ['Spare Parts Available', 'Genuine spare parts in stock to minimise downtime.'],
-    ['Service Support', 'Technicians ready for scheduled maintenance and on-site repairs.'],
+    ['Full Specifications', 'Technical data, PDF brochures, and a unit comparison tool right on our website.'],
+    ['Quick Answers on WhatsApp', 'Ask for prices, request a brochure, or talk directly with our team.'],
     ['Technical Consultation', 'We help you choose the unit that fits your land and type of work.']
   ],
   zh: [
     ['授权经销商', '原厂正品，提供保修及完整文件。'],
-    ['配件充足', '原厂配件库存充足，最大限度减少停机时间。'],
-    ['维修服务', '技术人员可提供定期保养和现场维修。'],
+    ['参数齐全', '网站直接提供技术参数、PDF 宣传册和机型对比功能。'],
+    ['WhatsApp 快速咨询', '询价、索取宣传册或直接与我们的团队沟通。'],
     ['技术咨询', '帮助您根据土地面积和作业类型选择合适的机型。']
   ]
 };
@@ -72,12 +72,12 @@ const HALAMAN = [
     keyword: 'jual traktor jakarta, traktor jakarta, harga traktor, traktor zoomlion, dealer traktor jakarta, traktor sawah, traktor hybrid',
     id: {
       judulTab: 'Jual Traktor Jakarta | Traktor Zoomlion Resmi & Bergaransi | DASS',
-      desk: 'Jual traktor di Jakarta: traktor roda empat dan traktor hybrid Zoomlion berbagai kelas tenaga, lengkap dengan implement, sparepart asli, dan layanan servis.',
+      desk: 'Jual traktor di Jakarta: traktor roda empat dan traktor hybrid Zoomlion berbagai kelas tenaga, lengkap dengan implement dan konsultasi pemilihan unit.',
       h1: 'Jual Traktor di Jakarta',
       sub: 'Traktor roda empat dan traktor hybrid Zoomlion, langsung dari distributor resmi di Jakarta Timur.',
       intro: [
         'Mencari traktor di Jakarta? PT Diesel Agri Sukses Sejahtera (DASS) adalah distributor resmi traktor Zoomlion yang berlokasi di Cakung, Jakarta Timur. Kami menyediakan traktor untuk sawah, perkebunan, dan lahan kering, dari kelas kecil hingga traktor hybrid bertenaga besar.',
-        'Setiap unit didukung sparepart asli, layanan servis, dan konsultasi teknis untuk membantu Anda memilih traktor yang sesuai luas lahan dan jenis pekerjaan.'
+        'Tim kami memberikan konsultasi teknis dan brosur lengkap untuk membantu Anda memilih traktor yang sesuai luas lahan dan jenis pekerjaan.'
       ],
       kenapa: 'Kenapa Membeli Traktor di DASS?',
       produk: 'Pilihan Traktor Zoomlion',
@@ -85,7 +85,6 @@ const HALAMAN = [
         ['Di mana tempat membeli traktor di Jakarta?', `Anda bisa membeli traktor Zoomlion di PT Diesel Agri Sukses Sejahtera, Jalan River Garden Boulevard No. 19B, Cakung Timur, Jakarta Timur. Hubungi kami lewat WhatsApp ${TELEPON} untuk konsultasi dan penawaran harga.`],
         ['Berapa harga traktor Zoomlion?', 'Harga traktor tergantung model, kelas tenaga, dan implement yang dipilih. Hubungi tim kami untuk mendapatkan penawaran harga terbaru.'],
         ['Traktor apa yang cocok untuk sawah?', 'Pilih traktor dengan tenaga dan ukuran yang sesuai luas sawah, serta ban yang cocok untuk lahan berlumpur. Tim kami siap membantu memilih unit yang tepat.'],
-        ['Apakah tersedia sparepart dan servis traktor?', 'Ya. Kami menyediakan sparepart asli dan layanan servis untuk traktor Zoomlion, mulai dari perawatan berkala hingga perbaikan.']
       ],
       cta: 'Tanya Harga Traktor via WhatsApp'
     },
@@ -94,7 +93,7 @@ const HALAMAN = [
       sub: 'Zoomlion four-wheel and hybrid tractors, direct from the authorised distributor in East Jakarta.',
       intro: [
         'Looking for a tractor in Jakarta? PT Diesel Agri Sukses Sejahtera (DASS) is the authorised Zoomlion tractor distributor based in Cakung, East Jakarta. We supply tractors for rice fields, plantations, and dryland farming, from compact models to high-powered hybrid tractors.',
-        'Every unit is backed by genuine spare parts, service support, and technical advice to help you choose the right tractor for your land and type of work.'
+        'Our team provides technical advice and full brochures to help you choose the right tractor for your land and type of work.'
       ],
       kenapa: 'Why Buy a Tractor from DASS?',
       produk: 'Zoomlion Tractor Range',
@@ -102,7 +101,6 @@ const HALAMAN = [
         ['Where can I buy a tractor in Jakarta?', `You can buy Zoomlion tractors from PT Diesel Agri Sukses Sejahtera, Jalan River Garden Boulevard No. 19B, Cakung Timur, East Jakarta. Contact us on WhatsApp ${TELEPON} for advice and a quotation.`],
         ['How much does a Zoomlion tractor cost?', 'The price depends on the model, power class, and implements you choose. Contact our team for the latest quotation.'],
         ['Which tractor is best for rice fields?', 'Choose a tractor whose power and size match your field area, with tyres suited to muddy ground. Our team can help you choose the right unit.'],
-        ['Are spare parts and servicing available?', 'Yes. We provide genuine spare parts and service for Zoomlion tractors, from scheduled maintenance to repairs.']
       ],
       cta: 'Ask for Tractor Prices on WhatsApp'
     },
@@ -111,7 +109,7 @@ const HALAMAN = [
       sub: '中联重科四轮拖拉机和混合动力拖拉机，由东雅加达授权经销商直接供应。',
       intro: [
         '在雅加达寻找拖拉机？PT Diesel Agri Sukses Sejahtera（DASS）是中联重科拖拉机的授权经销商，位于东雅加达Cakung。我们提供适用于水田、种植园和旱地的拖拉机，从小型机型到大马力混合动力拖拉机一应俱全。',
-        '每台拖拉机均有原厂配件、维修服务和技术咨询支持，帮助您根据土地面积和作业类型选择合适的机型。'
+        '我们的团队提供技术咨询和完整宣传册，帮助您根据土地面积和作业类型选择合适的机型。'
       ],
       kenapa: '为什么选择在DASS购买拖拉机？',
       produk: '中联重科拖拉机系列',
@@ -119,7 +117,6 @@ const HALAMAN = [
         ['在雅加达哪里可以买到拖拉机？', `您可以在PT Diesel Agri Sukses Sejahtera购买中联重科拖拉机，地址：东雅加达Cakung Timur，Jalan River Garden Boulevard No. 19B。如需咨询和报价，请通过WhatsApp ${TELEPON}联系我们。`],
         ['中联重科拖拉机多少钱？', '价格取决于型号、功率等级和所选农具。请联系我们的团队获取最新报价。'],
         ['哪种拖拉机适合水田？', '请选择功率和尺寸与田块面积相匹配、并配备适合泥地轮胎的拖拉机。我们的团队可以帮助您选择合适的机型。'],
-        ['是否提供配件和维修服务？', '是的。我们为中联重科拖拉机提供原厂配件和维修服务，从定期保养到故障维修。']
       ],
       cta: '通过WhatsApp咨询拖拉机价格'
     }
@@ -135,7 +132,7 @@ const HALAMAN = [
     keyword: 'jual drone pertanian jakarta, drone pertanian jakarta, drone sprayer, harga drone pertanian, drone penyemprot, drone eavision, drone vectoragr',
     id: {
       judulTab: 'Jual Drone Pertanian Jakarta | EAVision & VectorAgr Resmi | DASS',
-      desk: 'Jual drone pertanian di Jakarta: drone sprayer EAVision dan VectorAgr untuk semprot, tebar pupuk, dan benih. Distributor resmi dengan sparepart dan servis.',
+      desk: 'Jual drone pertanian di Jakarta: drone sprayer EAVision dan VectorAgr untuk semprot, tebar pupuk, dan benih. Langsung dari distributor resmi.',
       h1: 'Jual Drone Pertanian di Jakarta',
       sub: 'Drone sprayer EAVision dan VectorAgr untuk penyemprotan, penebaran pupuk, dan tabur benih.',
       intro: [
@@ -148,7 +145,6 @@ const HALAMAN = [
         ['Di mana membeli drone pertanian di Jakarta?', `Anda bisa membeli drone EAVision dan VectorAgr di PT Diesel Agri Sukses Sejahtera, Jalan River Garden Boulevard No. 19B, Cakung Timur, Jakarta Timur. Hubungi kami lewat WhatsApp ${TELEPON}.`],
         ['Berapa harga drone pertanian?', 'Harga drone tergantung model dan kapasitasnya. Hubungi tim kami untuk mendapatkan penawaran harga terbaru.'],
         ['Apakah drone bisa dipakai untuk menebar pupuk dan benih?', 'Bisa. Drone seperti EAVision J150, J100, dan J70 dilengkapi sistem tebar untuk pupuk granul dan benih.'],
-        ['Apakah tersedia sparepart dan servis drone?', 'Ya. Kami menyediakan sparepart dan layanan servis untuk drone EAVision dan VectorAgr.']
       ],
       cta: 'Tanya Harga Drone via WhatsApp'
     },
@@ -165,7 +161,6 @@ const HALAMAN = [
         ['Where can I buy an agricultural drone in Jakarta?', `You can buy EAVision and VectorAgr drones from PT Diesel Agri Sukses Sejahtera, Jalan River Garden Boulevard No. 19B, Cakung Timur, East Jakarta. Contact us on WhatsApp ${TELEPON}.`],
         ['How much does an agricultural drone cost?', 'The price depends on the model and capacity. Contact our team for the latest quotation.'],
         ['Can drones spread fertiliser and seed?', 'Yes. Drones such as the EAVision J150, J100, and J70 have spreading systems for granular fertiliser and seed.'],
-        ['Are spare parts and drone servicing available?', 'Yes. We provide spare parts and service for EAVision and VectorAgr drones.']
       ],
       cta: 'Ask for Drone Prices on WhatsApp'
     },
@@ -182,7 +177,6 @@ const HALAMAN = [
         ['在雅加达哪里可以买到农业无人机？', `您可以在PT Diesel Agri Sukses Sejahtera购买EAVision和VectorAgr无人机，地址：东雅加达Cakung Timur，Jalan River Garden Boulevard No. 19B。请通过WhatsApp ${TELEPON}联系我们。`],
         ['农业无人机多少钱？', '价格取决于型号和容量。请联系我们的团队获取最新报价。'],
         ['无人机可以撒肥和播种吗？', '可以。EAVision J150、J100和J70等无人机配备撒播系统，可撒播颗粒肥和种子。'],
-        ['是否提供无人机配件和维修服务？', '是的。我们为EAVision和VectorAgr无人机提供配件和维修服务。']
       ],
       cta: '通过WhatsApp咨询无人机价格'
     }
@@ -203,7 +197,7 @@ const HALAMAN = [
       sub: 'Combine harvester, rice transplanter, mesin panen tebu, mesin pengering gabah, dan baler Zoomlion.',
       intro: [
         'PT Diesel Agri Sukses Sejahtera (DASS) menyediakan mesin pertanian Zoomlion untuk setiap tahap budidaya, dari tanam, panen, hingga pascapanen. Kantor kami berada di Cakung, Jakarta Timur.',
-        'Mulai dari rice transplanter untuk tanam padi, combine harvester untuk panen, mesin panen tebu untuk perkebunan, hingga mesin pengering gabah dan baler jerami, semuanya didukung sparepart asli dan layanan servis.'
+        'Mulai dari rice transplanter untuk tanam padi, combine harvester untuk panen, mesin panen tebu untuk perkebunan, hingga mesin pengering gabah dan baler jerami, semuanya langsung dari distributor resmi.'
       ],
       kenapa: 'Kenapa Membeli Mesin Pertanian di DASS?',
       produk: 'Pilihan Mesin Pertanian Zoomlion',
@@ -211,7 +205,6 @@ const HALAMAN = [
         ['Di mana membeli mesin pertanian di Jakarta?', `Anda bisa membeli mesin pertanian Zoomlion di PT Diesel Agri Sukses Sejahtera, Jalan River Garden Boulevard No. 19B, Cakung Timur, Jakarta Timur. Hubungi kami lewat WhatsApp ${TELEPON}.`],
         ['Berapa harga combine harvester dan mesin pertanian lainnya?', 'Harga tergantung jenis mesin, model, dan kapasitasnya. Hubungi tim kami untuk mendapatkan penawaran harga terbaru.'],
         ['Mesin apa yang cocok untuk lahan saya?', 'Pilihan mesin tergantung luas lahan, jenis tanaman, dan kebutuhan di setiap tahap. Tim kami siap membantu menghitung kebutuhan Anda.'],
-        ['Apakah tersedia sparepart dan servis?', 'Ya. Kami menyediakan sparepart asli dan layanan servis untuk mesin pertanian Zoomlion.']
       ],
       cta: 'Tanya Harga Mesin Pertanian via WhatsApp'
     },
@@ -220,7 +213,7 @@ const HALAMAN = [
       sub: 'Zoomlion combine harvesters, rice transplanters, sugarcane harvesters, grain dryers, and balers.',
       intro: [
         'PT Diesel Agri Sukses Sejahtera (DASS) supplies Zoomlion agricultural machinery for every stage of cultivation, from planting and harvesting to post-harvest. Our office is in Cakung, East Jakarta.',
-        'From rice transplanters for planting, combine harvesters for harvesting, and sugarcane harvesters for plantations to grain dryers and straw balers, every machine is backed by genuine spare parts and service support.'
+        'From rice transplanters for planting, combine harvesters for harvesting, and sugarcane harvesters for plantations to grain dryers and straw balers, all direct from the authorised distributor.'
       ],
       kenapa: 'Why Buy Agricultural Machinery from DASS?',
       produk: 'Zoomlion Agricultural Machinery Range',
@@ -228,7 +221,6 @@ const HALAMAN = [
         ['Where can I buy agricultural machinery in Jakarta?', `You can buy Zoomlion agricultural machinery from PT Diesel Agri Sukses Sejahtera, Jalan River Garden Boulevard No. 19B, Cakung Timur, East Jakarta. Contact us on WhatsApp ${TELEPON}.`],
         ['How much do combine harvesters and other machines cost?', 'The price depends on the type of machine, model, and capacity. Contact our team for the latest quotation.'],
         ['Which machine suits my land?', 'The right machine depends on your land area, crop type, and needs at each stage. Our team can help calculate what you need.'],
-        ['Are spare parts and servicing available?', 'Yes. We provide genuine spare parts and service for Zoomlion agricultural machinery.']
       ],
       cta: 'Ask for Machinery Prices on WhatsApp'
     },
@@ -237,7 +229,7 @@ const HALAMAN = [
       sub: '中联重科联合收割机、插秧机、甘蔗收获机、谷物烘干机和打捆机。',
       intro: [
         'PT Diesel Agri Sukses Sejahtera（DASS）提供覆盖种植、收获到产后各环节的中联重科农业机械。我们的办公室位于东雅加达Cakung。',
-        '从用于水稻栽插的插秧机、用于收获的联合收割机、用于种植园的甘蔗收获机，到谷物烘干机和秸秆打捆机，每台机器都有原厂配件和维修服务支持。'
+        '从用于水稻栽插的插秧机、用于收获的联合收割机、用于种植园的甘蔗收获机，到谷物烘干机和秸秆打捆机，全部由授权经销商直接供应。'
       ],
       kenapa: '为什么选择在DASS购买农业机械？',
       produk: '中联重科农业机械系列',
@@ -245,7 +237,6 @@ const HALAMAN = [
         ['在雅加达哪里可以买到农业机械？', `您可以在PT Diesel Agri Sukses Sejahtera购买中联重科农业机械，地址：东雅加达Cakung Timur，Jalan River Garden Boulevard No. 19B。请通过WhatsApp ${TELEPON}联系我们。`],
         ['联合收割机等农机多少钱？', '价格取决于机器类型、型号和产能。请联系我们的团队获取最新报价。'],
         ['哪种机器适合我的土地？', '合适的机器取决于土地面积、作物种类以及各环节的需求。我们的团队可以帮助您测算。'],
-        ['是否提供配件和维修服务？', '是的。我们为中联重科农业机械提供原厂配件和维修服务。']
       ],
       cta: '通过WhatsApp咨询农机价格'
     }
@@ -283,7 +274,6 @@ const HALAMAN = [
         ['Berapa HP traktor yang cocok untuk kebun sawit?', 'Tergantung pekerjaan utamanya. Perawatan jalan dan penyemprotan bisa memakai traktor kelas menengah, sedangkan menarik trailer TBS bermuatan berat dan mengolah lahan replanting membutuhkan traktor bertenaga lebih besar. Tim kami siap membantu menghitungnya.'],
         ['Apakah traktor bisa dipasangi auto steering?', 'Bisa. Sistem auto steering VectorAgr seperti HD812 kompatibel dengan traktor, combine harvester, dan sprayer dari berbagai merek.'],
         ['Di mana membeli traktor untuk kebun sawit?', `Di PT Diesel Agri Sukses Sejahtera, Jalan River Garden Boulevard No. 19B, Cakung Timur, Jakarta Timur. Hubungi kami lewat WhatsApp ${TELEPON} untuk konsultasi.`],
-        ['Apakah tersedia sparepart dan servis?', 'Ya. Kami menyediakan sparepart asli dan layanan servis untuk traktor Zoomlion dan sistem auto steering VectorAgr.']
       ],
       cta: 'Konsultasi Traktor Sawit via WhatsApp'
     },
@@ -307,7 +297,6 @@ const HALAMAN = [
         ['What horsepower tractor suits an oil palm estate?', 'It depends on the main job. Road maintenance and spraying can use a mid-range tractor, while pulling heavy FFB trailers and preparing replanting land need a more powerful tractor. Our team can help you work it out.'],
         ['Can tractors be fitted with auto steering?', 'Yes. VectorAgr auto steering systems such as the HD812 are compatible with tractors, combine harvesters, and sprayers from many brands.'],
         ['Where can I buy a tractor for an oil palm estate?', `From PT Diesel Agri Sukses Sejahtera, Jalan River Garden Boulevard No. 19B, Cakung Timur, East Jakarta. Contact us on WhatsApp ${TELEPON} for advice.`],
-        ['Are spare parts and servicing available?', 'Yes. We provide genuine spare parts and service for Zoomlion tractors and VectorAgr auto steering systems.']
       ],
       cta: 'Ask About Oil Palm Tractors on WhatsApp'
     },
@@ -331,7 +320,6 @@ const HALAMAN = [
         ['油棕园适合多大马力的拖拉机？', '取决于主要作业。道路维护和喷洒可使用中等功率拖拉机，而牵引重载鲜果串拖车和翻种整地则需要更大功率的拖拉机。我们的团队可以帮助您测算。'],
         ['拖拉机可以加装自动驾驶吗？', '可以。VectorAgr HD812等自动驾驶系统兼容多个品牌的拖拉机、联合收割机和喷雾机。'],
         ['在哪里可以买到油棕园拖拉机？', `PT Diesel Agri Sukses Sejahtera，地址：东雅加达Cakung Timur，Jalan River Garden Boulevard No. 19B。请通过WhatsApp ${TELEPON}咨询。`],
-        ['是否提供配件和维修服务？', '是的。我们为中联重科拖拉机和VectorAgr自动驾驶系统提供原厂配件和维修服务。']
       ],
       cta: '通过WhatsApp咨询油棕园拖拉机'
     }
@@ -349,7 +337,7 @@ const HALAMAN = [
     keyword: 'combine harvester padi, mesin panen padi, harga combine harvester, combine harvester zoomlion, zoomlion zl88, zoomlion zl105',
     id: {
       judulTab: 'Combine Harvester Padi | Mesin Panen Padi Zoomlion ZL Series | DASS',
-      desk: 'Jual combine harvester padi Zoomlion ZL88, ZL105, ZL125, dan ZL145 di Jakarta. Panduan memilih mesin panen padi sesuai luas sawah, lengkap dengan sparepart.',
+      desk: 'Jual combine harvester padi Zoomlion ZL88, ZL105, ZL125, dan ZL145 di Jakarta. Panduan memilih mesin panen padi sesuai luas sawah, langsung dari distributor resmi.',
       h1: 'Combine Harvester Padi',
       sub: 'Mesin panen padi crawler Zoomlion ZL Series untuk sawah kecil hingga luas.',
       intro: [
@@ -369,7 +357,6 @@ const HALAMAN = [
         ['Combine harvester mana yang cocok untuk sawah kecil?', 'Untuk sawah kecil hingga menengah, ZL88 dengan tenaga 88 HP dan lebar potong 2,0 m bisa menjadi pilihan. Tim kami siap membantu menyesuaikan dengan kondisi sawah Anda.'],
         ['Berapa harga combine harvester padi?', 'Harga tergantung model dan konfigurasinya. Hubungi tim kami untuk mendapatkan penawaran harga terbaru.'],
         ['Di mana membeli combine harvester padi di Jakarta?', `Di PT Diesel Agri Sukses Sejahtera, Jalan River Garden Boulevard No. 19B, Cakung Timur, Jakarta Timur. Hubungi kami lewat WhatsApp ${TELEPON}.`],
-        ['Apakah tersedia sparepart dan servis?', 'Ya. Kami menyediakan sparepart asli dan layanan servis untuk combine harvester Zoomlion.']
       ],
       cta: 'Tanya Harga Combine Harvester via WhatsApp'
     },
@@ -393,7 +380,6 @@ const HALAMAN = [
         ['Which combine harvester suits small paddy fields?', 'For small to medium fields, the ZL88 with 88 HP and a 2.0 m cutting width is a good option. Our team can help match it to your field conditions.'],
         ['How much does a rice combine harvester cost?', 'The price depends on the model and configuration. Contact our team for the latest quotation.'],
         ['Where can I buy a rice combine harvester in Jakarta?', `From PT Diesel Agri Sukses Sejahtera, Jalan River Garden Boulevard No. 19B, Cakung Timur, East Jakarta. Contact us on WhatsApp ${TELEPON}.`],
-        ['Are spare parts and servicing available?', 'Yes. We provide genuine spare parts and service for Zoomlion combine harvesters.']
       ],
       cta: 'Ask for Combine Harvester Prices on WhatsApp'
     },
@@ -417,7 +403,6 @@ const HALAMAN = [
         ['哪款联合收割机适合小块稻田？', '对于中小型稻田，88马力、割幅2.0米的ZL88是不错的选择。我们的团队可根据您的田间条件帮助选型。'],
         ['水稻联合收割机多少钱？', '价格取决于型号和配置。请联系我们的团队获取最新报价。'],
         ['在雅加达哪里可以买到水稻联合收割机？', `PT Diesel Agri Sukses Sejahtera，地址：东雅加达Cakung Timur，Jalan River Garden Boulevard No. 19B。请通过WhatsApp ${TELEPON}联系我们。`],
-        ['是否提供配件和维修服务？', '是的。我们为中联重科联合收割机提供原厂配件和维修服务。']
       ],
       cta: '通过WhatsApp咨询联合收割机价格'
     }
