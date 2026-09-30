@@ -1,0 +1,96 @@
+# Website PT Diesel Agri Sukses Sejahtera (DASS)
+
+Catatan untuk Claude: konteks proyek, cara kerja, dan keputusan yang sudah diambil.
+Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan baru.
+
+## Tentang proyek & pemilik
+- Website statis distributor resmi **Zoomlion** (traktor, combine, dryer, baler, dll.),
+  **EAVision** (drone sprayer), dan **VectorAgr** (drone, auto steering, rover) di
+  Cakung, Jakarta Timur. Live: https://dass.co.id (hosting **Hostinger**).
+- Pemilik repo adalah IT developer DASS, masih pemula. **Jawab dalam bahasa Indonesia
+  yang sederhana**, beri langkah konkret (perintah cmd satu per satu), jangan bertele-tele.
+  Ia sering mengeluh kalau lambat — kerjakan efisien, laporkan hasil singkat.
+- Salinan lokal pengguna: `C:\Users\User\Downloads\DASS-WEB` (Windows cmd, VS Code +
+  Live Server). Setelah merge, pengguna menjalankan `git pull` lalu upload ke Hostinger
+  (paling aman: ZIP semua isi folder kecuali `.git`, hapus isi `public_html`, extract).
+  `.htaccess` adalah file tersembunyi — ingatkan "Show hidden files" di File Manager.
+- Kontak: WA/telepon `0811-1660-2926` (`nomorWA()` di config.js mengubah ke 62…),
+  Instagram `dass.agriculture`, alamat Jl. River Garden Boulevard No. 19B Blok B2,
+  Cakung Timur. Google Analytics 4: `G-1XWSJJDZMF`.
+
+## Alur git (wajib)
+1. `git fetch origin main && git checkout -B claude/code-initialization-oj63ya origin/main`
+   (branch lama selalu sudah di-merge; mulai ulang dari main).
+2. Kerjakan, uji, commit (pesan bahasa Indonesia), `git push -u origin <branch>`.
+3. Buat PR ke `main` lalu **merge sendiri** (pengguna selalu minta merge). Pakai SHA
+   lengkap 40 karakter untuk `expectedHeadSha`.
+4. Di akhir, beri tahu pengguna: `git pull` + file/cara upload ke Hostinger (+ Ctrl+F5).
+
+## Struktur
+- HTML statis di root (`index`, `tentang`, `kontak`, `artikel`, `kalkulator`,
+  `bandingkan`, `kamus-pertanian`, `faq`, `404`, 6 halaman kata kunci `jual-*`,
+  `traktor-kebun-sawit`, `combine-harvester-padi`, `drone-pertanian-sawah`),
+  `produk/*.html` (62 halaman detail), `artikel/*.html`, `pages/produk/<brand>.html`.
+- `partials/navbar.html` & `footer.html` dimuat oleh `main.js` (`{{base}}` = `data-base`).
+- `assets/js/config.js` — data perusahaan (satu sumber: nomor, email, jam kerja, GA).
+- `assets/js/data/` — `brands.js` (BRANDS, KATEGORI, ALT_KATEGORI, `PRODUK = []`),
+  `produk-{zoomlion,eavision,vectoragr}.js`, `lang.js` (semua teks ID/EN/ZH),
+  `artikel.js` + `artikel-terjemahan.js`.
+- JS fitur: `filter-produk.js` (kartu, urlProduk, gambarKecil, altProduk),
+  `produk-detail.js`, `kalkulator.js` (kalkulator drone + pilih traktor + versi mini di
+  halaman produk), `bandingkan.js`, `fitur.js` (pencarian, "terakhir dilihat", tombol
+  bagikan — **dimuat otomatis oleh main.js**), `brosur-pdf.js` (jsPDF dari cdnjs).
+- `tools/` (jalankan ulang setelah mengubah data terkait):
+  - `node tools/buat-halaman-artikel.js` — halaman artikel + sitemap.
+  - `node tools/buat-halaman-landing.js` — halaman kata kunci + blok "Lihat Juga" di
+    produk/*.html (di antara penanda `<!-- LIHAT-JUGA -->`) + sitemap.
+  - `python tools/optimasi-gambar.py` — `-kecil.webp` (kartu), `-og.jpg` (pratinjau link).
+  - `node tools/seo-gambar.js` — teks alt foto produk + `sitemap-gambar.xml`.
+
+## Konvensi penting
+- **3 bahasa (ID/EN/ZH)** untuk semua teks baru: kunci di `lang.js` + `data-i18n`, atau
+  blok `[data-bahasa="id|en|zh"]` (ID tampil bawaan agar terbaca Google). Fungsi yang
+  merender ulang saat ganti bahasa didaftarkan di `gantiBahasa()` (i18n.js).
+- Pesan WhatsApp ke tim selalu bahasa Indonesia.
+- Foto produk: PNG 1200×900 transparan (asli, untuk PDF) + `.webp` + `-kecil.webp` +
+  `-og.jpg`. Foto baru dari pengguna dikirim lewat folder `foto-baru/` (git push).
+- Logo `assets/images/logo/z.png` (Zoomlion, tulisan hijau #8DC63F, transparan) dan
+  `eavision.png` (transparan).
+- Jangan mencantumkan email di HTML (anti-spam); email hanya dari config.js.
+- `.htaccess`: HTTPS, gzip, header keamanan, 404 → `/404.html`, blokir `tools/`, `.git`,
+  `*.md`, `*.py`, `PETUNJUK.txt`. Tidak bisa diuji di sandbox — minta pengguna cek setelah upload.
+
+## Pengujian sebelum merge
+- Server lokal: `python3 -m http.server 8765` (background).
+- Playwright: `executablePath: '/opt/pw-browsers/chromium'`, `NODE_PATH=$(npm root -g)`.
+  Cek tiap halaman: tanpa error JS, tanpa gambar rusak, tanpa scroll horizontal di 390px,
+  dan tampilan ID/EN/ZH. Ambil screenshot untuk perubahan tampilan.
+- cdnjs, Google Fonts, dan googletagmanager diblokir di sandbox (error itu normal).
+
+## Keputusan yang sudah diambil
+- Menu **Kalkulator** tidak ada di navbar (halaman `kalkulator.html` tetap ada, link di
+  footer). Kalkulator Pilih Traktor tampil di **semua 48 halaman produk Zoomlion**;
+  kalkulator semprot di halaman drone; kotak "Cocok untuk Lahan" di halaman traktor.
+- Kalkulator drone **tanpa harga/biaya** (perusahaan tidak punya tarif resmi).
+- Asumsi kalkulator (drone 5 m/s, efisiensi 50%, 8 jam/hari; manual 300 L/ha, 1 ha/orang/hari;
+  HP traktor ditebak dari nama model, mis. RK504 ≈ 50 HP) adalah perkiraan Claude —
+  belum dicek tim teknis.
+- Halaman Bandingkan: pilih kategori per merek, pilih unit lewat kartu foto, maks. 3
+  unit (2 di HP), baris nama menempel saat scroll.
+- Menu WA pintar: harga / konsultasi / brosur / lain + status jam kerja
+  (`COMPANY.jamKerja`). **Tidak ada pilihan servis/sparepart.**
+- CAPTCHA tidak dipasang (tidak ada form yang mengirim ke server; form kontak membuka WA).
+
+## Belum selesai / menunggu pengguna
+- **Klaim servis & sparepart**: perusahaan belum menyediakan layanan servis/sparepart,
+  tetapi beranda (kotak "Layanan Servis", "Sparepart Tersedia"), 6 halaman kata kunci,
+  form kontak (opsi Sparepart/Layanan Servis), footer ("dukungan purna jual"), dan
+  beberapa meta description masih menyebutnya. Menunggu jawaban: hapus/ganti atau
+  layanannya sebenarnya ada.
+- FAQ: jawaban pengiriman ke luar Jakarta masih netral — menunggu kebijakan perusahaan.
+- Ide yang ditawarkan tapi belum dikerjakan: Kebijakan Privasi (UU PDP, perlu cek legal),
+  galeri pengiriman unit/testimoni (perlu foto sales), Google Merchant Center (perlu
+  keputusan harga), Bing Webmaster Tools, konten artikel rutin.
+- Tugas pengguna: upload terbaru ke Hostinger, Search Console (kirim ulang `sitemap.xml`,
+  tambah `sitemap-gambar.xml`, minta indeks `bandingkan.html`, `kamus-pertanian.html`,
+  `faq.html`), aktifkan 2FA (Hostinger/GitHub/Google), UptimeRobot, Google Business Profile.
