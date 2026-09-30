@@ -103,8 +103,10 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   VectorAgr dari Kling 5 dtk dengan watermark "KlingAI 3.0" — dipasang apa adanya atas
   permintaan pengguna; jangan dipotong/ditutup, ganti bila ada versi bersih. Chromium sandbox tak bisa H.264 — uji
   pakai salinan .webm lewat page.route.
-- Hero beranda di layar ≤768px: video/foto utuh 16:9 di atas (tidak terpotong), judul & teks di
-  bawahnya (responsive.css bagian akhir).
+- Judul hero beranda (H1 "Distributor Traktor & Drone Pertanian di Jakarta" + deskripsi)
+  DISEMBUNYIKAN dari tampilan dengan `.sr-only` atas permintaan pengguna (tetap di HTML untuk
+  SEO/aksesibilitas; risiko kecil "teks tersembunyi" sudah dijelaskan). Jangan dihapus dari HTML.
+- Hero beranda di layar ≤768px: video/foto utuh 16:9, indikator di bawah video.
 - Navbar: putih di atas, kaca buram transparan saat di-scroll (`.header::before` + backdrop-filter).
   Jangan pasang backdrop-filter/transform di `.header` langsung — merusak menu HP (position: fixed).
 - CAPTCHA tidak dipasang (tidak ada form yang mengirim ke server; form kontak membuka WA).
