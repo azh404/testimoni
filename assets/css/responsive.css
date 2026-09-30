@@ -132,6 +132,7 @@
   .footer__grid { grid-template-columns: 1fr; gap: var(--sp-6); }
   .footer__col--center { text-align: left; }
   .footer__icons { justify-content: flex-start; }
+  .footer__seo { grid-template-columns: repeat(3, 1fr); }
 
   /* --- Modal --- */
   .modal__media { padding: var(--sp-5); }
@@ -149,6 +150,7 @@
     width: 100%;
   }
   .footer__seo a { white-space: normal; }
+  .footer__copy { text-align: center; }
 
 
   :root {

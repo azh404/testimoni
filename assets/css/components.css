@@ -299,12 +299,12 @@
   gap: var(--sp-4);
 }
 
-/* Tautan ke halaman kata kunci & alat bantu */
+/* Tautan ke halaman kata kunci & alat bantu: berkolom, rata kiri */
 .footer__seo {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: var(--sp-2) var(--sp-6);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-3) var(--sp-6);
+  width: 100%;
 }
 .footer__seo a {
   color: rgba(255, 255, 255, 0.75);
@@ -317,7 +317,7 @@
   margin: 0;
   padding-top: var(--sp-4);
   width: 100%;
-  text-align: center;
+  text-align: left;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
