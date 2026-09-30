@@ -140,9 +140,22 @@
 
 /* ===== MOBILE (≤ 640px) ===== */
 @media (max-width: 640px) {
-  /* --- Footer bawah: beri ruang untuk tombol WA --- */
-  .footer__bottom { padding-bottom: 96px; }
-  .footer__seo { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--sp-3) var(--sp-5); }
+  /* --- Footer di HP: jarak dan baris dibuat lebih rapat --- */
+  .footer { padding-top: var(--sp-6); }
+  .footer__grid { gap: var(--sp-5); padding-bottom: var(--sp-5); }
+  .footer__brand { margin-bottom: var(--sp-2); }
+  .footer__title { margin-bottom: var(--sp-3); }
+  .footer__label { margin-bottom: var(--sp-1); }
+  .footer__text { line-height: 1.5; margin-bottom: 0; }
+  .footer__seo {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--sp-2) var(--sp-4);
+    font-size: var(--fs-xs);
+    line-height: 1.4;
+  }
+  /* Ruang bawah agar hak cipta tidak tertutup tombol WA */
+  .footer__bottom { padding-block: var(--sp-3) 84px; }
+  .footer__copy { font-size: 0.6875rem; line-height: 1.5; }
 
 
   :root {
