@@ -6,7 +6,10 @@
    Diambil dari atribut data-base pada <body>. */
 const BASE = document.body.dataset.base || '';
 
-/* --- Memuat partial HTML --- */
+/* --- Memuat partial HTML ---
+   Berkas partial sengaja berakhiran .txt, bukan .html: Live Server (VS Code)
+   menyisipkan script ke setiap file .html sehingga isinya terpotong di akhir
+   (bagian bawah footer hilang saat diuji lokal). */
 async function loadPartial(selector, file) {
   const target = document.querySelector(selector);
   if (!target) return;
@@ -191,8 +194,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (typeof initHalamanArtikel === 'function') initHalamanArtikel();
   if (typeof initArtikelHalaman === 'function') initArtikelHalaman();
   if (typeof initHalamanLanding === 'function') initHalamanLanding();
-  await loadPartial('#site-header', 'navbar.html');
-  await loadPartial('#site-footer', 'footer.html');
+  await loadPartial('#site-header', 'navbar.txt');
+  await loadPartial('#site-footer', 'footer.txt');
 
   isiDataPerusahaan();
   tandaiMenuAktif();
