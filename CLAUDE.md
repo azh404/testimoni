@@ -92,7 +92,12 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   Slider produk di halaman merek (filter-produk.js) sama: 3 detik, masuk dari kanan, zoom pelan,
   indikator progres. Hero beranda juga punya efek sinematik CSS (.hero__cahaya, .hero__partikel,
   vignette, foto baru muncul dari buram di laptop). Semua mati bila perangkat "reduce motion".
-  Video asli belum ada — bila pengguna kirim video unit, jadikan video latar hero (foto = cadangan).
+  Video hero: `assets/videos/hero-*.mp4` (dari Gemini/Veo, 10 dtk, 720p, tanpa suara, dikompres
+  ffmpeg crf 27 ±1–1,6 MB; ffmpeg dari `pip install imageio-ffmpeg`). Pasang lewat atribut
+  `data-video` di `.hero__slide`; slide video tampil 6 dtk (DURASI_VIDEO), foto tetap cadangan
+  (hemat data / reduce motion / gagal muat). Baru ada: mesin pengering & traktor; 4 lainnya
+  menunggu pengguna (prompt Gemini sudah diberikan). Chromium sandbox tak bisa H.264 — uji
+  pakai salinan .webm lewat page.route.
 - CAPTCHA tidak dipasang (tidak ada form yang mengirim ke server; form kontak membuka WA).
 
 ## Belum selesai / menunggu pengguna

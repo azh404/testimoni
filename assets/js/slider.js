@@ -10,18 +10,63 @@ function initHeroSlider() {
 
   let index = 0;
   let timer = null;
-  const DURASI = 3000;
+  const DURASI = 3000;        /* slide foto */
+  const DURASI_VIDEO = 6000;  /* slide video (video 10 detik, lanjut dari posisi terakhir) */
+
+  /* --- Video latar ---
+     Tidak dimuat bila pengunjung memilih "kurangi gerakan" atau mode hemat data */
+  const bolehVideo = !window.matchMedia('(prefers-reduced-motion: reduce)').matches &&
+                     !(navigator.connection && navigator.connection.saveData);
+  let halamanSiap = document.readyState === 'complete';
+
+  const pasangVideo = (s) => {
+    if (!bolehVideo || !halamanSiap || !s.dataset.video || s.querySelector('video')) return;
+    const v = document.createElement('video');
+    v.className = 'hero__video';
+    v.muted = true;
+    v.loop = true;
+    v.playsInline = true;
+    v.setAttribute('muted', '');
+    v.setAttribute('playsinline', '');
+    v.setAttribute('aria-hidden', 'true');
+    v.preload = 'auto';
+    v.src = s.dataset.video;
+    /* Video baru terlihat setelah benar-benar berjalan; sampai itu foto yang tampil */
+    v.addEventListener('playing', () => s.classList.add('ada-video'));
+    v.addEventListener('error', () => v.remove());
+    s.appendChild(v);
+  };
+
+  const aturVideo = () => {
+    slides.forEach((s, k) => {
+      const v = s.querySelector('video');
+      if (!v) return;
+      if (k === index && !document.hidden) v.play().catch(() => {});
+      else v.pause();
+    });
+  };
+
+  const durasiSlide = (n) =>
+    (bolehVideo && slides[n] && slides[n].dataset.video) ? DURASI_VIDEO : DURASI;
 
   /* Gambar slide selain yang pertama dimuat belakangan (data-bg),
      supaya halaman awal lebih cepat terbuka */
   const muat = (s) => {
-    if (!s || !s.dataset.bg) return;
+    if (!s) return;
+    pasangVideo(s);
+    if (!s.dataset.bg) return;
     s.style.backgroundImage = `url('${s.dataset.bg}')`;
     delete s.dataset.bg;
   };
   const muatBerikut = (n) => muat(slides[(n + 1) % slides.length]);
-  if (document.readyState === 'complete') muatBerikut(0);
-  else window.addEventListener('load', () => muatBerikut(0), { once: true });
+  const setelahLoad = () => {
+    halamanSiap = true;
+    muat(slides[index]);
+    muatBerikut(index);
+    aturVideo();
+  };
+  if (halamanSiap) setelahLoad();
+  else window.addEventListener('load', setelahLoad, { once: true });
 
   /* Garis progres di indikator aktif diulang dari nol tiap timer mulai,
      supaya selalu sama dengan waktu pergantian slide */
@@ -29,6 +74,7 @@ function initHeroSlider() {
     dots.forEach(d => d.classList.remove('is-jalan'));
     const aktif = dots[index];
     if (!aktif) return;
+    aktif.style.setProperty('--durasi', durasiSlide(index) + 'ms');
     void aktif.offsetWidth; /* paksa browser mengulang animasi */
     aktif.classList.add('is-jalan');
   };
@@ -41,18 +87,24 @@ function initHeroSlider() {
     dots.forEach((d, k) => d.classList.toggle('is-active', k === n));
     index = n;
     ulangProgres();
+    aturVideo();
   };
 
   /* henti dideklarasikan lebih dulu karena dipakai di dalam mulai */
   const henti = () => {
-    clearInterval(timer);
+    clearTimeout(timer);
     if (hero) hero.classList.add('hero--jeda');
+  };
+  /* Pakai setTimeout berantai karena lama tiap slide bisa berbeda (foto/video) */
+  const jadwal = () => {
+    clearTimeout(timer);
+    timer = setTimeout(() => { tampilkan(index + 1); jadwal(); }, durasiSlide(index));
   };
   const mulai = () => {
     henti();
     if (hero) hero.classList.remove('hero--jeda');
     ulangProgres();
-    timer = setInterval(() => tampilkan(index + 1), DURASI);
+    jadwal();
   };
 
   dots.forEach((dot, i) => {
@@ -62,6 +114,7 @@ function initHeroSlider() {
   /* Hentikan saat tab tidak aktif — hemat resource */
   document.addEventListener('visibilitychange', () => {
     document.hidden ? henti() : mulai();
+    aturVideo();
   });
 
   /* --- Geser dengan jari atau mouse --- */
