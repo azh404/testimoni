@@ -284,11 +284,12 @@
 .footer__icons a:hover { transform: translateY(-3px); }
 .footer__icons svg { width: 100%; height: 100%; display: block; }
 
-/* --- Tautan cepat (kolom 3): daftar ke bawah, 2 kolom di HP --- */
+/* --- Kolom Jelajahi: menempel ke kanan, daftar ke bawah, 2 kolom di HP --- */
+.footer__col--kanan { justify-self: end; }
 .footer__seo {
   display: grid;
   gap: var(--sp-2) var(--sp-5);
-  font-size: var(--fs-sm);
+  font-size: 0.8125rem;
 }
 .footer__seo a {
   color: rgba(255, 255, 255, 0.72);
