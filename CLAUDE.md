@@ -88,13 +88,13 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   Jangan menulis klaim servis/sparepart lagi. Tips umum di artikel ("pastikan suku cadang
   mudah didapat") boleh tetap.
 - Hero beranda beranimasi: foto memudar TANPA zoom (pengguna tidak mau zoom), judul/teks muncul naik saat
-  dibuka, indikator bawah terisi seperti progress bar (3 detik = DURASI di slider.js, samakan dengan heroProgres di pages.css).
+  dibuka, indikator bawah terisi seperti progress bar (5 detik = DURASI di slider.js).
   Slider produk di halaman merek (filter-produk.js) sama: 3 detik, masuk dari kanan, zoom pelan,
   indikator progres. Hero beranda juga punya efek sinematik CSS (.hero__cahaya, .hero__partikel,
   vignette, foto baru muncul dari buram di laptop). Semua mati bila perangkat "reduce motion".
   Video hero: `assets/videos/hero-*.mp4` (dari Gemini/Veo, 10 dtk, 720p, tanpa suara, dikompres
   ffmpeg crf 27 ±1–1,6 MB; ffmpeg dari `pip install imageio-ffmpeg`). Pasang lewat atribut
-  `data-video` di `.hero__slide`; slide video tampil 6 dtk (DURASI_VIDEO), foto tetap cadangan
+  `data-video` di `.hero__slide`; slide video juga 5 dtk (DURASI_VIDEO), foto tetap cadangan
   (hemat data / reduce motion / gagal muat). Semua 6 slide sudah video: mesin pengering (Gemini, versi ke-2
   kamera diam + truk datang), traktor (Gemini), EAVision (Gemini); pemanen tebu, combine,
   VectorAgr dari Kling 5 dtk dengan watermark "KlingAI 3.0" — dipasang apa adanya atas
