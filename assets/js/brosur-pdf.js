@@ -7,6 +7,8 @@ const JSPDF_CDN =
   'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js';
 
 const BROSUR_LOGO = 'assets/images/logo/logo.png';
+/* Watermark super transparan di tengah halaman brosur */
+const BROSUR_WATERMARK = 'assets/images/logo/logo-dass.png';
 
 const BROSUR_LABEL = {
   'hybrid':'Traktor Hybrid', 'tractor':'Traktor Pertanian',
@@ -178,10 +180,11 @@ async function unduhBrosur(idProduk, tombol) {
   try {
     await muatJsPDF();
 
-    const [logoPT, logoBrand, fotoProduk] = await Promise.all([
+    const [logoPT, logoBrand, fotoProduk, watermark] = await Promise.all([
       muatGambar(base + BROSUR_LOGO),
       brand ? muatGambar(base + brand.logo) : Promise.resolve(null),
-      muatGambar(base + p.gambar)
+      muatGambar(base + p.gambar),
+      muatGambar(base + BROSUR_WATERMARK)
     ]);
 
     const { jsPDF } = window.jspdf;
@@ -348,6 +351,16 @@ async function unduhBrosur(idProduk, tombol) {
     doc.setFont('helvetica', 'normal').setFontSize(6);
     tulis(doc, pecah(doc, tb('catatan') + bersih(COMPANY.nama) + '.', LEBAR, 6, false),
           M, yKontak + 28, 6, false, [150, 155, 162]);
+
+    /* ---------- WATERMARK LOGO DASS ----------
+       Digambar paling akhir, super transparan, di tengah halaman */
+    if (watermark && doc.GState) {
+      doc.saveGraphicsState();
+      doc.setGState(new doc.GState({ opacity: 0.035 }));
+      const g = pasKotak(watermark, 35, 90, 140, 120);
+      doc.addImage(watermark, 'PNG', g.x, g.y, g.w, g.h);
+      doc.restoreGraphicsState();
+    }
 
     /* ---------- SIMPAN ---------- */
     doc.save('brosur-' +

@@ -115,7 +115,10 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
 - Brosur PDF (`brosur-pdf.js`) mengikuti bahasa aktif (BAHASA): teks tetap di `BROSUR_TEKS`,
   isi pakai tList/tSpec/tNilai/tKategori, nama file diberi akhiran `-en`/`-zh`. Huruf Mandarin
   digambar lewat canvas (fungsi `tulis`/`pecah`) karena Helvetica jsPDF tak punya huruf CJK.
+  Watermark logo-dass.png opacity 0,035 di tengah halaman PDF (GState).
   Uji: jsPDF dari npm (cdnjs diblokir) lewat page.route, PDF dibaca dengan `pip install pymupdf`.
+- Foto utama di halaman detail produk tanpa kotak/latar (`.detail-media` transparan + drop-shadow);
+  semua foto utama produk sudah transparan.
 - CAPTCHA tidak dipasang (tidak ada form yang mengirim ke server; form kontak membuka WA).
 
 ## Belum selesai / menunggu pengguna
