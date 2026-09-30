@@ -23,6 +23,16 @@ function initHeroSlider() {
   if (document.readyState === 'complete') muatBerikut(0);
   else window.addEventListener('load', () => muatBerikut(0), { once: true });
 
+  /* Garis progres di indikator aktif diulang dari nol tiap timer mulai,
+     supaya selalu sama dengan waktu pergantian slide */
+  const ulangProgres = () => {
+    dots.forEach(d => d.classList.remove('is-jalan'));
+    const aktif = dots[index];
+    if (!aktif) return;
+    void aktif.offsetWidth; /* paksa browser mengulang animasi */
+    aktif.classList.add('is-jalan');
+  };
+
   const tampilkan = (i) => {
     const n = (i + slides.length) % slides.length;
     muat(slides[n]);
@@ -30,11 +40,20 @@ function initHeroSlider() {
     slides.forEach((s, k) => s.classList.toggle('is-active', k === n));
     dots.forEach((d, k) => d.classList.toggle('is-active', k === n));
     index = n;
+    ulangProgres();
   };
 
   /* henti dideklarasikan lebih dulu karena dipakai di dalam mulai */
-  const henti = () => clearInterval(timer);
-  const mulai = () => { henti(); timer = setInterval(() => tampilkan(index + 1), DURASI); };
+  const henti = () => {
+    clearInterval(timer);
+    if (hero) hero.classList.add('hero--jeda');
+  };
+  const mulai = () => {
+    henti();
+    if (hero) hero.classList.remove('hero--jeda');
+    ulangProgres();
+    timer = setInterval(() => tampilkan(index + 1), DURASI);
+  };
 
   dots.forEach((dot, i) => {
     dot.addEventListener('click', () => { henti(); tampilkan(i); mulai(); });
@@ -121,6 +140,9 @@ function initHeroSlider() {
 
   tampilkan(0);
   mulai();
+
+  /* Mulai gerakan foto latar setelah halaman tampil */
+  if (hero) requestAnimationFrame(() => requestAnimationFrame(() => hero.classList.add('hero--siap')));
 }
 
 /* =========================================
