@@ -5,7 +5,7 @@ const BRANDS = [
   {
     id: 'zoomlion',
     nama: 'Zoomlion',
-    logo: 'assets/images/logo/z.png',
+    logo: 'assets/images/logo/z.png?v=2',
     deskripsi: {
       id: 'Alat berat dan mesin pertanian berskala global',
       en: 'Global-scale heavy and agricultural machinery',
@@ -16,7 +16,7 @@ const BRANDS = [
   {
     id: 'eavision',
     nama: 'EAVision',
-    logo: 'assets/images/logo/eavision.png',
+    logo: 'assets/images/logo/eavision.png?v=2',
     deskripsi: {
       id: 'Teknologi drone penyemprot pertanian presisi',
       en: 'Precision agricultural sprayer drone technology',
@@ -27,7 +27,7 @@ const BRANDS = [
   {
     id: 'vectoragr',
     nama: 'VectorAgr',
-    logo: 'assets/images/logo/logo-vector.png',
+    logo: 'assets/images/logo/logo-vector.png?v=2',
     deskripsi: {
       id: 'Drone pertanian untuk penyemprotan presisi',
       en: 'Agricultural drones for precision spraying',
