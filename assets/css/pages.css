@@ -5,7 +5,7 @@
   position: relative;
   min-height: clamp(520px, 88vh, 780px);
   display: flex;
-  align-items: center;
+  align-items: flex-end;   /* kalimat hero di kiri bawah */
   background-color: var(--color-dark);
   overflow: hidden;
   touch-action: pan-y;
@@ -29,8 +29,10 @@
 .hero__overlay {
   position: absolute;
   inset: 0;
-  /* Judul hero disembunyikan, jadi cukup gelap tipis di bawah untuk indikator */
-  background: linear-gradient(180deg, rgba(10, 22, 40, 0) 65%, rgba(10, 22, 40, 0.45) 100%);
+  /* Gelap tipis di kiri bawah agar kalimat hero & indikator terbaca */
+  background:
+    linear-gradient(180deg, rgba(10, 22, 40, 0) 55%, rgba(10, 22, 40, 0.55) 100%),
+    linear-gradient(90deg, rgba(10, 22, 40, 0.35) 0%, rgba(10, 22, 40, 0) 55%);
 }
 
 /* Video latar (slide dengan data-video). Muncul halus setelah berjalan;
@@ -51,7 +53,7 @@
   position: relative;
   z-index: 2;
   max-width: 640px;
-  padding-block: var(--sp-8);
+  padding-block: var(--sp-8) calc(var(--sp-6) + 32px); /* di atas garis indikator */
 }
 
 .hero__title {
@@ -64,7 +66,10 @@
 
 .hero__desc {
   font-size: var(--fs-xl);
-  font-weight: var(--fw-medium);
+  font-weight: var(--fw-semibold, 600);
+  line-height: 1.5;
+  padding-left: var(--sp-4);
+  border-left: 3px solid var(--color-accent);
   color: rgba(255, 255, 255, 0.94);
   margin-bottom: 0;
   max-width: 620px;
