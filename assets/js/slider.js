@@ -10,7 +10,7 @@ function initHeroSlider() {
 
   let index = 0;
   let timer = null;
-  const DURASI = 6000;
+  const DURASI = 3000;
 
   /* Gambar slide selain yang pertama dimuat belakangan (data-bg),
      supaya halaman awal lebih cepat terbuka */
