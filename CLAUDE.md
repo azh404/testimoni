@@ -57,6 +57,8 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
 - Pesan WhatsApp ke tim selalu bahasa Indonesia.
 - Foto produk: PNG 1200×900 transparan (asli, untuk PDF) + `.webp` + `-kecil.webp` +
   `-og.jpg`. Foto baru dari pengguna dikirim lewat folder `foto-baru/` (git push).
+- Logo DASS di navbar: `logo-dass.png` (transparan, tanpa kotak putih; dibuat dari `logo.png`).
+  `logo.png` (gaya ikon kotak) tetap untuk favicon, schema, dan brosur PDF.
 - Logo `assets/images/logo/z.png` (Zoomlion, tulisan hijau #8DC63F, transparan) dan
   `eavision.png` (transparan).
 - Jangan mencantumkan email di HTML (anti-spam); email hanya dari config.js.
