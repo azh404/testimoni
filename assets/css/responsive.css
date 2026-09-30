@@ -273,6 +273,9 @@
     aspect-ratio: 16 / 9;
     overflow: hidden;
   }
-  .hero__dots  { bottom: var(--sp-3); }
+  /* Kalimat hero di bawah video, di atas latar gelap */
+  .hero__content { max-width: none; padding-block: var(--sp-4) var(--sp-5); }
+  .hero__desc { font-size: var(--fs-base); padding-left: var(--sp-3); }
+  .hero__dots  { top: calc(56.25vw - var(--sp-5)); bottom: auto; }
 }
 

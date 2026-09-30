@@ -103,8 +103,9 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   VectorAgr dari Kling 5 dtk dengan watermark "KlingAI 3.0" — dipasang apa adanya atas
   permintaan pengguna; jangan dipotong/ditutup, ganti bila ada versi bersih. Chromium sandbox tak bisa H.264 — uji
   pakai salinan .webm lewat page.route.
-- Judul hero beranda (H1 "Distributor Traktor & Drone Pertanian di Jakarta" + deskripsi)
-  DISEMBUNYIKAN dari tampilan dengan `.sr-only` atas permintaan pengguna (tetap di HTML untuk
+- Judul hero beranda (H1 "Distributor Traktor & Drone Pertanian di Jakarta") DISEMBUNYIKAN
+  dari tampilan dengan `.sr-only`; kalimat "Distributor resmi Zoomlion…" TAMPIL di kiri bawah video
+  (HP: di bawah video) atas permintaan pengguna (tetap di HTML untuk
   SEO/aksesibilitas; risiko kecil "teks tersembunyi" sudah dijelaskan). Jangan dihapus dari HTML.
 - Hero beranda di layar ≤768px: video/foto utuh 16:9, indikator di bawah video.
 - Navbar: putih di atas, kaca buram transparan saat di-scroll (`.header::before` + backdrop-filter).
