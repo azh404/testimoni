@@ -98,8 +98,9 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   indikator progres. Efek sinematik (partikel, cahaya, vignette, buram) SUDAH DIHAPUS atas
   permintaan pengguna — jangan ditambah lagi. Animasi mati bila perangkat "reduce motion".
   Video hero: `assets/videos/hero-*.mp4` (dari Gemini/Veo, 10 dtk, 720p, tanpa suara, dikompres
-  ffmpeg crf 20 "HD" 3–5 MB, Kling 1920px, Gemini 1280px (resolusi asli); file asli ada di riwayat git
-  (commit f0b0826, 55b80a4, 83b7eda); ffmpeg dari `pip install imageio-ffmpeg`). Tiap video punya versi HP `*-hp.mp4` (960px crf 26, 0,6–1,3 MB) yang
+  ffmpeg crf 17 kualitas maksimal 7–13 MB: Kling 1984px asli, Gemini 720p diperbesar ke 1920×1080
+  (lanczos + unsharp ringan; 720p tak bisa jadi Ultra HD sungguhan); file asli ada di riwayat git
+  (commit f0b0826, 55b80a4, 83b7eda); ffmpeg dari `pip install imageio-ffmpeg`). Tiap video punya versi HP `*-hp.mp4` (1280px crf 21, 1,9–3,4 MB) yang
   dipakai otomatis di layar ≤768px (slider.js). Pasang lewat atribut
   `data-video` di `.hero__slide`; slide video juga 5 dtk (DURASI_VIDEO), foto tetap cadangan
   (hemat data / reduce motion / gagal muat). Semua 6 slide sudah video: mesin pengering (Gemini, versi ke-2
