@@ -65,6 +65,8 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
 - Logo `assets/images/logo/z.png` (Zoomlion, tulisan hijau #8DC63F, transparan) dan
   `eavision.png` (transparan).
 - Jangan mencantumkan email di HTML (anti-spam); email hanya dari config.js.
+- Cache: `.htaccess` memberi `no-cache` (cek ulang ke server) untuk css/js/html/gambar/video/txt.
+  Logo merek diberi `?v=2`; naikkan versinya bila file logo diganti.
 - `.htaccess`: HTTPS, gzip, header keamanan, 404 → `/404.html`, blokir `tools/`, `.git`,
   `*.md`, `*.py`, `PETUNJUK.txt`. Tidak bisa diuji di sandbox — minta pengguna cek setelah upload.
 
@@ -121,6 +123,8 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   isi pakai tList/tSpec/tNilai/tKategori, nama file diberi akhiran `-en`/`-zh`. Huruf Mandarin
   digambar lewat canvas (fungsi `tulis`/`pecah`) karena Helvetica jsPDF tak punya huruf CJK.
   Watermark logo-dass.png opacity 0,035 di tengah halaman PDF (GState).
+  Semua gambar PDF lewat `latarPutih()`: warna di area transparan diganti putih (alpha 0 → 1) supaya
+  viewer PDF yang abaikan transparansi tidak menampilkan latar hitam/hijau.
   Uji: jsPDF dari npm (cdnjs diblokir) lewat page.route, PDF dibaca dengan `pip install pymupdf`.
 - Foto utama di halaman detail produk tanpa kotak/latar (`.detail-media` transparan + drop-shadow);
   semua foto utama produk sudah transparan.

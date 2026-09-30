@@ -40,8 +40,11 @@ RewriteRule \.(py|md|sh|log|bak)$ - [F,L]
     Header set Cache-Control "no-cache"
   </FilesMatch>
 
-  # Gambar boleh di-cache seminggu
-  <FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|ico)$">
-    Header set Cache-Control "max-age=604800, public"
+  # Gambar, video & partial: browser boleh menyimpan, tapi selalu cek ke server
+  # apakah ada versi baru (kalau tidak berubah, server hanya menjawab "304",
+  # tidak diunduh ulang). Dulu gambar di-cache 7 hari tanpa cek, sehingga
+  # pengunjung lama masih melihat logo/foto versi lama setelah website diperbarui.
+  <FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|ico|mp4|webm|txt)$">
+    Header set Cache-Control "no-cache"
   </FilesMatch>
 </IfModule>

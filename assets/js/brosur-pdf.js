@@ -159,6 +159,37 @@ function muatGambar(src) {
   });
 }
 
+/* Warna tersembunyi di area transparan PNG (sering hitam/hijau tua) diganti putih,
+   transparansi tetap dipertahankan. Tanpa ini, aplikasi PDF yang tidak mendukung
+   transparansi gambar menampilkan latar hitam/hijau di belakang logo & foto. */
+function latarPutih(img) {
+  if (!img) return null;
+  try {
+    const c = document.createElement('canvas');
+    c.width = img.naturalWidth; c.height = img.naturalHeight;
+    const ctx = c.getContext('2d');
+    ctx.drawImage(img, 0, 0);
+    const data = ctx.getImageData(0, 0, c.width, c.height);
+    const d = data.data;
+    for (let i = 0; i < d.length; i += 4) {
+      const a = d[i + 3] / 255;
+      if (a < 1) {
+        d[i]     = Math.round(d[i]     * a + 255 * (1 - a));
+        d[i + 1] = Math.round(d[i + 1] * a + 255 * (1 - a));
+        d[i + 2] = Math.round(d[i + 2] * a + 255 * (1 - a));
+        /* Canvas membuang warna piksel yang 100% transparan, jadi dibuat
+           99,6% transparan (tak terlihat) agar warna putihnya tersimpan */
+        if (d[i + 3] === 0) d[i + 3] = 1;
+      }
+    }
+    ctx.putImageData(data, 0, 0);
+    c.naturalWidth = c.width; c.naturalHeight = c.height;   // dipakai pasKotak
+    return c;
+  } catch (e) {
+    return img;
+  }
+}
+
 /* Gambar dipaskan ke dalam kotak tanpa gepeng */
 function pasKotak(img, kx, ky, kw, kh) {
   const rasio = img.naturalWidth / img.naturalHeight;
@@ -180,12 +211,14 @@ async function unduhBrosur(idProduk, tombol) {
   try {
     await muatJsPDF();
 
-    const [logoPT, logoBrand, fotoProduk, watermark] = await Promise.all([
+    const [logoPT0, logoBrand0, fotoProduk0, watermark0] = await Promise.all([
       muatGambar(base + BROSUR_LOGO),
       brand ? muatGambar(base + brand.logo) : Promise.resolve(null),
       muatGambar(base + p.gambar),
       muatGambar(base + BROSUR_WATERMARK)
     ]);
+    const logoPT = latarPutih(logoPT0), logoBrand = latarPutih(logoBrand0),
+          fotoProduk = latarPutih(fotoProduk0), watermark = latarPutih(watermark0);
 
     const { jsPDF } = window.jspdf;
     const doc = new jsPDF({ unit: 'mm', format: 'a4' });
@@ -241,8 +274,7 @@ async function unduhBrosur(idProduk, tombol) {
     /* Foto produk (PNG transparan) langsung di atas halaman, tanpa kotak latar */
     if (fotoProduk) {
       const g = pasKotak(fotoProduk, M + 3, atasY + 3, lebarFoto - 6, tinggiFoto - 6);
-      const jenis = /\.jpe?g$/i.test(p.gambar) ? 'JPEG' : 'PNG';
-      doc.addImage(fotoProduk, jenis, g.x, g.y, g.w, g.h);
+      doc.addImage(fotoProduk, 'PNG', g.x, g.y, g.w, g.h);
     }
 
     const xGuna = M + lebarFoto + 6;
