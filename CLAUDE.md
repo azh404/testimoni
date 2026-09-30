@@ -90,7 +90,9 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
 - Hero beranda beranimasi: foto zoom+geser pelan (Ken Burns), judul/teks muncul naik saat
   dibuka, indikator bawah terisi seperti progress bar (3 detik = DURASI di slider.js, samakan dengan heroProgres di pages.css).
   Slider produk di halaman merek (filter-produk.js) sama: 3 detik, masuk dari kanan, zoom pelan,
-  indikator progres. Mati otomatis bila perangkat memakai "reduce motion".
+  indikator progres. Hero beranda juga punya efek sinematik CSS (.hero__cahaya, .hero__partikel,
+  vignette, foto baru muncul dari buram di laptop). Semua mati bila perangkat "reduce motion".
+  Video asli belum ada — bila pengguna kirim video unit, jadikan video latar hero (foto = cadangan).
 - CAPTCHA tidak dipasang (tidak ada form yang mengirim ke server; form kontak membuka WA).
 
 ## Belum selesai / menunggu pengguna
