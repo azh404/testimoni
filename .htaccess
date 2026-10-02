@@ -4,6 +4,10 @@ RewriteEngine On
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
+# Jenis file video (supaya browser mengenali WebM)
+AddType video/webm .webm
+AddType video/mp4 .mp4
+
 # Jangan tampilkan daftar isi folder
 Options -Indexes
 

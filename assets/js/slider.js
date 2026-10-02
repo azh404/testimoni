@@ -33,12 +33,24 @@ function initHeroSlider() {
     /* Layar ≤768px (HP/tablet tegak) memakai versi ringan: nama file + "-hp"
        (mis. hero-tractor-hp.mp4, 960px ±1 MB). Laptop tetap versi HD. */
     const layarKecil = window.matchMedia('(max-width: 768px)').matches;
-    v.src = layarKecil
+    const mp4 = layarKecil
       ? s.dataset.video.replace(/\.mp4(\?|$)/, '-hp.mp4$1')
       : s.dataset.video;
+    /* data-webm: tersedia juga versi WebM (VP9, lebih ringan) dengan nama sama.
+       Browser memilih WebM dulu; Safari lama otomatis memakai MP4. */
+    const sumber = 'webm' in s.dataset
+      ? [[mp4.replace(/\.mp4(\?|$)/, '.webm$1'), 'video/webm'], [mp4, 'video/mp4']]
+      : [[mp4, 'video/mp4']];
+    sumber.forEach(([src, type], k) => {
+      const el = document.createElement('source');
+      el.src = src;
+      el.type = type;
+      /* Error pada <source> terakhir = semua gagal → hapus video, foto tetap tampil */
+      if (k === sumber.length - 1) el.addEventListener('error', () => v.remove());
+      v.appendChild(el);
+    });
     /* Video baru terlihat setelah benar-benar berjalan; sampai itu foto yang tampil */
     v.addEventListener('playing', () => s.classList.add('ada-video'));
-    v.addEventListener('error', () => v.remove());
     s.appendChild(v);
   };
 

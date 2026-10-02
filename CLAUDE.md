@@ -142,8 +142,9 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
     dari `assets/images/hero/*-og.jpg`, tanpa zoom, objek di tengah/kanan, kiri bawah kosong;
     boleh ada orang kecil/jauh: operator di kabin / pilot drone jauh). Dikirim sebagai
     `foto-baru/video-1..6.mp4` (1 pengering, 2 traktor, 3 tebu, 4 combine, 5 VectorAgr, 6 EAVision).
-    Rencana: ubah ke **WebM (VP9)** + MP4 cadangan (Safari) dan versi HP; pakai `<source>` webm+mp4
-    di `pasangVideo()` slider.js; ganti video Kling bertanda air.
+    SUDAH SIAP: `python tools/ubah-video.py [nomor]` membuat .webm+.mp4 (HD & -hp) dan memasang
+    `data-webm` + menaikkan `?v=` di index.html; slider.js memakai `<source>` webm lalu mp4.
+    Tinggal jalankan saat video masuk, uji (Chromium sandbox bisa putar WebM), hapus `foto-baru/`.
   - PageSpeed Insights: pengguna akan kirim screenshot hasil Mobile/Desktop untuk dioptimasi
     (perkiraan: video besar, navbar/footer via JS, Google Fonts, GA).
 - FAQ: jawaban pengiriman ke luar Jakarta masih netral — menunggu kebijakan perusahaan.
