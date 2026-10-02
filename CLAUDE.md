@@ -19,8 +19,8 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   Cakung Timur. Google Analytics 4: `G-1XWSJJDZMF`.
 
 ## Alur git (wajib)
-1. `git fetch origin main && git checkout -B claude/code-initialization-oj63ya origin/main`
-   (branch lama selalu sudah di-merge; mulai ulang dari main).
+1. `git fetch origin main && git checkout -B <branch-sesi-ini> origin/main`
+   (pakai nama branch yang diberikan sistem di sesi itu; branch lama selalu sudah di-merge).
 2. Kerjakan, uji, commit (pesan bahasa Indonesia), `git push -u origin <branch>`.
 3. Buat PR ke `main` lalu **merge sendiri** (pengguna selalu minta merge). Pakai SHA
    lengkap 40 karakter untuk `expectedHeadSha`.
@@ -132,6 +132,20 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
 - CAPTCHA tidak dipasang (tidak ada form yang mengirim ke server; form kontak membuka WA).
 
 ## Belum selesai / menunggu pengguna
+- **Status terakhir (2 Okt 2026):**
+  - Pengguna melapor website "crash" setelah upload (logo Zoomlion/EAVision versi lama berlatar,
+    PDF berlatar hitam/hijau). Sudah diperbaiki (PR #59: `.htaccess` no-cache, logo `?v=2`,
+    `latarPutih()` di PDF). Pengguna bilang masih ada yang crash — MINTA screenshot + halaman +
+    apakah di tab penyamaran juga. Bila ternyata foto produk lama dari cache, beri `?v=` pada
+    semua path foto produk (data `p.gambar`, html produk, gambarKecil).
+  - Pengguna akan membuat ulang 6 video hero di Gemini (prompt "Ultra HD 4K", 16:9, image-to-video
+    dari `assets/images/hero/*-og.jpg`, tanpa zoom, objek di tengah/kanan, kiri bawah kosong;
+    boleh ada orang kecil/jauh: operator di kabin / pilot drone jauh). Dikirim sebagai
+    `foto-baru/video-1..6.mp4` (1 pengering, 2 traktor, 3 tebu, 4 combine, 5 VectorAgr, 6 EAVision).
+    Rencana: ubah ke **WebM (VP9)** + MP4 cadangan (Safari) dan versi HP; pakai `<source>` webm+mp4
+    di `pasangVideo()` slider.js; ganti video Kling bertanda air.
+  - PageSpeed Insights: pengguna akan kirim screenshot hasil Mobile/Desktop untuk dioptimasi
+    (perkiraan: video besar, navbar/footer via JS, Google Fonts, GA).
 - FAQ: jawaban pengiriman ke luar Jakarta masih netral — menunggu kebijakan perusahaan.
 - Ide yang ditawarkan tapi belum dikerjakan: Kebijakan Privasi (UU PDP, perlu cek legal),
   galeri pengiriman unit/testimoni (perlu foto sales), Google Merchant Center (perlu
