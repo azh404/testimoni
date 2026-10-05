@@ -145,6 +145,12 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
     SUDAH SIAP: `python tools/ubah-video.py [nomor]` membuat .webm+.mp4 (HD & -hp) dan memasang
     `data-webm` + menaikkan `?v=` di index.html; slider.js memakai `<source>` webm lalu mp4.
     Tinggal jalankan saat video masuk, uji (Chromium sandbox bisa putar WebM), hapus `foto-baru/`.
+    Video 1 (pengering) SUDAH diganti (5 Okt 2026): dari **Dola AI** 720p HEVC, watermark "Dola AI"
+    di kanan bawah dibuang dengan crop 1152×648 dari kiri atas lalu diperbesar ke 1920×1080
+    (+unsharp). Video 2–6 masih versi lama (3 Kling bertanda air). Pengguna sudah diingatkan
+    agar memastikan aturan Dola mengizinkan pemakaian komersial tanpa watermark.
+  - 9 foto Zoomlion HD baru (combine F6/H7/H8/ZL88/ZL105/ZL125/ZL145, G630, C600) dipasang
+    5 Okt 2026; latar kotak-kotak dihapus rembg isnet-general-use.
   - PageSpeed Insights: pengguna akan kirim screenshot hasil Mobile/Desktop untuk dioptimasi
     (perkiraan: video besar, navbar/footer via JS, Google Fonts, GA).
 - FAQ: jawaban pengiriman ke luar Jakarta masih netral — menunggu kebijakan perusahaan.
