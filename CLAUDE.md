@@ -15,7 +15,9 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   (paling aman: ZIP semua isi folder kecuali `.git`, hapus isi `public_html`, extract).
   `.htaccess` adalah file tersembunyi — ingatkan "Show hidden files" di File Manager.
 - Kontak: WA/telepon `0811-1660-2926` (`nomorWA()` di config.js mengubah ke 62…),
-  Instagram `dass.agriculture`, alamat Jl. River Garden Boulevard No. 19B Blok B2,
+  Instagram `dass.agriculture`, Google Business Profile (terverifikasi, Okt 2026):
+  `https://g.page/r/CX_ykRcjTf7sEBM` (+ `/review` untuk ulasan) di `COMPANY.sosmed.googleMaps/ulasan`,
+  dipakai ikon peta di footer, tombol di kontak.html, dan schema `sameAs`/`hasMap`; alamat Jl. River Garden Boulevard No. 19B Blok B2,
   Cakung Timur. Google Analytics 4: `G-1XWSJJDZMF`.
 
 ## Alur git (wajib)
@@ -159,4 +161,5 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   keputusan harga), Bing Webmaster Tools, konten artikel rutin.
 - Tugas pengguna: upload terbaru ke Hostinger, Search Console (kirim ulang `sitemap.xml`,
   tambah `sitemap-gambar.xml`, minta indeks `bandingkan.html`, `kamus-pertanian.html`,
-  `faq.html`), aktifkan 2FA (Hostinger/GitHub/Google), UptimeRobot, Google Business Profile.
+  `faq.html`), aktifkan 2FA (Hostinger/GitHub/Google), UptimeRobot. GBP sudah dibuat — saran: kategori
+  utama "Pemasok mesin pertanian", ganti foto sampul (masih foto mobil), tambah foto kantor/unit.

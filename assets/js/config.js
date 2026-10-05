@@ -37,6 +37,9 @@ const COMPANY = {
 
   sosmed: {
     instagram: "https://www.instagram.com/dass.agriculture",
+    /* Google Business Profile: halaman di Google Maps & link minta ulasan */
+    googleMaps: "https://g.page/r/CX_ykRcjTf7sEBM",
+    ulasan:     "https://g.page/r/CX_ykRcjTf7sEBM/review",
     facebook:  "#",
     linkedin:  "#",
     youtube:   "#"
