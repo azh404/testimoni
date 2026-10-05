@@ -32,6 +32,13 @@
             </svg>
           </a>
 
+          <a href="#" data-sosmed="googleMaps" aria-label="Google Maps" title="Google Maps">
+            <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+              <path fill="#EA4335" d="M24 4c-7.73 0-14 6.27-14 14 0 10.5 14 26 14 26s14-15.5 14-26c0-7.73-6.27-14-14-14z"/>
+              <circle fill="#FFFFFF" cx="24" cy="18" r="5.5"/>
+            </svg>
+          </a>
+
           <a href="#" data-sosmed="instagram" aria-label="Instagram" title="Instagram">
             <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
               <defs>
