@@ -198,11 +198,15 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   jual dihapus, slug mengikuti Marketing bila topiknya sama. Tanpa foto. Tanggal: panel 5 Okt, sisanya
   6 Okt (jadwal Marketing 07–10 Okt tidak dipakai karena tanggal masa depan). Bila Marketing menambah
   tab baru, bandingkan dengan daftar ini.
+  **Website kini HANYA berisi 7 artikel dari Marketing** (permintaan pengguna, 6 Okt). 12 artikel buatan Claude
+  dihapus; alamat lamanya dialihkan 301 ke `/artikel.html` lewat `.htaccess`; foto lamanya masih ada di
+  `assets/images/artikel/` (tidak dipakai). Jangan menulis artikel sendiri tanpa diminta. Daftar "Baca Juga"
+  di halaman kata kunci & produk (tools/buat-halaman-landing.js) disesuaikan; halaman drone belum punya
+  artikel. Tombol filter kategori disembunyikan bila hanya ada satu kategori.
 - Halaman `artikel.html` (6 Okt 2026): artikel terbaru = kartu sorotan mendatar (`#artikelUtama`), sisanya
   grid 6 kolom (3 per baris; baris terakhir tak penuh dilebarkan lewat CSS nth-child), "Baca selengkapnya" +
   waktu baca (200 kata/menit). **Foto artikel opsional**: `gambar: ''` → sampul gradasi hijau→biru + logo
-  putih + kategori (`.artikel-sampul`, 4 variasi warna dari id artikel; juga dipakai bila foto gagal dimuat); og:image cadangan `hero-tractor-og.jpg`. Tanggal 13 artikel lama
-  disebar 22 Sep–5 Okt 2026 (sebelumnya semua 28 Sep). Belum dibuat: template Marketing & `tools/tambah-artikel.js`.
+  putih + kategori (`.artikel-sampul`, 4 variasi warna dari id artikel; juga dipakai bila foto gagal dimuat); og:image cadangan `hero-tractor-og.jpg`. Belum dibuat: template Marketing & `tools/tambah-artikel.js`.
 - **Mode perbaikan mungkin masih aktif di Hostinger**: pengguna menempel 5 baris "MODE PERBAIKAN" di
   `.htaccess` server pada 6 Okt 2026 (website ditutup 503). Ada pengingat (send_later, trig_01Hj1x6NpEpd9BQGcbXMVgE7)
   9 Okt 2026 09.00 WIB untuk menyalakan lagi. Cara menyalakan: hapus 5 baris itu, atau upload ulang

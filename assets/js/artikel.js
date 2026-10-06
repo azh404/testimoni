@@ -86,6 +86,9 @@ function initHalamanArtikel() {
     k => semua.some(a => a.kategori === k.id)
   );
 
+  /* Tombol filter hanya berguna bila ada lebih dari satu kategori */
+  if (wrapFilter) wrapFilter.style.display = kategoriAktif.length < 2 ? 'none' : '';
+
   if (wrapFilter) {
     wrapFilter.innerHTML = `
       <button class="filter-btn is-active" data-kategori="all">
