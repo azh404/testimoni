@@ -2134,3 +2134,16 @@ body[data-brand="eavision"] .produk-grid {
   .tt-visi { padding: var(--sp-6) var(--sp-5); }
   .tt-misi, .tt-unggul { grid-template-columns: 1fr; }
 }
+
+/* Profil tanpa foto: satu kolom di tengah, lebar nyaman dibaca */
+.tt-profil--satu { grid-template-columns: 1fr; max-width: 820px; text-align: center; }
+.tt-profil--satu .tt-profil__teks p { text-align: left; }
+.tt-profil--satu .tt-profil__teks h1::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  margin: var(--sp-4) auto 0;
+  border-radius: 2px;
+  background: #8DC63F;
+}
