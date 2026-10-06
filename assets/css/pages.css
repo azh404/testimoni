@@ -2007,7 +2007,7 @@ body[data-brand="eavision"] .produk-grid {
   gap: var(--sp-8);
   align-items: center;
 }
-.tt-profil__teks h2 { font-size: clamp(1.6rem, 3vw, 2.3rem); margin: var(--sp-2) 0 var(--sp-4); }
+.tt-profil__teks h1 { font-size: clamp(1.8rem, 3.4vw, 2.6rem); margin: var(--sp-2) 0 var(--sp-4); }
 .tt-profil__teks p { color: var(--color-body); line-height: 1.8; }
 .tt-kolase {
   position: relative;
