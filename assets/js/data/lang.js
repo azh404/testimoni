@@ -267,6 +267,7 @@ const TEKS = {
   },
   'kontak.petaEyebrow': { id: 'Lokasi',            en: 'Location',        zh: '位置' },
   'kontak.petaJudul':   { id: 'Kantor Pusat Kami', en: 'Our Head Office', zh: '我们的总部' },
+  'kontak.igTeks':     { id: 'Foto unit & kabar terbaru', en: 'Unit photos & latest updates', zh: '机型照片与最新动态' },
   'kontak.bukaMaps':    { id: 'Buka di Google Maps', en: 'Open in Google Maps', zh: '在谷歌地图中打开' },
   'kontak.beriUlasan':  { id: '★ Beri Ulasan di Google', en: '★ Review Us on Google', zh: '★ 在谷歌上评价我们' },
 
