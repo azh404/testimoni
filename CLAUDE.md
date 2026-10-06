@@ -184,18 +184,20 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   (ZL145), `hero-sugarcane-hasverter.webp` (C610).
 
 ## Belum selesai / menunggu pengguna (status 6 Okt 2026)
-- **ARTIKEL — LANJUTKAN DI SESI BARU (6 Okt 2026):** artikel & berita ditulis divisi **Marketing
-  Komunikasi** di **Google Docs** (selalu diperbarui), lalu dikirim ke pengguna (IT). Pengguna memilih
-  menyambungkan **konektor Google Drive** (claude.ai/customize/connectors) agar Claude bisa membaca
-  dokumen itu langsung. Di sesi baru: (1) cek konektor Google Drive tersedia, minta link/nama dokumen
-  Marketing; (2) review artikel (ejaan, fakta, judul/ringkasan SEO, tanpa klaim servis/sparepart) lalu
-  masukkan ke website. Usulan yang belum dikerjakan & belum disetujui (tawarkan lagi, pratinjau dulu):
-  foto artikel OPSIONAL (sekarang tanpa foto = kotak abu-abu di kartu + `<img>` rusak di halaman artikel;
-  ganti sampul pengganti warna DASS + logo + kategori), template untuk Marketing, alat
-  `tools/tambah-artikel.js` (file di `artikel-baru/` → data + halaman + sitemap), halaman `artikel.html`
-  dirapikan (artikel terbaru jadi sorotan besar, tombol "Baca selengkapnya", kartu terakhir tidak
-  sendirian). Temuan: semua 13 artikel bertanggal sama 2026-09-28; semua foto artikel buatan AI.
-  Artikel Marketing biasanya hanya bahasa Indonesia — tawarkan terjemahan EN/ZH.
+- **ARTIKEL dari Marketing (6 Okt 2026):** artikel & berita ditulis divisi **Marketing Komunikasi**
+  (iko.tbg@gmail.com) di Google Docs **"Artikel Website"** (id `1779NV9vUfaoSUkeoraAIMKRDNzk0fElBbXdISEjZaFo`,
+  satu dokumen, artikel per tanggal). Konektor Google Drive tersambung. Buka HANYA dokumen yang disebut
+  pengguna. Alur: review (ejaan, fakta, nama perusahaan, tanpa klaim servis/sparepart/purna jual, topik
+  alat berat konstruksi tidak cocok, foto iStock tidak boleh tanpa lisensi) → rapikan → masukkan ke
+  `artikel.js` + terjemahan EN/ZH → `node tools/buat-halaman-artikel.js`. Review 6 Okt: 10/10 Oksidasi Oli
+  memuat nama "PT Bumi Citra Traktor Nusantara (BCTN)" + teks dobel (jangan tayang); 09/10 salah nama
+  "Nusantara"; 07/10 & 22/09 klaim purna jual/suku cadang; pesan rangkuman sudah diberikan ke pengguna.
+  Sudah tayang dari Marketing: Ganti Oli & Differential Lock (tanpa foto, tanggal 6 Okt).
+- Halaman `artikel.html` (6 Okt 2026): artikel terbaru = kartu sorotan mendatar (`#artikelUtama`), sisanya
+  grid 6 kolom (3 per baris; baris terakhir tak penuh dilebarkan lewat CSS nth-child), "Baca selengkapnya" +
+  waktu baca (200 kata/menit). **Foto artikel opsional**: `gambar: ''` → sampul gradasi hijau→biru + logo
+  putih + kategori (`.artikel-sampul`); og:image cadangan `hero-tractor-og.jpg`. Tanggal 13 artikel lama
+  disebar 22 Sep–5 Okt 2026 (sebelumnya semua 28 Sep). Belum dibuat: template Marketing & `tools/tambah-artikel.js`.
 - **Mode perbaikan mungkin masih aktif di Hostinger**: pengguna menempel 5 baris "MODE PERBAIKAN" di
   `.htaccess` server pada 6 Okt 2026 (website ditutup 503). Ada pengingat (send_later, trig_01Hj1x6NpEpd9BQGcbXMVgE7)
   9 Okt 2026 09.00 WIB untuk menyalakan lagi. Cara menyalakan: hapus 5 baris itu, atau upload ulang

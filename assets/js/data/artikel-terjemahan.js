@@ -9,6 +9,144 @@
 const ARTIKEL_TERJEMAHAN = {
 
   /* ------------------------------------------------------------ */
+  'cara-ganti-oli-traktor': {
+    en: {
+      judul: `How to Change Tractor Oil the Right Way and Save Money`,
+      ringkas: `Changing oil on time and with the right procedure keeps your tractor engine running longer and lowers operating costs.`,
+      isi: [
+        `Routine maintenance is the key to keeping a tractor engine in top condition. One step you should never skip is changing the oil correctly and on time. Regular oil changes protect engine parts from wear, keep temperatures stable, and prevent damage that leads to expensive repairs.`,
+        `Done properly, it not only extends engine life but also saves operating costs in the long run.`,
+        `## Why Is Changing Tractor Oil Important?`,
+        `Engine oil lubricates, cools, and cleans the parts inside the engine. Over time its quality drops because of heat and combustion residue. If it is changed too late, friction between parts increases and can damage the engine.`,
+        `By changing the oil regularly, you can:`,
+        `• Keep engine performance at its best<br>• Reduce fuel consumption<br>• Prevent overheating<br>• Reduce the risk of the tractor breaking down mid-season`,
+        `Ideally, change the oil according to the working-hour interval in the unit's manual.`,
+        `## Preparation Before Changing the Oil`,
+        `Prepare the following:`,
+        `• New oil that meets the manufacturer's specification<br>• A new oil filter<br>• A spanner or socket wrench<br>• A container for the used oil<br>• Gloves and a rag`,
+        `Make sure the tractor is on level ground and the engine is warm (not hot) so the oil drains more easily.`,
+        `## Steps to Change Tractor Oil`,
+        `### 1. Turn Off the Engine and Open the Drain Plug`,
+        `Make sure the engine is off. Open the drain plug under the engine and let the used oil flow into the container.`,
+        `### 2. Remove and Replace the Oil Filter`,
+        `Use a filter wrench to remove the old filter. Spread a little new oil on the rubber seal before fitting the new filter to prevent leaks.`,
+        `### 3. Refit the Plug and Fill With New Oil`,
+        `Once all the old oil has drained, refit the drain plug firmly. Pour in new oil up to the engine's capacity through the filler hole.`,
+        `### 4. Check the Level and Start the Engine`,
+        `Use the dipstick to make sure the oil level is correct. Run the engine for a few minutes, then check again for leaks.`,
+        `## Tips to Save on Maintenance Costs`,
+        `• Use oil with the recommended specification<br>• Replace the filter every time you change the oil<br>• Do not mix old and new oil<br>• Keep a record of oil changes`,
+        `Disciplined maintenance is far cheaper than major repairs caused by neglect. See also <a href="artikel/perawatan-traktor-jelang-musim-hujan.html">7 tractor maintenance steps before planting season</a>.`,
+        `## Conclusion`,
+        `Changing tractor oil correctly is a simple step with a big impact on engine life and performance. With routine maintenance, the right oil, and regular filter changes, you save money and keep productivity high.`,
+        null,
+        `<strong>Looking for a new tractor?</strong> PT Diesel Agri Sukses Sejahtera (DASS) is the authorised distributor of <a href="pages/produk/zoomlion.html">Zoomlion tractors</a>, a manufacturer of high-tech agricultural machinery. Contact us for advice and a quotation.`,
+        `Need advice? <a href="kontak.html">Contact us</a>.`
+      ]
+    },
+    zh: {
+      judul: `正确更换拖拉机机油的方法，省钱又护机`,
+      ringkas: `按时并按正确步骤更换机油，可延长拖拉机发动机寿命并降低运营成本。`,
+      isi: [
+        `定期保养是保持拖拉机发动机良好状态的关键。其中不可忽视的一步，就是按时、正确地更换机油。定期换油可保护发动机部件免受磨损、保持温度稳定，并避免导致高昂维修费用的损坏。`,
+        `只要步骤正确，不仅能延长发动机寿命，还能长期节省运营成本。`,
+        `## 为什么更换拖拉机机油很重要？`,
+        `机油具有润滑、冷却和清洁发动机内部部件的作用。随着时间推移，机油会因高温和燃烧残留物而变质。若更换过晚，部件之间的摩擦增加，可能损坏发动机。`,
+        `定期换油可以：`,
+        `• 保持发动机最佳性能<br>• 降低油耗<br>• 防止发动机过热<br>• 降低农忙期间停机的风险`,
+        `理想情况下，应按照使用手册中建议的工作小时数更换机油。`,
+        `## 换油前的准备`,
+        `请准备以下物品：`,
+        `• 符合厂家规格的新机油<br>• 新机油滤清器<br>• 扳手或套筒扳手<br>• 废油收集容器<br>• 手套和抹布`,
+        `确保拖拉机停在平地上，发动机处于温热（而非高温）状态，以便机油更容易流出。`,
+        `## 更换拖拉机机油的步骤`,
+        `### 1. 关闭发动机并打开放油螺栓`,
+        `确认发动机已熄火。打开发动机底部的放油螺栓，让废油流入收集容器。`,
+        `### 2. 拆下并更换机油滤清器`,
+        `用专用扳手拆下旧滤清器。安装新滤清器前，在密封圈上涂少许新机油以防渗漏。`,
+        `### 3. 装回螺栓并加注新机油`,
+        `旧机油放净后，拧紧放油螺栓。按发动机容量从加油口加注新机油。`,
+        `### 4. 检查油位并启动发动机`,
+        `用油尺确认油位符合标准。启动发动机运转几分钟，再检查是否有渗漏。`,
+        `## 节省保养费用的小贴士`,
+        `• 使用推荐规格的机油<br>• 每次换油时同时更换滤清器<br>• 不要混用新旧机油<br>• 记录每次换油时间`,
+        `坚持保养远比因疏忽导致的大修便宜。另请参阅<a href="artikel/perawatan-traktor-jelang-musim-hujan.html">播种季前的7项拖拉机保养</a>。`,
+        `## 总结`,
+        `正确更换拖拉机机油是一个简单却影响深远的步骤。通过定期保养、使用合适的机油并按时更换滤清器，既能省钱，又能保持高生产效率。`,
+        null,
+        `<strong>正在寻找新拖拉机？</strong>PT Diesel Agri Sukses Sejahtera（DASS）是高科技农机制造商<a href="pages/produk/zoomlion.html">中联重科拖拉机</a>的官方经销商。欢迎联系我们获取咨询和报价。`,
+        `需要建议？<a href="kontak.html">联系我们</a>。`
+      ]
+    }
+  },
+
+  /* ------------------------------------------------------------ */
+  'cara-pakai-differential-lock-traktor': {
+    en: {
+      judul: `Tractor Keeps Slipping? Here's How to Use the Differential Lock`,
+      ringkas: `The differential lock helps a tractor get out of muddy fields. Learn how it works and when to engage it.`,
+      isi: [
+        `A tractor that keeps slipping in wet, muddy, or sandy fields slows the work down. One solution is to use the differential lock correctly. This feature improves wheel traction so engine power reaches the ground, especially on difficult terrain.`,
+        `This article explains what the differential lock does, its benefits, and how to use it so your tractor performs well in all field conditions.`,
+        `## What Is a Tractor Differential Lock?`,
+        `The differential lets the left and right wheels turn at different speeds when cornering. But when one wheel loses traction (for example, stuck in mud), engine power flows to the slipping wheel instead.`,
+        `That is where the differential lock comes in. When engaged, it locks both wheels to turn at the same speed. Power is shared evenly and the tractor can get out of the slip more easily.`,
+        `## Why Tractors Slip`,
+        `• Muddy or very wet fields<br>• Sandy or loose soil<br>• Too heavy a load<br>• Incorrect tyre pressure<br>• Improper driving technique`,
+        `Knowing the causes helps the operator decide when to use the differential lock. Tyre choice matters too, see <a href="artikel/cara-pilih-ban-traktor.html">how to choose the right tractor tyres</a>.`,
+        `## How to Use the Differential Lock Correctly`,
+        `### 1. Engage It at Low Speed`,
+        `Engage the differential lock when the tractor is moving slowly or almost stopped. Engaging it at high speed can damage the transmission.`,
+        `### 2. Use It Only on Slippery or Muddy Ground`,
+        `Use the feature when the wheels start losing traction. The lever or pedal is usually near the operator's feet; check its location in the unit's manual.`,
+        `### 3. Release It After Passing the Difficult Area`,
+        `Once the tractor is back on firm ground, disengage the differential lock right away. Using it too long speeds up wear on the differential.`,
+        `### 4. Avoid Using It When Turning Sharply`,
+        `Because both wheels are locked together, using it during sharp turns puts excessive stress on the axles.`,
+        `## Benefits of the Differential Lock`,
+        `• Better traction on tough terrain<br>• Lower risk of getting stuck<br>• More even distribution of engine power<br>• Saves time and fuel`,
+        `The feature is very useful for paddy field preparation, pulling heavy implements, and work in oil palm plantations.`,
+        `## Conclusion`,
+        `Using the differential lock correctly helps stop a tractor from slipping and keeps work moving. Engage it only when needed and disengage it once conditions are stable to keep components in good shape.`,
+        null,
+        `<strong>Need a tractor for paddy fields or plantations?</strong> PT Diesel Agri Sukses Sejahtera (DASS) is the authorised distributor of <a href="pages/produk/zoomlion.html">Zoomlion tractors</a>. Contact us for advice and a quotation.`,
+        `Need advice? <a href="kontak.html">Contact us</a>.`
+      ]
+    },
+    zh: {
+      judul: `拖拉机经常打滑？差速锁的正确使用方法`,
+      ringkas: `差速锁可帮助拖拉机驶出泥泞田地。了解其工作原理以及何时应启用。`,
+      isi: [
+        `拖拉机在湿地、泥地或沙地作业时经常打滑，会拖慢工作进度。解决方法之一是正确使用差速锁。该功能可提高车轮牵引力，使发动机动力有效传递到地面，尤其适用于复杂地形。`,
+        `本文介绍差速锁的作用、好处及使用步骤，让拖拉机在各种田间条件下都能高效工作。`,
+        `## 什么是拖拉机差速锁？`,
+        `差速器使左右车轮在转弯时能以不同速度转动。但当一侧车轮失去牵引力（例如陷入泥中）时，发动机动力反而会流向打滑的车轮。`,
+        `这时差速锁就派上用场。启用后，它会将两侧车轮锁定为同速转动，动力均匀分配，拖拉机更容易摆脱打滑。`,
+        `## 拖拉机打滑的原因`,
+        `• 田地泥泞或过湿<br>• 沙质或松软土壤<br>• 负荷过重<br>• 轮胎气压不符合标准<br>• 驾驶操作不当`,
+        `了解原因有助于操作员判断何时使用差速锁。轮胎选择同样重要，请参阅<a href="artikel/cara-pilih-ban-traktor.html">如何选择合适的拖拉机轮胎</a>。`,
+        `## 正确使用差速锁的方法`,
+        `### 1. 在低速时启用`,
+        `在拖拉机低速行驶或接近停止时启用差速锁。高速时启用可能损坏变速系统。`,
+        `### 2. 仅在湿滑或泥泞路面使用`,
+        `当车轮开始失去牵引力时再使用。差速锁操纵杆或踏板通常位于操作员脚部附近，具体位置请查看使用手册。`,
+        `### 3. 驶过困难区域后立即解除`,
+        `拖拉机回到稳固地面后，应立即解除差速锁。长时间使用会加速差速器部件磨损。`,
+        `### 4. 急转弯时避免使用`,
+        `由于两侧车轮被锁定同速转动，急转弯时使用会对车轴造成过大压力。`,
+        `## 差速锁的好处`,
+        `• 在恶劣地形中提高牵引力<br>• 降低陷车风险<br>• 发动机动力分配更均匀<br>• 节省时间和燃油`,
+        `该功能非常适合水田整地、牵引重型农具以及油棕种植园作业。`,
+        `## 总结`,
+        `正确使用差速锁可有效解决拖拉机打滑问题，保持作业顺畅。仅在需要时启用，地面稳定后及时解除，可延长部件寿命。`,
+        null,
+        `<strong>需要用于水田或种植园的拖拉机？</strong>PT Diesel Agri Sukses Sejahtera（DASS）是<a href="pages/produk/zoomlion.html">中联重科拖拉机</a>的官方经销商。欢迎联系我们获取咨询和报价。`,
+        `需要建议？<a href="kontak.html">联系我们</a>。`
+      ]
+    }
+  },
+
+  /* ------------------------------------------------------------ */
   'perawatan-traktor-jelang-musim-hujan': {
     en: {
       judul: `Rainy Season Is Coming: 7 Tractor Maintenance Steps Before Planting Season`,

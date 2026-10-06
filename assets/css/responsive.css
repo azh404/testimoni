@@ -119,6 +119,14 @@
 
   /* --- Artikel --- */
   .artikel-grid { grid-template-columns: repeat(2, 1fr); }
+  .artikel-grid > .artikel-card,
+  .artikel-grid > .artikel-card:nth-child(n):nth-child(n) { grid-column: auto; flex-direction: column; }
+  .artikel-grid > .artikel-card:nth-child(n):nth-child(n) .artikel-card__media { flex: none; aspect-ratio: 16 / 10; min-height: 0; }
+  .artikel-grid > .artikel-card:nth-child(2n+1):last-child { grid-column: 1 / -1; flex-direction: row; }
+  .artikel-grid > .artikel-card:nth-child(2n+1):last-child .artikel-card__media { flex: 0 0 45%; aspect-ratio: auto; min-height: 220px; }
+  .artikel-card--utama .artikel-card__media { flex-basis: 50%; min-height: 300px; }
+  .artikel-card--utama .artikel-card__body { padding: var(--sp-6) var(--sp-5); }
+  .artikel-card--utama .artikel-card__judul { font-size: var(--fs-xl); }
 
   /* --- Produk --- */
   .produk-grid { grid-template-columns: repeat(3, 1fr); }
@@ -171,6 +179,12 @@
   .visi-misi,
   .kontak-grid,
   .artikel-grid { grid-template-columns: 1fr; }
+  .artikel-grid > .artikel-card:nth-child(n):nth-child(n),
+  .artikel-utama > .artikel-card--utama { flex-direction: column; }
+  .artikel-grid > .artikel-card:nth-child(n):nth-child(n) .artikel-card__media,
+  .artikel-card--utama .artikel-card__media { flex: none; aspect-ratio: 16 / 10; min-height: 0; }
+  .artikel-card--utama .artikel-card__body { padding: var(--sp-5); }
+  .artikel-card--utama .artikel-card__ringkas { font-size: var(--fs-sm); }
 
   /* --- Navbar --- */
   .brand__logo { height: 38px; }

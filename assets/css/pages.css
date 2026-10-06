@@ -828,8 +828,101 @@
    ========================================= */
 .artikel-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: var(--sp-5);
+}
+/* 3 kartu per baris; baris terakhir yang tidak penuh dilebarkan
+   agar tidak ada kartu sendirian di pojok kiri */
+.artikel-grid > .artikel-card { grid-column: span 2; }
+.artikel-grid > .artikel-card:nth-child(3n+1):nth-last-child(2),
+.artikel-grid > .artikel-card:nth-child(3n+2):last-child { grid-column: span 3; }
+.artikel-grid > .artikel-card:nth-child(3n+1):last-child {
+  grid-column: 1 / -1;
+  flex-direction: row;
+}
+.artikel-grid > .artikel-card:nth-child(3n+1):last-child .artikel-card__media {
+  flex: 0 0 40%;
+  aspect-ratio: auto;
+  min-height: 240px;
+}
+
+/* Artikel terbaru (sorotan) di atas grid */
+.artikel-utama { margin-bottom: var(--sp-6); }
+.artikel-utama:empty { display: none; }
+.artikel-utama > .artikel-card--utama { flex-direction: row; }
+.artikel-card--utama .artikel-card__media {
+  flex: 0 0 55%;
+  aspect-ratio: auto;
+  min-height: 340px;
+}
+.artikel-card--utama .artikel-card__body {
+  justify-content: center;
+  padding: var(--sp-7) var(--sp-6);
+}
+.artikel-card--utama .artikel-card__judul { font-size: var(--fs-2xl); }
+.artikel-card--utama .artikel-card__ringkas { font-size: var(--fs-base); }
+.artikel-card--utama .artikel-card__kaki { margin-top: var(--sp-2); }
+
+.artikel-card__label { display: flex; flex-wrap: wrap; gap: var(--sp-2); }
+.artikel-card__badge--baru {
+  color: var(--color-white);
+  background-color: var(--color-accent);
+}
+.artikel-card__kaki {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-2);
+  margin-top: auto;
+  padding-top: var(--sp-4);
+  border-top: 1px solid var(--color-border);
+}
+.artikel-card__baca {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--color-primary);
+  transition: transform var(--transition);
+}
+.artikel-card:hover .artikel-card__baca { transform: translateX(4px); }
+
+/* Sampul pengganti bila artikel tanpa foto */
+.artikel-card__media { position: relative; }
+.artikel-sampul {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-3);
+  padding: var(--sp-5);
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-primary) 100%);
+  overflow: hidden;
+}
+.artikel-sampul[hidden] { display: none; }
+.artikel-sampul::after {
+  content: '';
+  position: absolute;
+  inset: auto -20% -45% auto;
+  width: 70%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .08);
+}
+.artikel-card__media .artikel-sampul img {
+  width: 34%;
+  max-width: 150px;
+  height: auto;
+  object-fit: contain;
+  transform: none;
+}
+.artikel-sampul span {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .85);
 }
 
 .artikel-card {
@@ -896,7 +989,6 @@
 .artikel-card__tanggal {
   font-size: var(--fs-xs);
   color: var(--color-muted);
-  margin-top: auto;
 }
 
 .artikel-detail__media {
