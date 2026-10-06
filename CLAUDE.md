@@ -154,6 +154,10 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   bandingkan) → Sektor → Artikel gaya majalah "Wawasan & Berita / Kabar Terbaru dari Lapangan" (latar biru tua→hijau, 1 artikel
   besar + 3 ringkas, `.majalah`; data artikel dimuat malas saat bagian hampir terlihat)
   → Mitra. Kode: `assets/js/beranda.js` (`initBeranda`, juga di gantiBahasa).
+- Halaman Tentang Kami didesain ulang (6 Okt 2026, "terlalu polos"): hero foto (`hero-zoomlion-2.webp`)
+  + 2 tombol → profil + kolase 3 foto & lencana "3 Merek Global" → strip angka (`.stats`) → kartu merek
+  (`#brandCards`, initProdukTabs) → Visi (kotak kutipan gradasi) + Misi 6 kartu bernomor → Mengapa Kami
+  (kunci `unggul.*`) → Kemitraan. CSS awalan `.tt-`.
 - Mode perbaikan: `perbaikan.html` (noindex) + blok "MODE PERBAIKAN" di awal `.htaccess`
   (3 baris Rewrite diberi #; hapus # untuk menutup website dengan 503). Pengguna mengaktifkannya
   langsung di File Manager Hostinger.

@@ -30,21 +30,24 @@
 
   <main>
 
-    <!-- ===== HERO ===== -->
-    <section class="brand-hero">
-      <div class="container brand-hero__grid brand-hero__grid--satu">
-        <div class="brand-hero__left">
-          <span class="brand-hero__eyebrow" data-i18n="tt.eyebrow">Tentang Kami</span>
-          <h1>PT Diesel Agri Sukses Sejahtera</h1>
-          <p data-i18n="tt.hero">Menggerakkan Masa Depan Pertanian Indonesia</p>
+    <!-- ===== HERO BERGAMBAR ===== -->
+    <section class="tt-hero">
+      <div class="container tt-hero__isi">
+        <span class="tt-hero__eyebrow" data-i18n="tt.eyebrow">Tentang Kami</span>
+        <h1>PT Diesel Agri Sukses Sejahtera</h1>
+        <p data-i18n="tt.hero">Menggerakkan Masa Depan Pertanian Indonesia</p>
+        <div class="tt-hero__aksi">
+          <a href="#merek" class="btn btn--accent btn--lg" data-i18n="produk.lihat">Lihat Produk</a>
+          <a href="kontak.html" class="btn btn--terang btn--lg" data-i18n="mitra.btn">Hubungi Kami</a>
         </div>
       </div>
     </section>
 
-    <!-- ===== PROFIL ===== -->
+    <!-- ===== PROFIL + KOLASE FOTO ===== -->
     <section class="section">
-      <div class="container container--narrow">
-        <div class="tentang-teks">
+      <div class="container tt-profil">
+        <div class="tt-profil__teks" data-reveal>
+          <span class="section-header__eyebrow" data-i18n="tt.eyebrow">Tentang Kami</span>
           <h2 data-i18n="tt.judul">Menggerakkan Masa Depan Pertanian Indonesia</h2>
           <p data-i18n="tt.p1">
             PT Diesel Agri Sukses Sejahtera adalah mitra berdedikasi dalam memajukan sektor
@@ -69,54 +72,108 @@
             masa depan yang lebih berkelanjutan bagi pertanian Indonesia.
           </p>
         </div>
+        <div class="tt-kolase" data-reveal="1">
+          <img class="tt-kolase__a" src="assets/images/hero/hero-tractor.webp?v=2" alt="Traktor Zoomlion RK704 membajak sawah" loading="lazy">
+          <img class="tt-kolase__b" src="assets/images/hero/eavision-j150-panel.webp" alt="Drone pertanian EAVision EA-J150" loading="lazy">
+          <img class="tt-kolase__c" src="assets/images/hero/hero-combine-hasverter.webp?v=2" alt="Combine harvester Zoomlion ZL145 memanen padi" loading="lazy">
+          <span class="tt-kolase__lencana">
+            <strong>3</strong>
+            <span data-i18n="tt.lencana">Merek Global, Distributor Resmi</span>
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ANGKA ===== -->
+    <section class="stats" aria-label="DASS dalam angka">
+      <div class="container stats__grid">
+        <div class="stats__item" data-reveal>
+          <span class="stats__angka" data-count="3">3</span>
+          <span class="stats__label" data-i18n="stat.merek">Merek Resmi</span>
+        </div>
+        <div class="stats__item" data-reveal="1">
+          <span class="stats__angka" data-count="60" data-suffix="+">60+</span>
+          <span class="stats__label" data-i18n="stat.model">Model Unit</span>
+        </div>
+        <div class="stats__item" data-reveal="2">
+          <span class="stats__angka" data-count="13">13</span>
+          <span class="stats__label" data-i18n="stat.kategori">Kategori Mesin</span>
+        </div>
+        <div class="stats__item" data-reveal="3">
+          <span class="stats__angka">Jakarta</span>
+          <span class="stats__label" data-i18n="stat.kantor">Kantor Pusat</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MEREK RESMI ===== -->
+    <section class="section section--soft" id="merek">
+      <div class="container">
+        <div class="section-header section-header--center">
+          <span class="section-header__eyebrow" data-i18n="stat.merek">Merek Resmi</span>
+          <h2 class="section-header__title" data-i18n="tt.merekJudul">Distributor Resmi Tiga Merek Global</h2>
+        </div>
+        <div class="brand-cards" id="brandCards"></div>
       </div>
     </section>
 
     <!-- ===== VISI & MISI ===== -->
-    <section class="section section--soft">
+    <section class="section">
       <div class="container">
-
         <div class="section-header section-header--center">
           <span class="section-header__eyebrow" data-i18n="tt.vmEyebrow">Arah Kami</span>
           <h2 class="section-header__title" data-i18n="tt.vmJudul">Visi &amp; Misi</h2>
         </div>
 
-        <div class="visi-misi">
+        <div class="tt-visi" data-reveal>
+          <span class="tt-visi__label" data-i18n="tt.visiJudul">Visi</span>
+          <p data-i18n="tt.visi">
+            Menjadi mitra paling terpercaya di Indonesia dalam mekanisasi pertanian,
+            mendorong produktivitas, keberlanjutan, dan kemakmuran bagi petani dan
+            pelaku usaha perkebunan di seluruh Indonesia.
+          </p>
+        </div>
 
-          <div class="visi-card" data-reveal>
-            <div class="visi-card__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/>
-                <circle cx="12" cy="12" r="3"/>
-              </svg>
-            </div>
-            <h3 data-i18n="tt.visiJudul">Visi</h3>
-            <p data-i18n="tt.visi">
-              Menjadi mitra paling terpercaya di Indonesia dalam mekanisasi pertanian,
-              mendorong produktivitas, keberlanjutan, dan kemakmuran bagi petani dan
-              pelaku usaha perkebunan di seluruh Indonesia.
-            </p>
+        <h3 class="tt-misi__judul" data-i18n="tt.misiJudul">Misi</h3>
+        <div class="tt-misi">
+          <div class="tt-misi__item" data-reveal="0"><span>01</span><p data-i18n="tt.misi1">Menyediakan mesin pertanian berkualitas tinggi dan andal dari produsen internasional terkemuka</p></div>
+          <div class="tt-misi__item" data-reveal="1"><span>02</span><p data-i18n="tt.misi2">Memperjuangkan dan mempromosikan peralatan fabrikasi lokal yang unggul di samping teknologi global</p></div>
+          <div class="tt-misi__item" data-reveal="2"><span>03</span><p data-i18n="tt.misi3">Menyediakan solusi menyeluruh yang mendukung setiap tahap operasi pertanian dan perkebunan</p></div>
+          <div class="tt-misi__item" data-reveal="0"><span>04</span><p data-i18n="tt.misi4">Memberdayakan petani dan operator agribisnis dengan peralatan yang memaksimalkan efisiensi dan hasil panen</p></div>
+          <div class="tt-misi__item" data-reveal="1"><span>05</span><p data-i18n="tt.misi5">Membangun kemitraan jangka panjang yang didasarkan pada kepercayaan, layanan, dan pertumbuhan bersama</p></div>
+          <div class="tt-misi__item" data-reveal="2"><span>06</span><p data-i18n="tt.misi6">Berkontribusi pada keberlanjutan dan kemajuan sektor pertanian Indonesia</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MENGAPA DASS ===== -->
+    <section class="section section--soft">
+      <div class="container">
+        <div class="section-header section-header--center">
+          <span class="section-header__eyebrow" data-i18n="unggul.eyebrow">Mengapa Kami</span>
+          <h2 class="section-header__title" data-i18n="unggul.judul">Bukan Sekadar Penjual Unit</h2>
+        </div>
+        <div class="tt-unggul">
+          <div class="tt-unggul__item" data-reveal="0">
+            <span class="tt-unggul__ikon">🛡️</span>
+            <h3 data-i18n="unggul.1.judul">Produk Bergaransi</h3>
+            <p data-i18n="unggul.1.teks">Unit resmi dari prinsipal, disertai garansi dan dokumen lengkap.</p>
           </div>
-
-          <div class="misi-card" data-reveal="1">
-            <div class="visi-card__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"/>
-                <circle cx="12" cy="12" r="6"/>
-                <circle cx="12" cy="12" r="2"/>
-              </svg>
-            </div>
-            <h3 data-i18n="tt.misiJudul">Misi</h3>
-            <ul class="check-list">
-              <li data-i18n="tt.misi1">Menyediakan mesin pertanian berkualitas tinggi dan andal dari produsen internasional terkemuka</li>
-              <li data-i18n="tt.misi2">Memperjuangkan dan mempromosikan peralatan fabrikasi lokal yang unggul di samping teknologi global</li>
-              <li data-i18n="tt.misi3">Menyediakan solusi menyeluruh yang mendukung setiap tahap operasi pertanian dan perkebunan</li>
-              <li data-i18n="tt.misi4">Memberdayakan petani dan operator agribisnis dengan peralatan yang memaksimalkan efisiensi dan hasil panen</li>
-              <li data-i18n="tt.misi5">Membangun kemitraan jangka panjang yang didasarkan pada kepercayaan, layanan, dan pertumbuhan bersama</li>
-              <li data-i18n="tt.misi6">Berkontribusi pada keberlanjutan dan kemajuan sektor pertanian Indonesia</li>
-            </ul>
+          <div class="tt-unggul__item" data-reveal="1">
+            <span class="tt-unggul__ikon">🏅</span>
+            <h3 data-i18n="unggul.2.judul">Distributor Resmi</h3>
+            <p data-i18n="unggul.2.teks">Unit asli dari Zoomlion, EAVision, dan VectorAgr, dijual langsung oleh distributor resminya.</p>
           </div>
-
+          <div class="tt-unggul__item" data-reveal="2">
+            <span class="tt-unggul__ikon">📄</span>
+            <h3 data-i18n="unggul.3.judul">Spesifikasi Lengkap</h3>
+            <p data-i18n="unggul.3.teks">Data teknis, brosur PDF, dan fitur bandingkan unit tersedia langsung di website.</p>
+          </div>
+          <div class="tt-unggul__item" data-reveal="3">
+            <span class="tt-unggul__ikon">🤝</span>
+            <h3 data-i18n="unggul.4.judul">Konsultasi Teknis</h3>
+            <p data-i18n="unggul.4.teks">Kami bantu menentukan unit yang sesuai luas lahan dan jenis pekerjaan.</p>
+          </div>
         </div>
       </div>
     </section>
