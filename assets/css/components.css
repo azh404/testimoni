@@ -601,3 +601,53 @@ body.cari-terbuka { overflow: hidden; }
 .dilihat__item img { width: 100%; aspect-ratio: 4 / 3; object-fit: contain; }
 .dilihat__item small { display: block; color: var(--color-muted); font-weight: var(--fw-medium); font-size: var(--fs-xs); }
 .cari__baris input::-webkit-search-cancel-button { -webkit-appearance: none; display: none; }
+
+/* =========================================
+   FOOTER — logo, info berikon, ikon berlabel, aksen hijau
+   ========================================= */
+.footer { position: relative; }
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #8DC63F, #2E7D32 40%, var(--color-primary-light));
+}
+.footer__logo { display: inline-block; margin-bottom: var(--sp-3); }
+.footer__logo img { width: 92px; height: auto; display: block; }
+.footer__tagline { color: rgba(255, 255, 255, 0.65); font-size: 0.9rem; margin: 0 0 var(--sp-4); }
+.footer__info { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--sp-3); }
+.footer__info li {
+  display: grid;
+  grid-template-columns: 18px 1fr;
+  gap: var(--sp-3);
+  align-items: start;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+.footer__info svg { width: 18px; height: 18px; margin-top: 2px; color: #8DC63F; }
+.footer__info a { color: inherit; }
+.footer__info a:hover { color: var(--color-white); }
+
+.footer__icons--label {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--sp-3);
+}
+.footer__icons--label a {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  width: auto;
+  height: auto;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.9rem;
+}
+.footer__icons--label a:hover { color: var(--color-white); transform: translateX(3px); }
+.footer__icons--label svg { width: 26px; height: 26px; flex-shrink: 0; }
+
+@media (max-width: 640px) {
+  .footer__logo img { width: 76px; }
+  .footer__icons--label { grid-template-columns: 1fr 1fr; }
+}
