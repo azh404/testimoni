@@ -41,6 +41,14 @@ function isiDataPerusahaan() {
     if (key === 'email-link')   el.href = `mailto:${COMPANY.email}`;
   });
 
+  /* Status jam kerja di kartu WhatsApp halaman kontak */
+  const online = sedangJamKerja();
+  document.querySelectorAll('[data-wa-status]').forEach(el => {
+    if (online === null) return;
+    el.textContent = t(online ? 'wa.online' : 'wa.offline');
+    el.classList.toggle('is-online', online);
+  });
+
   document.querySelectorAll('[data-wa-link]').forEach(el => {
     el.href = waLink(el.dataset.waPesan || WA_PESAN_DEFAULT);
     el.target = '_blank';
