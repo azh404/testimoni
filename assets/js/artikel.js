@@ -29,23 +29,51 @@ function teksArtikel(a, kolom) {
   return (BAHASA !== 'id' && tr && tr[BAHASA] && tr[BAHASA][kolom]) || a[kolom];
 }
 
-function kartuArtikel(a, base, i = 0) {
+/* Perkiraan waktu baca (200 kata/menit, dari teks Indonesia) */
+function menitBaca(a) {
+  const kata = (a.isi || []).join(' ').replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length;
+  return Math.max(1, Math.round(kata / 200));
+}
+
+/* Foto artikel opsional: tanpa foto (atau foto gagal dimuat) tampil sampul warna DASS */
+function mediaArtikel(a, base) {
+  /* Warna sampul bervariasi (tetap sama untuk artikel yang sama) */
+  const varian = [...a.id].reduce((n, c) => n + c.charCodeAt(0), 0) % 4;
+  const sampul = `
+        <div class="artikel-sampul artikel-sampul--${varian}">
+          <img src="${base}assets/images/logo/logo-dass-putih.png" alt="" loading="lazy">
+          <span>${namaKategoriArtikel(a.kategori)}</span>
+        </div>`;
+  if (!a.gambar) return sampul;
   return `
-    <a href="${base}artikel/${a.id}.html" class="artikel-card" style="animation-delay:${i * 60}ms">
-      <div class="artikel-card__media">
-        <img src="${base}${a.gambar}" alt="${teksArtikel(a, 'judul')}" loading="lazy" onerror="this.style.visibility='hidden'">
+        <img src="${base}${a.gambar}" alt="${teksArtikel(a, 'judul')}" loading="lazy"
+             onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+        ${sampul.replace('class="artikel-sampul"', 'class="artikel-sampul" hidden')}`;
+}
+
+function kartuArtikel(a, base, i = 0, utama = false) {
+  return `
+    <a href="${base}artikel/${a.id}.html" class="artikel-card${utama ? ' artikel-card--utama' : ''}" style="animation-delay:${i * 60}ms">
+      <div class="artikel-card__media">${mediaArtikel(a, base)}
       </div>
       <div class="artikel-card__body">
-        <span class="artikel-card__badge">${namaKategoriArtikel(a.kategori)}</span>
+        <div class="artikel-card__label">
+          ${utama ? `<span class="artikel-card__badge artikel-card__badge--baru">${t('artikel.terbaru')}</span>` : ''}
+          <span class="artikel-card__badge">${namaKategoriArtikel(a.kategori)}</span>
+        </div>
         <h3 class="artikel-card__judul">${teksArtikel(a, 'judul')}</h3>
         <p class="artikel-card__ringkas">${teksArtikel(a, 'ringkas')}</p>
-        <span class="artikel-card__tanggal">${formatTanggal(a.tanggal)}</span>
+        <div class="artikel-card__kaki">
+          <span class="artikel-card__tanggal">${formatTanggal(a.tanggal)} &middot; ${menitBaca(a)} ${t('artikel.menit')}</span>
+          <span class="artikel-card__baca">${t('artikel.baca')} &rarr;</span>
+        </div>
       </div>
     </a>`;
 }
 
 function initHalamanArtikel() {
   const wrapFilter = document.getElementById('filterArtikel');
+  const wrapUtama  = document.getElementById('artikelUtama');
   const wrapGrid   = document.getElementById('artikelGrid');
   if (!wrapGrid) return;
 
@@ -69,6 +97,10 @@ function initHalamanArtikel() {
       }).join('')}
     `;
 
+    /* Dipanggil ulang saat ganti bahasa: pasang pendengar klik sekali saja */
+    if (!wrapFilter.dataset.siap) wrapFilter.dataset.siap = '1';
+    else return render('all');
+
     wrapFilter.addEventListener('click', e => {
       const btn = e.target.closest('.filter-btn');
       if (!btn) return;
@@ -83,9 +115,14 @@ function initHalamanArtikel() {
       ? semua
       : semua.filter(a => a.kategori === kategori);
 
-    wrapGrid.innerHTML = items.length
-      ? items.map((a, i) => kartuArtikel(a, base, i)).join('')
-      : `<p class="produk-empty">${t('artikel.kosong')}</p>`;
+    /* Artikel terbaru tampil besar di atas, sisanya di grid */
+    const [pertama, ...sisa] = items;
+    if (wrapUtama) wrapUtama.innerHTML = pertama ? kartuArtikel(pertama, base, 0, true) : '';
+    const daftar = wrapUtama ? sisa : items;
+
+    wrapGrid.innerHTML = daftar.length
+      ? daftar.map((a, i) => kartuArtikel(a, base, i + 1)).join('')
+      : (items.length ? '' : `<p class="produk-empty">${t('artikel.kosong')}</p>`);
 
     if (typeof initImageFallback === 'function') initImageFallback();
   }

@@ -243,6 +243,9 @@ const TEKS = {
     zh: '保养技巧、产品信息与最新动态'
   },
   'artikel.semua':   { id: 'Semua',                       en: 'All',                          zh: '全部' },
+  'artikel.baca':    { id: 'Baca selengkapnya',           en: 'Read more',                    zh: '阅读全文' },
+  'artikel.menit':   { id: 'mnt baca',                    en: 'min read',                     zh: '分钟阅读' },
+  'artikel.terbaru': { id: 'Terbaru',                     en: 'Latest',                       zh: '最新' },
   'artikel.kosong':  { id: 'Belum ada artikel.',          en: 'No articles yet.',             zh: '暂无文章。' },
   'artikel.sumber':  { id: 'Sumber:',                     en: 'Sources:',                     zh: '资料来源：' },
 

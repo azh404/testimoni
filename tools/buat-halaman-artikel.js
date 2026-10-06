@@ -87,7 +87,7 @@ function halaman(a) {
   const deskripsi = a.metaDeskripsi || tanpaTag(a.ringkas);
   const kat       = KATEGORI_ARTIKEL.find(k => k.id === a.kategori) || {};
   const adaGambar = a.gambar && fs.existsSync(path.join(ROOT, a.gambar));
-  const gambarUrl = `${DOMAIN}/${adaGambar ? a.gambar : 'assets/images/logo/logo.png'}`;
+  const gambarUrl = `${DOMAIN}/${adaGambar ? a.gambar : 'assets/images/hero/hero-tractor-og.jpg'}`;
 
   const jsonLd = {
     '@context': 'https://schema.org',
