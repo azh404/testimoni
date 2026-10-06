@@ -131,6 +131,12 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
 - Foto utama di halaman detail produk tanpa kotak/latar (`.detail-media` transparan + drop-shadow);
   semua foto utama produk sudah transparan.
 - Menu HP: `.nav-toggle` z-index 2 agar tombol ✕ tampil di atas panel menu.
+- Beranda dibuat "lebih ramai" (6 Okt 2026, permintaan pengguna): urutan Hero → strip angka
+  (merek/model/kategori dihitung dari data, + "Jakarta Kantor Pusat") → kartu merek → Kategori (8 kotak
+  foto, link `pages/produk/<brand>.html?kategori=<id>` yang langsung menyaring) → Unit Unggulan (8 kartu,
+  daftar di `BERANDA_PILIHAN` beranda.js) → Keunggulan → banner ajakan konsultasi (WA/kalkulator/
+  bandingkan) → Sektor → Artikel Terbaru (3; data artikel dimuat malas saat bagian hampir terlihat)
+  → Mitra. Kode: `assets/js/beranda.js` (`initBeranda`, juga di gantiBahasa).
 - CAPTCHA tidak dipasang (tidak ada form yang mengirim ke server; form kontak membuka WA).
 
 ## Belum selesai / menunggu pengguna

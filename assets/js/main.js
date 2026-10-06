@@ -209,6 +209,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   if (typeof initReveal        === 'function') initReveal();
   if (typeof initCounter       === 'function') initCounter();
   if (typeof initProdukTabs    === 'function') initProdukTabs();
+  if (typeof initBeranda       === 'function') initBeranda();
   if (typeof initHalamanBrand  === 'function') initHalamanBrand();
   if (typeof initBrandGallery  === 'function') initBrandGallery();
   if (typeof initModalProduk   === 'function') initModalProduk();

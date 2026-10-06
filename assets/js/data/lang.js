@@ -134,6 +134,26 @@ const TEKS = {
   },
   'mitra.btn': { id: 'Hubungi Kami', en: 'Contact Us', zh: '联系我们' },
 
+  /* Beranda: angka, kategori, unit pilihan, ajakan, artikel */
+  'stat.merek':    { id: 'Merek Resmi', en: 'Official Brands', zh: '官方品牌' },
+  'stat.model':    { id: 'Model Unit', en: 'Unit Models', zh: '机型' },
+  'stat.kategori': { id: 'Kategori Mesin', en: 'Machine Categories', zh: '机械类别' },
+  'stat.kantor':   { id: 'Kantor Pusat', en: 'Head Office', zh: '总部' },
+  'kat.eyebrow':   { id: 'Kategori', en: 'Categories', zh: '类别' },
+  'kat.judul':     { id: 'Jelajahi Berdasarkan Kategori', en: 'Browse by Category', zh: '按类别浏览' },
+  'kat.unit':      { id: 'unit', en: 'units', zh: '款' },
+  'pilih.eyebrow': { id: 'Unit Pilihan', en: 'Featured Units', zh: '精选机型' },
+  'pilih.judul':   { id: 'Unit Unggulan Kami', en: 'Our Featured Machines', zh: '我们的精选机械' },
+  'pilih.desc':    { id: 'Traktor, combine harvester, mesin panen tebu, dan drone pertanian dari tiga merek resmi kami.', en: 'Tractors, combine harvesters, sugarcane harvesters, and agricultural drones from our three official brands.', zh: '来自我们三个官方品牌的拖拉机、联合收割机、甘蔗收割机和农业无人机。' },
+  'cta.judul':     { id: 'Bingung Memilih Unit yang Tepat?', en: 'Not Sure Which Unit Is Right?', zh: '不确定选择哪款机型？' },
+  'cta.desc':      { id: 'Ceritakan luas lahan dan jenis pekerjaan Anda. Tim kami bantu merekomendasikan unit yang sesuai.', en: 'Tell us your land size and type of work. Our team will help recommend the right unit.', zh: '告诉我们您的土地面积和作业类型，我们的团队将帮助推荐合适的机型。' },
+  'cta.wa':        { id: 'Konsultasi via WhatsApp', en: 'Consult via WhatsApp', zh: '通过WhatsApp咨询' },
+  'cta.kalkulator':{ id: 'Kalkulator Pertanian', en: 'Farming Calculator', zh: '农业计算器' },
+  'cta.bandingkan':{ id: 'Bandingkan Unit', en: 'Compare Units', zh: '对比机型' },
+  'artikelBaru.eyebrow': { id: 'Berita & Artikel', en: 'News & Articles', zh: '新闻与文章' },
+  'artikelBaru.judul':   { id: 'Artikel Terbaru', en: 'Latest Articles', zh: '最新文章' },
+  'artikelBaru.semua':   { id: 'Lihat Semua Artikel', en: 'View All Articles', zh: '查看全部文章' },
+
   /* ===== FOOTER ===== */
   'footer.alamat':      { id: 'Alamat',            en: 'Address',          zh: '地址' },
   'footer.kantorPusat': { id: 'Kantor Pusat:',     en: 'Head Office:',     zh: '总部：' },

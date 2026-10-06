@@ -1344,3 +1344,145 @@ body[data-brand="eavision"] .produk-grid {
 .kalk-hasil__status.is-cocok { background: #e3f1e4; color: var(--color-accent-dark); }
 .kalk-hasil__status.is-kurang { background: #fff4e0; color: #8a5a00; }
 .kalk-mini + .kalk-mini, [data-kalk-mini] + [data-kalk-traktor] { margin-top: var(--sp-6); }
+
+/* =========================================
+   BERANDA — angka, kategori, ajakan konsultasi
+   ========================================= */
+.stats {
+  background: linear-gradient(135deg, var(--color-primary-dark), var(--color-primary));
+  color: var(--color-white);
+}
+.stats__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding-block: var(--sp-6);
+}
+.stats__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-1);
+  text-align: center;
+  padding-inline: var(--sp-3);
+}
+.stats__item + .stats__item { border-left: 1px solid rgba(255, 255, 255, 0.15); }
+.stats__angka {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: #8DC63F;
+}
+.stats__label {
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.kat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-5);
+}
+.kat-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--sp-5) var(--sp-4) var(--sp-5);
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  color: var(--color-dark);
+  transition: all var(--transition);
+}
+.kat-tile:hover {
+  border-color: #8DC63F;
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+.kat-tile__media {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  margin-bottom: var(--sp-3);
+  border-radius: var(--radius-md);
+  background: radial-gradient(circle at 50% 60%, var(--color-primary-soft), transparent 70%);
+}
+.kat-tile__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform var(--transition);
+}
+.kat-tile:hover .kat-tile__media img { transform: scale(1.06); }
+.kat-tile__nama {
+  font-size: 1rem;
+  margin-bottom: var(--sp-1);
+}
+.kat-tile__jumlah {
+  font-size: 0.8rem;
+  color: var(--color-muted);
+}
+
+.beranda-aksi {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--sp-3);
+  margin-top: var(--sp-6);
+}
+
+.cta-band {
+  position: relative;
+  color: var(--color-white);
+  background:
+    linear-gradient(90deg, rgba(12, 39, 73, 0.94) 0%, rgba(12, 39, 73, 0.8) 55%, rgba(12, 39, 73, 0.45) 100%),
+    url('../images/hero/hero-combine-hasverter.webp?v=2') center / cover no-repeat;
+}
+.cta-band__isi {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-6);
+  padding-block: var(--sp-8);
+}
+.cta-band__judul {
+  color: var(--color-white);
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  margin-bottom: var(--sp-3);
+}
+.cta-band__desc {
+  max-width: 540px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.88);
+}
+.cta-band__aksi {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  flex-shrink: 0;
+}
+.btn--terang {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.5);
+  color: var(--color-white);
+}
+.btn--terang:hover {
+  background-color: var(--color-white);
+  color: var(--color-primary-dark);
+}
+
+@media (max-width: 992px) {
+  .kat-grid { grid-template-columns: repeat(3, 1fr); }
+  .cta-band__isi { flex-direction: column; align-items: flex-start; }
+  .cta-band__aksi { flex-direction: row; flex-wrap: wrap; }
+}
+@media (max-width: 640px) {
+  .stats__grid { grid-template-columns: repeat(2, 1fr); row-gap: var(--sp-5); padding-block: var(--sp-5); }
+  .stats__item:nth-child(3) { border-left: 0; }
+  .kat-grid { grid-template-columns: repeat(2, 1fr); gap: var(--sp-3); }
+  .kat-tile { padding: var(--sp-3); }
+  .kat-tile__nama { font-size: 0.9rem; }
+  .cta-band__isi { padding-block: var(--sp-7); }
+  .cta-band__aksi, .cta-band__aksi .btn { width: 100%; }
+}
