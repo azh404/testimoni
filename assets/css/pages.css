@@ -2042,3 +2042,121 @@ body[data-brand="eavision"] .produk-grid {
   .beli__langkah p { flex-basis: 100%; padding-left: calc(44px + var(--sp-3)); max-width: none; }
   .beli .btn { width: 100%; }
 }
+
+/* =========================================
+   KONTAK — desain baru
+   ========================================= */
+.kt-kepala { padding-bottom: var(--sp-7); }
+.kt-kepala__isi { max-width: 760px; text-align: center; margin-bottom: var(--sp-6); }
+.kt-kepala__isi h1 { font-size: clamp(1.9rem, 3.6vw, 2.7rem); margin: var(--sp-2) 0 var(--sp-3); }
+.kt-kepala__isi h1::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  margin: var(--sp-4) auto 0;
+  border-radius: 2px;
+  background: #8DC63F;
+}
+.kt-kepala__isi p { color: var(--color-body); font-size: 1.05rem; }
+
+.kt-cepat {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-4);
+}
+.kt-kartu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: var(--sp-6) var(--sp-4);
+  border-radius: var(--radius-lg);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  color: var(--color-dark);
+  transition: all var(--transition);
+}
+.kt-kartu:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--color-primary); }
+.kt-kartu__ikon {
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  margin-bottom: var(--sp-2);
+  border-radius: 50%;
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+}
+.kt-kartu__ikon svg { width: 28px; height: 28px; }
+.kt-kartu__label { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--color-muted); }
+.kt-kartu__nilai { font-size: 1.1rem; font-weight: 700; word-break: break-word; }
+.kt-kartu__status { font-size: 0.82rem; color: var(--color-muted); }
+.kt-kartu--wa { background: linear-gradient(135deg, #25D366, #128C4A); border-color: transparent; color: var(--color-white); }
+.kt-kartu--wa:hover { border-color: transparent; }
+.kt-kartu--wa .kt-kartu__ikon { background: rgba(255, 255, 255, 0.2); color: var(--color-white); }
+.kt-kartu--wa .kt-kartu__label,
+.kt-kartu--wa .kt-kartu__status { color: rgba(255, 255, 255, 0.88); }
+.kt-kartu__status.is-online::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 6px;
+  border-radius: 50%;
+  background: #B9F6CA;
+  box-shadow: 0 0 0 3px rgba(185, 246, 202, 0.35);
+  vertical-align: middle;
+}
+
+.kt-dua {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: var(--sp-6);
+  align-items: start;
+}
+.kt-dua .kontak-form {
+  padding: var(--sp-6);
+  border-radius: var(--radius-lg);
+  background: var(--color-white);
+  box-shadow: var(--shadow-md);
+}
+.kt-lokasi {
+  padding: var(--sp-4);
+  border-radius: var(--radius-lg);
+  background: var(--color-white);
+  box-shadow: var(--shadow-md);
+}
+.kt-lokasi__info {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: var(--sp-4);
+  padding: var(--sp-4) var(--sp-2) 0;
+}
+.kt-lokasi__info h3 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-muted); margin-bottom: 4px; }
+.kt-lokasi__info p { margin: 0; color: var(--color-dark); font-size: 0.93rem; line-height: 1.6; }
+.kt-lokasi .kontak-google { justify-content: flex-start; padding: 0 var(--sp-2) var(--sp-2); margin-top: var(--sp-4); }
+
+@media (max-width: 992px) {
+  .kt-dua { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .kt-cepat { grid-template-columns: 1fr; gap: var(--sp-3); }
+  .kt-kartu {
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    column-gap: var(--sp-3);
+    row-gap: 2px;
+    align-items: center;
+    text-align: left;
+    padding: var(--sp-4);
+  }
+  .kt-kartu__ikon { width: 48px; height: 48px; margin: 0; grid-row: 1 / span 3; }
+  .kt-kartu__ikon svg { width: 22px; height: 22px; }
+  .kt-kartu > span:not(.kt-kartu__ikon) { grid-column: 2; }
+  .kt-dua .kontak-form { padding: var(--sp-4); }
+  .kt-lokasi__info { grid-template-columns: 1fr; }
+  .kt-lokasi .kontak-google .btn { flex: 1 1 100%; }
+}

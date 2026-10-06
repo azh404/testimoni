@@ -159,6 +159,10 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   permintaan pengguna). Isi: profil satu kolom di tengah TANPA foto (H1 = tt.judul + garis hijau; pengguna menolak kolase, foto+logo, dan foto lebar)
   → Visi (kotak kutipan gradasi) + Misi 6 kartu bernomor → Mengapa Kami (kunci `unggul.*`)
   → Kemitraan. CSS awalan `.tt-`.
+- Halaman Kontak didesain ulang (6 Okt 2026): judul di tengah tanpa banner (H1 + garis hijau) → 3 kartu
+  kontak cepat (WhatsApp hijau + status online otomatis `[data-wa-status]` dari `sedangJamKerja()`,
+  Telepon, Email) → form "Kirim Pesan" (kiri) + peta & alamat/jam & tombol Google Maps/Ulasan (kanan).
+  CSS awalan `.kt-`. Saran belum dipakai: kartu Telepon diganti Instagram.
 - Mode perbaikan: `perbaikan.html` (noindex) + blok "MODE PERBAIKAN" di awal `.htaccess`
   (3 baris Rewrite diberi #; hapus # untuk menutup website dengan 503). Pengguna mengaktifkannya
   langsung di File Manager Hostinger.
