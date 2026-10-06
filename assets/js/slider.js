@@ -6,7 +6,10 @@ function initHeroSlider() {
   const hero   = document.querySelector('.hero');
   const slides = document.querySelectorAll('.hero__slide');
   const dots   = document.querySelectorAll('.hero__dot');
-  if (slides.length < 2) return;
+  if (!slides.length) return;
+  /* Hanya satu slide (slide lain sedang disembunyikan di index.html):
+     video diulang terus, tanpa pergantian slide dan tanpa indikator */
+  const satuSlide = slides.length === 1;
 
   let index = 0;
   let timer = null;
@@ -25,7 +28,7 @@ function initHeroSlider() {
     const v = document.createElement('video');
     v.className = 'hero__video';
     v.muted = true;
-    v.loop = false;
+    v.loop = satuSlide;
     v.playsInline = true;
     v.setAttribute('muted', '');
     v.setAttribute('playsinline', '');
@@ -96,6 +99,13 @@ function initHeroSlider() {
   };
   if (halamanSiap) setelahLoad();
   else window.addEventListener('load', setelahLoad, { once: true });
+
+  if (satuSlide) {
+    const wadahDots = document.querySelector('.hero__dots');
+    if (wadahDots) wadahDots.style.display = 'none';
+    document.addEventListener('visibilitychange', aturVideo);
+    return;
+  }
 
   /* Garis progres di indikator aktif diulang dari nol tiap timer mulai,
      supaya selalu sama dengan waktu pergantian slide */
