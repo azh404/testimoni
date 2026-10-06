@@ -10,8 +10,9 @@ function initHeroSlider() {
 
   let index = 0;
   let timer = null;
-  const DURASI = 5000;        /* slide foto */
-  const DURASI_VIDEO = 5000;  /* slide video (lanjut dari posisi terakhir) */
+  const DURASI = 5000;  /* slide foto, atau video tanpa data-durasi */
+  /* Slide video tampil sepanjang videonya (data-durasi = panjang video dalam detik),
+     diputar dari awal setiap kali slide itu muncul */
 
   /* --- Video latar ---
      Tidak dimuat bila pengunjung memilih "kurangi gerakan" atau mode hemat data */
@@ -24,7 +25,7 @@ function initHeroSlider() {
     const v = document.createElement('video');
     v.className = 'hero__video';
     v.muted = true;
-    v.loop = true;
+    v.loop = false;
     v.playsInline = true;
     v.setAttribute('muted', '');
     v.setAttribute('playsinline', '');
@@ -58,13 +59,22 @@ function initHeroSlider() {
     slides.forEach((s, k) => {
       const v = s.querySelector('video');
       if (!v) return;
-      if (k === index && !document.hidden) v.play().catch(() => {});
-      else v.pause();
+      if (k === index) {
+        /* Tab tidak aktif: jeda saja (lanjut dari posisi yang sama nanti) */
+        if (document.hidden) v.pause(); else v.play().catch(() => {});
+      } else if (v.currentTime > 0) {
+        /* Slide lain: kembali ke awal supaya nanti diputar dari awal */
+        v.pause();
+        v.currentTime = 0;
+      }
     });
   };
 
-  const durasiSlide = (n) =>
-    (bolehVideo && slides[n] && slides[n].dataset.video) ? DURASI_VIDEO : DURASI;
+  const durasiSlide = (n) => {
+    const s = slides[n];
+    const detik = s && bolehVideo && s.dataset.video && parseFloat(s.dataset.durasi);
+    return detik ? Math.round(detik * 1000) : DURASI;
+  };
 
   /* Gambar slide selain yang pertama dimuat belakangan (data-bg),
      supaya halaman awal lebih cepat terbuka */
