@@ -219,7 +219,16 @@ function initHalamanBrand() {
     render(btn.dataset.kategori);
   });
 
-  render('all');
+  /* ?kategori=tractor (dari kotak kategori di beranda) langsung menyaring */
+  const awal = new URLSearchParams(location.search).get('kategori');
+  const tombolAwal = awal && wrapFilter.querySelector(`[data-kategori="${awal}"]`);
+  if (tombolAwal) {
+    wrapFilter.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('is-active'));
+    tombolAwal.classList.add('is-active');
+    render(awal);
+  } else {
+    render('all');
+  }
 }
 
 /* =========================================

@@ -122,6 +122,28 @@
       </div>
     </section>
 
+    <!-- ============ ANGKA ============ -->
+    <section class="stats" aria-label="DASS dalam angka">
+      <div class="container stats__grid">
+        <div class="stats__item" data-reveal>
+          <span class="stats__angka" id="statMerek">3</span>
+          <span class="stats__label" data-i18n="stat.merek">Merek Resmi</span>
+        </div>
+        <div class="stats__item" data-reveal="1">
+          <span class="stats__angka" id="statModel" data-suffix="+">60+</span>
+          <span class="stats__label" data-i18n="stat.model">Model Unit</span>
+        </div>
+        <div class="stats__item" data-reveal="2">
+          <span class="stats__angka" id="statKategori">10</span>
+          <span class="stats__label" data-i18n="stat.kategori">Kategori Mesin</span>
+        </div>
+        <div class="stats__item" data-reveal="3">
+          <span class="stats__angka">Jakarta</span>
+          <span class="stats__label" data-i18n="stat.kantor">Kantor Pusat</span>
+        </div>
+      </div>
+    </section>
+
     <!-- ============ PRODUK KAMI ============ -->
     <section class="section section--soft" id="produk">
       <div class="container">
@@ -136,6 +158,36 @@
 
         <div class="brand-cards" id="brandCards"></div>
 
+      </div>
+    </section>
+
+    <!-- ============ KATEGORI ============ -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header section-header--center">
+          <span class="section-header__eyebrow" data-i18n="kat.eyebrow">Kategori</span>
+          <h2 class="section-header__title" data-i18n="kat.judul">Jelajahi Berdasarkan Kategori</h2>
+        </div>
+        <div class="kat-grid" id="berandaKategori"></div>
+      </div>
+    </section>
+
+    <!-- ============ UNIT PILIHAN ============ -->
+    <section class="section section--soft">
+      <div class="container">
+        <div class="section-header section-header--center">
+          <span class="section-header__eyebrow" data-i18n="pilih.eyebrow">Unit Pilihan</span>
+          <h2 class="section-header__title" data-i18n="pilih.judul">Unit Unggulan Kami</h2>
+          <p class="section-header__desc" data-i18n="pilih.desc">
+            Traktor, combine harvester, mesin panen tebu, dan drone pertanian dari tiga merek resmi kami.
+          </p>
+        </div>
+        <div class="produk-grid" id="berandaPilihan"></div>
+        <div class="beranda-aksi">
+          <a href="pages/produk/zoomlion.html" class="btn btn--outline">Zoomlion →</a>
+          <a href="pages/produk/eavision.html" class="btn btn--outline">EAVision →</a>
+          <a href="pages/produk/vectoragr.html" class="btn btn--outline">VectorAgr →</a>
+        </div>
       </div>
     </section>
 
@@ -194,6 +246,26 @@
       </div>
     </section>
 
+    <!-- ============ AJAKAN KONSULTASI ============ -->
+    <section class="cta-band">
+      <div class="container cta-band__isi" data-reveal>
+        <div>
+          <h2 class="cta-band__judul" data-i18n="cta.judul">Bingung Memilih Unit yang Tepat?</h2>
+          <p class="cta-band__desc" data-i18n="cta.desc">
+            Ceritakan luas lahan dan jenis pekerjaan Anda. Tim kami bantu merekomendasikan unit yang sesuai.
+          </p>
+        </div>
+        <div class="cta-band__aksi">
+          <a href="#" class="btn btn--wa btn--lg" data-wa-link data-i18n="cta.wa"
+             data-wa-pesan="Halo, saya ingin konsultasi memilih unit yang sesuai dengan lahan saya.">
+            Konsultasi via WhatsApp
+          </a>
+          <a href="kalkulator.html" class="btn btn--terang" data-i18n="cta.kalkulator">Kalkulator Pertanian</a>
+          <a href="bandingkan.html" class="btn btn--terang" data-i18n="cta.bandingkan">Bandingkan Unit</a>
+        </div>
+      </div>
+    </section>
+
     <!-- ============ SEKTOR ============ -->
     <section class="section section--soft">
       <div class="container">
@@ -215,6 +287,20 @@
             <span class="sector__icon">🥬</span>
             <h3 class="sector__title" data-i18n="sektor.3.judul">Hortikultura</h3>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ARTIKEL TERBARU ============ -->
+    <section class="section section--soft">
+      <div class="container">
+        <div class="section-header section-header--center">
+          <span class="section-header__eyebrow" data-i18n="artikelBaru.eyebrow">Berita &amp; Artikel</span>
+          <h2 class="section-header__title" data-i18n="artikelBaru.judul">Artikel Terbaru</h2>
+        </div>
+        <div class="artikel-grid" id="berandaArtikel"></div>
+        <div class="beranda-aksi">
+          <a href="artikel.html" class="btn btn--primary" data-i18n="artikelBaru.semua">Lihat Semua Artikel</a>
         </div>
       </div>
     </section>
@@ -260,6 +346,7 @@
   <script src="assets/js/navbar.js"></script>
   <script src="assets/js/slider.js"></script>
   <script src="assets/js/filter-produk.js"></script>
+  <script src="assets/js/beranda.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>

@@ -168,6 +168,7 @@ function gantiBahasa(kode) {
 
   /* Bangun ulang bagian yang dirender lewat JavaScript */
   if (typeof initProdukTabs    === 'function') initProdukTabs();
+  if (typeof initBeranda       === 'function') initBeranda();
   if (typeof initHalamanBrand  === 'function') initHalamanBrand();
   if (typeof initBrandGallery  === 'function') initBrandGallery();
   if (typeof initHalamanArtikel === 'function') initHalamanArtikel();
