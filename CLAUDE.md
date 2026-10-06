@@ -151,7 +151,8 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   (menggantikan bagian Kategori & Unit Unggulan atas permintaan pengguna: tab 6 kategori, unit besar +
   4 spesifikasi + tombol Detail/WA, thumbnail unit lain; daftar di `BERANDA_SHOWCASE` beranda.js;
   halaman merek tetap mendukung `?kategori=<id>`) → Keunggulan → banner ajakan konsultasi (WA/kalkulator/
-  bandingkan) → Sektor → Artikel Terbaru (3; data artikel dimuat malas saat bagian hampir terlihat)
+  bandingkan) → Sektor → Artikel gaya majalah "Wawasan & Berita / Kabar Terbaru dari Lapangan" (latar biru tua→hijau, 1 artikel
+  besar + 3 ringkas, `.majalah`; data artikel dimuat malas saat bagian hampir terlihat)
   → Mitra. Kode: `assets/js/beranda.js` (`initBeranda`, juga di gantiBahasa).
 - Mode perbaikan: `perbaikan.html` (noindex) + blok "MODE PERBAIKAN" di awal `.htaccess`
   (3 baris Rewrite diberi #; hapus # untuk menutup website dengan 503). Pengguna mengaktifkannya

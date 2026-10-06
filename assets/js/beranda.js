@@ -114,13 +114,34 @@ function renderArtikelBeranda() {
   const wrap = document.getElementById('berandaArtikel');
   if (!wrap) return;
 
-  if (typeof ARTIKEL !== 'undefined' && typeof kartuArtikel === 'function') {
+  if (typeof ARTIKEL !== 'undefined' && typeof teksArtikel === 'function') {
     const base = document.body.dataset.base || '';
-    wrap.innerHTML = [...ARTIKEL]
+    const [utama, ...lain] = [...ARTIKEL]
       .sort((a, b) => new Date(b.tanggal) - new Date(a.tanggal))
-      .slice(0, 3)
-      .map((a, i) => kartuArtikel(a, base, i))
-      .join('');
+      .slice(0, 4);
+    const url = a => `${base}artikel/${a.id}.html`;
+    /* Tata letak majalah: 1 artikel besar + 3 artikel ringkas */
+    wrap.innerHTML = `
+      <a href="${url(utama)}" class="majalah__utama">
+        <img src="${base}${utama.gambar}" alt="${teksArtikel(utama, 'judul')}" loading="lazy" decoding="async">
+        <span class="majalah__isi">
+          <span class="majalah__badge">${namaKategoriArtikel(utama.kategori)}</span>
+          <span class="majalah__judul">${teksArtikel(utama, 'judul')}</span>
+          <span class="majalah__ringkas">${teksArtikel(utama, 'ringkas')}</span>
+          <span class="majalah__tanggal">${formatTanggal(utama.tanggal)}</span>
+        </span>
+      </a>
+      <div class="majalah__daftar">
+        ${lain.map(a => `
+          <a href="${url(a)}" class="majalah__item">
+            <img src="${base}${a.gambar}" alt="${teksArtikel(a, 'judul')}" loading="lazy" decoding="async">
+            <span>
+              <span class="majalah__kat">${namaKategoriArtikel(a.kategori)}</span>
+              <span class="majalah__item-judul">${teksArtikel(a, 'judul')}</span>
+              <span class="majalah__tanggal">${formatTanggal(a.tanggal)}</span>
+            </span>
+          </a>`).join('')}
+      </div>`;
     return;
   }
   if (artikelBerandaDimuat) return;

@@ -151,8 +151,8 @@ const TEKS = {
   'cta.wa':        { id: 'Konsultasi via WhatsApp', en: 'Consult via WhatsApp', zh: '通过WhatsApp咨询' },
   'cta.kalkulator':{ id: 'Kalkulator Pertanian', en: 'Farming Calculator', zh: '农业计算器' },
   'cta.bandingkan':{ id: 'Bandingkan Unit', en: 'Compare Units', zh: '对比机型' },
-  'artikelBaru.eyebrow': { id: 'Berita & Artikel', en: 'News & Articles', zh: '新闻与文章' },
-  'artikelBaru.judul':   { id: 'Artikel Terbaru', en: 'Latest Articles', zh: '最新文章' },
+  'artikelBaru.eyebrow': { id: 'Wawasan & Berita', en: 'Insights & News', zh: '资讯与新闻' },
+  'artikelBaru.judul':   { id: 'Kabar Terbaru dari Lapangan', en: 'Latest from the Field', zh: '来自田间的最新动态' },
   'artikelBaru.semua':   { id: 'Lihat Semua Artikel', en: 'View All Articles', zh: '查看全部文章' },
 
   /* ===== FOOTER ===== */
