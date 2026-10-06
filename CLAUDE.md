@@ -132,7 +132,10 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   semua foto utama produk sudah transparan.
 - Menu HP: `.nav-toggle` z-index 2 agar tombol ✕ tampil di atas panel menu.
 - Beranda dibuat "lebih ramai" (6 Okt 2026, permintaan pengguna): urutan Hero → strip angka
-  (merek/model/kategori dihitung dari data, + "Jakarta Kantor Pusat") → kartu merek → Kategori (8 kotak
+  (merek/model/kategori dihitung dari data, + "Jakarta Kantor Pusat") → "Produk Kami" 3 panel merek (desain dari slide pengguna:
+  kiri putih→hijau + judul "Agricultural Equipment" + badge Zoomlion + foto traktor dalam lingkaran, tengah biru
+  muda #9CC8FF logo EAVision putih + foto drone, kanan kuning #F9B812 logo `logo-vector-putih.png` + auto
+  steering HD818; statis di index.html, CSS `.ourproduk`) → Kategori (8 kotak
   foto, link `pages/produk/<brand>.html?kategori=<id>` yang langsung menyaring) → Unit Unggulan (8 kartu,
   daftar di `BERANDA_PILIHAN` beranda.js) → Keunggulan → banner ajakan konsultasi (WA/kalkulator/
   bandingkan) → Sektor → Artikel Terbaru (3; data artikel dimuat malas saat bagian hampir terlihat)

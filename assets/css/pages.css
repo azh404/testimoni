@@ -1486,3 +1486,176 @@ body[data-brand="eavision"] .produk-grid {
   .cta-band__isi { padding-block: var(--sp-7); }
   .cta-band__aksi, .cta-band__aksi .btn { width: 100%; }
 }
+
+/* =========================================
+   BERANDA — PRODUK KAMI (3 panel merek)
+   ========================================= */
+.ourproduk {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr 1fr;
+  min-height: 620px;
+}
+.ourproduk__panel {
+  position: relative;
+  padding-bottom: 84px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  color: var(--color-dark);
+  isolation: isolate;
+}
+.ourproduk__panel img { display: block; }
+
+/* Zoomlion: putih → hijau, segitiga hijau, foto dalam lingkaran */
+.ourproduk__panel--zoomlion {
+  align-items: stretch;
+  background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 38%, #DDEFCF 70%, #B5DC98 100%);
+}
+.ourproduk__panel--zoomlion::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 70%;
+  height: 55%;
+  background: linear-gradient(135deg, #43A047, #2E7D32);
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+  z-index: -1;
+}
+.ourproduk__head { padding: var(--sp-7) var(--sp-6) 0; }
+.ourproduk__eyebrow {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #E0A030;
+  margin-bottom: var(--sp-2);
+}
+.ourproduk__judul {
+  font-size: clamp(1.5rem, 2.3vw, 2.1rem);
+  color: #12321C;
+  margin: 0 0 var(--sp-2);
+}
+.ourproduk__sub {
+  font-style: italic;
+  color: var(--color-body);
+  margin: 0 0 var(--sp-4);
+}
+.ourproduk__garis {
+  display: block;
+  width: 100px;
+  height: 5px;
+  border-radius: 3px;
+  background: #E0A030;
+}
+.ourproduk__badge {
+  align-self: center;
+  margin: var(--sp-7) 0 var(--sp-5);
+  padding: 14px 22px;
+  background: #8DC63F;
+  border-radius: 4px;
+}
+.ourproduk__badge img {
+  height: 26px;
+  width: auto;
+  filter: brightness(0) opacity(0.85);
+}
+.ourproduk__lingkar {
+  align-self: center;
+  width: min(68%, 300px);
+  aspect-ratio: 1;
+  margin-bottom: var(--sp-6);
+  border-radius: 50%;
+  border: 10px solid #FFFFFF;
+  box-shadow: 0 0 0 6px #43A047, 0 18px 40px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+}
+.ourproduk__lingkar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 62% 50%;
+  transition: transform 0.5s ease;
+}
+
+/* EAVision: biru muda, logo putih, banner foto */
+.ourproduk__panel--eavision { background: #9CC8FF; justify-content: center; }
+/* VectorAgr: kuning, logo putih, foto produk */
+.ourproduk__panel--vectoragr { background: #F9B812; justify-content: center; }
+.ourproduk__panel--vectoragr .ourproduk__logo { filter: none; }
+
+.ourproduk__logo {
+  height: 46px;
+  width: auto;
+  max-width: 70%;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  transition: transform var(--transition);
+}
+.ourproduk__panel--vectoragr .ourproduk__logo { height: 34px; }
+.ourproduk__banner {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin-top: var(--sp-7);
+  overflow: hidden;
+}
+.ourproduk__banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.ourproduk__produk {
+  width: 88%;
+  margin-top: var(--sp-6);
+}
+.ourproduk__produk img {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 16px 24px rgba(0, 0, 0, 0.18));
+  transition: transform 0.5s ease;
+}
+
+/* Tombol "Lihat Produk" muncul halus di bawah tiap panel */
+.ourproduk__cta {
+  position: absolute;
+  left: 50%;
+  bottom: var(--sp-5);
+  transform: translateX(-50%);
+  white-space: nowrap;
+  padding: 8px 20px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--color-primary-dark);
+  font-weight: 700;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  transition: transform var(--transition), background-color var(--transition);
+}
+.ourproduk__cta::after { content: ' →'; }
+.ourproduk__panel:hover .ourproduk__cta { transform: translate(-50%, -3px); background: #FFFFFF; }
+.ourproduk__panel:hover .ourproduk__lingkar img,
+.ourproduk__panel:hover .ourproduk__banner img,
+.ourproduk__panel:hover .ourproduk__produk img { transform: scale(1.05); }
+.ourproduk__panel:hover .ourproduk__logo { transform: scale(1.05); }
+
+@media (max-width: 992px) {
+  .ourproduk { grid-template-columns: 1fr 1fr; }
+  .ourproduk__panel--zoomlion { grid-column: 1 / -1; }
+}
+@media (max-width: 640px) {
+  .ourproduk { grid-template-columns: 1fr; }
+  .ourproduk__head { padding: var(--sp-6) var(--sp-4) 0; }
+  .ourproduk__badge { margin: var(--sp-6) 0 var(--sp-4); }
+  .ourproduk__lingkar { width: 62%; }
+  .ourproduk__panel--eavision,
+  .ourproduk__panel--vectoragr { min-height: 0; }
+  .ourproduk__panel { padding-top: var(--sp-6); }
+  .ourproduk__panel--zoomlion { padding-top: 0; }
+  .ourproduk__logo { height: 38px; }
+  .ourproduk__panel--vectoragr .ourproduk__logo { height: 28px; }
+  .ourproduk__banner { margin-top: var(--sp-5); }
+  .ourproduk__produk { margin-top: var(--sp-4); width: 80%; }
+}
