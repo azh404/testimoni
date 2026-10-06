@@ -155,8 +155,8 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   besar + 3 ringkas, `.majalah`; data artikel dimuat malas saat bagian hampir terlihat)
   → Mitra. Kode: `assets/js/beranda.js` (`initBeranda`, juga di gantiBahasa).
 - Halaman Tentang Kami didesain ulang (6 Okt 2026): TANPA hero, strip angka, dan kartu merek (dihapus atas
-  permintaan pengguna). Isi: profil (H1 = tt.judul) + kolase 3 foto (tebu C610, drone, combine) & lencana
-  "3 Merek Global" → Visi (kotak kutipan gradasi) + Misi 6 kartu bernomor → Mengapa Kami (kunci `unggul.*`)
+  permintaan pengguna). Isi: profil (H1 = tt.judul) + foto besar traktor RK704 + baris 3 logo merek (link ke halaman merek; menggantikan kolase atas permintaan)
+  → Visi (kotak kutipan gradasi) + Misi 6 kartu bernomor → Mengapa Kami (kunci `unggul.*`)
   → Kemitraan. CSS awalan `.tt-`.
 - Mode perbaikan: `perbaikan.html` (noindex) + blok "MODE PERBAIKAN" di awal `.htaccess`
   (3 baris Rewrite diberi #; hapus # untuk menutup website dengan 503). Pengguna mengaktifkannya
