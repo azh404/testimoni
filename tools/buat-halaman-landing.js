@@ -66,8 +66,7 @@ const HALAMAN = [
     kategori: ['tractor', 'hybrid', 'implement'],
     brand: 'pages/produk/zoomlion.html',
     gambar: 'assets/images/hero/hero-tractor-og.jpg',
-    artikel: ['cara-pilih-ban-traktor', 'perawatan-traktor-jelang-musim-hujan',
-              'traktor-hybrid-zoomlion-hemat-solar', 'auto-steering-traktor-perkebunan'],
+    artikel: ['cara-pilih-ban-traktor', 'cara-ganti-oli-traktor-yang-benar-dan-hemat-biaya', 'traktor-sering-selip-ini-cara-pakai-differential-lock', 'keunggulan-hydraulic-power-steering-traktor'],
     waPesan: 'Halo, saya ingin menanyakan harga traktor Zoomlion.',
     keyword: 'jual traktor jakarta, traktor jakarta, harga traktor, traktor zoomlion, dealer traktor jakarta, traktor sawah, traktor hybrid',
     id: {
@@ -126,8 +125,7 @@ const HALAMAN = [
     kategori: ['sprayer-drone', 'va-drone'],
     brand: 'pages/produk/eavision.html',
     gambar: 'assets/images/hero/hero-eavision-og.jpg',
-    artikel: ['drone-tabur-benih-pupuk', 'perawatan-drone-sprayer-musim-kemarau',
-              'eavision-j150-agrishow-2026', 'sni-drone-pertanian-kemenperin'],
+    artikel: [],
     waPesan: 'Halo, saya ingin menanyakan harga drone pertanian.',
     keyword: 'jual drone pertanian jakarta, drone pertanian jakarta, drone sprayer, harga drone pertanian, drone penyemprot, drone eavision, drone vectoragr',
     id: {
@@ -186,8 +184,7 @@ const HALAMAN = [
     kategori: ['harvester', 'planter', 'sugarcane', 'dryer', 'baler'],
     brand: 'pages/produk/zoomlion.html',
     gambar: 'assets/images/hero/hero-combine-hasverter-og.jpg',
-    artikel: ['alsintan-2026-pilih-mesin-sesuai-lahan', 'perawatan-combine-harvester-setelah-panen',
-              'mesin-pengering-gabah-musim-hujan', 'swasembada-gula-mekanisasi-panen-tebu'],
+    artikel: ['waspada-oksidasi-oli-pada-mesin-pertanian', 'cara-ganti-oli-traktor-yang-benar-dan-hemat-biaya'],
     waPesan: 'Halo, saya ingin menanyakan harga mesin pertanian Zoomlion.',
     keyword: 'jual mesin pertanian jakarta, alat mesin pertanian, combine harvester, rice transplanter, mesin pengering gabah, mesin panen tebu, alsintan',
     id: {
@@ -248,8 +245,7 @@ const HALAMAN = [
     kategori: ['tractor', 'implement', 'va-steering'],
     brand: 'pages/produk/zoomlion.html',
     gambar: 'assets/images/hero/hero-tractor-og.jpg',
-    artikel: ['auto-steering-traktor-perkebunan', 'cara-pilih-ban-traktor',
-              'perawatan-traktor-jelang-musim-hujan', 'traktor-hybrid-zoomlion-hemat-solar'],
+    artikel: ['traktor-sering-selip-ini-cara-pakai-differential-lock', 'keunggulan-hydraulic-power-steering-traktor', 'cara-pilih-ban-traktor', 'teknik-mengendalikan-traktor'],
     waPesan: 'Halo, saya ingin konsultasi traktor untuk kebun sawit.',
     keyword: 'traktor kebun sawit, traktor sawit, traktor perkebunan, traktor 4wd, auto steering traktor, traktor zoomlion',
     id: {
@@ -331,8 +327,7 @@ const HALAMAN = [
     produkId: ['zl-zl88', 'zl-zl105', 'zl-zl125', 'zl-zl145'],
     brand: 'pages/produk/zoomlion.html',
     gambar: 'assets/images/hero/hero-combine-hasverter-og.jpg',
-    artikel: ['perawatan-combine-harvester-setelah-panen', 'alsintan-2026-pilih-mesin-sesuai-lahan',
-              'mesin-pengering-gabah-musim-hujan'],
+    artikel: ['waspada-oksidasi-oli-pada-mesin-pertanian'],
     waPesan: 'Halo, saya ingin menanyakan harga combine harvester padi Zoomlion.',
     keyword: 'combine harvester padi, mesin panen padi, harga combine harvester, combine harvester zoomlion, zoomlion zl88, zoomlion zl105',
     id: {
@@ -414,8 +409,7 @@ const HALAMAN = [
     kategori: ['sprayer-drone', 'va-drone'],
     brand: 'pages/produk/eavision.html',
     gambar: 'assets/images/hero/hero-eavision-og.jpg',
-    artikel: ['drone-tabur-benih-pupuk', 'perawatan-drone-sprayer-musim-kemarau',
-              'semprot-malam-eavision-ea-30x', 'sni-drone-pertanian-kemenperin'],
+    artikel: [],
     waPesan: 'Halo, saya ingin konsultasi drone pertanian untuk sawah.',
     keyword: 'drone pertanian sawah, drone semprot padi, drone tabur benih padi, drone pupuk, drone sprayer padi, drone pertanian',
     id: {
@@ -497,19 +491,19 @@ const HALAMAN = [
 
 /* Artikel terkait per kategori produk, untuk bagian "Lihat Juga" di halaman produk */
 const ARTIKEL_KATEGORI = {
-  'tractor':       ['cara-pilih-ban-traktor', 'perawatan-traktor-jelang-musim-hujan', 'auto-steering-traktor-perkebunan'],
-  'hybrid':        ['traktor-hybrid-zoomlion-hemat-solar', 'cara-pilih-ban-traktor', 'perawatan-traktor-jelang-musim-hujan'],
-  'implement':     ['perawatan-traktor-jelang-musim-hujan', 'cara-pilih-ban-traktor'],
-  'harvester':     ['perawatan-combine-harvester-setelah-panen', 'alsintan-2026-pilih-mesin-sesuai-lahan'],
-  'planter':       ['alsintan-2026-pilih-mesin-sesuai-lahan', 'perawatan-traktor-jelang-musim-hujan'],
-  'sugarcane':     ['swasembada-gula-mekanisasi-panen-tebu', 'traktor-hybrid-zoomlion-hemat-solar'],
-  'dryer':         ['mesin-pengering-gabah-musim-hujan', 'alsintan-2026-pilih-mesin-sesuai-lahan'],
-  'baler':         ['alsintan-2026-pilih-mesin-sesuai-lahan'],
-  'sprayer-drone': ['drone-tabur-benih-pupuk', 'perawatan-drone-sprayer-musim-kemarau', 'eavision-j150-agrishow-2026'],
-  'va-drone':      ['drone-tabur-benih-pupuk', 'perawatan-drone-sprayer-musim-kemarau', 'sni-drone-pertanian-kemenperin'],
-  'va-steering':   ['auto-steering-traktor-perkebunan'],
-  'va-rover':      ['auto-steering-traktor-perkebunan', 'sni-drone-pertanian-kemenperin'],
-  'va-digital':    ['auto-steering-traktor-perkebunan', 'sni-drone-pertanian-kemenperin']
+  'tractor':       ['cara-pilih-ban-traktor', 'cara-ganti-oli-traktor-yang-benar-dan-hemat-biaya', 'traktor-sering-selip-ini-cara-pakai-differential-lock'],
+  'hybrid':        ['cara-ganti-oli-traktor-yang-benar-dan-hemat-biaya', 'keunggulan-hydraulic-power-steering-traktor', 'cara-pilih-ban-traktor'],
+  'implement':     ['teknik-mengendalikan-traktor', 'traktor-sering-selip-ini-cara-pakai-differential-lock'],
+  'harvester':     ['waspada-oksidasi-oli-pada-mesin-pertanian'],
+  'planter':       ['waspada-oksidasi-oli-pada-mesin-pertanian'],
+  'sugarcane':     ['waspada-oksidasi-oli-pada-mesin-pertanian'],
+  'dryer':         ['waspada-oksidasi-oli-pada-mesin-pertanian'],
+  'baler':         ['waspada-oksidasi-oli-pada-mesin-pertanian'],
+  'sprayer-drone': [],
+  'va-drone':      [],
+  'va-steering':   ['teknik-mengendalikan-traktor', 'keunggulan-hydraulic-power-steering-traktor'],
+  'va-rover':      [],
+  'va-digital':    []
 };
 
 /* =========================================
@@ -672,11 +666,12 @@ ${BAHASA.map(b => `        ${blok(b, `
           <h2 class="landing__judul">${UI[b].faq}</h2>
           ${h[b].faq.map(([q, a]) => `<details class="faq"><summary>${q}</summary><p>${a}</p></details>`).join('\n          ')}
 
+${h.artikel.length ? `
           <h2 class="landing__judul">${UI[b].artikel}</h2>
           <ul class="landing__artikel">
             ${h.artikel.map(id => `<li><a href="artikel/${id}.html">${judulArtikel(id, b)}</a></li>`).join('\n            ')}
           </ul>
-
+` : ''}
           <h2 class="landing__judul">${UI[b].terkait}</h2>
           <ul class="landing__artikel">
             ${HALAMAN.filter(x => x !== h).map(x => `<li><a href="${x.file}">${x[b].h1}</a></li>`).join('\n            ')}

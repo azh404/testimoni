@@ -22,6 +22,9 @@ Options -Indexes
 # Halaman "tidak ditemukan" bergaya DASS
 ErrorDocument 404 /404.html
 
+# Artikel lama yang sudah dihapus (Okt 2026) dialihkan ke daftar artikel
+RewriteRule ^artikel/(perawatan-traktor-jelang-musim-hujan|perawatan-drone-sprayer-musim-kemarau|perawatan-combine-harvester-setelah-panen|mesin-pengering-gabah-musim-hujan|semprot-malam-eavision-ea-30x|swasembada-gula-mekanisasi-panen-tebu|alsintan-2026-pilih-mesin-sesuai-lahan|drone-tabur-benih-pupuk|auto-steering-traktor-perkebunan|traktor-hybrid-zoomlion-hemat-solar|eavision-j150-agrishow-2026|sni-drone-pertanian-kemenperin)\.html$ /artikel.html [R=301,L]
+
 # Kunci file & folder internal (alat, catatan, git) walau ikut ter-upload
 RewriteRule ^(tools|DASS-WEB|\.git)(/.*)?$ - [F,L]
 RewriteRule (^|/)(PETUNJUK\.txt|README\.md|\.gitignore)$ - [F,L]
