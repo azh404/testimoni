@@ -186,7 +186,7 @@ function renderDilihat() {
   if (!wadah) {
     /* Halaman produk: sebelum "Produk Lainnya"; beranda: setelah kartu brand */
     const acuan = document.querySelector('.detail-lainnya-head')?.closest('section')
-      || document.getElementById('brandCards')?.closest('section')?.nextElementSibling;
+      || document.getElementById('produk')?.nextElementSibling;
     if (!acuan) return;
     wadah = document.createElement('section');
     wadah.id = 'terakhirDilihat';
