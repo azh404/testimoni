@@ -2160,3 +2160,8 @@ body[data-brand="eavision"] .produk-grid {
   .kt-lokasi__info { grid-template-columns: 1fr; }
   .kt-lokasi .kontak-google .btn { flex: 1 1 100%; }
 }
+
+.kt-kartu--ig .kt-kartu__ikon {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  color: var(--color-white);
+}
