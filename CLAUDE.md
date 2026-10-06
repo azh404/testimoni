@@ -184,9 +184,18 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   (ZL145), `hero-sugarcane-hasverter.webp` (C610).
 
 ## Belum selesai / menunggu pengguna (status 6 Okt 2026)
-- **PERTANYAAN TERBUKA BERIKUTNYA:** pengguna bertanya "berita dan artikel kenapa?" (halaman
-  `artikel.html` / `artikel/*.html`) tepat sebelum pindah ke percakapan baru — tanyakan apa yang
-  dimaksud (rusak? kurang bagus?), minta screenshot, lalu buat pratinjau sebelum merge.
+- **ARTIKEL — LANJUTKAN DI SESI BARU (6 Okt 2026):** artikel & berita ditulis divisi **Marketing
+  Komunikasi** di **Google Docs** (selalu diperbarui), lalu dikirim ke pengguna (IT). Pengguna memilih
+  menyambungkan **konektor Google Drive** (claude.ai/customize/connectors) agar Claude bisa membaca
+  dokumen itu langsung. Di sesi baru: (1) cek konektor Google Drive tersedia, minta link/nama dokumen
+  Marketing; (2) review artikel (ejaan, fakta, judul/ringkasan SEO, tanpa klaim servis/sparepart) lalu
+  masukkan ke website. Usulan yang belum dikerjakan & belum disetujui (tawarkan lagi, pratinjau dulu):
+  foto artikel OPSIONAL (sekarang tanpa foto = kotak abu-abu di kartu + `<img>` rusak di halaman artikel;
+  ganti sampul pengganti warna DASS + logo + kategori), template untuk Marketing, alat
+  `tools/tambah-artikel.js` (file di `artikel-baru/` → data + halaman + sitemap), halaman `artikel.html`
+  dirapikan (artikel terbaru jadi sorotan besar, tombol "Baca selengkapnya", kartu terakhir tidak
+  sendirian). Temuan: semua 13 artikel bertanggal sama 2026-09-28; semua foto artikel buatan AI.
+  Artikel Marketing biasanya hanya bahasa Indonesia — tawarkan terjemahan EN/ZH.
 - **Mode perbaikan mungkin masih aktif di Hostinger**: pengguna menempel 5 baris "MODE PERBAIKAN" di
   `.htaccess` server pada 6 Okt 2026 (website ditutup 503). Ada pengingat (send_later, trig_01Hj1x6NpEpd9BQGcbXMVgE7)
   9 Okt 2026 09.00 WIB untuk menyalakan lagi. Cara menyalakan: hapus 5 baris itu, atau upload ulang
