@@ -32,7 +32,6 @@ function initBeranda() {
   isiAngka('statKategori', jumlahKategori);
 
   renderShowcase();
-  renderArtikelBeranda();
 
   if (typeof terapkanBahasa === 'function') terapkanBahasa();
   if (typeof initReveal     === 'function') initReveal();
@@ -105,65 +104,4 @@ function renderShowcase() {
     renderShowcase();
     if (typeof terapkanBahasa === 'function') terapkanBahasa();
   };
-}
-
-/* --- Artikel terbaru: data artikel (±140 KB) baru dimuat saat bagiannya hampir terlihat --- */
-let artikelBerandaDimuat = false;
-
-function renderArtikelBeranda() {
-  const wrap = document.getElementById('berandaArtikel');
-  if (!wrap) return;
-
-  if (typeof ARTIKEL !== 'undefined' && typeof teksArtikel === 'function') {
-    const base = document.body.dataset.base || '';
-    const [utama, ...lain] = [...ARTIKEL]
-      .sort((a, b) => new Date(b.tanggal) - new Date(a.tanggal))
-      .slice(0, 4);
-    const url = a => `${base}artikel/${a.id}.html`;
-    /* Tata letak majalah: 1 artikel besar + 3 artikel ringkas */
-    wrap.innerHTML = `
-      <a href="${url(utama)}" class="majalah__utama">
-        <img src="${base}${utama.gambar}" alt="${teksArtikel(utama, 'judul')}" loading="lazy" decoding="async">
-        <span class="majalah__isi">
-          <span class="majalah__badge">${namaKategoriArtikel(utama.kategori)}</span>
-          <span class="majalah__judul">${teksArtikel(utama, 'judul')}</span>
-          <span class="majalah__ringkas">${teksArtikel(utama, 'ringkas')}</span>
-          <span class="majalah__tanggal">${formatTanggal(utama.tanggal)}</span>
-        </span>
-      </a>
-      <div class="majalah__daftar">
-        ${lain.map(a => `
-          <a href="${url(a)}" class="majalah__item">
-            <img src="${base}${a.gambar}" alt="${teksArtikel(a, 'judul')}" loading="lazy" decoding="async">
-            <span>
-              <span class="majalah__kat">${namaKategoriArtikel(a.kategori)}</span>
-              <span class="majalah__item-judul">${teksArtikel(a, 'judul')}</span>
-              <span class="majalah__tanggal">${formatTanggal(a.tanggal)}</span>
-            </span>
-          </a>`).join('')}
-      </div>`;
-    return;
-  }
-  if (artikelBerandaDimuat) return;
-
-  const muat = () => {
-    if (artikelBerandaDimuat) return;
-    artikelBerandaDimuat = true;
-    const base = document.body.dataset.base || '';
-    const file = ['data/artikel.js', 'data/artikel-terjemahan.js', 'artikel.js'];
-    const berikut = (n) => {
-      if (n >= file.length) return renderArtikelBeranda();
-      const s = document.createElement('script');
-      s.src = `${base}assets/js/${file[n]}`;
-      s.onload = () => berikut(n + 1);
-      document.body.appendChild(s);
-    };
-    berikut(0);
-  };
-
-  if (!('IntersectionObserver' in window)) return muat();
-  const obs = new IntersectionObserver(entries => {
-    if (entries.some(e => e.isIntersecting)) { obs.disconnect(); muat(); }
-  }, { rootMargin: '400px 0px' });
-  obs.observe(wrap);
 }
