@@ -52,8 +52,8 @@ def ubah(sumber):
         ffmpeg(*umum, '-c:v', 'libx264', '-preset', 'slow', '-crf', crf264,
                '-maxrate', maks, '-bufsize', str(int(maks[:-1]) * 2) + 'k',
                '-profile:v', 'high', '-movflags', '+faststart', f'{dasar}.mp4')
-        # Foto sampul = gambar pertama video
-        ffmpeg('-i', str(sumber), '-frames:v', '1', '-vf', f'scale={lebar}:-2:flags=lanczos',
+        # Foto sampul = gambar detik ke-1 (banyak video diawali layar hitam)
+        ffmpeg('-ss', '1', '-i', str(sumber), '-frames:v', '1', '-vf', f'scale={lebar}:-2:flags=lanczos',
                '-c:v', 'libwebp', '-quality', '72', str(HERO / f'{nama}{akhiran}.webp'))
         for f in (f'{dasar}.webm', f'{dasar}.mp4', HERO / f'{nama}{akhiran}.webp'):
             print(f'  {Path(f).name:34s} {Path(f).stat().st_size / 1e6:5.2f} MB')
