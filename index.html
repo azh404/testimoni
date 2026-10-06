@@ -17,10 +17,17 @@
   <meta property="og:locale" content="id_ID">
 
   <link rel="icon" href="assets/images/logo/logo.png">
+  <!-- Foto sampul slide hero pertama dimuat paling awal (elemen terbesar di layar) -->
+  <link rel="preload" as="image" href="assets/images/hero/hero-zoomlion-1-hp.webp?v=1" media="(max-width: 768px)" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/images/hero/hero-zoomlion-1.webp?v=1" media="(min-width: 769px)" fetchpriority="high">
+  <style>
+    .hero__slide:first-child { background-image: url('assets/images/hero/hero-zoomlion-1-hp.webp?v=1'); }
+    @media (min-width: 769px) { .hero__slide:first-child { background-image: url('assets/images/hero/hero-zoomlion-1.webp?v=1'); } }
+  </style>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- Data terstruktur untuk Google -->
@@ -90,12 +97,11 @@
     <section class="hero">
       <div class="hero__slides">
         <!-- Slide dengan data-video: foto tampil dulu, video diputar setelah halaman selesai dimuat -->
-        <div class="hero__slide is-active" style="background-image:url('assets/images/hero/hero-drying-machine.webp')" data-video="assets/videos/hero-drying-machine.mp4?v=5" data-webm></div>
-        <div class="hero__slide" data-bg="assets/images/hero/hero-tractor.webp?v=2" data-video="assets/videos/hero-tractor.mp4?v=5" data-webm></div>
-        <div class="hero__slide" data-bg="assets/images/hero/hero-sugarcane-hasverter.webp?v=2"></div>
-        <div class="hero__slide" data-bg="assets/images/hero/hero-combine-hasverter.webp?v=2" data-video="assets/videos/hero-combine-harvester.mp4?v=5" data-webm></div>
-        <div class="hero__slide" data-bg="assets/images/hero/hero-vectoragr.webp" data-video="assets/videos/hero-vectoragr.mp4?v=4"></div>
-        <div class="hero__slide" data-bg="assets/images/hero/hero-eavision.webp" data-video="assets/videos/hero-eavision.mp4?v=4"></div>
+        <div class="hero__slide is-active" data-video="assets/videos/hero-zoomlion-1.mp4?v=1" data-webm></div>
+        <div class="hero__slide" data-bg="assets/images/hero/hero-zoomlion-2.webp?v=1" data-bg-hp="assets/images/hero/hero-zoomlion-2-hp.webp?v=1" data-video="assets/videos/hero-zoomlion-2.mp4?v=1" data-webm></div>
+        <div class="hero__slide" data-bg="assets/images/hero/hero-eavision.webp?v=1" data-bg-hp="assets/images/hero/hero-eavision-hp.webp?v=1" data-video="assets/videos/hero-eavision.mp4?v=1" data-webm></div>
+        <div class="hero__slide" data-bg="assets/images/hero/hero-vectoragr-1.webp?v=1" data-bg-hp="assets/images/hero/hero-vectoragr-1-hp.webp?v=1" data-video="assets/videos/hero-vectoragr-1.mp4?v=1" data-webm></div>
+        <div class="hero__slide" data-bg="assets/images/hero/hero-vectoragr-2.webp?v=1" data-bg-hp="assets/images/hero/hero-vectoragr-2-hp.webp?v=1" data-video="assets/videos/hero-vectoragr-2.mp4?v=1" data-webm></div>
       </div>
       <div class="hero__overlay"></div>
 
@@ -118,7 +124,6 @@
         <button class="hero__dot" aria-label="Slide 3"></button>
         <button class="hero__dot" aria-label="Slide 4"></button>
         <button class="hero__dot" aria-label="Slide 5"></button>
-        <button class="hero__dot" aria-label="Slide 6"></button>
       </div>
     </section>
 

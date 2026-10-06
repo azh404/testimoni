@@ -112,6 +112,15 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   VectorAgr dari Kling 5 dtk dengan watermark "KlingAI 3.0" — dipasang apa adanya atas
   permintaan pengguna; jangan dipotong/ditutup, ganti bila ada versi bersih. Chromium sandbox tak bisa H.264 — uji
   pakai salinan .webm lewat page.route.
+- **Hero beranda sejak 6 Okt 2026 = 5 video promosi asli dari pengguna** (1080p, bukan AI): urutan
+  hero-zoomlion-1 (animasi smart farm), hero-zoomlion-2 (cuplikan tebu/traktor), hero-eavision,
+  hero-vectoragr-1, hero-vectoragr-2. Dibuat dengan `python tools/ubah-video.py foto-baru/<nama>.mp4`:
+  dipotong maks. 20 dtk, 25 fps, tanpa suara; WebM VP9 1920 (crf36, ±1,8 Mbps, 3–5 MB) + 1280 `-hp`
+  (±0,8 Mbps, 1,4–2,3 MB) + MP4 cadangan; sampul `hero/<nama>.webp` & `-hp.webp` (detik ke-1, karena
+  awal video sering hitam). Sampul slide 1 di-preload (`<link rel=preload media=...>` + `<style>` di
+  head) agar LCP cepat; slide lain `data-bg` + `data-bg-hp` (slider.js memilih versi HP ≤768px).
+  Video lama (pengering, traktor, tebu, combine, VectorAgr Kling) dihapus dari assets (ada di riwayat git).
+  Google Fonts dimuat tanpa menahan tampilan (`media="print" onload`) di semua halaman + generator tools.
 - Judul hero beranda (H1 "Distributor Traktor & Drone Pertanian di Jakarta") DISEMBUNYIKAN
   dari tampilan dengan `.sr-only`; kalimat "Distributor resmi Zoomlion…" TAMPIL di kiri bawah video
   (HP: juga di atas video, kiri bawah) atas permintaan pengguna (tetap di HTML untuk
