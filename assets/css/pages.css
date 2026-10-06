@@ -2147,3 +2147,12 @@ body[data-brand="eavision"] .produk-grid {
   border-radius: 2px;
   background: #8DC63F;
 }
+
+/* Foto lebar di antara profil dan Visi & Misi */
+.tt-panorama {
+  height: clamp(220px, 34vw, 440px);
+  background: url('../images/hero/hero-tractor.webp?v=2') 60% 58% / cover no-repeat;
+}
+@media (max-width: 640px) {
+  .tt-panorama { height: 220px; background-position: 70% 55%; }
+}
