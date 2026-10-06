@@ -116,6 +116,9 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   head) agar LCP cepat; slide lain `data-bg` + `data-bg-hp` (slider.js memilih versi HP ≤768px).
   Video lama (pengering, traktor, tebu, combine, VectorAgr Kling) dihapus dari assets (ada di riwayat git).
   Google Fonts dimuat tanpa menahan tampilan (`media="print" onload`) di semua halaman + generator tools.
+- **Hero slide 2–5 SEMENTARA DISEMBUNYIKAN (6 Okt 2026, permintaan pengguna)**: dibungkus komentar HTML di
+  index.html (slide + indikator). Hanya hero-zoomlion-1 yang tampil; slider.js mode satu slide = video `loop`,
+  indikator disembunyikan. Untuk menampilkan lagi: hapus 2 pasang penanda komentar itu. File video tetap ada.
 - Judul hero beranda (H1 "Distributor Traktor & Drone Pertanian di Jakarta") DISEMBUNYIKAN
   dari tampilan dengan `.sr-only`; kalimat "Distributor resmi Zoomlion…" TAMPIL di kiri bawah video
   (HP: juga di atas video, kiri bawah) atas permintaan pengguna (tetap di HTML untuk
