@@ -30,8 +30,8 @@ MAKS_DETIK = 20
 
 # lebar, VP9 (crf, bitrate target, maks), H.264 crf
 UKURAN = {
-    '':    (1920, ('36', '1800k', '2600k'), '27'),
-    '-hp': (1280, ('38', '800k', '1200k'), '29'),
+    '':    (1920, ('28', '4500k', '6500k'), '23'),
+    '-hp': (1280, ('32', '1800k', '2600k'), '26'),
 }
 
 
@@ -43,7 +43,7 @@ def ubah(sumber):
     nama = sumber.stem
     print(f'{nama}:')
     for akhiran, (lebar, (crf, br, maks), crf264) in UKURAN.items():
-        vf = f'scale={lebar}:-2:flags=lanczos,fps=25,format=yuv420p'
+        vf = f'scale={lebar}:-2:flags=lanczos,format=yuv420p'
         dasar = VIDEO / f'{nama}{akhiran}'
         umum = ['-i', str(sumber), '-t', str(MAKS_DETIK), '-an', '-vf', vf]
         ffmpeg(*umum, '-c:v', 'libvpx-vp9', '-crf', crf, '-b:v', br, '-maxrate', maks,
@@ -54,7 +54,7 @@ def ubah(sumber):
                '-profile:v', 'high', '-movflags', '+faststart', f'{dasar}.mp4')
         # Foto sampul = gambar detik ke-1 (banyak video diawali layar hitam)
         ffmpeg('-ss', '1', '-i', str(sumber), '-frames:v', '1', '-vf', f'scale={lebar}:-2:flags=lanczos',
-               '-c:v', 'libwebp', '-quality', '72', str(HERO / f'{nama}{akhiran}.webp'))
+               '-c:v', 'libwebp', '-quality', '82', str(HERO / f'{nama}{akhiran}.webp'))
         for f in (f'{dasar}.webm', f'{dasar}.mp4', HERO / f'{nama}{akhiran}.webp'):
             print(f'  {Path(f).name:34s} {Path(f).stat().st_size / 1e6:5.2f} MB')
 
