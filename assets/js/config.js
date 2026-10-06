@@ -38,7 +38,7 @@ const COMPANY = {
   /* URL Aplikasi web Google Apps Script (berakhiran /exec) untuk menyimpan
      leads ke Google Sheet "Leads Website DASS" — cara pasang: tools/leads-apps-script.gs.
      Kosongkan ("") untuk mematikan form leads (pop-up & form sebelum unduh brosur). */
-  leadsUrl: "",
+  leadsUrl: "https://script.google.com/macros/s/AKfycbyutgP3pKLyD8leqSIp2yVEG-p09bLrZspXwFPUTC8evY0rsB-Z4BWxdd5sPmlmmcs3/exec",
 
   sosmed: {
     instagram: "https://www.instagram.com/dass.agriculture",
