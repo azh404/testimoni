@@ -4,6 +4,14 @@ RewriteEngine On
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
+# ===== MODE PERBAIKAN (website ditutup sementara) =====
+# Untuk MENUTUP website: hapus tanda # di depan 3 baris "Rewrite..." di bawah ini.
+# Untuk MEMBUKA lagi: beri tanda # lagi. Kode 503 = "sementara", peringkat Google aman.
+# RewriteCond %{REQUEST_URI} !^/perbaikan\.html$
+# RewriteCond %{REQUEST_URI} !^/assets/images/logo/
+# RewriteRule ^ - [R=503,L]
+ErrorDocument 503 /perbaikan.html
+
 # Jenis file video (supaya browser mengenali WebM)
 AddType video/webm .webm
 AddType video/mp4 .mp4

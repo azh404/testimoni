@@ -137,6 +137,9 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   daftar di `BERANDA_PILIHAN` beranda.js) → Keunggulan → banner ajakan konsultasi (WA/kalkulator/
   bandingkan) → Sektor → Artikel Terbaru (3; data artikel dimuat malas saat bagian hampir terlihat)
   → Mitra. Kode: `assets/js/beranda.js` (`initBeranda`, juga di gantiBahasa).
+- Mode perbaikan: `perbaikan.html` (noindex) + blok "MODE PERBAIKAN" di awal `.htaccess`
+  (3 baris Rewrite diberi #; hapus # untuk menutup website dengan 503). Pengguna mengaktifkannya
+  langsung di File Manager Hostinger.
 - CAPTCHA tidak dipasang (tidak ada form yang mengirim ke server; form kontak membuka WA).
 
 ## Belum selesai / menunggu pengguna
