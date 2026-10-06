@@ -162,7 +162,8 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   → Kemitraan. CSS awalan `.tt-`.
 - Halaman Kontak didesain ulang (6 Okt 2026): judul di tengah tanpa banner (H1 + garis hijau) → 3 kartu
   kontak cepat (WhatsApp hijau + status online otomatis `[data-wa-status]` dari `sedangJamKerja()`,
-  Instagram @dass.agriculture (menggantikan kartu Telepon atas permintaan), Email) → form "Kirim Pesan" (kiri)
+  Instagram @dass.agriculture (menggantikan kartu Telepon atas permintaan), Email; kartu ringkas mendatar
+  ikon-kiri + H1 kecil, versi besar dinilai "terlalu besar") → form "Kirim Pesan" (kiri)
   + peta & alamat/jam & tombol Google Maps/Ulasan (kanan). CSS awalan `.kt-`.
 - Mode perbaikan: `perbaikan.html` (noindex) + blok "MODE PERBAIKAN" di awal `.htaccess`
   (3 baris Rewrite diberi #; hapus # untuk menutup website dengan 503). Pengguna mengaktifkannya
