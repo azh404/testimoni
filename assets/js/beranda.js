@@ -4,30 +4,21 @@
    Didaftarkan juga di gantiBahasa() (i18n.js).
    ========================================= */
 
-/* Kategori yang ditampilkan + produk yang fotonya dipakai */
-const BERANDA_KATEGORI = [
-  ['tractor',       'zl-rk704'],
-  ['hybrid',        'zl-dh7-6000'],
-  ['harvester',     'zl-zl145'],
-  ['sugarcane',     'zl-c610'],
-  ['planter',       'zl-g630-g825-g830'],
-  ['dryer',         'zl-5hxg-30e'],
-  ['sprayer-drone', 'ea-j150'],
-  ['va-steering',   null]
+/* Showcase produk: tab kategori → daftar unit (unit pertama tampil besar) */
+const BERANDA_SHOWCASE = [
+  ['tractor',       ['zl-rk704', 'zl-rk504', 'zl-rk754', 'zl-rc904']],
+  ['harvester',     ['zl-zl145', 'zl-zl125', 'zl-h7-4500', 'zl-f6-3000']],
+  ['sugarcane',     ['zl-c610', 'zl-c620', 'zl-c600']],
+  ['dryer',         ['zl-5hxg-30e', 'zl-5hxg-30c1', 'zl-5hxh-30']],
+  ['sprayer-drone', ['ea-j150', 'ea-j100', 'ea-30x']],
+  ['va-steering',   ['va-hd818', 'va-hd812', 'va-hd408']]
 ];
-
-/* Unit pilihan (urut tampil) */
-const BERANDA_PILIHAN = [
-  'zl-rk704', 'zl-zl145', 'zl-c610', 'ea-j150',
-  'zl-h7-4500', 'zl-g630-g825-g830', 'va-hd540', 'zl-5hxg-30e'
-];
+let showcaseTab = 0;
+let showcaseUnit = 0;
 
 function initBeranda() {
-  const wrapKat = document.getElementById('berandaKategori');
-  if (!wrapKat) return;
-
-  const base = document.body.dataset.base || '';
-  const brandDari = id => BRANDS.find(b => b.id === id);
+  const wrapShow = document.getElementById('berandaShowcase');
+  if (!wrapShow) return;
 
   /* --- Angka --- */
   const isiAngka = (id, nilai) => {
@@ -40,38 +31,80 @@ function initBeranda() {
   isiAngka('statModel', Math.floor(PRODUK.length / 10) * 10);
   isiAngka('statKategori', jumlahKategori);
 
-  /* --- Kategori --- */
-  wrapKat.innerHTML = BERANDA_KATEGORI.map(([kat, idFoto], i) => {
-    const items = PRODUK.filter(p => p.kategori === kat);
-    if (!items.length) return '';
-    const p = items.find(x => x.id === idFoto) || items[0];
-    const brand = brandDari(p.brand);
-    return `
-      <a href="${base}${brand.halaman}?kategori=${kat}" class="kat-tile" data-reveal="${i % 4}">
-        <div class="kat-tile__media">
-          <img src="${base}${gambarKecil(p.gambar)}" alt="${altProduk(p)}" loading="lazy" decoding="async">
-        </div>
-        <h3 class="kat-tile__nama">${namaKategori(kat, p.brand)}</h3>
-        <span class="kat-tile__jumlah">${items.length} <span data-i18n="kat.unit">unit</span> · ${brand.nama}</span>
-      </a>`;
-  }).join('');
-
-  /* --- Unit pilihan --- */
-  const wrapPilih = document.getElementById('berandaPilihan');
-  if (wrapPilih) {
-    wrapPilih.innerHTML = BERANDA_PILIHAN
-      .map(id => PRODUK.find(p => p.id === id))
-      .filter(Boolean)
-      .map((p, i) => kartuProduk(p, brandDari(p.brand), base, i))
-      .join('');
-  }
-
+  renderShowcase();
   renderArtikelBeranda();
 
-  if (typeof initImageFallback === 'function') initImageFallback();
-  if (typeof terapkanBahasa    === 'function') terapkanBahasa();
-  if (typeof initReveal        === 'function') initReveal();
-  if (typeof initCounter       === 'function') initCounter();
+  if (typeof terapkanBahasa === 'function') terapkanBahasa();
+  if (typeof initReveal     === 'function') initReveal();
+  if (typeof initCounter    === 'function') initCounter();
+}
+
+function renderShowcase() {
+  const wrap = document.getElementById('berandaShowcase');
+  if (!wrap) return;
+  const base = document.body.dataset.base || '';
+  const tabs = BERANDA_SHOWCASE
+    .map(([kat, ids]) => [kat, ids.map(id => PRODUK.find(p => p.id === id)).filter(Boolean)])
+    .filter(([, items]) => items.length);
+  if (!tabs.length) return;
+  showcaseTab = Math.min(showcaseTab, tabs.length - 1);
+  const [kat, items] = tabs[showcaseTab];
+  showcaseUnit = Math.min(showcaseUnit, items.length - 1);
+  const p = items[showcaseUnit];
+  const brand = BRANDS.find(b => b.id === p.brand);
+
+  /* 4 spesifikasi pertama selain "Model" */
+  const spek = (p.spesifikasi || []).filter(x => !/^model$/i.test(x.label)).slice(0, 4);
+  const label = (x) => typeof tSpec === 'function' ? tSpec(x) : x;
+  const nilai = (x) => typeof tNilai === 'function' ? tNilai(x) : x;
+  const pesan = `Halo, saya ingin menanyakan unit ${brand.nama} ${p.nama}. Mohon info harga dan ketersediaannya.`;
+
+  wrap.innerHTML = `
+    <div class="showcase__tabs" role="tablist">
+      ${tabs.map(([k, it], i) => `
+        <button class="showcase__tab${i === showcaseTab ? ' is-active' : ''}" role="tab"
+                aria-selected="${i === showcaseTab}" data-tab="${i}">
+          ${namaKategori(k, it[0].brand)}
+        </button>`).join('')}
+    </div>
+
+    <div class="showcase__panggung" data-brand="${p.brand}">
+      <div class="showcase__media">
+        <span class="showcase__bayang" aria-hidden="true">${p.nama}</span>
+        <img src="${base}${gambarWeb(p.gambar)}" alt="${altProduk(p)}" loading="lazy" decoding="async">
+      </div>
+      <div class="showcase__info">
+        <img class="showcase__logo" src="${base}${brand.logo}" alt="${brand.nama}" loading="lazy">
+        <span class="showcase__kategori">${namaKategori(kat, p.brand)}</span>
+        <h3 class="showcase__nama">${p.nama}</h3>
+        <p class="showcase__ringkas">${teksField(p.ringkas) || ''}</p>
+        <dl class="showcase__spek">
+          ${spek.map(x => `<div><dt>${label(x.label)}</dt><dd>${nilai(x.nilai)}</dd></div>`).join('')}
+        </dl>
+        <div class="showcase__aksi">
+          <a href="${base}${urlProduk(p)}" class="btn btn--primary" data-i18n="show.detail">Lihat Detail</a>
+          <a href="${waLink(pesan)}" target="_blank" rel="noopener" class="btn btn--wa" data-i18n="show.wa">Tanya via WhatsApp</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="showcase__daftar">
+      ${items.map((x, i) => `
+        <button class="showcase__thumb${i === showcaseUnit ? ' is-active' : ''}" data-unit="${i}" aria-label="${x.nama}">
+          <img src="${base}${gambarKecil(x.gambar)}" alt="" loading="lazy" decoding="async">
+          <span>${x.nama}</span>
+        </button>`).join('')}
+    </div>`;
+
+  wrap.onclick = (e) => {
+    const tab = e.target.closest('[data-tab]');
+    const unit = e.target.closest('[data-unit]');
+    if (tab) { showcaseTab = +tab.dataset.tab; showcaseUnit = 0; }
+    else if (unit) { showcaseUnit = +unit.dataset.unit; }
+    else return;
+    renderShowcase();
+    if (typeof terapkanBahasa === 'function') terapkanBahasa();
+  };
 }
 
 /* --- Artikel terbaru: data artikel (±140 KB) baru dimuat saat bagiannya hampir terlihat --- */

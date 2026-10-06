@@ -147,9 +147,10 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   kiri putih→hijau + judul "Agricultural Equipment" + badge Zoomlion + foto traktor dalam lingkaran, tengah EAVision
   ala banner resmi: judul HTML "EAVISION EA-J150 [2025] Agricultural Drone" (#3D4A7A) di atas langit + foto
   `hero/eavision-j150-panel.webp` (dari gambar pengguna, "Learn More" dihapus, tinggi 440px), kanan kuning #F9B812 logo `logo-vector-putih.png` + auto
-  steering HD818; statis di index.html, CSS `.ourproduk`) → Kategori (8 kotak
-  foto, link `pages/produk/<brand>.html?kategori=<id>` yang langsung menyaring) → Unit Unggulan (8 kartu,
-  daftar di `BERANDA_PILIHAN` beranda.js) → Keunggulan → banner ajakan konsultasi (WA/kalkulator/
+  steering HD818; statis di index.html, CSS `.ourproduk`) → Showcase Produk
+  (menggantikan bagian Kategori & Unit Unggulan atas permintaan pengguna: tab 6 kategori, unit besar +
+  4 spesifikasi + tombol Detail/WA, thumbnail unit lain; daftar di `BERANDA_SHOWCASE` beranda.js;
+  halaman merek tetap mendukung `?kategori=<id>`) → Keunggulan → banner ajakan konsultasi (WA/kalkulator/
   bandingkan) → Sektor → Artikel Terbaru (3; data artikel dimuat malas saat bagian hampir terlihat)
   → Mitra. Kode: `assets/js/beranda.js` (`initBeranda`, juga di gantiBahasa).
 - Mode perbaikan: `perbaikan.html` (noindex) + blok "MODE PERBAIKAN" di awal `.htaccess`
