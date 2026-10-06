@@ -1980,7 +1980,7 @@ body[data-brand="eavision"] .produk-grid {
   color: var(--color-white);
   background:
     linear-gradient(90deg, rgba(8, 28, 52, 0.92) 0%, rgba(8, 28, 52, 0.65) 50%, rgba(8, 28, 52, 0.15) 100%),
-    url('../images/hero/hero-zoomlion-2.webp?v=3') center / cover no-repeat;
+    url('../images/hero/hero-tractor.webp?v=2') 70% 55% / cover no-repeat;
 }
 .tt-hero__isi { max-width: 1200px; }
 .tt-hero__eyebrow {
@@ -2024,7 +2024,7 @@ body[data-brand="eavision"] .produk-grid {
   border-radius: var(--radius-lg);
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.15);
 }
-.tt-kolase__a { grid-row: 1 / 3; object-position: 62% 50%; }
+.tt-kolase__a { grid-row: 1 / 3; object-position: 68% 50%; }
 .tt-kolase__b { object-position: 50% 20%; }
 .tt-kolase__c { object-position: 60% 50%; }
 .tt-kolase__lencana {
