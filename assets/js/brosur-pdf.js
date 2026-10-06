@@ -202,6 +202,9 @@ async function unduhBrosur(idProduk, tombol) {
   const p = PRODUK.find(x => x.id === idProduk);
   if (!p) return;
 
+  /* Form leads dulu (sekali saja per pengunjung); batal bila form ditutup */
+  if (typeof gerbangLead === 'function' && !(await gerbangLead('brosur: ' + p.nama))) return;
+
   const brand = BRANDS.find(b => b.id === p.brand);
   const base  = document.body.dataset.base || '';
 

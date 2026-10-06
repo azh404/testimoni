@@ -35,6 +35,11 @@ const COMPANY = {
      Kosongkan ("") untuk mematikan pelacakan. */
   googleAnalytics: "G-1XWSJJDZMF",
 
+  /* URL Aplikasi web Google Apps Script (berakhiran /exec) untuk menyimpan
+     leads ke Google Sheet "Leads Website DASS" — cara pasang: tools/leads-apps-script.gs.
+     Kosongkan ("") untuk mematikan form leads (pop-up & form sebelum unduh brosur). */
+  leadsUrl: "",
+
   sosmed: {
     instagram: "https://www.instagram.com/dass.agriculture",
     /* Google Business Profile: halaman di Google Maps & link minta ulasan */

@@ -229,6 +229,13 @@ document.addEventListener('DOMContentLoaded', async () => {
   const fitur = document.createElement('script');
   fitur.src = `${BASE}assets/js/fitur.js`;
   document.body.appendChild(fitur);
+
+  /* Form leads (pop-up & form sebelum unduh brosur) — hanya bila COMPANY.leadsUrl diisi */
+  if (COMPANY.leadsUrl) {
+    const leads = document.createElement('script');
+    leads.src = `${BASE}assets/js/leads.js`;
+    document.body.appendChild(leads);
+  }
   if (typeof initKalkulator    === 'function') initKalkulator();
   if (typeof initBandingkan    === 'function') initBandingkan();
 });
