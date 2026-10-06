@@ -1,23 +1,21 @@
 """
-UBAH VIDEO HERO — dari foto-baru/video-1..6.mp4 ke file siap pakai di beranda
+UBAH VIDEO HERO — MP4 dari pengguna → file ringan siap pakai di beranda
 
-Untuk tiap video yang ada di foto-baru/ dibuat 4 file di assets/videos/:
-  hero-<nama>.webm      1920px VP9  (utama, lebih kecil dari MP4)
-  hero-<nama>.mp4       1920px H.264 (cadangan untuk Safari/iPhone lama)
-  hero-<nama>-hp.webm   1280px VP9  (layar HP ≤768px)
-  hero-<nama>-hp.mp4    1280px H.264
-Lalu index.html diperbarui: atribut data-webm dipasang dan ?v= dinaikkan
-(supaya browser tidak memakai video lama dari cache).
-
-Nomor video:
-  1 pengering, 2 traktor, 3 tebu, 4 combine, 5 VectorAgr, 6 EAVision
+Untuk tiap video dibuat 4 file di assets/videos/ + 2 foto sampul di assets/images/hero/:
+  <nama>.webm        1920px VP9  (utama laptop)
+  <nama>-hp.webm     1280px VP9  (layar HP ≤768px)
+  <nama>.mp4         1920px H.264 (cadangan Safari/iPhone lama)
+  <nama>-hp.mp4      1280px H.264
+  hero/<nama>.webp   foto sampul 1920px (tampil sebelum video berjalan)
+  hero/<nama>-hp.webp foto sampul 1280px
+Video dipotong maksimal MAKS_DETIK detik, tanpa suara, 25 fps.
 
 Jalankan:
   pip install imageio-ffmpeg
-  python tools/ubah-video.py          (semua video yang ada)
-  python tools/ubah-video.py 2 5      (hanya video 2 dan 5)
+  python tools/ubah-video.py foto-baru/hero-zoomlion-1.mp4 foto-baru/hero-eavision.mp4
+  (nama hasil = nama file sumber, mis. hero-zoomlion-1)
+Lalu pasang di index.html: <div class="hero__slide" data-video="assets/videos/<nama>.mp4?v=1" data-webm ...>
 """
-import re
 import subprocess
 import sys
 from pathlib import Path
@@ -25,73 +23,42 @@ from pathlib import Path
 import imageio_ffmpeg
 
 ROOT = Path(__file__).resolve().parent.parent
-SUMBER = ROOT / 'foto-baru'
-TUJUAN = ROOT / 'assets' / 'videos'
-INDEX = ROOT / 'index.html'
+VIDEO = ROOT / 'assets' / 'videos'
+HERO = ROOT / 'assets' / 'images' / 'hero'
 FFMPEG = imageio_ffmpeg.get_ffmpeg_exe()
+MAKS_DETIK = 20
 
-NAMA = {
-    1: 'hero-drying-machine',
-    2: 'hero-tractor',
-    3: 'hero-sugarcane-harvester',
-    4: 'hero-combine-harvester',
-    5: 'hero-vectoragr',
-    6: 'hero-eavision',
+# lebar, VP9 (crf, bitrate target, maks), H.264 crf
+UKURAN = {
+    '':    (1920, ('36', '1800k', '2600k'), '27'),
+    '-hp': (1280, ('38', '800k', '1200k'), '29'),
 }
-
-# (lebar, CRF VP9, CRF H.264) — angka CRF kecil = kualitas lebih tinggi
-UKURAN = {'': (1920, 30, 18), '-hp': (1280, 36, 23)}
 
 
 def ffmpeg(*arg):
     subprocess.run([FFMPEG, '-y', '-hide_banner', '-loglevel', 'error', *arg], check=True)
 
 
-def ubah(no):
-    asal = SUMBER / f'video-{no}.mp4'
-    if not asal.exists():
-        return False
-    for akhiran, (lebar, crf_vp9, crf_264) in UKURAN.items():
-        # Diperkecil/diperbesar ke lebar target (16:9), tanpa suara, 25 fps
+def ubah(sumber):
+    nama = sumber.stem
+    print(f'{nama}:')
+    for akhiran, (lebar, (crf, br, maks), crf264) in UKURAN.items():
         vf = f'scale={lebar}:-2:flags=lanczos,fps=25,format=yuv420p'
-        dasar = TUJUAN / f'{NAMA[no]}{akhiran}'
-        ffmpeg('-i', str(asal), '-an', '-vf', vf,
-               '-c:v', 'libvpx-vp9', '-b:v', '0', '-crf', str(crf_vp9),
-               '-row-mt', '1', '-deadline', 'good', '-cpu-used', '2',
-               str(dasar) + '.webm')
-        ffmpeg('-i', str(asal), '-an', '-vf', vf,
-               '-c:v', 'libx264', '-preset', 'slow', '-crf', str(crf_264),
-               '-profile:v', 'high', '-movflags', '+faststart',
-               str(dasar) + '.mp4')
-        for ext in ('webm', 'mp4'):
-            f = Path(str(dasar) + '.' + ext)
-            print(f'  {f.name:40s} {f.stat().st_size / 1e6:5.1f} MB')
-    return True
-
-
-def perbarui_index(nomor):
-    html = INDEX.read_text(encoding='utf-8')
-    for no in nomor:
-        pola = re.compile(
-            r'data-video="assets/videos/' + NAMA[no] + r'\.mp4(?:\?v=(\d+))?"( data-webm)?')
-        def ganti(m):
-            v = int(m.group(1) or 0) + 1
-            return f'data-video="assets/videos/{NAMA[no]}.mp4?v={v}" data-webm'
-        html, n = pola.subn(ganti, html)
-        if not n:
-            print(f'  ! slide {NAMA[no]} tidak ditemukan di index.html')
-    INDEX.write_text(html, encoding='utf-8')
+        dasar = VIDEO / f'{nama}{akhiran}'
+        umum = ['-i', str(sumber), '-t', str(MAKS_DETIK), '-an', '-vf', vf]
+        ffmpeg(*umum, '-c:v', 'libvpx-vp9', '-crf', crf, '-b:v', br, '-maxrate', maks,
+               '-bufsize', str(int(maks[:-1]) * 2) + 'k', '-row-mt', '1',
+               '-deadline', 'good', '-cpu-used', '2', f'{dasar}.webm')
+        ffmpeg(*umum, '-c:v', 'libx264', '-preset', 'slow', '-crf', crf264,
+               '-maxrate', maks, '-bufsize', str(int(maks[:-1]) * 2) + 'k',
+               '-profile:v', 'high', '-movflags', '+faststart', f'{dasar}.mp4')
+        # Foto sampul = gambar pertama video
+        ffmpeg('-i', str(sumber), '-frames:v', '1', '-vf', f'scale={lebar}:-2:flags=lanczos',
+               '-c:v', 'libwebp', '-quality', '72', str(HERO / f'{nama}{akhiran}.webp'))
+        for f in (f'{dasar}.webm', f'{dasar}.mp4', HERO / f'{nama}{akhiran}.webp'):
+            print(f'  {Path(f).name:34s} {Path(f).stat().st_size / 1e6:5.2f} MB')
 
 
 if __name__ == '__main__':
-    pilih = [int(a) for a in sys.argv[1:]] or list(NAMA)
-    selesai = []
-    for no in pilih:
-        print(f'Video {no} ({NAMA[no]}):')
-        if ubah(no):
-            selesai.append(no)
-        else:
-            print('  (tidak ada file, dilewati)')
-    if selesai:
-        perbarui_index(selesai)
-        print('index.html diperbarui untuk video', selesai)
+    for arg in sys.argv[1:]:
+        ubah(Path(arg))

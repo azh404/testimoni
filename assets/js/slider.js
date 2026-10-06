@@ -72,7 +72,9 @@ function initHeroSlider() {
     if (!s) return;
     pasangVideo(s);
     if (!s.dataset.bg) return;
-    s.style.backgroundImage = `url('${s.dataset.bg}')`;
+    /* Layar HP memakai foto sampul versi kecil (data-bg-hp) bila ada */
+    const kecil = s.dataset.bgHp && window.matchMedia('(max-width: 768px)').matches;
+    s.style.backgroundImage = `url('${kecil ? s.dataset.bgHp : s.dataset.bg}')`;
     delete s.dataset.bg;
   };
   const muatBerikut = (n) => muat(slides[(n + 1) % slides.length]);
