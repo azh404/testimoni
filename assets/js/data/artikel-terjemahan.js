@@ -9,7 +9,289 @@
 const ARTIKEL_TERJEMAHAN = {
 
   /* ------------------------------------------------------------ */
-  'cara-ganti-oli-traktor': {
+  'waspada-oksidasi-oli-pada-mesin-pertanian': {
+    en: {
+      judul: `Watch Out! Oil Oxidation in Agricultural Machinery`,
+      ringkas: `Oil that turns black quickly and an engine that runs hot may be signs of oil oxidation. Learn the causes, effects, and how to prevent it.`,
+      isi: [
+        `The performance of agricultural machinery depends heavily on the quality of its oil. One problem that often goes unnoticed is oil oxidation. It happens slowly, but it can damage the parts inside the engine.`,
+        `Once oil oxidises, its ability to lubricate and cool the engine drops. Left unchecked, it can lead to costly damage and leave a tractor or combine idle in the middle of the season.`,
+        `## What Is Oil Oxidation?`,
+        `Oil oxidation is a chemical reaction between oil and oxygen, triggered by the high temperatures of a running engine. It produces deposits and sludge and makes the oil thicker.`,
+        `The hotter the engine runs and the longer the oil goes unchanged, the greater the risk of oxidation.`,
+        `## Causes of Oil Oxidation`,
+        `### 1. High Operating Temperature`,
+        `An engine that runs for long periods without proper cooling speeds up oxidation.`,
+        `### 2. Oil Left Unchanged Too Long`,
+        `Oil past its change interval loses its stability and oxidises easily.`,
+        `### 3. Water and Air Contamination`,
+        `Excess air or water from condensation inside the engine accelerates oxidation.`,
+        `### 4. Low-Quality Oil`,
+        `Oil without enough antioxidant additives breaks down faster.`,
+        `## Effects of Oil Oxidation`,
+        `• <strong>Poorer lubrication</strong>: thicker oil flows less easily, so lubrication becomes uneven.<br>• <strong>Deposits and sludge</strong>: sludge can block oil passages.<br>• <strong>Overheating</strong>: the oil's cooling ability drops.<br>• <strong>Faster wear</strong>: high friction damages pistons, cylinders, and bearings.`,
+        `## How to Prevent Oil Oxidation`,
+        `### 1. Change the Oil Regularly`,
+        `Follow the manufacturer's working-hour interval. See the full guide in <a href="artikel/cara-ganti-oli-traktor-yang-benar-dan-hemat-biaya.html">how to change tractor oil the right way</a>.`,
+        `### 2. Use Quality Oil`,
+        `Choose oil that meets the SAE and API standards in the manual and contains antioxidant additives.`,
+        `### 3. Check the Cooling System`,
+        `Keep the radiator clean and the coolant topped up so the engine temperature stays stable.`,
+        `### 4. Avoid Overloading`,
+        `Working too hard without breaks raises engine temperature and speeds up oxidation.`,
+        `## Conclusion`,
+        `Oil oxidation is a serious problem that can reduce performance and even damage the engine. Regular oil changes, quality oil, and a well-maintained cooling system keep the risk low.`,
+        null,
+        `<strong>Need tough agricultural machinery?</strong> PT Diesel Agri Sukses Sejahtera (DASS) is the authorised distributor of <a href="pages/produk/zoomlion.html">Zoomlion</a> tractors, combine harvesters, and grain dryers. Contact us for advice and a quotation.`,
+        `Need advice? <a href="kontak.html">Contact us</a>.`
+      ]
+    },
+    zh: {
+      judul: `注意！农业机械的机油氧化问题`,
+      ringkas: `机油很快变黑、发动机容易过热，可能是机油氧化的信号。了解其原因、危害及预防方法。`,
+      isi: [
+        `农业机械的性能在很大程度上取决于所用机油的质量。机油氧化是一个常被忽视的问题，它发生得很缓慢，却可能损坏发动机内部部件。`,
+        `机油一旦氧化，润滑和冷却能力就会下降。若置之不理，可能造成高昂的损坏，让拖拉机或联合收割机在农忙期间停工。`,
+        `## 什么是机油氧化？`,
+        `机油氧化是发动机运转时的高温引发的机油与氧气之间的化学反应，会产生沉积物和油泥，并使机油变稠。`,
+        `发动机温度越高、机油越久不换，氧化风险就越大。`,
+        `## 机油氧化的原因`,
+        `### 1. 工作温度过高`,
+        `发动机长时间运转且冷却不良，会加速氧化反应。`,
+        `### 2. 机油长期未更换`,
+        `超过更换周期的机油会失去稳定性，容易氧化。`,
+        `### 3. 混入水分和空气`,
+        `过多空气或发动机内的冷凝水会加速氧化。`,
+        `### 4. 机油质量差`,
+        `缺乏足够抗氧化添加剂的机油更容易变质。`,
+        `## 机油氧化的危害`,
+        `• <strong>润滑性能下降</strong>：机油变稠、流动困难，润滑不均匀。<br>• <strong>沉积物和油泥</strong>：油泥可能堵塞油道。<br>• <strong>发动机过热</strong>：机油的冷却能力降低。<br>• <strong>部件加速磨损</strong>：高摩擦损伤活塞、气缸和轴承。`,
+        `## 如何预防机油氧化`,
+        `### 1. 定期更换机油`,
+        `按照厂家建议的工作小时数换油。完整步骤请参阅<a href="artikel/cara-ganti-oli-traktor-yang-benar-dan-hemat-biaya.html">正确更换拖拉机机油的方法</a>。`,
+        `### 2. 使用优质机油`,
+        `选择符合手册要求的SAE和API标准、含抗氧化添加剂的机油。`,
+        `### 3. 检查冷却系统`,
+        `保持散热器清洁、冷却液充足，使发动机温度保持稳定。`,
+        `### 4. 避免超负荷作业`,
+        `长时间高负荷不休息会使发动机升温并加速氧化。`,
+        `## 总结`,
+        `机油氧化是会降低性能甚至损坏发动机的严重问题。定期换油、使用优质机油并保养好冷却系统，即可将风险降到最低。`,
+        null,
+        `<strong>需要耐用的农业机械？</strong>PT Diesel Agri Sukses Sejahtera（DASS）是<a href="pages/produk/zoomlion.html">中联重科</a>拖拉机、联合收割机和烘干机的官方经销商。欢迎联系我们获取咨询和报价。`,
+        `需要建议？<a href="kontak.html">联系我们</a>。`
+      ]
+    }
+  },
+
+  /* ------------------------------------------------------------ */
+  'teknik-mengendalikan-traktor': {
+    en: {
+      judul: `Want to Be a Pro? Master Tractor Handling Techniques`,
+      ringkas: `Skilled operators work more safely, faster, and use less diesel. These are the basic tractor handling techniques to master.`,
+      isi: [
+        `In paddy fields and plantations alike, the operator's skill at handling a tractor has a big effect on results. A skilled operator not only drives the unit smoothly but also understands how to work safely and efficiently.`,
+        `Without good skills, the risk of accidents, engine damage, and wasted diesel goes up. Every operator should master the basics and beyond.`,
+        `## Why Tractor Handling Technique Matters`,
+        `Handling a tractor is more than pressing pedals and turning the wheel. It takes good coordination, an understanding of field conditions, and command of the hydraulic and transmission systems.`,
+        `Benefits of mastering these techniques include:`,
+        `• Work gets done faster<br>• Fewer accidents<br>• Lower maintenance costs<br>• Longer tractor life`,
+        `Skilled operators can work precisely, for example when ploughing, harrowing, or pulling implements in tight fields.`,
+        `## Basic Tractor Handling Techniques`,
+        `### 1. Know the Panel and Control Levers`,
+        `Every tractor has a different layout. Understand the hydraulic levers, pedals, and indicator lights before starting work. See also <a href="artikel/cara-kerja-panel-kontrol-traktor.html">how a tractor control panel works</a>.`,
+        `### 2. Practise Coordination`,
+        `Practise hand and foot coordination. Movements should be smooth, not sudden, especially when raising or lowering implements hydraulically.`,
+        `### 3. Match Speed to the Field`,
+        `Slow down on slippery, muddy, or uneven ground to keep the tractor stable. If the wheels start slipping, use the <a href="artikel/traktor-sering-selip-ini-cara-pakai-differential-lock.html">differential lock</a> correctly.`,
+        `### 4. Watch the Load and Implement`,
+        `Make sure the implement suits the tractor's power. Overloading makes the tractor unstable and speeds up component wear.`,
+        `## Tips to Improve Your Skills`,
+        `• Attend operator training<br>• Practise on an empty field before working the main field<br>• Study the unit's manual thoroughly<br>• Review your technique regularly`,
+        `These skills do not come overnight. Regular practice and field experience build professional, confident operators.`,
+        `## The Role of Technology`,
+        `Modern tractors now come with electronic controls, automatic safety features, and even GPS-based auto steering. This technology helps operators work more accurately and make fewer mistakes. See also <a href="artikel/auto-steering-traktor-perkebunan.html">the benefits of auto steering for plantation tractors</a>.`,
+        `## Conclusion`,
+        `Mastering tractor handling is an important step towards becoming a professional operator. With solid basics, a focus on safety, and modern technology, field productivity can rise.`,
+        null,
+        `<strong>Looking for tractors for your team?</strong> PT Diesel Agri Sukses Sejahtera (DASS) is the authorised distributor of <a href="pages/produk/zoomlion.html">Zoomlion tractors</a>. Contact us for advice and a quotation.`,
+        `Need advice? <a href="kontak.html">Contact us</a>.`
+      ]
+    },
+    zh: {
+      judul: `想成为高手？掌握拖拉机驾驶操控技巧`,
+      ringkas: `熟练的操作员作业更安全、更快、更省油。以下是需要掌握的拖拉机基本操控技巧。`,
+      isi: [
+        `无论在水田还是种植园，操作员的拖拉机操控水平都直接影响作业效果。熟练的操作员不仅能平稳驾驶，还懂得安全高效的作业方法。`,
+        `操控技能不足会增加事故、发动机损坏和柴油浪费的风险。因此，每位操作员都应掌握从基础到进阶的技巧。`,
+        `## 操控技巧为何重要`,
+        `操控拖拉机不只是踩踏板、转方向盘，还需要良好的协调能力、了解田地状况，并熟悉液压和传动系统。`,
+        `掌握这些技巧的好处包括：`,
+        `• 作业完成更快<br>• 减少事故<br>• 降低保养成本<br>• 延长拖拉机寿命`,
+        `熟练的操作员能精准作业，例如在狭小田块中犁地、耙地或牵引农具。`,
+        `## 拖拉机基本操控技巧`,
+        `### 1. 熟悉仪表盘和操纵杆`,
+        `每台拖拉机的布局不同。作业前要了解液压操纵杆、踏板和指示灯的功能。另请参阅<a href="artikel/cara-kerja-panel-kontrol-traktor.html">拖拉机控制面板的工作原理</a>。`,
+        `### 2. 练习动作协调`,
+        `练习手脚协调。动作要平稳、不突然，尤其是用液压升降农具时。`,
+        `### 3. 根据田地调整速度`,
+        `在湿滑、泥泞或不平的地面上减速，保持拖拉机稳定。车轮开始打滑时，请正确使用<a href="artikel/traktor-sering-selip-ini-cara-pakai-differential-lock.html">差速锁</a>。`,
+        `### 4. 注意负荷与农具`,
+        `确保所牵引的农具与拖拉机功率匹配。超负荷会使拖拉机失稳并加速部件磨损。`,
+        `## 提升技能的小贴士`,
+        `• 参加操作员培训<br>• 先在空地练习再到主田作业<br>• 透彻学习使用手册<br>• 定期总结作业方法`,
+        `这些技能无法一蹴而就。持续练习和现场经验才能造就专业、自信的操作员。`,
+        `## 科技的作用`,
+        `现代拖拉机配备电子控制、自动安全功能，甚至基于GPS的自动导航驾驶。这些技术帮助操作员更精准作业、减少失误。另请参阅<a href="artikel/auto-steering-traktor-perkebunan.html">自动导航在种植园拖拉机上的好处</a>。`,
+        `## 总结`,
+        `掌握拖拉机操控技巧是成为专业操作员的重要一步。打好基础、重视安全并善用现代科技，田间生产效率就能提升。`,
+        null,
+        `<strong>正在为团队寻找拖拉机？</strong>PT Diesel Agri Sukses Sejahtera（DASS）是<a href="pages/produk/zoomlion.html">中联重科拖拉机</a>的官方经销商。欢迎联系我们获取咨询和报价。`,
+        `需要建议？<a href="kontak.html">联系我们</a>。`
+      ]
+    }
+  },
+
+  /* ------------------------------------------------------------ */
+  'keunggulan-hydraulic-power-steering-traktor': {
+    en: {
+      judul: `6 Advantages of Hydraulic Power Steering on Tractors`,
+      ringkas: `Lighter, more precise, and safer steering. Learn the advantages of hydraulic power steering before choosing a tractor.`,
+      isi: [
+        `The steering system plays a big part in a tractor's comfort, safety, and efficiency. One technology widely used today is hydraulic power steering.`,
+        `By using hydraulic pressure, it makes steering lighter and more precise. No wonder it is one of the things buyers consider when choosing a tractor.`,
+        `## What Is Hydraulic Power Steering?`,
+        `Hydraulic power steering uses hydraulic oil pressure to help turn the steering wheel. A hydraulic pump generates the pressure and sends it to the steering components, so the operator needs little effort to turn the tractor, even when pulling a heavy implement.`,
+        `## 6 Advantages of Hydraulic Power Steering`,
+        `### 1. Lighter, More Responsive Steering`,
+        `The most noticeable benefit is much lighter steering. The operator can control the tractor easily even with a load or in heavy ground.`,
+        `### 2. More Comfortable for the Operator`,
+        `Because turning the wheel takes little effort, the operator tires less. That directly lifts productivity, especially during long days in planting season.`,
+        `### 3. More Precise Control`,
+        `The hydraulic system responds smoothly and steadily. This matters for work that needs accurate manoeuvres, such as turning at the end of a paddy plot or working between crop rows.`,
+        `### 4. Safer in All Field Conditions`,
+        `On slippery, uneven, or tight ground, stable steering is essential. Hydraulic power steering helps keep control and reduces the risk of accidents.`,
+        `### 5. Suited to Large Tractors`,
+        `High-horsepower tractors are heavy. Without hydraulic assistance, steering would be very hard. This system handles big loads without sacrificing driving comfort.`,
+        `### 6. Longer-Lasting Steering Components`,
+        `With less mechanical strain, steering parts wear more slowly. With routine care, such as checking the hydraulic oil level, the system lasts a long time.`,
+        `## Impact on Productivity`,
+        `A comfortable operator and precise steering mean faster work, fewer manoeuvring mistakes, and a tractor that stays in good condition.`,
+        `## Conclusion`,
+        `Hydraulic power steering makes steering lighter, control more precise, and work safer. It deserves a place on your checklist when choosing a tractor, especially a high-horsepower one.`,
+        null,
+        `<strong>Want to know the steering features of each tractor model?</strong> PT Diesel Agri Sukses Sejahtera (DASS) is the authorised distributor of <a href="pages/produk/zoomlion.html">Zoomlion tractors</a>. Ask our team for full specifications, or compare units on the <a href="bandingkan.html">Compare Products</a> page.`,
+        `Need advice? <a href="kontak.html">Contact us</a>.`
+      ]
+    },
+    zh: {
+      judul: `拖拉机液压助力转向的6大优势`,
+      ringkas: `转向更轻、更精准、更安全。选购拖拉机前，先了解液压助力转向的优势。`,
+      isi: [
+        `转向系统对拖拉机的舒适性、安全性和作业效率影响很大。液压助力转向是目前广泛使用的技术之一。`,
+        `它利用液压压力使转向更轻、更精准，因此成为选购拖拉机时的重要考量之一。`,
+        `## 什么是液压助力转向？`,
+        `液压助力转向利用液压油的压力帮助转动方向盘。液压泵产生压力并传送到转向部件，即使牵引重型农具，操作员也无需费力即可转向。`,
+        `## 液压助力转向的6大优势`,
+        `### 1. 转向更轻、响应更快`,
+        `最明显的好处是方向盘轻了很多。即使负重或在重土中作业，操作员也能轻松操控拖拉机。`,
+        `### 2. 操作员更舒适`,
+        `转动方向盘几乎不费力，操作员不易疲劳，直接提升生产效率，尤其是在播种季长时间作业时。`,
+        `### 3. 操控更精准`,
+        `液压系统响应平顺稳定，对于需要精确操作的作业非常重要，例如在田块尽头掉头或在作物行间作业。`,
+        `### 4. 各种田地条件下更安全`,
+        `在湿滑、不平或狭窄的地面上，稳定的转向至关重要。液压助力转向有助于保持操控，降低事故风险。`,
+        `### 5. 适合大型拖拉机`,
+        `大马力拖拉机自重大，没有液压助力转向会非常沉重。该系统能承受大负荷而不影响驾驶舒适性。`,
+        `### 6. 转向部件更耐用`,
+        `机械负荷减轻，转向部件磨损更慢。只要定期保养（例如检查液压油油位），系统就能长久使用。`,
+        `## 对生产效率的影响`,
+        `操作员舒适、转向精准，意味着作业更快、操作失误更少，拖拉机也能保持良好状态。`,
+        `## 总结`,
+        `液压助力转向让转向更轻、操控更精准、作业更安全。选购拖拉机时，尤其是大马力机型，值得将其列入考虑清单。`,
+        null,
+        `<strong>想了解各型号拖拉机的转向配置？</strong>PT Diesel Agri Sukses Sejahtera（DASS）是<a href="pages/produk/zoomlion.html">中联重科拖拉机</a>的官方经销商。欢迎向我们的团队索取完整参数，或在<a href="bandingkan.html">产品对比</a>页面比较机型。`,
+        `需要建议？<a href="kontak.html">联系我们</a>。`
+      ]
+    }
+  },
+
+  /* ------------------------------------------------------------ */
+  'cara-kerja-panel-kontrol-traktor': {
+    en: {
+      judul: `How a Tractor Control Panel Works: What Every Operator Should Know`,
+      ringkas: `Misreading an indicator can lead to serious damage. Understand what a tractor control panel does and how it works so you can work more safely.`,
+      isi: [
+        `Understanding how a tractor control panel works is essential for operators and owners alike. The control panel is the information and control centre that keeps the tractor running safely, efficiently, and at its best.`,
+        `Misreading an indicator or pressing the wrong button can reduce performance or even cause serious engine damage.`,
+        `## Main Functions of the Control Panel`,
+        `The control panel is the main link between the operator and the tractor's systems. Through it, the operator can monitor the engine, hydraulics, electrics, and other working data in real time.`,
+        `On the latest tractors, the control panel includes a digital display, sensors, and a warning system that flags anything abnormal early.`,
+        `## Key Components of the Control Panel`,
+        `### Indicators and Gauges`,
+        `Show key information such as engine temperature, oil pressure, fuel level, and hydraulic pressure. This data helps the operator keep the tractor within safe limits.`,
+        `### Warning Lights and Alarms`,
+        `These protect the machine. When a fault occurs, a warning light comes on so the operator can stop before the damage gets worse.`,
+        `### Switches and Buttons`,
+        `Used to activate functions such as work lights, the starter, the PTO, and work modes. Know what each button does before operating the tractor.`,
+        `## How the Control Panel Works`,
+        `It starts with the operator's command through a button or lever. The control unit translates the command into a signal to the engine, hydraulics, or electrics. Sensors then read the system's response and show it back on the panel as indicators or digital readings.`,
+        `This cycle runs continuously while the tractor is working, so the operator can make quick decisions based on the data shown.`,
+        `## Common Mistakes`,
+        `Not understanding the control panel often leads to mistakes such as ignoring warning lights, choosing the wrong work mode, or shutting down too late when the engine overheats. These mistakes shorten component life and raise maintenance costs.`,
+        `## Tips for Using the Control Panel`,
+        `### 1. Study the Manual`,
+        `Every tractor has a different panel layout. The manual explains what each indicator and light means.`,
+        `### 2. Check Before Starting Work`,
+        `Make sure all indicators are normal before driving off. If the oil pressure or temperature light is on, do not push on.`,
+        `### 3. Make Use of the Digital Panel`,
+        `Digital panels on modern tractors show more accurate, easier-to-read information, making work more efficient.`,
+        `## Conclusion`,
+        `Understanding the control panel is key to operating a tractor safely and efficiently. By knowing what the indicators and warning lights mean, operators can make the right calls and prevent damage early.`,
+        null,
+        `<strong>Looking for a tractor with a modern control panel?</strong> PT Diesel Agri Sukses Sejahtera (DASS) is the authorised distributor of <a href="pages/produk/zoomlion.html">Zoomlion tractors</a>. Contact us for advice and a quotation.`,
+        `Need advice? <a href="kontak.html">Contact us</a>.`
+      ]
+    },
+    zh: {
+      judul: `必须了解的拖拉机控制面板工作原理`,
+      ringkas: `看错指示灯可能导致严重损坏。了解拖拉机控制面板的功能和工作原理，作业更安全。`,
+      isi: [
+        `了解拖拉机控制面板的工作原理，对操作员和机主都非常重要。控制面板是信息与控制中心，确保拖拉机安全、高效、稳定地工作。`,
+        `看错指示灯或按错按钮，可能导致性能下降，甚至造成严重的发动机损坏。`,
+        `## 控制面板的主要功能`,
+        `控制面板是操作员与拖拉机各系统之间的主要桥梁。通过它，操作员可实时监测发动机、液压、电气及其他作业数据。`,
+        `最新一代拖拉机的控制面板配备数字显示屏、传感器和预警系统，能提前提示异常情况。`,
+        `## 控制面板的重要组成`,
+        `### 指示器和仪表`,
+        `显示发动机温度、机油压力、燃油油位和液压压力等关键信息，帮助操作员确保拖拉机在安全范围内工作。`,
+        `### 警告灯和警报`,
+        `起保护作用。出现故障时警告灯亮起，提醒操作员及时停机，避免损坏扩大。`,
+        `### 开关和按钮`,
+        `用于启动工作灯、起动机、动力输出（PTO）以及作业模式等功能。操作前应了解每个按钮的作用。`,
+        `## 控制面板的工作原理`,
+        `操作员通过按钮或操纵杆发出指令，控制单元将其转换为信号发送到发动机、液压或电气系统。随后传感器读取系统反馈，并以指示灯或数字形式显示在面板上。`,
+        `这一循环在拖拉机工作期间持续进行，操作员可根据显示的数据迅速做出判断。`,
+        `## 常见错误`,
+        `不了解控制面板常导致忽视警告灯、选错作业模式或发动机过热时未及时熄火等错误。这些错误会缩短部件寿命并增加保养费用。`,
+        `## 使用控制面板的小贴士`,
+        `### 1. 学习使用手册`,
+        `每台拖拉机的面板布局不同，手册会说明每个指示器和指示灯的含义。`,
+        `### 2. 作业前检查`,
+        `启动前确认所有指示正常。若机油压力或温度警告灯亮起，切勿强行作业。`,
+        `### 3. 善用数字面板`,
+        `现代拖拉机的数字面板显示的信息更准确、更易读，让作业更高效。`,
+        `## 总结`,
+        `了解控制面板是安全高效操作拖拉机的关键。熟悉指示器和警告灯的含义，操作员就能做出正确判断，及早预防损坏。`,
+        null,
+        `<strong>正在寻找配备现代控制面板的拖拉机？</strong>PT Diesel Agri Sukses Sejahtera（DASS）是<a href="pages/produk/zoomlion.html">中联重科拖拉机</a>的官方经销商。欢迎联系我们获取咨询和报价。`,
+        `需要建议？<a href="kontak.html">联系我们</a>。`
+      ]
+    }
+  },
+
+  /* ------------------------------------------------------------ */
+  'cara-ganti-oli-traktor-yang-benar-dan-hemat-biaya': {
     en: {
       judul: `How to Change Tractor Oil the Right Way and Save Money`,
       ringkas: `Changing oil on time and with the right procedure keeps your tractor engine running longer and lowers operating costs.`,
@@ -81,7 +363,7 @@ const ARTIKEL_TERJEMAHAN = {
   },
 
   /* ------------------------------------------------------------ */
-  'cara-pakai-differential-lock-traktor': {
+  'traktor-sering-selip-ini-cara-pakai-differential-lock': {
     en: {
       judul: `Tractor Keeps Slipping? Here's How to Use the Differential Lock`,
       ringkas: `The differential lock helps a tractor get out of muddy fields. Learn how it works and when to engage it.`,

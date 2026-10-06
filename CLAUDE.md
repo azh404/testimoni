@@ -192,11 +192,16 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   `artikel.js` + terjemahan EN/ZH → `node tools/buat-halaman-artikel.js`. Review 6 Okt: 10/10 Oksidasi Oli
   memuat nama "PT Bumi Citra Traktor Nusantara (BCTN)" + teks dobel (jangan tayang); 09/10 salah nama
   "Nusantara"; 07/10 & 22/09 klaim purna jual/suku cadang; pesan rangkuman sudah diberikan ke pengguna.
-  Sudah tayang dari Marketing: Ganti Oli & Differential Lock (tanpa foto, tanggal 6 Okt).
+  Dokumen punya **7 tab** (nama = tanggal: 22/09, 05/10–10/10). SEMUA sudah dimasukkan (6 Okt, atas
+  permintaan pengguna) setelah diperbaiki: topik "alat berat" diubah fokus ke traktor/mesin pertanian
+  (panel kontrol, power steering, teknik mengendalikan traktor), BCTN & teks dobel dibuang, klaim purna
+  jual dihapus, slug mengikuti Marketing bila topiknya sama. Tanpa foto. Tanggal: panel 5 Okt, sisanya
+  6 Okt (jadwal Marketing 07–10 Okt tidak dipakai karena tanggal masa depan). Bila Marketing menambah
+  tab baru, bandingkan dengan daftar ini.
 - Halaman `artikel.html` (6 Okt 2026): artikel terbaru = kartu sorotan mendatar (`#artikelUtama`), sisanya
   grid 6 kolom (3 per baris; baris terakhir tak penuh dilebarkan lewat CSS nth-child), "Baca selengkapnya" +
   waktu baca (200 kata/menit). **Foto artikel opsional**: `gambar: ''` → sampul gradasi hijau→biru + logo
-  putih + kategori (`.artikel-sampul`); og:image cadangan `hero-tractor-og.jpg`. Tanggal 13 artikel lama
+  putih + kategori (`.artikel-sampul`, 4 variasi warna dari id artikel; juga dipakai bila foto gagal dimuat); og:image cadangan `hero-tractor-og.jpg`. Tanggal 13 artikel lama
   disebar 22 Sep–5 Okt 2026 (sebelumnya semua 28 Sep). Belum dibuat: template Marketing & `tools/tambah-artikel.js`.
 - **Mode perbaikan mungkin masih aktif di Hostinger**: pengguna menempel 5 baris "MODE PERBAIKAN" di
   `.htaccess` server pada 6 Okt 2026 (website ditutup 503). Ada pengingat (send_later, trig_01Hj1x6NpEpd9BQGcbXMVgE7)

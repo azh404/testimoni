@@ -37,8 +37,10 @@ function menitBaca(a) {
 
 /* Foto artikel opsional: tanpa foto (atau foto gagal dimuat) tampil sampul warna DASS */
 function mediaArtikel(a, base) {
+  /* Warna sampul bervariasi (tetap sama untuk artikel yang sama) */
+  const varian = [...a.id].reduce((n, c) => n + c.charCodeAt(0), 0) % 4;
   const sampul = `
-        <div class="artikel-sampul">
+        <div class="artikel-sampul artikel-sampul--${varian}">
           <img src="${base}assets/images/logo/logo-dass-putih.png" alt="" loading="lazy">
           <span>${namaKategoriArtikel(a.kategori)}</span>
         </div>`;

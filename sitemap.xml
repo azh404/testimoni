@@ -366,43 +366,33 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://dass.co.id/jual-traktor-jakarta.html</loc>
-    <lastmod>2026-10-06</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://dass.co.id/jual-drone-pertanian-jakarta.html</loc>
-    <lastmod>2026-10-06</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://dass.co.id/jual-mesin-pertanian-jakarta.html</loc>
-    <lastmod>2026-10-06</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://dass.co.id/traktor-kebun-sawit.html</loc>
-    <lastmod>2026-10-06</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://dass.co.id/combine-harvester-padi.html</loc>
-    <lastmod>2026-10-06</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://dass.co.id/drone-pertanian-sawah.html</loc>
-    <lastmod>2026-10-06</lastmod>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://dass.co.id/artikel/cara-ganti-oli-traktor.html</loc>
+    <loc>https://dass.co.id/artikel/waspada-oksidasi-oli-pada-mesin-pertanian.html</loc>
     <lastmod>2026-10-06</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://dass.co.id/artikel/cara-pakai-differential-lock-traktor.html</loc>
+    <loc>https://dass.co.id/artikel/traktor-sering-selip-ini-cara-pakai-differential-lock.html</loc>
     <lastmod>2026-10-06</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dass.co.id/artikel/teknik-mengendalikan-traktor.html</loc>
+    <lastmod>2026-10-06</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dass.co.id/artikel/keunggulan-hydraulic-power-steering-traktor.html</loc>
+    <lastmod>2026-10-06</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dass.co.id/artikel/cara-ganti-oli-traktor-yang-benar-dan-hemat-biaya.html</loc>
+    <lastmod>2026-10-06</lastmod>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dass.co.id/artikel/cara-kerja-panel-kontrol-traktor.html</loc>
+    <lastmod>2026-10-05</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
@@ -469,5 +459,35 @@
     <loc>https://dass.co.id/artikel/cara-pilih-ban-traktor.html</loc>
     <lastmod>2026-09-22</lastmod>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://dass.co.id/jual-traktor-jakarta.html</loc>
+    <lastmod>2026-10-06</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://dass.co.id/jual-drone-pertanian-jakarta.html</loc>
+    <lastmod>2026-10-06</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://dass.co.id/jual-mesin-pertanian-jakarta.html</loc>
+    <lastmod>2026-10-06</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://dass.co.id/traktor-kebun-sawit.html</loc>
+    <lastmod>2026-10-06</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://dass.co.id/combine-harvester-padi.html</loc>
+    <lastmod>2026-10-06</lastmod>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://dass.co.id/drone-pertanian-sawah.html</loc>
+    <lastmod>2026-10-06</lastmod>
+    <priority>0.9</priority>
   </url>
 </urlset>

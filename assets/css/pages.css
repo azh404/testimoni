@@ -900,6 +900,9 @@
   background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-primary) 100%);
   overflow: hidden;
 }
+.artikel-sampul--1 { background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary-dark) 100%); }
+.artikel-sampul--2 { background: linear-gradient(160deg, #3F8F2F 0%, var(--color-accent-dark) 100%); }
+.artikel-sampul--3 { background: linear-gradient(135deg, var(--color-primary) 0%, #1F6F5C 100%); }
 .artikel-sampul[hidden] { display: none; }
 .artikel-sampul::after {
   content: '';
