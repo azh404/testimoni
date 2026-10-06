@@ -168,7 +168,7 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   7 hari tidak muncul; sudah isi → tidak muncul lagi, localStorage `dass-lead-terkirim`) + `gerbangLead()` wajib isi
   sekali sebelum unduh brosur (brosur-pdf.js). Kolom: nama, WA, perusahaan, minat, lokasi, centang persetujuan
   (UU PDP), kolom jebakan bot `situs`. Kirim `fetch` no-cors text/plain ke Apps Script (`tools/leads-apps-script.gs`,
-  dipasang di Sheet "Leads Website DASS" id `1R1BZvf173lVX2NPnQrlQJ4CGMQOjrg7aRnNnMZslXnE` milik pengguna, tab
+  dipasang di Sheet "Leads Website DASS" (URL /exec sudah di config.js, AKTIF sejak 6 Okt) id `1R1BZvf173lVX2NPnQrlQJ4CGMQOjrg7aRnNnMZslXnE` milik pengguna, tab
   "Leads"). Website TIDAK mewajibkan login (sudah dijelaskan: buruk untuk SEO). Kebijakan Privasi belum dibuat.
 - CAPTCHA tidak dipasang (tidak ada form yang mengirim ke server; form kontak membuka WA).
 
