@@ -2165,3 +2165,26 @@ body[data-brand="eavision"] .produk-grid {
   background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
   color: var(--color-white);
 }
+
+/* Kontak: kepala & kartu dibuat lebih ringkas (permintaan pengguna) */
+.kt-kepala { padding-top: var(--sp-7); padding-bottom: var(--sp-6); }
+.kt-kepala__isi { margin-bottom: var(--sp-5); }
+.kt-kepala__isi h1 { font-size: clamp(1.6rem, 2.6vw, 2.1rem); margin: var(--sp-1) 0 var(--sp-2); }
+.kt-kepala__isi h1::after { width: 60px; height: 3px; margin-top: var(--sp-3); }
+.kt-kepala__isi p { font-size: 0.98rem; margin: 0; }
+.kt-cepat { max-width: 1000px; margin-inline: auto; gap: var(--sp-3); }
+.kt-kartu {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  column-gap: var(--sp-3);
+  row-gap: 0;
+  align-items: center;
+  text-align: left;
+  padding: var(--sp-3) var(--sp-4);
+}
+.kt-kartu__ikon { width: 44px; height: 44px; margin: 0; grid-row: 1 / span 3; }
+.kt-kartu__ikon svg { width: 22px; height: 22px; }
+.kt-kartu > span:not(.kt-kartu__ikon) { grid-column: 2; }
+.kt-kartu__label { font-size: 0.72rem; }
+.kt-kartu__nilai { font-size: 0.98rem; }
+.kt-kartu__status { font-size: 0.78rem; }
