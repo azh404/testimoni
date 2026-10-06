@@ -115,8 +115,10 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
 - **Hero beranda sejak 6 Okt 2026 = 5 video promosi asli dari pengguna** (1080p, bukan AI): urutan
   hero-zoomlion-1 (animasi smart farm), hero-zoomlion-2 (cuplikan tebu/traktor), hero-eavision,
   hero-vectoragr-1, hero-vectoragr-2. Dibuat dengan `python tools/ubah-video.py foto-baru/<nama>.mp4`:
-  dipotong maks. 20 dtk, fps asli, tanpa suara; WebM VP9 1920 (crf28, ±4,5 Mbps, 6,5–11 MB) + 1280 `-hp`
-  (crf32, ±1,8 Mbps, 2,8–4,9 MB) + MP4 cadangan (versi pertama 1,8 Mbps dinilai pengguna "kurang HD"); sampul `hero/<nama>.webp` & `-hp.webp` (detik ke-1, karena
+  DURASI PENUH (permintaan pengguna; MAKS_DETIK=0), fps asli, tanpa suara; WebM VP9 1920 (crf24, ±6 Mbps,
+  8–22 MB) + 1280 `-hp` (crf30, ±2,2 Mbps, 3,4–8,7 MB) + MP4 cadangan (versi 1,8 & 4,5 Mbps dinilai "kurang HD";
+  sumber 1080p, 4K tidak dibuat karena tidak menambah detail). Tiap slide tampil sepanjang videonya
+  (`data-durasi` detik di slide, slider.js; video diputar dari awal tiap slide muncul, loop=false); sampul `hero/<nama>.webp` & `-hp.webp` (detik ke-1, karena
   awal video sering hitam). Sampul slide 1 di-preload (`<link rel=preload media=...>` + `<style>` di
   head) agar LCP cepat; slide lain `data-bg` + `data-bg-hp` (slider.js memilih versi HP ≤768px).
   Video lama (pengering, traktor, tebu, combine, VectorAgr Kling) dihapus dari assets (ada di riwayat git).
