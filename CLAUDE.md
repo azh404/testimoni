@@ -30,7 +30,7 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
 
 ## Struktur
 - HTML statis di root (`index`, `tentang`, `kontak`, `artikel`, `kalkulator`,
-  `bandingkan`, `kamus-pertanian`, `faq`, `404`, 6 halaman kata kunci `jual-*`,
+  `bandingkan`, `kamus-pertanian`, `faq`, `404`, `perbaikan` (mode perbaikan), 6 halaman kata kunci `jual-*`,
   `traktor-kebun-sawit`, `combine-harvester-padi`, `drone-pertanian-sawah`),
   `produk/*.html` (62 halaman detail), `artikel/*.html`, `pages/produk/<brand>.html`.
 - Footer 4 kolom (desain baru 6 Okt 2026, garis aksen hijau→biru di atas): logo `logo-dass-putih.png` + nama +
@@ -46,12 +46,14 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   `produk-detail.js`, `kalkulator.js` (kalkulator drone + pilih traktor + versi mini di
   halaman produk), `bandingkan.js`, `fitur.js` (pencarian, "terakhir dilihat", tombol
   bagikan — **dimuat otomatis oleh main.js**), `brosur-pdf.js` (jsPDF dari cdnjs).
+  `beranda.js` (angka, Showcase Produk), `slider.js` (hero video/foto + reveal + counter).
 - `tools/` (jalankan ulang setelah mengubah data terkait):
   - `node tools/buat-halaman-artikel.js` — halaman artikel + sitemap.
   - `node tools/buat-halaman-landing.js` — halaman kata kunci + blok "Lihat Juga" di
     produk/*.html (di antara penanda `<!-- LIHAT-JUGA -->`) + sitemap.
   - `python tools/optimasi-gambar.py` — `-kecil.webp` (kartu), `-og.jpg` (pratinjau link).
   - `node tools/seo-gambar.js` — teks alt foto produk + `sitemap-gambar.xml`.
+  - `python tools/ubah-video.py foto-baru/<nama>.mp4` — video hero → WebM+MP4 (HD & `-hp`) + sampul webp.
 
 ## Konvensi penting
 - **3 bahasa (ID/EN/ZH)** untuk semua teks baru: kunci di `lang.js` + `data-i18n`, atau
@@ -97,22 +99,12 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   Penggantinya: "Distributor Resmi", "Spesifikasi Lengkap", "Tanya Cepat via WhatsApp".
   Jangan menulis klaim servis/sparepart lagi. Tips umum di artikel ("pastikan suku cadang
   mudah didapat") boleh tetap.
-- Hero beranda beranimasi: foto memudar TANPA zoom (pengguna tidak mau zoom), judul/teks muncul naik saat
-  dibuka, indikator bawah terisi seperti progress bar (5 detik = DURASI di slider.js).
-  Slider produk di halaman merek (filter-produk.js) sama: 3 detik, masuk dari kanan, zoom pelan,
-  indikator progres. Efek sinematik (partikel, cahaya, vignette, buram) SUDAH DIHAPUS atas
-  permintaan pengguna — jangan ditambah lagi. Animasi mati bila perangkat "reduce motion".
-  Video hero: `assets/videos/hero-*.mp4` (dari Gemini/Veo, 10 dtk, 720p, tanpa suara, dikompres
-  ffmpeg crf 17 kualitas maksimal 7–13 MB: Kling 1984px asli, Gemini 720p diperbesar ke 1920×1080
-  (lanczos + unsharp ringan; 720p tak bisa jadi Ultra HD sungguhan); file asli ada di riwayat git
-  (commit f0b0826, 55b80a4, 83b7eda); ffmpeg dari `pip install imageio-ffmpeg`). Tiap video punya versi HP `*-hp.mp4` (1280px crf 21, 1,9–3,4 MB) yang
-  dipakai otomatis di layar ≤768px (slider.js). Pasang lewat atribut
-  `data-video` di `.hero__slide`; slide video juga 5 dtk (DURASI_VIDEO), foto tetap cadangan
-  (hemat data / reduce motion / gagal muat). Semua 6 slide sudah video: mesin pengering (Gemini, versi ke-2
-  kamera diam + truk datang), traktor (Gemini), EAVision (Gemini); pemanen tebu, combine,
-  VectorAgr dari Kling 5 dtk dengan watermark "KlingAI 3.0" — dipasang apa adanya atas
-  permintaan pengguna; jangan dipotong/ditutup, ganti bila ada versi bersih. Chromium sandbox tak bisa H.264 — uji
-  pakai salinan .webm lewat page.route.
+- Hero beranda: slide memudar TANPA zoom (pengguna tidak mau zoom), teks muncul naik, indikator bawah
+  = progress bar. Slide foto 5 dtk (DURASI), slide video sepanjang videonya (`data-durasi`). Slider
+  produk di halaman merek (filter-produk.js): 3 dtk, masuk dari kanan, zoom pelan. Efek sinematik
+  (partikel, cahaya, vignette, buram) SUDAH DIHAPUS atas permintaan — jangan ditambah lagi. Animasi
+  mati bila "reduce motion"; video tidak dimuat saat hemat data. Chromium sandbox tidak bisa H.264
+  tapi BISA WebM (VP9) — uji pakai WebM.
 - **Hero beranda sejak 6 Okt 2026 = 5 video promosi asli dari pengguna** (1080p, bukan AI): urutan
   hero-zoomlion-1 (animasi smart farm), hero-zoomlion-2 (cuplikan tebu/traktor), hero-eavision,
   hero-vectoragr-1, hero-vectoragr-2. Dibuat dengan `python tools/ubah-video.py foto-baru/<nama>.mp4`:
@@ -170,33 +162,54 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   langsung di File Manager Hostinger.
 - CAPTCHA tidak dipasang (tidak ada form yang mengirim ke server; form kontak membuka WA).
 
-## Belum selesai / menunggu pengguna
-- **Status terakhir (2 Okt 2026):**
-  - Pengguna melapor website "crash" setelah upload (logo Zoomlion/EAVision versi lama berlatar,
-    PDF berlatar hitam/hijau). Sudah diperbaiki (PR #59: `.htaccess` no-cache, logo `?v=2`,
-    `latarPutih()` di PDF). Pengguna bilang masih ada yang crash — MINTA screenshot + halaman +
-    apakah di tab penyamaran juga. Bila ternyata foto produk lama dari cache, beri `?v=` pada
-    semua path foto produk (data `p.gambar`, html produk, gambarKecil).
-  - Pengguna akan membuat ulang 6 video hero di Gemini (prompt "Ultra HD 4K", 16:9, image-to-video
-    dari `assets/images/hero/*-og.jpg`, tanpa zoom, objek di tengah/kanan, kiri bawah kosong;
-    boleh ada orang kecil/jauh: operator di kabin / pilot drone jauh). Dikirim sebagai
-    `foto-baru/video-1..6.mp4` (1 pengering, 2 traktor, 3 tebu, 4 combine, 5 VectorAgr, 6 EAVision).
-    SUDAH SIAP: `python tools/ubah-video.py [nomor]` membuat .webm+.mp4 (HD & -hp) dan memasang
-    `data-webm` + menaikkan `?v=` di index.html; slider.js memakai `<source>` webm lalu mp4.
-    Tinggal jalankan saat video masuk, uji (Chromium sandbox bisa putar WebM), hapus `foto-baru/`.
-    Video 1 (pengering) SUDAH diganti (5 Okt 2026): dari **Dola AI** 720p HEVC, watermark "Dola AI"
-    di kanan bawah dibuang dengan crop 1152×648 dari kiri atas lalu diperbesar ke 1920×1080
-    (+unsharp). Video 2–6 masih versi lama (3 Kling bertanda air). Pengguna sudah diingatkan
-    agar memastikan aturan Dola mengizinkan pemakaian komersial tanpa watermark.
-  - 9 foto Zoomlion HD baru (combine F6/H7/H8/ZL88/ZL105/ZL125/ZL145, G630, C600) dipasang
-    5 Okt 2026; latar kotak-kotak dihapus rembg isnet-general-use.
-  - PageSpeed Insights: pengguna akan kirim screenshot hasil Mobile/Desktop untuk dioptimasi
-    (perkiraan: video besar, navbar/footer via JS, Google Fonts, GA).
+## Cara kerja dengan pengguna (pelajaran dari sesi sebelumnya)
+- Untuk perubahan TAMPILAN, pengguna suka melihat **pratinjau dulu**: buat di branch, kirim screenshot
+  laptop (1366) + HP (390) lewat SendUserFile, JANGAN merge sampai pengguna bilang "merge"/"gas".
+  Untuk perbaikan kecil yang jelas, langsung kerjakan + merge.
+- Pengguna sering menolak desain lalu minta ganti; tawarkan 3–4 pilihan (AskUserQuestion dengan
+  preview) bila permintaannya kabur ("ganti yang lebih bagus").
+- Desain yang SUDAH DITOLAK pengguna (jangan diusulkan lagi): hero/banner bergambar di Tentang Kami,
+  strip angka & kartu merek di Tentang Kami, kolase foto / foto+3 logo / foto lebar di Tentang Kami,
+  bagian Kategori kotak & Unit Unggulan kartu di beranda, artikel grid & artikel gaya majalah di beranda,
+  kartu kontak besar di Kontak, foto hero dari cuplikan video HP (buram).
+- Alat di sandbox (pasang bila perlu): `pip install pillow imageio-ffmpeg "rembg[cpu]" opencv-python-headless`.
+  Hapus watermark video TANPA crop: inpaint OpenCV per frame hanya pada huruf (mask = persentil-10 luma
+  >150 di kotak watermark + closing 11×11 + dilate 3×, `INPAINT_NS`, + butiran halus). Hasilnya rapi di
+  latar acak (padi/rumput); di benda polos masih terlihat samar.
+- Proses encode video panjang bisa lewat batas 10 menit: jalankan di background (parallel per video).
+- Prompt gambar/video AI (ChatGPT, Gemini/Veo, Dola AI) untuk hero: 16:9, objek di tengah-kanan 50–60%
+  lebar & utuh, kiri bawah kosong untuk teks, operator realistis di kabin, siang hari (BUKAN golden
+  hour), kamera diam tanpa zoom, logo/tulisan unit (mis. "Z" & "RK704") wajib dipertahankan.
+  Gambar hasil ChatGPT yang dipakai: `hero/hero-tractor.webp` (RK704), `hero-combine-hasverter.webp`
+  (ZL145), `hero-sugarcane-hasverter.webp` (C610).
+
+## Belum selesai / menunggu pengguna (status 6 Okt 2026)
+- **PERTANYAAN TERBUKA BERIKUTNYA:** pengguna bertanya "berita dan artikel kenapa?" (halaman
+  `artikel.html` / `artikel/*.html`) tepat sebelum pindah ke percakapan baru — tanyakan apa yang
+  dimaksud (rusak? kurang bagus?), minta screenshot, lalu buat pratinjau sebelum merge.
+- **Mode perbaikan mungkin masih aktif di Hostinger**: pengguna menempel 5 baris "MODE PERBAIKAN" di
+  `.htaccess` server pada 6 Okt 2026 (website ditutup 503). Ada pengingat (send_later, trig_01Hj1x6NpEpd9BQGcbXMVgE7)
+  9 Okt 2026 09.00 WIB untuk menyalakan lagi. Cara menyalakan: hapus 5 baris itu, atau upload ulang
+  `.htaccess` dari repo. Tanyakan statusnya bila relevan.
+- **PageSpeed Insights**: pengguna ingin "hijau semua"; belum mengirim hasil. Sudah dilakukan: sampul
+  hero di-preload, video dimuat setelah `load`, versi HP, font tidak menahan tampilan, data artikel tidak
+  lagi dimuat di beranda. Video hero kini besar (8–22 MB laptop) atas permintaan kualitas — bila
+  PageSpeed buruk, jelaskan kompromi kualitas vs. kecepatan.
+- Laporan lama "website crash" (2 Okt): sudah diperbaiki di PR #59 (no-cache, `?v=2`, `latarPutih()`);
+  bila muncul lagi minta screenshot + apakah di tab penyamaran juga. Cache: naikkan `?v=` saat
+  mengganti file gambar/video yang namanya sama.
+- Pengguna pernah tidak bisa `git pull` karena ada perubahan lokal di `pages/produk/vectoragr.html`
+  (Live Server/VS Code) — solusi: `git stash` lalu `git pull`.
 - FAQ: jawaban pengiriman ke luar Jakarta masih netral — menunggu kebijakan perusahaan.
+- Google AI Overview menampilkan alamat salah (Epiwalk, Rasuna Said) & merek salah (Shaktiman, John
+  Deere) dari LinkedIn direktur (Anjar Sana Kusuma Wiwaha) — pengguna disarankan cek apakah Epiwalk
+  alamat legal, perbarui LinkedIn, buat LinkedIn Company Page, laporkan ke Google. Belum ada kabar.
 - Ide yang ditawarkan tapi belum dikerjakan: Kebijakan Privasi (UU PDP, perlu cek legal),
   galeri pengiriman unit/testimoni (perlu foto sales), Google Merchant Center (perlu
-  keputusan harga), Bing Webmaster Tools, konten artikel rutin.
+  keputusan harga), Bing Webmaster Tools, konten artikel rutin, nama kategori bahasa Indonesia
+  ("Tractor" → "Traktor") di tab/kartu.
 - Tugas pengguna: upload terbaru ke Hostinger, Search Console (kirim ulang `sitemap.xml`,
   tambah `sitemap-gambar.xml`, minta indeks `bandingkan.html`, `kamus-pertanian.html`,
-  `faq.html`), aktifkan 2FA (Hostinger/GitHub/Google), UptimeRobot. GBP sudah dibuat — saran: kategori
-  utama "Pemasok mesin pertanian", ganti foto sampul (masih foto mobil), tambah foto kantor/unit.
+  `faq.html`), aktifkan 2FA (Hostinger/GitHub/Google), UptimeRobot. Google Business Profile sudah
+  terverifikasi — saran: kategori utama "Pemasok mesin pertanian", ganti foto sampul (masih foto mobil),
+  tambah foto kantor/unit, balas ulasan dengan template formal singkat (tanpa menyebut panen/alat).
