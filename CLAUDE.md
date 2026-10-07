@@ -60,6 +60,9 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   blok `[data-bahasa="id|en|zh"]` (ID tampil bawaan agar terbaca Google). Fungsi yang
   merender ulang saat ganti bahasa didaftarkan di `gantiBahasa()` (i18n.js).
 - Pesan WhatsApp ke tim selalu bahasa Indonesia.
+- **Beranda selalu dibuka dalam bahasa Indonesia** (7 Okt, i18n.js), walau pengunjung pernah memilih EN/ZH; pilihan
+  itu tetap berlaku di halaman lain. Pengguna sempat minta halaman lain default EN — ditolak setelah dijelaskan
+  risiko SEO (Google membaca versi bawaan). Jangan ubah bawaan halaman lain dari ID.
 - Foto produk: PNG 1200×900 transparan (asli, untuk PDF) + `.webp` + `-kecil.webp` +
   `-og.jpg`. Foto baru dari pengguna dikirim lewat folder `foto-baru/` (git push).
   Foto HD 1448×1086 (11 foto Zoomlion, Sep 2026): PNG disimpan HD, .webp 1200×900 q80.
@@ -147,10 +150,10 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   (menggantikan bagian Kategori & Unit Unggulan atas permintaan pengguna: tab 6 kategori, unit besar +
   4 spesifikasi + tombol Detail/WA, thumbnail unit lain; daftar di `BERANDA_SHOWCASE` beranda.js;
   halaman merek tetap mendukung `?kategori=<id>`) → Keunggulan → banner ajakan konsultasi (WA/kalkulator/
-  bandingkan) → Sektor → Cara Pembelian 4 langkah (Pilih Unit → Konsultasi WA → Terima Penawaran → Proses Pembelian,
-  nomor bulat hijau + garis putus-putus, tombol WA; `.beli`, kunci `beli.*`; menggantikan bagian artikel —
-  artikel tidak lagi tampil di beranda atas permintaan pengguna)
-  → Mitra. Kode: `assets/js/beranda.js` (`initBeranda`, juga di gantiBahasa).
+  bandingkan) → Sektor → Mitra. (Bagian "Cara Pembelian" 4 langkah DIHAPUS 7 Okt atas permintaan pengguna;
+  CSS `.beli` & kunci `beli.*` masih ada tapi tidak dipakai. Artikel juga tidak tampil di beranda.)
+  Latar Showcase (7 Okt) ikut merek unit yang tampil: `.showcase[data-brand]` hijau/biru muda/kuning lembut
+  (diset di beranda.js); ditolak: hijau tetap, navy, hijau→biru. Kode: `assets/js/beranda.js` (`initBeranda`, juga di gantiBahasa).
 - Halaman Tentang Kami didesain ulang (6 Okt 2026): TANPA hero, strip angka, dan kartu merek (dihapus atas
   permintaan pengguna). Isi: profil satu kolom di tengah TANPA foto (H1 = tt.judul + garis hijau; pengguna menolak kolase, foto+logo, dan foto lebar)
   → Visi (kotak kutipan gradasi) + Misi 6 kartu bernomor → Mengapa Kami (kunci `unggul.*`)
