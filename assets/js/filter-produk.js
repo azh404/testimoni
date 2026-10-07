@@ -413,6 +413,21 @@ function jalankanPutar(el) {
   if (!el) return;
   const unit = el.querySelector('.putar__unit');
   const bayangan = el.querySelector('.putar__bayangan');
+  const pantul = el.querySelector('.putar__pantul');
+  // Batas bawah unit di foto (PNG transparan punya ruang kosong di bawah) -> pantulan menempel di roda
+  let batasBawah = 1;
+  function ukurBatasBawah() {
+    try {
+      const c = document.createElement('canvas'), w = 80, h = Math.round(80 * unit.naturalHeight / unit.naturalWidth) || 60;
+      c.width = w; c.height = h;
+      const g = c.getContext('2d'); g.drawImage(unit, 0, 0, w, h);
+      const d = g.getImageData(0, 0, w, h).data;
+      for (let y = h - 1; y >= 0; y--) {
+        for (let x = 0; x < w; x++) if (d[(y * w + x) * 4 + 3] > 40) { batasBawah = (y + 1) / h; ke(target); return; }
+      }
+    } catch (e) {}
+  }
+  if (pantul) { if (unit.complete) ukurBatasBawah(); else unit.addEventListener('load', ukurBatasBawah); }
   const MAKS = 35;                 // sudut miring maksimal (derajat)
   let target = 0, sudut = 0, awalX = 0, awalSudut = 0, geser = false, jalan = false;
 
@@ -423,6 +438,11 @@ function jalankanPutar(el) {
     const r = sudut / MAKS;
     unit.style.transform = `rotateY(${sudut.toFixed(2)}deg) rotateX(${(Math.abs(r) * 4).toFixed(2)}deg) scale(${(1 - Math.abs(r) * 0.04).toFixed(3)})`;
     unit.style.filter = `drop-shadow(${(-r * 18).toFixed(1)}px 16px 18px rgba(0,0,0,.18)) brightness(${(1 + r * 0.06).toFixed(3)})`;
+    if (pantul) {
+      pantul.style.width = unit.offsetWidth + 'px';
+      pantul.style.top = (unit.offsetTop + unit.offsetHeight * (2 * batasBawah - 1) - 2) + 'px';
+      pantul.style.transform = `translateX(-50%) rotateY(${sudut.toFixed(2)}deg) scaleY(-1)`;
+    }
     bayangan.style.transform = `translateX(${(-r * 14).toFixed(1)}%) scaleX(${(1 - Math.abs(r) * 0.18).toFixed(3)})`;
     if (sudut !== target || geser) requestAnimationFrame(gambar); else jalan = false;
   }
@@ -512,7 +532,8 @@ function initModalProduk() {
         ${p.brand === 'zoomlion' ? `
         <div class="modal__media putar ${gayaPutar().map(g => 'putar--' + g).join(' ')}" data-putar data-lahan="${lahanProduk(p)}" tabindex="0" aria-label="${teks('putar.petunjuk', 'Geser untuk memutar')}">
           ${gayaPutar().includes('lahan') ? '<div class="putar__lahan" aria-hidden="true"><i></i><i></i></div>' : ''}
-          ${gayaPutar().includes('podium') ? '<div class="putar__sorot" aria-hidden="true"></div><div class="putar__podium" aria-hidden="true"></div>' : ''}
+          ${gayaPutar().some(g => ['podium', 'gelap', 'hijau', 'turntable'].includes(g)) ? '<div class="putar__sorot" aria-hidden="true"></div><div class="putar__podium" aria-hidden="true"></div>' : ''}
+          ${gayaPutar().some(g => ['cermin', 'gelap'].includes(g)) ? `<img class="putar__pantul" src="${base}${gambarWeb(p.gambar)}" alt="" aria-hidden="true" draggable="false">` : ''}
           <div class="putar__bayangan"></div>
           <img class="putar__unit" src="${base}${gambarWeb(p.gambar)}" alt="${altProduk(p)}" draggable="false" onerror="this.style.visibility='hidden'">
           ${gayaPutar().includes('chip') ? chipSpesifikasi(p) : ''}

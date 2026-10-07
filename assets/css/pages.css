@@ -2557,3 +2557,38 @@ body[data-brand="eavision"] .produk-grid {
   .putar__chip--2 { top: auto; bottom: 46px; left: 10px; right: auto; }
   .putar__chip--3 { bottom: 46px; right: 10px; }
 }
+
+/* --- Variasi showroom (pratinjau) --- */
+/* Pantulan lantai (dipakai 'cermin' & 'gelap') */
+.putar__pantul {
+  position: absolute; left: 50%;
+  height: auto; max-height: none;
+  opacity: .25; pointer-events: none;
+  -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,.85), transparent 40%);
+          mask-image: linear-gradient(to top, rgba(0,0,0,.85), transparent 40%);
+}
+.putar--cermin, .putar--gelap { padding-bottom: 80px; }
+
+/* A. Studio gelap premium */
+.putar--gelap { background: radial-gradient(90% 80% at 50% 25%, #3a4350 0%, #1c222b 55%, #0d1117 100%); border-bottom-color: #0d1117; }
+.putar--gelap .putar__sorot { background: radial-gradient(45% 60% at 50% 0%, rgba(255,255,255,.28), rgba(255,255,255,0) 70%); }
+.putar--gelap .putar__podium { background: radial-gradient(closest-side, #4a5361 0%, #2b323c 65%, #161b22 100%); box-shadow: 0 0 40px rgba(141,198,63,.18); }
+.putar--gelap .putar__pantul { opacity: .28; }
+.putar--gelap .putar__petunjuk { background: rgba(255,255,255,.16); }
+
+/* B. Lantai cermin terang */
+.putar--cermin { background: linear-gradient(#ffffff 0%, #f3f5f8 62%, #e7ebf0 62.2%, #f6f8fa 100%); }
+
+/* C. Podium cincin hijau Zoomlion */
+.putar--hijau { background: radial-gradient(120% 90% at 50% 0%, #ffffff 0%, #f1f6ec 60%, #e3eedb 100%); }
+.putar--hijau .putar__podium {
+  background: radial-gradient(closest-side, #ffffff 0%, #eef3ea 70%, #dfe8d8 100%);
+  box-shadow: 0 0 0 3px #8DC63F, 0 0 28px rgba(141,198,63,.55), 0 12px 24px rgba(15,23,42,.12);
+}
+
+/* D. Meja putar (cincin & garis putus-putus) */
+.putar--turntable { background: radial-gradient(120% 90% at 50% 0%, #ffffff 0%, #eef1f5 60%, #e2e7ed 100%); }
+.putar--turntable .putar__podium::before,
+.putar--turntable .putar__podium::after { content: ""; position: absolute; border-radius: 50%; }
+.putar--turntable .putar__podium::before { inset: 9%; border: 2px dashed rgba(15,23,42,.22); }
+.putar--turntable .putar__podium::after  { inset: 30%; border: 1px solid rgba(15,23,42,.16); }
