@@ -278,6 +278,74 @@
 }
 .grid--sektor .sector__title { margin-bottom: 0; }
 
+/* --- Beranda: ikon "Mengapa Kami" berwarna merek --- */
+.unggul-beranda .feature:nth-child(1) .feature__icon { background: #E6F4E2; color: #2E7D32; }
+.unggul-beranda .feature:nth-child(2) .feature__icon { background: #E3EDF8; color: var(--color-primary); }
+.unggul-beranda .feature:nth-child(3) .feature__icon { background: #FDF1D6; color: #B7791F; }
+.unggul-beranda .feature:nth-child(4) .feature__icon { background: #DFF1EC; color: #1F6F5C; }
+.unggul-beranda .feature:nth-child(1):hover { border-color: #43A047; }
+.unggul-beranda .feature:nth-child(2):hover { border-color: var(--color-primary); }
+.unggul-beranda .feature:nth-child(3):hover { border-color: #E0A030; }
+.unggul-beranda .feature:nth-child(4):hover { border-color: #1F8A70; }
+
+/* --- Beranda: Sektor Layanan, kartu besar berwarna lembut --- */
+.sektor-beranda { background: linear-gradient(180deg, #F6FAF1 0%, #E4F2D8 100%); }
+.sektor-beranda__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-5);
+  max-width: 1040px;
+  margin-inline: auto;
+}
+.sektor-kartu {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: var(--sp-6);
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm, 0 2px 8px rgba(26, 29, 33, .06));
+  color: var(--color-dark);
+  text-decoration: none;
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.sektor-kartu::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 5px;
+  background: var(--sektor-warna);
+}
+.sektor-kartu:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); color: var(--color-dark); }
+.sektor-kartu--kebun  { --sektor-warna: #2E7D32; --sektor-latar: #E6F4E2; }
+.sektor-kartu--pangan { --sektor-warna: #E0A030; --sektor-latar: #FDF1D6; --sektor-teks: #9A6512; }
+.sektor-kartu--horti  { --sektor-warna: #1D5296; --sektor-latar: #E3EDF8; }
+.sektor-kartu__ikon {
+  width: 64px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+  font-size: 2rem;
+  border-radius: 50%;
+  background: var(--sektor-latar);
+  margin-bottom: var(--sp-4);
+}
+.sektor-kartu__judul { font-size: var(--fs-lg); margin-bottom: var(--sp-2); }
+.sektor-kartu__teks { font-size: var(--fs-sm); color: var(--color-body); margin-bottom: var(--sp-4); }
+.sektor-kartu__link {
+  margin-top: auto;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  color: var(--sektor-teks, var(--sektor-warna));
+}
+.sektor-kartu__link::after { content: ' →'; transition: margin var(--transition); }
+.sektor-kartu:hover .sektor-kartu__link::after { margin-left: 4px; }
+@media (max-width: 768px) {
+  .sektor-beranda__grid { grid-template-columns: 1fr; gap: var(--sp-4); }
+  .sektor-kartu { padding: var(--sp-5); }
+}
+
 /* =========================================
    SECTION MITRA
    ========================================= */
