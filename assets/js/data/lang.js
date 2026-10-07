@@ -265,7 +265,7 @@ const TEKS = {
   'lead.salahWa':    { id: 'Nomor WhatsApp belum benar (minimal 9 angka).', en: 'Please enter a valid WhatsApp number (at least 9 digits).', zh: '请输入有效的WhatsApp号码（至少9位数字）。' },
   'lead.gagal':      { id: 'Gagal mengirim. Periksa koneksi internet lalu coba lagi.', en: 'Sending failed. Check your internet connection and try again.', zh: '发送失败，请检查网络后重试。' },
   'lead.terima':     { id: 'Terima kasih atas minat Anda', en: 'Thank you for your interest', zh: '感谢您的关注' },
-  'lead.terimaDesc': { id: 'Permintaan Anda telah berhasil dikirim. Perwakilan kami akan segera menindaklanjuti. Seluruh informasi Anda dijaga kerahasiaannya dan hanya digunakan untuk keperluan informasi produk.', en: 'Your request has been submitted successfully. Our representative will follow up shortly. All of your information is kept confidential and used only for product information purposes.', zh: '您的请求已成功提交，我们的代表将尽快跟进。您的所有信息均严格保密，仅用于产品信息咨询。' },
+  'lead.terimaDesc': { id: 'Permintaan Anda telah berhasil dikirim. Untuk respons lebih cepat, silakan hubungi kami langsung melalui WhatsApp.', en: 'Your request has been submitted successfully. For a faster response, please contact us directly via WhatsApp.', zh: '您的请求已成功提交。如需更快回复，请直接通过WhatsApp联系我们。' },
   'lead.chatSekarang':{ id: 'Chat WhatsApp Sekarang', en: 'Chat on WhatsApp Now', zh: '立即WhatsApp咨询' },
   'artikel.eyebrow': { id: 'Berita & Artikel',                en: 'News & Articles',                    zh: '新闻与文章' },
   'artikel.judul':   { id: 'Wawasan Seputar Mesin Pertanian', en: 'Insights on Agricultural Machinery', zh: '农业机械资讯' },
