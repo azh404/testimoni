@@ -119,6 +119,10 @@ const TEKS = {
   'sektor.1.judul': { id: 'Perkebunan',       en: 'Plantations',  zh: '种植园' },
   'sektor.2.judul': { id: 'Pertanian Pangan', en: 'Food Crops',   zh: '粮食作物' },
   'sektor.3.judul': { id: 'Hortikultura',     en: 'Horticulture', zh: '园艺种植' },
+  'sektor.1.teks':  { id: 'Traktor 4WD bertenaga besar dan auto steering untuk kebun sawit, tebu, dan karet.', en: 'High-horsepower 4WD tractors and auto steering for oil palm, sugarcane, and rubber estates.', zh: '适用于油棕、甘蔗和橡胶种植园的大马力四驱拖拉机与自动导航系统。' },
+  'sektor.2.teks':  { id: 'Traktor, mesin tanam, combine harvester, dan pengering gabah untuk padi dan jagung.', en: 'Tractors, transplanters, combine harvesters, and grain dryers for rice and corn.', zh: '适用于水稻和玉米的拖拉机、插秧机、联合收割机和谷物烘干机。' },
+  'sektor.3.teks':  { id: 'Drone penyemprot dan traktor kompak untuk sayur, buah, dan lahan yang terbatas.', en: 'Spraying drones and compact tractors for vegetables, fruit, and smaller plots.', zh: '适用于蔬菜、水果及小地块的植保无人机和紧凑型拖拉机。' },
+  'sektor.lihat':   { id: 'Lihat unit', en: 'View units', zh: '查看机型' },
 
   /* ===== MITRA ===== */
   'mitra.eyebrow': { id: 'Kemitraan', en: 'Partnership', zh: '合作伙伴' },
