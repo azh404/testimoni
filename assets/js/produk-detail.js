@@ -92,4 +92,54 @@ function initHalamanDetail() {
       tbody.appendChild(tr);
     });
   }
+
+  rapikanHalamanDetail(p);
+}
+
+/* =========================================
+   TAMPILAN HALAMAN DETAIL (dibuat ulang tiap ganti bahasa)
+   - menu lompat (Keunggulan / Spesifikasi / Kalkulator / Produk Lainnya), menempel saat scroll
+   ========================================= */
+function rapikanHalamanDetail(p) {
+  const tx = (k, f) => (typeof t === 'function' && t(k)) || f;
+
+  /* Menu lompat antar-bagian (ditunda: kalkulator baru diisi setelah fungsi ini) */
+  setTimeout(() => buatMenuDetail(tx), 0);
+}
+
+function buatMenuDetail(tx) {
+  const tujuan = [
+    ['keunggulan', document.querySelector('[data-detail="kegunaan"]')?.parentElement, tx('modal.kegunaan', 'Keunggulan')],
+    ['spesifikasi', document.querySelector('[data-detail="spesifikasi"]')?.closest('table')?.parentElement, tx('modal.spesifikasi', 'Spesifikasi')],
+    ['kalkulator', document.querySelector('[data-kalk-mini], [data-kalk-traktor]')?.closest('section'), tx('detail.tabKalk', 'Kalkulator')],
+    ['lainnya', document.querySelector('.detail-lainnya-head')?.closest('section'), tx('detail.lainnya', 'Produk Lainnya')]
+  ].filter(x => x[1] && (x[0] !== 'kalkulator' || x[1].querySelector('[data-kalk-mini]:not(:empty), [data-kalk-traktor]:not(:empty)')));
+  const hero = document.querySelector('.detail-hero');
+  if (!hero || tujuan.length < 2) return;
+  document.querySelector('.detail-tab')?.remove();
+  const nav = document.createElement('nav');
+  nav.className = 'detail-tab';
+  nav.setAttribute('aria-label', tx('detail.tabLabel', 'Bagian halaman'));
+  const isi = document.createElement('div');
+  isi.className = 'container detail-tab__isi';
+  tujuan.forEach(([id, el, label]) => {
+    el.id = 'bagian-' + id;
+    const a = document.createElement('a');
+    a.href = '#bagian-' + id; a.textContent = label;
+    isi.appendChild(a);
+  });
+  nav.appendChild(isi);
+  hero.after(nav);
+
+  /* Tandai bagian yang sedang dilihat */
+  if ('IntersectionObserver' in window) {
+    const link = id => nav.querySelector(`a[href="#${id}"]`);
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) {
+        nav.querySelectorAll('a').forEach(a => a.classList.remove('is-aktif'));
+        link(e.target.id)?.classList.add('is-aktif');
+      }
+    }), { rootMargin: '-45% 0px -50% 0px' });
+    tujuan.forEach(([, el]) => io.observe(el));
+  }
 }

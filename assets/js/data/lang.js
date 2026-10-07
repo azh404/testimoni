@@ -198,6 +198,8 @@ const TEKS = {
   'detail.ctaJudul':   { id: 'Tanya harga & ketersediaan unit', en: 'Ask for price & availability', zh: '咨询价格与库存' },
   'detail.ctaDesc':    { id: 'Tim kami siap membantu memilih unit yang sesuai kebutuhan lahan Anda.', en: 'Our team is ready to help you choose the right unit for your land.', zh: '我们的团队随时帮助您选择适合您土地的机型。' },
   'detail.lainnya':    { id: 'Produk Lainnya',     en: 'Other Products',   zh: '其他产品' },
+  'detail.tabKalk':   { id: 'Kalkulator',         en: 'Calculator',       zh: '计算器' },
+  'detail.tabLabel':  { id: 'Bagian halaman',     en: 'Page sections',    zh: '页面导航' },
   'detail.semua':      { id: 'Lihat semua produk', en: 'View all products', zh: '查看全部产品' },
   'detail.diagramJudul': { id: 'Bagian & Dimensi Unit', en: 'Unit Parts & Dimensions', zh: '整机部件与尺寸' },
   'detail.diagramKlik':  { id: 'Klik gambar untuk melihat ukuran penuh.', en: 'Click the image to view it full size.', zh: '点击图片查看大图。' },

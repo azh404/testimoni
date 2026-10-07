@@ -266,3 +266,69 @@ a.produk-card { color: inherit; text-decoration: none; }
 .detail-bagikan .is-wa svg { color: var(--color-whatsapp); }
 .detail-bagikan .is-fb svg { color: #1877f2; }
 .detail-bagikan a:hover, .detail-bagikan button:hover { border-color: var(--color-primary); color: var(--color-primary); }
+
+/* =========================================
+   DESAIN BARU HALAMAN DETAIL (7 Okt)
+   ========================================= */
+/* Hero gelap ala studio (khusus Zoomlion) */
+body[data-brand="zoomlion"] .detail-hero {
+  background: radial-gradient(70% 90% at 25% 30%, #343d4a 0%, #1a2029 55%, #0d1117 100%);
+  border-bottom: 0;
+}
+body[data-brand="zoomlion"] .detail-crumb,
+body[data-brand="zoomlion"] .detail-crumb a { color: rgba(255,255,255,.6); }
+body[data-brand="zoomlion"] .detail-crumb span[aria-current] { color: #fff; }
+body[data-brand="zoomlion"] .detail-info h1 { color: #fff; }
+body[data-brand="zoomlion"] .detail-ringkas { color: rgba(255,255,255,.75); }
+body[data-brand="zoomlion"] .detail-hero .btn--outline { color: #fff; border-color: rgba(255,255,255,.35); background: transparent; }
+body[data-brand="zoomlion"] .detail-hero .btn--outline:hover { background: rgba(255,255,255,.1); }
+body[data-brand="zoomlion"] .detail-banding { color: #8DC63F; }
+body[data-brand="zoomlion"] .detail-bagikan__label { color: rgba(255,255,255,.6); }
+body[data-brand="zoomlion"] .detail-putar { background: transparent; }
+
+/* Menu lompat antar-bagian (menempel di bawah navbar) */
+.detail-tab {
+  position: sticky; top: var(--header-height); z-index: 20;
+  background: rgba(255,255,255,.92);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--color-border);
+}
+.detail-tab__isi { display: flex; gap: var(--sp-5); overflow-x: auto; scrollbar-width: none; }
+.detail-tab__isi::-webkit-scrollbar { display: none; }
+.detail-tab a {
+  flex-shrink: 0;
+  padding: 14px 2px;
+  font-size: var(--fs-sm); font-weight: var(--fw-semibold);
+  color: var(--color-muted); text-decoration: none;
+  border-bottom: 3px solid transparent;
+}
+.detail-tab a:hover { color: var(--color-dark); }
+.detail-tab a.is-aktif { color: var(--color-primary); border-bottom-color: var(--color-primary); }
+[id^="bagian-"] { scroll-margin-top: calc(var(--header-height) + 60px); }
+
+/* Judul bagian dengan garis aksen */
+.detail-body h2 { border-bottom: 0; padding-bottom: 0; display: flex; align-items: center; gap: 10px; }
+.detail-body h2::before { content: ""; width: 5px; height: 1.1em; border-radius: 3px; background: var(--color-primary); }
+
+/* Keunggulan = kartu bernomor */
+.detail-body .check-list { counter-reset: unggul; }
+.detail-body .check-list li {
+  counter-increment: unggul;
+  padding: 16px 18px;
+  border-radius: 14px;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 4px 14px rgba(15,23,42,.04);
+}
+.detail-body .check-list li::before {
+  content: counter(unggul, decimal-leading-zero);
+  width: 32px; height: 32px;
+  border-radius: 10px;
+  background: var(--color-primary); color: #fff;
+  font-size: var(--fs-xs);
+}
+@media (min-width: 900px) { .detail-body .check-list { gap: var(--sp-4); } }
+body[data-brand="zoomlion"] .detail-putar .putar__sorot {
+  -webkit-mask-image: linear-gradient(transparent, #000 35%);
+          mask-image: linear-gradient(transparent, #000 35%);
+}
