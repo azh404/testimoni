@@ -188,7 +188,7 @@ const HALAMAN = [
     waPesan: 'Halo, saya ingin menanyakan harga mesin pertanian Zoomlion.',
     keyword: 'jual mesin pertanian jakarta, alat mesin pertanian, combine harvester, rice transplanter, mesin pengering gabah, mesin panen tebu, alsintan',
     id: {
-      judulTab: 'Jual Mesin Pertanian Jakarta | Combine Harvester, Dryer & Lainnya | DASS',
+      judulTab: 'Jual Mesin Pertanian Jakarta: Combine, Dryer & Lainnya | DASS',
       desk: 'Jual mesin pertanian di Jakarta: combine harvester, rice transplanter, mesin panen tebu, mesin pengering gabah, dan baler Zoomlion. Distributor resmi.',
       h1: 'Jual Mesin Pertanian di Jakarta',
       sub: 'Combine harvester, rice transplanter, mesin panen tebu, mesin pengering gabah, dan baler Zoomlion.',
@@ -249,7 +249,7 @@ const HALAMAN = [
     waPesan: 'Halo, saya ingin konsultasi traktor untuk kebun sawit.',
     keyword: 'traktor kebun sawit, traktor sawit, traktor perkebunan, traktor 4wd, auto steering traktor, traktor zoomlion',
     id: {
-      judulTab: 'Traktor untuk Kebun Sawit | Traktor Zoomlion & Auto Steering | DASS',
+      judulTab: 'Traktor Kebun Sawit Zoomlion & Auto Steering | DASS',
       desk: 'Panduan memilih traktor untuk kebun sawit: tenaga, penggerak 4WD, ban, dan auto steering. Tersedia traktor Zoomlion dan auto steering VectorAgr di DASS Jakarta.',
       h1: 'Traktor untuk Kebun Sawit',
       sub: 'Traktor Zoomlion dan sistem auto steering VectorAgr untuk pekerjaan di perkebunan kelapa sawit.',
@@ -331,7 +331,7 @@ const HALAMAN = [
     waPesan: 'Halo, saya ingin menanyakan harga combine harvester padi Zoomlion.',
     keyword: 'combine harvester padi, mesin panen padi, harga combine harvester, combine harvester zoomlion, zoomlion zl88, zoomlion zl105',
     id: {
-      judulTab: 'Combine Harvester Padi | Mesin Panen Padi Zoomlion ZL Series | DASS',
+      judulTab: 'Combine Harvester Padi Zoomlion ZL Series | DASS',
       desk: 'Jual combine harvester padi Zoomlion ZL88, ZL105, ZL125, dan ZL145 di Jakarta. Panduan memilih mesin panen padi sesuai luas sawah dari distributor resmi.',
       h1: 'Combine Harvester Padi',
       sub: 'Mesin panen padi crawler Zoomlion ZL Series untuk sawah kecil hingga luas.',
