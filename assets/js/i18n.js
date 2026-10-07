@@ -9,6 +9,10 @@
 let BAHASA = 'id';
 let JUDUL_ASLI = null;   /* <title> bawaan halaman (bahasa Indonesia) */
 try { BAHASA = localStorage.getItem('bahasa') || 'id'; } catch (e) { BAHASA = 'id'; }
+/* Beranda selalu dibuka dalam bahasa Indonesia (permintaan pemilik, Okt 2026).
+   Pilihan bahasa pengunjung tetap tersimpan dan berlaku di halaman lain;
+   di beranda pengunjung masih bisa mengganti bahasa lewat menu bendera. */
+if (/(^|\/)(index\.html)?$/.test(location.pathname)) BAHASA = 'id';
 
 /* --- Definisi bahasa + bendera --- */
 const DAFTAR_BAHASA = [

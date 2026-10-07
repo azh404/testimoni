@@ -1768,6 +1768,13 @@ body[data-brand="eavision"] .produk-grid {
 /* =========================================
    BERANDA — SHOWCASE PRODUK
    ========================================= */
+/* Latar mengikuti merek unit yang tampil, senada dengan panel "Produk Kami" */
+.showcase {
+  background: linear-gradient(180deg, #F6FAF1 0%, #E4F2D8 60%, #CDE8B6 100%);
+  transition: background 0.5s ease;
+}
+.showcase[data-brand="eavision"]  { background: linear-gradient(180deg, #F2F7FD 0%, #DCEAF8 60%, #C3DAF2 100%); }
+.showcase[data-brand="vectoragr"] { background: linear-gradient(180deg, #FFFCF4 0%, #FDF0D2 60%, #F8DB98 100%); }
 .showcase__tabs {
   display: flex;
   justify-content: center;

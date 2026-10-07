@@ -58,6 +58,10 @@ function renderShowcase() {
   const nilai = (x) => typeof tNilai === 'function' ? tNilai(x) : x;
   const pesan = `Halo, saya ingin menanyakan unit ${brand.nama} ${p.nama}. Mohon info harga dan ketersediaannya.`;
 
+  /* Warna latar bagian ikut merek unit yang tampil (lihat .showcase[data-brand]) */
+  const bagian = wrap.closest('.showcase');
+  if (bagian) bagian.dataset.brand = p.brand;
+
   wrap.innerHTML = `
     <div class="showcase__tabs" role="tablist">
       ${tabs.map(([k, it], i) => `
