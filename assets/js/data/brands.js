@@ -42,23 +42,23 @@ const BRANDS = [
    ========================================= */
 const KATEGORI = {
   zoomlion: [
-    { id: 'hybrid',     nama: 'Hybrid Product' },
-    { id: 'tractor',    nama: 'Tractor' },
-    { id: 'planter',    nama: 'Rice Transplanter' },
+    { id: 'hybrid',     nama: 'Mesin Hybrid' },
+    { id: 'tractor',    nama: 'Traktor' },
+    { id: 'planter',    nama: 'Mesin Tanam Padi' },
     { id: 'harvester',  nama: 'Combine Harvester' },
-    { id: 'sugarcane',  nama: 'Sugarcane Harvester' },
-    { id: 'dryer',      nama: 'Dryer' },
-    { id: 'baler',      nama: 'Baler' },
-    { id: 'implement',  nama: 'Implement' }
+    { id: 'sugarcane',  nama: 'Mesin Panen Tebu' },
+    { id: 'dryer',      nama: 'Mesin Pengering Gabah' },
+    { id: 'baler',      nama: 'Mesin Baler' },
+    { id: 'implement',  nama: 'Implement Traktor' }
   ],
   eavision: [
-    { id: 'sprayer-drone', nama: 'Agricultural Sprayer Drone' }
+    { id: 'sprayer-drone', nama: 'Drone Sprayer' }
   ],
   vectoragr: [
-    { id: 'va-drone',    nama: 'Agricultural Drone' },
-    { id: 'va-steering', nama: 'Auto Steering System' },
-    { id: 'va-rover',    nama: 'Agricultural Rover' },
-    { id: 'va-digital',  nama: 'Digital Ag Solution' }
+    { id: 'va-drone',    nama: 'Drone Pertanian' },
+    { id: 'va-steering', nama: 'Auto Steering' },
+    { id: 'va-rover',    nama: 'Robot Pertanian' },
+    { id: 'va-digital',  nama: 'Pertanian Digital' }
   ]
 };
 

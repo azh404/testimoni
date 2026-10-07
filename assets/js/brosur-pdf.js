@@ -11,8 +11,8 @@ const BROSUR_LOGO = 'assets/images/logo/logo-dass.png';   // transparan, tanpa k
 const BROSUR_WATERMARK = 'assets/images/logo/logo-dass.png';
 
 const BROSUR_LABEL = {
-  'hybrid':'Traktor Hybrid', 'tractor':'Traktor Pertanian',
-  'planter':'Rice Transplanter', 'harvester':'Combine Harvester',
+  'hybrid':'Mesin Hybrid', 'tractor':'Traktor Pertanian',
+  'planter':'Mesin Tanam Padi', 'harvester':'Combine Harvester',
   'sugarcane':'Mesin Panen Tebu', 'dryer':'Mesin Pengering Gabah',
   'baler':'Mesin Baler', 'implement':'Implement Traktor',
   'sprayer-drone':'Drone Sprayer Pertanian', 'va-drone':'Drone Pertanian',
