@@ -181,6 +181,11 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   Pesan setelah kirim form (7 Okt, dipilih pengguna): "Terima kasih atas minat Anda — Permintaan Anda telah berhasil
   dikirim. Untuk respons lebih cepat, silakan hubungi kami langsung melalui WhatsApp." Jangan menyebut data/database/
   kerahasiaan (pengguna tidak mau kesan "database") maupun "data Anda sudah kami terima".
+- **Pop-up produk Zoomlion: foto bisa digeser kiri-kanan (7 Okt)**: `jalankanPutar()` di filter-produk.js, CSS `.putar*`
+  (pages.css), kunci `putar.petunjuk`. Efek miring 3D ±35° (perspektif, bayangan & cahaya ikut), goyang contoh saat dibuka,
+  panah keyboard, klik ganda = lurus. BUKAN 360° asli (1 foto tidak punya sisi belakang; sudah dijelaskan). EAVision/VectorAgr
+  tetap foto biasa. DITOLAK: efek "kamera drone", penampil 3D .glb dengan model uji, gambar 17 sudut dari ChatGPT
+  (DL2004: hasil tidak konsisten, kena limit).
 - CAPTCHA tidak dipasang (tidak ada form yang mengirim ke server; form kontak membuka WA).
 
 ## Cara kerja dengan pengguna (pelajaran dari sesi sebelumnya)

@@ -387,6 +387,55 @@ function jalankanSlider(wrap) {
 }
 
 /* =========================================
+   PUTAR FOTO (pop-up produk Zoomlion)
+   Foto digeser kiri-kanan -> miring 3D (perspektif), bentuk foto tidak diubah.
+   ========================================= */
+function jalankanPutar(el) {
+  if (!el) return;
+  const unit = el.querySelector('.putar__unit');
+  const bayangan = el.querySelector('.putar__bayangan');
+  const MAKS = 35;                 // sudut miring maksimal (derajat)
+  let target = 0, sudut = 0, awalX = 0, awalSudut = 0, geser = false, jalan = false;
+
+  const batasi = v => Math.max(-MAKS, Math.min(MAKS, v));
+  function gambar() {
+    sudut += (target - sudut) * 0.14;
+    if (Math.abs(target - sudut) < 0.05) sudut = target;
+    const r = sudut / MAKS;
+    unit.style.transform = `rotateY(${sudut.toFixed(2)}deg) rotateX(${(Math.abs(r) * 4).toFixed(2)}deg) scale(${(1 - Math.abs(r) * 0.04).toFixed(3)})`;
+    unit.style.filter = `drop-shadow(${(-r * 18).toFixed(1)}px 16px 18px rgba(0,0,0,.18)) brightness(${(1 + r * 0.06).toFixed(3)})`;
+    bayangan.style.transform = `translateX(${(-r * 14).toFixed(1)}%) scaleX(${(1 - Math.abs(r) * 0.18).toFixed(3)})`;
+    if (sudut !== target || geser) requestAnimationFrame(gambar); else jalan = false;
+  }
+  function ke(v) { target = batasi(v); if (!jalan) { jalan = true; requestAnimationFrame(gambar); } }
+  function sudahDipakai() { el.classList.add('is-dipakai'); }
+
+  el.addEventListener('pointerdown', e => {
+    geser = true; awalX = e.clientX; awalSudut = target;
+    el.setPointerCapture(e.pointerId); el.classList.add('is-geser'); sudahDipakai(); ke(target);
+  });
+  el.addEventListener('pointermove', e => {
+    if (!geser) return;
+    ke(awalSudut + (e.clientX - awalX) * (MAKS * 2 / Math.max(el.clientWidth, 1)));
+  });
+  const lepas = () => { geser = false; el.classList.remove('is-geser'); };
+  el.addEventListener('pointerup', lepas);
+  el.addEventListener('pointercancel', lepas);
+  el.addEventListener('dblclick', () => ke(0));
+  el.addEventListener('keydown', e => {
+    if (e.key === 'ArrowLeft')  { e.preventDefault(); sudahDipakai(); ke(target - 7); }
+    if (e.key === 'ArrowRight') { e.preventDefault(); sudahDipakai(); ke(target + 7); }
+  });
+
+  ke(0);
+  // Gerak contoh singkat saat pop-up dibuka (tidak untuk "reduce motion")
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    [[350, -22], [1050, 22], [1750, 0]].forEach(([ms, v]) =>
+      setTimeout(() => { if (!el.classList.contains('is-dipakai')) ke(v); }, ms));
+  }
+}
+
+/* =========================================
    MODAL DETAIL PRODUK
    ========================================= */
 function initModalProduk() {
@@ -412,9 +461,15 @@ function initModalProduk() {
       <button class="modal__close" data-tutup aria-label="Tutup">&times;</button>
       <div class="modal__grid">
 
+        ${p.brand === 'zoomlion' ? `
+        <div class="modal__media putar" data-putar tabindex="0" aria-label="${teks('putar.petunjuk', 'Geser untuk memutar')}">
+          <div class="putar__bayangan"></div>
+          <img class="putar__unit" src="${base}${gambarWeb(p.gambar)}" alt="${altProduk(p)}" draggable="false" onerror="this.style.visibility='hidden'">
+          <span class="putar__petunjuk">&#8592; ${teks('putar.petunjuk', 'Geser untuk memutar')} &#8594;</span>
+        </div>` : `
         <div class="modal__media">
           <img src="${base}${gambarWeb(p.gambar)}" alt="${altProduk(p)}" onerror="this.style.visibility='hidden'">
-        </div>
+        </div>`}
 
         <div class="modal__body">
           <img src="${base}${brand.logo}" alt="${brand.nama}" class="modal__brand">
@@ -462,6 +517,7 @@ function initModalProduk() {
     modal.classList.add('is-open');
     document.body.style.overflow = 'hidden';
     if (typeof initImageFallback === 'function') initImageFallback();
+    jalankanPutar(box.querySelector('[data-putar]'));
   }
 
   function tutup() {
