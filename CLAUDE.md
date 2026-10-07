@@ -250,8 +250,11 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   Combine Harvester (istilah umum, dibiarkan), Mesin Panen Tebu, Mesin Pengering Gabah, Mesin Baler, Implement
   Traktor, Drone Sprayer, Drone Pertanian, Auto Steering, Robot Pertanian, Pertanian Digital. EN/ZH tetap.
 - Deskripsi meta semua halaman ≤160 karakter (7 Okt; produk/*.html diedit langsung, tidak ada generatornya).
-- **Klaim "garansi"** ("Produk Bergaransi … disertai garansi") ada di beranda, Tentang, dan semua halaman kata
-  kunci — MENUNGGU konfirmasi pengguna apakah pembeli dapat garansi resmi; bila tidak, ganti semuanya.
+- **Klaim garansi DIHAPUS (7 Okt, permintaan pengguna)**: "Produk Bergaransi" → "Dokumen Resmi Lengkap: Unit resmi dari
+  prinsipal, disertai dokumen pembelian lengkap" (beranda, Tentang, halaman kata kunci, judul jual-traktor). Jangan
+  menulis klaim garansi DASS lagi (spek pabrik seperti "garansi baterai 1 tahun" EAVision boleh).
+- **Menu "Produk" di navbar = tombol** (7 Okt), bukan link ke Zoomlion (dulu terasa dobel dengan "Zoomlion" di
+  dropdown). Laptop: hover/klik membuka daftar; HP: daftar selalu terbuka, "Produk" hanya judul. navbar.js `aturDrop`.
 - Tugas pengguna: upload terbaru ke Hostinger, Search Console (kirim ulang `sitemap.xml`,
   tambah `sitemap-gambar.xml`, minta indeks `bandingkan.html`, `kamus-pertanian.html`,
   `faq.html`), aktifkan 2FA (Hostinger/GitHub/Google), UptimeRobot. Google Business Profile sudah

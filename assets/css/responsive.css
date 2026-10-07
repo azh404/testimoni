@@ -38,6 +38,9 @@
     width: 100%;
   }
   .nav__link { padding: var(--sp-4); font-size: var(--fs-base); }
+  /* Di menu HP daftar merek selalu terbuka; "Produk" hanya judul kelompok */
+  .nav__link--drop { width: 100%; text-align: left; font-size: var(--fs-base); cursor: default; }
+  .nav__link--drop:hover { background: none; color: var(--color-body); }
 
   .dropdown {
     position: static;

@@ -172,8 +172,19 @@
   transition: all var(--transition);
   z-index: var(--z-dropdown);
 }
+/* Tombol "Produk" tampil sama seperti link menu lain */
+.nav__link--drop {
+  background: none;
+  border: 0;
+  font: inherit;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  cursor: pointer;
+}
+.nav__item--has-drop.is-open .nav__toggle-icon { transform: rotate(180deg); }
 .nav__item--has-drop:hover .dropdown,
-.nav__item--has-drop:focus-within .dropdown {
+.nav__item--has-drop:focus-within .dropdown,
+.nav__item--has-drop.is-open .dropdown {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);

@@ -103,8 +103,8 @@ const TEKS = {
   'unggul.eyebrow': { id: 'Mengapa Kami',               en: 'Why Choose Us',           zh: '为何选择我们' },
   'unggul.judul':   { id: 'Bukan Sekadar Penjual Unit', en: 'More Than Just a Seller', zh: '不仅仅是销售商' },
 
-  'unggul.1.judul': { id: 'Produk Bergaransi', en: 'Warranted Products', zh: '正品保修' },
-  'unggul.1.teks':  { id: 'Unit resmi dari prinsipal, disertai garansi dan dokumen lengkap', en: 'Official units from the principal, with warranty and complete documentation', zh: '厂商正品机型，配备保修与完整文件' },
+  'unggul.1.judul': { id: 'Dokumen Resmi Lengkap', en: 'Complete Official Documents', zh: '正规文件齐全' },
+  'unggul.1.teks':  { id: 'Unit resmi dari prinsipal, disertai dokumen pembelian lengkap', en: 'Official units from the principal, with complete purchase documentation', zh: '厂商正品机型，附完整购买文件' },
   'unggul.2.judul': { id: 'Distributor Resmi', en: 'Authorised Distributor', zh: '授权经销商' },
   'unggul.2.teks':  { id: 'Unit asli dari Zoomlion, EAVision, dan VectorAgr, dijual langsung oleh distributor resminya', en: 'Genuine Zoomlion, EAVision, and VectorAgr units, sold directly by their authorised distributor', zh: '中联重科、EAVision 和 VectorAgr 正品机型，由授权经销商直接销售' },
   'unggul.3.judul': { id: 'Spesifikasi Lengkap', en: 'Full Specifications', zh: '参数齐全' },
