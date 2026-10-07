@@ -233,6 +233,11 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   produk tanpa awalan "Jual"/akhiran "Jakarta" bila kepanjangan); beranda punya schema WebSite (+ LocalBusiness lama).
   Schema **Product SENGAJA TIDAK dipasang**: tanpa harga/ulasan Google menandainya error merah di Search Console.
   Pasang hanya bila perusahaan mau menampilkan harga.
+- **Judul halaman produk (7 Okt)** = "<Merek Model>: Spesifikasi <Kategori> | DASS Jakarta" (nama model di depan, karena
+  Search Console menunjukkan orang mencari "zl88", "dl2004", "rk504"); bila >65 karakter dipersingkat. DH7-6000 &
+  TE100-DH = "Combine Harvester Hybrid". Nama "PT DASS" ditambahkan (alternateName schema index/kontak + paragraf
+  pertama Tentang ID/EN/ZH) karena ada kueri "pt dass". Kueri teratas 28 hari: "pt diesel agri sukses sejahtera"
+  77 klik/118 tayang; kueri model 0 klik (posisi masih rendah).
 - **PageSpeed Insights**: pengguna ingin "hijau semua"; belum mengirim hasil. Sudah dilakukan: sampul
   hero di-preload, video dimuat setelah `load`, versi HP, font tidak menahan tampilan, data artikel tidak
   lagi dimuat di beranda. Video hero kini besar (8–22 MB laptop) atas permintaan kualitas — bila
