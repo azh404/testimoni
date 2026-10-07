@@ -798,6 +798,44 @@
 }
 .modal__media img { max-width: 100%; max-height: 300px; object-fit: contain; }
 
+/* Putar foto (pop-up Zoomlion): geser kiri-kanan -> miring 3D */
+.putar {
+  position: relative;
+  perspective: 900px;
+  cursor: grab;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+  overflow: hidden;
+  outline: none;
+}
+.putar.is-geser { cursor: grabbing; }
+.putar:focus-visible { box-shadow: inset 0 0 0 3px var(--color-primary); }
+.putar__unit { position: relative; z-index: 1; will-change: transform; pointer-events: none; }
+.putar__bayangan {
+  position: absolute;
+  left: 22%; right: 22%; bottom: 14%;
+  height: 26px;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(0,0,0,.22), transparent);
+  pointer-events: none;
+}
+.putar__petunjuk {
+  position: absolute;
+  left: 50%; bottom: 10px;
+  transform: translateX(-50%);
+  z-index: 2;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(17,24,39,.72);
+  color: #fff;
+  font-size: var(--fs-xs);
+  white-space: nowrap;
+  pointer-events: none;
+  transition: opacity .4s ease;
+}
+.putar.is-dipakai .putar__petunjuk { opacity: 0; }
+
 .modal__body { padding: var(--sp-7) var(--sp-6); }
 .modal__brand { height: 26px; width: auto; margin-bottom: var(--sp-4); }
 .modal__seri {
