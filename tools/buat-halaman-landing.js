@@ -38,19 +38,19 @@ const UI = {
 /* Keunggulan yang sama untuk semua halaman */
 const KEUNGGULAN = {
   id: [
-    ['Distributor Resmi', 'Unit resmi dari prinsipal, disertai garansi dan dokumen lengkap.'],
+    ['Distributor Resmi', 'Unit resmi dari prinsipal, disertai dokumen pembelian lengkap.'],
     ['Spesifikasi Lengkap', 'Data teknis, brosur PDF, dan fitur bandingkan unit tersedia langsung di website.'],
     ['Tanya Cepat via WhatsApp', 'Tanya harga, minta brosur, atau konsultasi langsung dengan tim kami.'],
     ['Konsultasi Teknis', 'Kami bantu menentukan unit yang sesuai luas lahan dan jenis pekerjaan.']
   ],
   en: [
-    ['Authorised Distributor', 'Genuine units from the principal, with warranty and complete documents.'],
+    ['Authorised Distributor', 'Genuine units from the principal, with complete purchase documents.'],
     ['Full Specifications', 'Technical data, PDF brochures, and a unit comparison tool right on our website.'],
     ['Quick Answers on WhatsApp', 'Ask for prices, request a brochure, or talk directly with our team.'],
     ['Technical Consultation', 'We help you choose the unit that fits your land and type of work.']
   ],
   zh: [
-    ['授权经销商', '原厂正品，提供保修及完整文件。'],
+    ['授权经销商', '原厂正品，附完整购买文件。'],
     ['参数齐全', '网站直接提供技术参数、PDF 宣传册和机型对比功能。'],
     ['WhatsApp 快速咨询', '询价、索取宣传册或直接与我们的团队沟通。'],
     ['技术咨询', '帮助您根据土地面积和作业类型选择合适的机型。']
@@ -70,7 +70,7 @@ const HALAMAN = [
     waPesan: 'Halo, saya ingin menanyakan harga traktor Zoomlion.',
     keyword: 'jual traktor jakarta, traktor jakarta, harga traktor, traktor zoomlion, dealer traktor jakarta, traktor sawah, traktor hybrid',
     id: {
-      judulTab: 'Jual Traktor Jakarta | Traktor Zoomlion Resmi & Bergaransi | DASS',
+      judulTab: 'Jual Traktor Jakarta | Traktor Zoomlion Resmi | DASS',
       desk: 'Jual traktor di Jakarta: traktor roda empat dan traktor hybrid Zoomlion berbagai kelas tenaga, lengkap dengan implement dan konsultasi pemilihan unit.',
       h1: 'Jual Traktor di Jakarta',
       sub: 'Traktor roda empat dan traktor hybrid Zoomlion, langsung dari distributor resmi di Jakarta Timur.',

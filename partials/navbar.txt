@@ -19,9 +19,10 @@
         </li>
 
         <li class="nav__item nav__item--has-drop">
-          <a href="{{base}}pages/produk/zoomlion.html" class="nav__link" data-page="produk">
-            <span data-i18n="nav.produk">Produk</span> <span class="nav__toggle-icon">&#9660;</span>
-          </a>
+          <!-- "Produk" hanya membuka daftar merek (bukan link), supaya tidak dobel dengan "Zoomlion" -->
+          <button type="button" class="nav__link nav__link--drop" data-page="produk" aria-haspopup="true" aria-expanded="false">
+            <span data-i18n="nav.produk">Produk</span> <span class="nav__toggle-icon" aria-hidden="true">&#9660;</span>
+          </button>
           <ul class="dropdown">
             <li><a href="{{base}}pages/produk/zoomlion.html" class="dropdown__link">
               Zoomlion<small data-i18n="nav.zoomlionSub">Alat berat &amp; mesin pertanian</small></a></li>
@@ -32,7 +33,8 @@
             <li><a href="{{base}}bandingkan.html" class="dropdown__link">
               <span data-i18n="footer.bandingkan">Bandingkan Produk</span><small data-i18n="nav.bandingkanSub">Spesifikasi berdampingan</small></a></li>
           </ul>
- 
+        </li>
+
         <li class="nav__item">
           <a href="{{base}}artikel.html" class="nav__link" data-page="artikel" data-i18n="nav.artikel">Berita &amp; Artikel</a>
         </li>
