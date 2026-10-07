@@ -10,7 +10,9 @@ const BERANDA_SHOWCASE = [
   ['harvester',     ['zl-zl145', 'zl-zl125', 'zl-h7-4500', 'zl-f6-3000']],
   ['sugarcane',     ['zl-c610', 'zl-c620', 'zl-c600']],
   ['dryer',         ['zl-5hxg-30e', 'zl-5hxg-30c1', 'zl-5hxh-30']],
-  ['sprayer-drone', ['ea-j150', 'ea-j100', 'ea-30x']],
+  /* Nama tab ketiga (opsional) dipakai bila nama kategori saja membingungkan */
+  ['sprayer-drone', ['ea-j150', 'ea-j100', 'ea-30x'], 'Drone EAVision'],
+  ['va-drone',      ['va-hd540', 'va-hd525', 'va-v180', 'va-v80'], 'Drone VectorAgr'],
   ['va-steering',   ['va-hd818', 'va-hd812', 'va-hd408']]
 ];
 let showcaseTab = 0;
@@ -43,7 +45,7 @@ function renderShowcase() {
   if (!wrap) return;
   const base = document.body.dataset.base || '';
   const tabs = BERANDA_SHOWCASE
-    .map(([kat, ids]) => [kat, ids.map(id => PRODUK.find(p => p.id === id)).filter(Boolean)])
+    .map(([kat, ids, judul]) => [kat, ids.map(id => PRODUK.find(p => p.id === id)).filter(Boolean), judul])
     .filter(([, items]) => items.length);
   if (!tabs.length) return;
   showcaseTab = Math.min(showcaseTab, tabs.length - 1);
@@ -64,10 +66,10 @@ function renderShowcase() {
 
   wrap.innerHTML = `
     <div class="showcase__tabs" role="tablist">
-      ${tabs.map(([k, it], i) => `
+      ${tabs.map(([k, it, judul], i) => `
         <button class="showcase__tab${i === showcaseTab ? ' is-active' : ''}" role="tab"
                 aria-selected="${i === showcaseTab}" data-tab="${i}">
-          ${namaKategori(k, it[0].brand)}
+          ${judul || namaKategori(k, it[0].brand)}
         </button>`).join('')}
     </div>
 
