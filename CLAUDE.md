@@ -253,6 +253,10 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
 - **Klaim garansi DIHAPUS (7 Okt, permintaan pengguna)**: "Produk Bergaransi" → "Dokumen Resmi Lengkap: Unit resmi dari
   prinsipal, disertai dokumen pembelian lengkap" (beranda, Tentang, halaman kata kunci, judul jual-traktor). Jangan
   menulis klaim garansi DASS lagi (spek pabrik seperti "garansi baterai 1 tahun" EAVision boleh).
+- **Halaman kata kunci (jual-*, kebun sawit, combine padi, drone sawah) dibuat tidak polos (7 Okt)**: body
+  `.halaman-landing tema-hijau|tema-biru` (biru bila kategori drone; diset generator), garis tema di tiap judul,
+  kartu tips bernomor bulat, kartu "Kenapa DASS" garis kiri 4 warna, katalog `.landing-katalog` latar lembut warna
+  tema + sudut atas melengkung + eyebrow "Katalog Unit", ajakan WA akhir = kotak gradasi biru (`UI.ctaJudul/ctaDesc`).
 - **Menu "Produk" di navbar = tombol** (7 Okt), bukan link ke Zoomlion (dulu terasa dobel dengan "Zoomlion" di
   dropdown). Laptop: hover/klik membuka daftar; HP: daftar selalu terbuka, "Produk" hanya judul. navbar.js `aturDrop`.
 - Tugas pengguna: upload terbaru ke Hostinger, Search Console (kirim ulang `sitemap.xml`,

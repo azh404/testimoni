@@ -30,9 +30,9 @@ const TELEPON = COMPANY.telepon;
    TEKS ANTARMUKA
    ========================================= */
 const UI = {
-  id: { faq: 'Pertanyaan yang Sering Diajukan', artikel: 'Baca Juga', semua: 'Lihat semua produk', terkait: 'Lihat Juga', kalk: 'Kalkulator Semprot Drone & Pilih Traktor' },
-  en: { faq: 'Frequently Asked Questions',       artikel: 'Read Also', semua: 'View all products', terkait: 'See Also', kalk: 'Drone Spraying & Tractor Selection Calculator' },
-  zh: { faq: '常见问题',                          artikel: '延伸阅读',  semua: '查看全部产品',        terkait: '另请参阅', kalk: '无人机喷洒与拖拉机选型计算器' }
+  id: { faq: 'Pertanyaan yang Sering Diajukan', artikel: 'Baca Juga', semua: 'Lihat semua produk', terkait: 'Lihat Juga', kalk: 'Kalkulator Semprot Drone & Pilih Traktor', katalog: 'Katalog Unit', ctaJudul: 'Masih bingung memilih unit?', ctaDesc: 'Ceritakan luas lahan dan jenis pekerjaan Anda, tim kami bantu memilihkan.' },
+  en: { faq: 'Frequently Asked Questions',       artikel: 'Read Also', semua: 'View all products', terkait: 'See Also', kalk: 'Drone Spraying & Tractor Selection Calculator', katalog: 'Unit Catalogue', ctaJudul: 'Still unsure which unit to choose?', ctaDesc: 'Tell us your land size and type of work, and our team will help you choose.' },
+  zh: { faq: '常见问题',                          artikel: '延伸阅读',  semua: '查看全部产品',        terkait: '另请参阅', kalk: '无人机喷洒与拖拉机选型计算器', katalog: '机型目录', ctaJudul: '还不确定选哪款机型？', ctaDesc: '告诉我们您的地块面积和作业类型，我们的团队帮您挑选。' }
 };
 
 /* Keunggulan yang sama untuk semua halaman */
@@ -611,7 +611,7 @@ function halaman(h) {
 ${JSON.stringify(jsonLd, null, 2)}
   </script>
 </head>
-<body data-base="" data-page="produk">
+<body data-base="" data-page="produk" class="halaman-landing tema-${(h.kategori || []).some(k => /drone/.test(k)) ? 'biru' : 'hijau'}">
 
   <div id="site-header"></div>
 
@@ -648,10 +648,11 @@ ${h[b].panduan ? `          <h2 class="landing__judul">${h[b].panduan}</h2>
       </div>
     </section>
 
-    <section class="section section--soft">
+    <section class="section section--soft landing-katalog">
       <div class="container">
 ${BAHASA.map(b => `        ${blok(b, `
           <div class="section-header section-header--center">
+            <span class="section-header__eyebrow">${UI[b].katalog}</span>
             <h2 class="section-header__title">${h[b].produk}</h2>
             <p class="section-header__desc"><a href="${h.brand}">${UI[b].semua} &rarr;</a></p>
           </div>`)}`).join('\n')}
@@ -678,9 +679,13 @@ ${h.artikel.length ? `
             <li><a href="kalkulator.html">${esc(UI[b].kalk)}</a></li>
           </ul>
 
-          <p class="landing__cta">
+          <div class="landing__cta">
+            <div>
+              <h2 class="landing__cta-judul">${UI[b].ctaJudul}</h2>
+              <p class="landing__cta-desc">${UI[b].ctaDesc}</p>
+            </div>
             <a href="#" class="btn btn--wa btn--lg" data-wa-link data-wa-pesan="${esc(h.waPesan)}">${h[b].cta}</a>
-          </p>
+          </div>
         `)}`).join('\n')}
       </div>
     </section>
