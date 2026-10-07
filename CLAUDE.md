@@ -186,6 +186,14 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   panah keyboard, klik ganda = lurus. BUKAN 360° asli (1 foto tidak punya sisi belakang; sudah dijelaskan). EAVision/VectorAgr
   tetap foto biasa. DITOLAK: efek "kamera drone", penampil 3D .glb dengan model uji, gambar 17 sudut dari ChatGPT
   (DL2004: hasil tidak konsisten, kena limit).
+- **Gaya "studio gelap" Zoomlion (7 Okt, dipilih pengguna dari 8 contoh)**: pop-up & foto utama halaman detail produk
+  Zoomlion memakai `htmlPutar()` (filter-produk.js; detail via `initPutarDetail()` di main.js): latar gelap + sorot lampu +
+  podium + pantulan lantai (`.putar--gelap`, pages.css). Ditolak/tidak dipilih: podium terang, zoom kaca pembesar, chip
+  spesifikasi, latar lahan CSS, lantai cermin, cincin hijau, meja putar.
+- **Desain halaman detail produk (7 Okt)**: Zoomlion = hero gelap selebar layar (`body[data-brand="zoomlion"] .detail-hero`);
+  semua 62 halaman: menu lompat menempel (`.detail-tab`, dibuat `buatMenuDetail()` di produk-detail.js, kunci
+  `detail.tabKalk/tabLabel`), judul bagian bergaris aksen, Keunggulan = kartu bernomor 01–06. Strip "4 spesifikasi utama"
+  di bawah hero DITOLAK (kepanjangan).
 - CAPTCHA tidak dipasang (tidak ada form yang mengirim ke server; form kontak membuka WA).
 
 ## Cara kerja dengan pengguna (pelajaran dari sesi sebelumnya)

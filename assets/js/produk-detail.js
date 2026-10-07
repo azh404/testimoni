@@ -98,42 +98,10 @@ function initHalamanDetail() {
 
 /* =========================================
    TAMPILAN HALAMAN DETAIL (dibuat ulang tiap ganti bahasa)
-   - strip 4 spesifikasi utama di bawah hero
    - menu lompat (Keunggulan / Spesifikasi / Kalkulator / Produk Lainnya), menempel saat scroll
    ========================================= */
-function spekUtama(p, jumlah) {
-  const pola = [/daya|tenaga|power|hp\b/i, /transmisi/i, /kapasitas/i, /kecepatan/i, /lebar kerja|baris|jarak tanam/i, /berat/i, /mesin/i];
-  const spek = p.spesifikasi || [], pilih = [];
-  pola.forEach(re => {
-    if (pilih.length >= jumlah) return;
-    const s = spek.find(x => re.test(x.label) && !/model/i.test(x.label) && tField(x.nilai).length <= 22 && !pilih.includes(x));
-    if (s) pilih.push(s);
-  });
-  spek.forEach(x => { if (pilih.length < jumlah && !/model/i.test(x.label) && tField(x.nilai).length <= 22 && !pilih.includes(x)) pilih.push(x); });
-  return pilih;
-}
-
 function rapikanHalamanDetail(p) {
   const tx = (k, f) => (typeof t === 'function' && t(k)) || f;
-
-  /* Strip spesifikasi utama */
-  const heroBox = document.querySelector('.detail-hero .container');
-  if (heroBox) {
-    heroBox.querySelector('.detail-sorotan')?.remove();
-    const spek = spekUtama(p, 4);
-    if (spek.length >= 2) {
-      const div = document.createElement('div');
-      div.className = 'detail-sorotan';
-      spek.forEach(s => {
-        const c = document.createElement('div');
-        c.className = 'detail-sorotan__item';
-        const b = document.createElement('strong'); b.textContent = tNilai(tField(s.nilai));
-        const l = document.createElement('span'); l.textContent = tSpec(s.label);
-        c.append(b, l); div.appendChild(c);
-      });
-      heroBox.appendChild(div);
-    }
-  }
 
   /* Menu lompat antar-bagian (ditunda: kalkulator baru diisi setelah fungsi ini) */
   setTimeout(() => buatMenuDetail(tx), 0);
