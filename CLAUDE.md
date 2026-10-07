@@ -225,10 +225,14 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   grid 6 kolom (3 per baris; baris terakhir tak penuh dilebarkan lewat CSS nth-child), "Baca selengkapnya" +
   waktu baca (200 kata/menit). **Foto artikel opsional**: `gambar: ''` → sampul gradasi hijau→biru + logo
   putih + kategori (`.artikel-sampul`, 4 variasi warna dari id artikel; juga dipakai bila foto gagal dimuat); og:image cadangan `hero-tractor-og.jpg`. Belum dibuat: template Marketing & `tools/tambah-artikel.js`.
-- **Mode perbaikan mungkin masih aktif di Hostinger**: pengguna menempel 5 baris "MODE PERBAIKAN" di
-  `.htaccess` server pada 6 Okt 2026 (website ditutup 503). Ada pengingat (send_later, trig_01Hj1x6NpEpd9BQGcbXMVgE7)
-  9 Okt 2026 09.00 WIB untuk menyalakan lagi. Cara menyalakan: hapus 5 baris itu, atau upload ulang
-  `.htaccess` dari repo. Tanyakan statusnya bila relevan.
+- **Website sudah menyala lagi (7 Okt)**: mode perbaikan dimatikan, upload terbaru sudah tayang (sitemap live berisi
+  data 7 Okt). Pengingat 9 Okt sudah dihapus.
+- **Search Console (7 Okt)**: sitemap.xml & sitemap-gambar.xml dikirim ulang; status masih "Tidak dapat mengambil"
+  (sisa periode 503), tapi Uji URL Aktif sitemap = "URL tersedia untuk Google" → tinggal menunggu 1–2 hari.
+- **On-page SEO (7 Okt)**: semua `<title>` ≤65 karakter (beranda "Distributor Traktor & Mesin Pertanian Jakarta | DASS",
+  produk tanpa awalan "Jual"/akhiran "Jakarta" bila kepanjangan); beranda punya schema WebSite (+ LocalBusiness lama).
+  Schema **Product SENGAJA TIDAK dipasang**: tanpa harga/ulasan Google menandainya error merah di Search Console.
+  Pasang hanya bila perusahaan mau menampilkan harga.
 - **PageSpeed Insights**: pengguna ingin "hijau semua"; belum mengirim hasil. Sudah dilakukan: sampul
   hero di-preload, video dimuat setelah `load`, versi HP, font tidak menahan tampilan, data artikel tidak
   lagi dimuat di beranda. Video hero kini besar (8–22 MB laptop) atas permintaan kualitas — bila
