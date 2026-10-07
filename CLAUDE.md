@@ -142,7 +142,7 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   (merek/model/kategori dihitung dari data, + "Jakarta Kantor Pusat") → "Produk Kami" 3 panel merek (desain dari slide pengguna:
   kiri putih→hijau + judul "Agricultural Equipment" + badge Zoomlion + foto traktor dalam lingkaran, tengah EAVision
   ala banner resmi: judul HTML "EAVISION EA-J150 [2025] Agricultural Drone" (#3D4A7A) di atas langit + foto
-  `hero/eavision-j150-panel.webp` (dari gambar pengguna, "Learn More" dihapus, tinggi 440px), kanan kuning #F9B812 logo `logo-vector-putih.png` + auto
+  `hero/eavision-j150-panel.webp` (dari gambar pengguna, "Learn More" dihapus, tinggi 440px), kanan putih→kuning lembut (7 Okt, menggantikan kuning penuh #F9B812 yang "tidak menyatu"; ditolak: navy, putih→biru muda, jingga emas) logo berwarna `logo-vector.png` + auto
   steering HD818; statis di index.html, CSS `.ourproduk`) → Showcase Produk
   (menggantikan bagian Kategori & Unit Unggulan atas permintaan pengguna: tab 6 kategori, unit besar +
   4 spesifikasi + tombol Detail/WA, thumbnail unit lain; daftar di `BERANDA_SHOWCASE` beranda.js;
