@@ -153,7 +153,8 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   bandingkan) → Sektor → Mitra. (Bagian "Cara Pembelian" 4 langkah DIHAPUS 7 Okt atas permintaan pengguna;
   CSS `.beli` & kunci `beli.*` masih ada tapi tidak dipakai. Artikel juga tidak tampil di beranda.)
   Latar Showcase (7 Okt) ikut merek unit yang tampil: `.showcase[data-brand]` hijau/biru muda/kuning lembut
-  (diset di beranda.js); ditolak: hijau tetap, navy, hijau→biru. Kode: `assets/js/beranda.js` (`initBeranda`, juga di gantiBahasa).
+  (diset di beranda.js); ditolak: hijau tetap, navy, hijau→biru. Tab drone: "Drone EAVision" & "Drone VectorAgr"
+  (nama tab opsional = elemen ke-3 di BERANDA_SHOWCASE; drone VectorAgr ditambahkan 7 Okt). Kode: `assets/js/beranda.js` (`initBeranda`, juga di gantiBahasa).
 - Halaman Tentang Kami didesain ulang (6 Okt 2026): TANPA hero, strip angka, dan kartu merek (dihapus atas
   permintaan pengguna). Isi: profil satu kolom di tengah TANPA foto (H1 = tt.judul + garis hijau; pengguna menolak kolase, foto+logo, dan foto lebar)
   → Visi (kotak kutipan gradasi) + Misi 6 kartu bernomor → Mengapa Kami (kunci `unggul.*`)
