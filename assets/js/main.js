@@ -225,7 +225,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   if (typeof initImageFallback === 'function') initImageFallback();
     if (typeof initFormKontak === 'function') initFormKontak();
 
-  /* Pencarian, "terakhir dilihat", tombol bagikan */
+  /* Pencarian & tombol bagikan */
   const fitur = document.createElement('script');
   fitur.src = `${BASE}assets/js/fitur.js`;
   document.body.appendChild(fitur);

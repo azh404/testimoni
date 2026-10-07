@@ -44,8 +44,8 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   `artikel.js` + `artikel-terjemahan.js`.
 - JS fitur: `filter-produk.js` (kartu, urlProduk, gambarKecil, altProduk),
   `produk-detail.js`, `kalkulator.js` (kalkulator drone + pilih traktor + versi mini di
-  halaman produk), `bandingkan.js`, `fitur.js` (pencarian, "terakhir dilihat", tombol
-  bagikan — **dimuat otomatis oleh main.js**), `brosur-pdf.js` (jsPDF dari cdnjs).
+  halaman produk), `bandingkan.js`, `fitur.js` (pencarian & tombol bagikan — **dimuat otomatis
+  oleh main.js**; fitur "Terakhir Anda Lihat" DIHAPUS 7 Okt atas permintaan, riwayat lama dibersihkan), `brosur-pdf.js` (jsPDF dari cdnjs).
   `beranda.js` (angka, Showcase Produk), `slider.js` (hero video/foto + reveal + counter).
 - `tools/` (jalankan ulang setelah mengubah data terkait):
   - `node tools/buat-halaman-artikel.js` — halaman artikel + sitemap.
@@ -178,6 +178,9 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   (UU PDP), kolom jebakan bot `situs`. Kirim `fetch` no-cors text/plain ke Apps Script (`tools/leads-apps-script.gs`,
   dipasang di Sheet "Leads Website DASS" (URL /exec sudah di config.js, AKTIF sejak 6 Okt) id `1R1BZvf173lVX2NPnQrlQJ4CGMQOjrg7aRnNnMZslXnE` milik pengguna, tab
   "Leads"). Website TIDAK mewajibkan login (sudah dijelaskan: buruk untuk SEO). Kebijakan Privasi belum dibuat.
+  Pesan setelah kirim form (7 Okt, pengguna minta lebih profesional & menjaga kesan rahasia): "Terima kasih atas minat
+  Anda — Permintaan Anda telah berhasil dikirim. Perwakilan kami akan segera menindaklanjuti. Seluruh informasi Anda
+  dijaga kerahasiaannya…" (kunci `lead.terima`/`lead.terimaDesc`). Jangan pakai "data Anda sudah kami terima".
 - CAPTCHA tidak dipasang (tidak ada form yang mengirim ke server; form kontak membuka WA).
 
 ## Cara kerja dengan pengguna (pelajaran dari sesi sebelumnya)
