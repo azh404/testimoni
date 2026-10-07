@@ -1,8 +1,7 @@
 /* =========================================
    FITUR TAMBAHAN (dimuat otomatis oleh main.js di semua halaman)
    1. Pencarian produk (tombol kaca pembesar di navbar)
-   2. "Terakhir Anda lihat" (halaman produk & beranda)
-   3. Tombol Bagikan (halaman produk & artikel)
+   2. Tombol Bagikan (halaman produk & artikel)
    ========================================= */
 
 /* --- Memuat data produk yang belum ada di halaman ini --- */
@@ -155,69 +154,12 @@ function labelCari() {
   if (!panel.hidden) renderHasilCari();
 }
 
-/* =========================================
-   2. TERAKHIR ANDA LIHAT
-   Disimpan di browser pengunjung (localStorage), maks. 8 produk.
-   ========================================= */
-const KUNCI_DILIHAT = 'dass_dilihat';
-
-function bacaDilihat() {
-  try { return JSON.parse(localStorage.getItem(KUNCI_DILIHAT)) || []; } catch (e) { return []; }
-}
-
-function catatDilihat() {
-  const id = document.body.dataset.produkId;
-  const p = id && typeof PRODUK !== 'undefined' && PRODUK.find(x => x.id === id);
-  if (!p) return;
-  const canonical = document.querySelector('link[rel="canonical"]')?.getAttribute('href') || '';
-  const url = canonical.replace(/^https?:\/\/[^/]+\//, '');
-  if (!url) return;
-  const brand = (BRANDS.find(b => b.id === p.brand) || {}).nama || '';
-  const daftar = bacaDilihat().filter(x => x.id !== id);
-  daftar.unshift({ id, nama: p.nama, brand, url, gambar: p.gambar.replace(/\.png$/, '-kecil.webp') });
-  try { localStorage.setItem(KUNCI_DILIHAT, JSON.stringify(daftar.slice(0, 8))); } catch (e) {}
-}
-
-function renderDilihat() {
-  const base = document.body.dataset.base || '';
-  const daftar = bacaDilihat().filter(x => x.id !== document.body.dataset.produkId);
-  let wadah = document.getElementById('terakhirDilihat');
-
-  if (!wadah) {
-    /* Halaman produk: sebelum "Produk Lainnya"; beranda: setelah kartu brand */
-    const acuan = document.querySelector('.detail-lainnya-head')?.closest('section')
-      || document.getElementById('produk')?.nextElementSibling;
-    if (!acuan) return;
-    wadah = document.createElement('section');
-    wadah.id = 'terakhirDilihat';
-    wadah.className = 'section section--flush-top dilihat';
-    acuan.before(wadah);
-    wadah.addEventListener('click', e => {
-      if (!e.target.closest('[data-hapus-dilihat]')) return;
-      try { localStorage.removeItem(KUNCI_DILIHAT); } catch (err) {}
-      wadah.hidden = true;
-    });
-  }
-  wadah.hidden = !daftar.length;
-  if (!daftar.length) return;
-  wadah.innerHTML = `
-    <div class="container">
-      <div class="dilihat__kepala">
-        <h2>${t('dilihat.judul')}</h2>
-        <button type="button" data-hapus-dilihat>${t('dilihat.hapus')}</button>
-      </div>
-      <div class="dilihat__daftar">
-        ${daftar.map(x => `
-          <a href="${base}${x.url}" class="dilihat__item">
-            <img src="${base}${x.gambar}" alt="" loading="lazy" onerror="this.style.visibility='hidden'">
-            <span><small>${x.brand}</small>${x.nama}</span>
-          </a>`).join('')}
-      </div>
-    </div>`;
-}
+/* Fitur "Terakhir Anda lihat" sudah dihapus (Okt 2026); bersihkan riwayat lama
+   yang mungkin masih tersimpan di browser pengunjung */
+try { localStorage.removeItem('dass_dilihat'); } catch (e) {}
 
 /* =========================================
-   3. TOMBOL BAGIKAN (WhatsApp, Facebook, salin link)
+   2. TOMBOL BAGIKAN (WhatsApp, Facebook, salin link)
    Di HP yang mendukung, tombol "Bagikan" membuka menu berbagi bawaan.
    ========================================= */
 const IKON_BAGIKAN = {
@@ -289,9 +231,7 @@ function initFitur() {
     tombol.dataset.siap = '1';
     tombol.addEventListener('click', bukaCari);
   }
-  if (!initFitur.sudah) { initFitur.sudah = true; catatDilihat(); }
   labelCari();
-  renderDilihat();
   renderBagikan();
 }
 initFitur();
