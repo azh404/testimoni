@@ -1683,7 +1683,11 @@ body[data-brand="eavision"] .produk-grid {
 }
 .ourproduk__panel:hover .ourproduk__ea-foto img { transform: scale(1.05); }
 /* VectorAgr: kuning, logo putih, foto produk */
-.ourproduk__panel--vectoragr { background: #F9B812; justify-content: center; }
+/* VectorAgr: putih → kuning lembut (pola sama dengan panel Zoomlion), logo berwarna asli */
+.ourproduk__panel--vectoragr {
+  background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 35%, #FDEBC4 72%, #F8D27A 100%);
+  justify-content: center;
+}
 .ourproduk__panel--vectoragr .ourproduk__logo { filter: none; }
 
 .ourproduk__logo {
