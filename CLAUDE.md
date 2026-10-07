@@ -244,8 +244,14 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   alamat legal, perbarui LinkedIn, buat LinkedIn Company Page, laporkan ke Google. Belum ada kabar.
 - Ide yang ditawarkan tapi belum dikerjakan: Kebijakan Privasi (UU PDP, perlu cek legal),
   galeri pengiriman unit/testimoni (perlu foto sales), Google Merchant Center (perlu
-  keputusan harga), Bing Webmaster Tools, konten artikel rutin, nama kategori bahasa Indonesia
-  ("Tractor" → "Traktor") di tab/kartu.
+  keputusan harga), Bing Webmaster Tools, konten artikel rutin.
+- **Nama kategori versi ID sudah bahasa Indonesia (7 Okt)**: KATEGORI_TEKS.id & KATEGORI.nama → Mesin Hybrid
+  (bukan "Traktor Hybrid": kategori hybrid juga berisi combine DH7-6000/TE100-DH), Traktor, Mesin Tanam Padi,
+  Combine Harvester (istilah umum, dibiarkan), Mesin Panen Tebu, Mesin Pengering Gabah, Mesin Baler, Implement
+  Traktor, Drone Sprayer, Drone Pertanian, Auto Steering, Robot Pertanian, Pertanian Digital. EN/ZH tetap.
+- Deskripsi meta semua halaman ≤160 karakter (7 Okt; produk/*.html diedit langsung, tidak ada generatornya).
+- **Klaim "garansi"** ("Produk Bergaransi … disertai garansi") ada di beranda, Tentang, dan semua halaman kata
+  kunci — MENUNGGU konfirmasi pengguna apakah pembeli dapat garansi resmi; bila tidak, ganti semuanya.
 - Tugas pengguna: upload terbaru ke Hostinger, Search Console (kirim ulang `sitemap.xml`,
   tambah `sitemap-gambar.xml`, minta indeks `bandingkan.html`, `kamus-pertanian.html`,
   `faq.html`), aktifkan 2FA (Hostinger/GitHub/Google), UptimeRobot. Google Business Profile sudah

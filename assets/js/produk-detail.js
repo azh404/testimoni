@@ -6,9 +6,9 @@
    ========================================= */
 
 const LABEL_KATEGORI_ID = {
-  'hybrid':        'Traktor Hybrid',
+  'hybrid':        'Mesin Hybrid',
   'tractor':       'Traktor',
-  'planter':       'Rice Transplanter',
+  'planter':       'Mesin Tanam Padi',
   'harvester':     'Combine Harvester',
   'sugarcane':     'Mesin Panen Tebu',
   'dryer':         'Mesin Pengering Gabah',

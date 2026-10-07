@@ -2113,7 +2113,7 @@ body[data-brand="eavision"] .produk-grid {
   text-align: center;
   transition: all var(--transition);
 }
-.tt-unggul__item:hover { border-top-color: #8DC63F; transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.tt-unggul__item:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
 .tt-unggul__ikon {
   display: inline-grid;
   place-items: center;
@@ -2122,8 +2122,18 @@ body[data-brand="eavision"] .produk-grid {
   margin-bottom: var(--sp-3);
   border-radius: 50%;
   background: var(--color-primary-soft);
-  font-size: 1.8rem;
+  color: var(--color-primary);
 }
+.tt-unggul__ikon svg { width: 28px; height: 28px; }
+/* Warna ikon & garis atas sama dengan "Mengapa Kami" di beranda */
+.tt-unggul__item:nth-child(1) { border-top-color: #43A047; }
+.tt-unggul__item:nth-child(2) { border-top-color: var(--color-primary); }
+.tt-unggul__item:nth-child(3) { border-top-color: #E0A030; }
+.tt-unggul__item:nth-child(4) { border-top-color: #1F8A70; }
+.tt-unggul__item:nth-child(1) .tt-unggul__ikon { background: #E6F4E2; color: #2E7D32; }
+.tt-unggul__item:nth-child(2) .tt-unggul__ikon { background: #E3EDF8; color: var(--color-primary); }
+.tt-unggul__item:nth-child(3) .tt-unggul__ikon { background: #FDF1D6; color: #B7791F; }
+.tt-unggul__item:nth-child(4) .tt-unggul__ikon { background: #DFF1EC; color: #1F6F5C; }
 .tt-unggul__item h3 { font-size: 1.05rem; margin-bottom: var(--sp-2); }
 .tt-unggul__item p { margin: 0; color: var(--color-body); font-size: 0.92rem; }
 

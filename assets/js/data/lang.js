@@ -484,23 +484,23 @@ const TEKS = {
    ===================================================================== */
 const KATEGORI_TEKS = {
   /* --- Zoomlion --- */
-  'hybrid':    { id: 'Hybrid Product',      en: 'Hybrid Product',      zh: '混合动力产品' },
-  'tractor':   { id: 'Tractor',             en: 'Tractor',             zh: '拖拉机' },
-  'planter':   { id: 'Rice Transplanter',   en: 'Rice Transplanter',   zh: '水稻插秧机' },
+  'hybrid':    { id: 'Mesin Hybrid',      en: 'Hybrid Product',      zh: '混合动力产品' },
+  'tractor':   { id: 'Traktor',             en: 'Tractor',             zh: '拖拉机' },
+  'planter':   { id: 'Mesin Tanam Padi',   en: 'Rice Transplanter',   zh: '水稻插秧机' },
   'harvester': { id: 'Combine Harvester',   en: 'Combine Harvester',   zh: '联合收割机' },
-  'sugarcane': { id: 'Sugarcane Harvester', en: 'Sugarcane Harvester', zh: '甘蔗收割机' },
-  'dryer':     { id: 'Dryer',               en: 'Dryer',               zh: '烘干机' },
-  'baler':     { id: 'Baler',               en: 'Baler',               zh: '打捆机' },
-  'implement': { id: 'Implement',           en: 'Implement',           zh: '农机具' },
+  'sugarcane': { id: 'Mesin Panen Tebu', en: 'Sugarcane Harvester', zh: '甘蔗收割机' },
+  'dryer':     { id: 'Mesin Pengering Gabah',               en: 'Dryer',               zh: '烘干机' },
+  'baler':     { id: 'Mesin Baler',               en: 'Baler',               zh: '打捆机' },
+  'implement': { id: 'Implement Traktor',           en: 'Implement',           zh: '农机具' },
 
   /* --- EAVision --- */
-  'sprayer-drone': { id: 'Sprayer Drone', en: 'Sprayer Drone', zh: '植保无人机' },
+  'sprayer-drone': { id: 'Drone Sprayer', en: 'Sprayer Drone', zh: '植保无人机' },
 
   /* --- VectorAgr --- */
-  'va-drone':    { id: 'Agricultural Drone',   en: 'Agricultural Drone',   zh: '农业无人机' },
-  'va-steering': { id: 'Auto Steering System', en: 'Auto Steering System', zh: '自动驾驶系统' },
-  'va-rover':    { id: 'Agricultural Rover',   en: 'Agricultural Rover',   zh: '农业机器人' },
-  'va-digital':  { id: 'Digital Ag Solution',  en: 'Digital Ag Solution',  zh: '数字农业解决方案' }
+  'va-drone':    { id: 'Drone Pertanian',   en: 'Agricultural Drone',   zh: '农业无人机' },
+  'va-steering': { id: 'Auto Steering', en: 'Auto Steering System', zh: '自动驾驶系统' },
+  'va-rover':    { id: 'Robot Pertanian',   en: 'Agricultural Rover',   zh: '农业机器人' },
+  'va-digital':  { id: 'Pertanian Digital',  en: 'Digital Ag Solution',  zh: '数字农业解决方案' }
 };
 
 

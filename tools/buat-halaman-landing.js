@@ -332,7 +332,7 @@ const HALAMAN = [
     keyword: 'combine harvester padi, mesin panen padi, harga combine harvester, combine harvester zoomlion, zoomlion zl88, zoomlion zl105',
     id: {
       judulTab: 'Combine Harvester Padi | Mesin Panen Padi Zoomlion ZL Series | DASS',
-      desk: 'Jual combine harvester padi Zoomlion ZL88, ZL105, ZL125, dan ZL145 di Jakarta. Panduan memilih mesin panen padi sesuai luas sawah, langsung dari distributor resmi.',
+      desk: 'Jual combine harvester padi Zoomlion ZL88, ZL105, ZL125, dan ZL145 di Jakarta. Panduan memilih mesin panen padi sesuai luas sawah dari distributor resmi.',
       h1: 'Combine Harvester Padi',
       sub: 'Mesin panen padi crawler Zoomlion ZL Series untuk sawah kecil hingga luas.',
       intro: [
@@ -426,7 +426,7 @@ const HALAMAN = [
         ['Kapasitas Muatan', 'Muatan yang lebih besar berarti lebih jarang bolak-balik mengisi ulang. Untuk hamparan sawah yang luas, pilih drone berkapasitas besar seperti EAVision J150.'],
         ['Bisa Semprot dan Tebar', 'Pilih drone yang bisa berganti fungsi dari semprot ke tebar pupuk dan benih, supaya terpakai sepanjang musim tanam.'],
         ['Waktu Pengisian Baterai', 'Pengisian cepat membuat drone bisa terus bekerja. EAVision J100, misalnya, didukung pengisian daya sekitar 9 menit.'],
-        ['Operator Terlatih dan Servis', 'Hasil penyemprotan sangat bergantung pada operator. Pastikan tersedia pelatihan, sparepart, dan layanan servis dari penyedia drone.']
+        ['Operator Terlatih', 'Hasil penyemprotan sangat bergantung pada keterampilan operator. Siapkan operator yang paham cara terbang, pengaturan dosis, dan perawatan harian drone sesuai buku manual.']
       ],
       kenapa: 'Kenapa Membeli Drone di DASS?',
       produk: 'Pilihan Drone untuk Sawah',
@@ -450,7 +450,7 @@ const HALAMAN = [
         ['Payload Capacity', 'A larger payload means fewer refilling trips. For large stretches of paddy, choose a high-capacity drone such as the EAVision J150.'],
         ['Spraying and Spreading', 'Choose a drone that can switch from spraying to spreading fertiliser and seed, so it is used throughout the season.'],
         ['Battery Charging Time', 'Fast charging keeps the drone working. The EAVision J100, for example, supports charging in about 9 minutes.'],
-        ['Trained Operators and Service', 'Spraying results depend heavily on the operator. Make sure training, spare parts, and service are available from the drone supplier.']
+        ['Trained Operators', 'Spraying results depend heavily on the operator\'s skill. Make sure your operator understands flight handling, dosage settings, and daily drone care as described in the manual.']
       ],
       kenapa: 'Why Buy a Drone from DASS?',
       produk: 'Drones for Rice Fields',
@@ -474,7 +474,7 @@ const HALAMAN = [
         ['载重能力', '载重越大，往返加料次数越少。大面积稻田可选择EAVision J150等大载重机型。'],
         ['喷洒与撒播兼备', '选择可在喷洒与撒肥、播种之间切换的无人机，整个种植季都能派上用场。'],
         ['电池充电时间', '快速充电让无人机持续作业。例如EAVision J100支持约9分钟快充。'],
-        ['飞手培训与售后', '喷洒效果在很大程度上取决于操作员。请确认无人机供应商提供培训、配件和维修服务。']
+        ['熟练的飞手', '喷洒效果在很大程度上取决于操作员的技能。请确保飞手熟悉飞行操作、用量设置以及使用手册中的日常保养。']
       ],
       kenapa: '为什么选择在DASS购买无人机？',
       produk: '适用于稻田的无人机',
