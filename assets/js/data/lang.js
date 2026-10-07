@@ -332,9 +332,9 @@ const TEKS = {
     zh: '推动印尼农业的未来'
   },
   'tt.p1': {
-    id: 'PT Diesel Agri Sukses Sejahtera adalah mitra berdedikasi dalam memajukan sektor pertanian dan perkebunan Indonesia. Sebagai distributor dan pengecer terkemuka, kami berspesialisasi dalam menyediakan mesin dan peralatan pertanian berkualitas tinggi serta drone pertanian yang dapat diandalkan oleh para petani dan pelaku usaha perkebunan.',
-    en: 'PT Diesel Agri Sukses Sejahtera is a dedicated partner in advancing Indonesia\u2019s agriculture and plantation sectors. As a leading distributor and retailer, we specialise in supplying high-quality agricultural machinery, equipment, and agricultural drones that farmers and plantation businesses can rely on.',
-    zh: 'PT Diesel Agri Sukses Sejahtera 致力于推动印尼农业与种植业的发展。作为领先的经销商与零售商，我们专注于提供高品质的农业机械设备与农业无人机，为农户与种植企业提供可靠支持。'
+    id: 'PT Diesel Agri Sukses Sejahtera (PT DASS) adalah mitra berdedikasi dalam memajukan sektor pertanian dan perkebunan Indonesia. Sebagai distributor dan pengecer terkemuka, kami berspesialisasi dalam menyediakan mesin dan peralatan pertanian berkualitas tinggi serta drone pertanian yang dapat diandalkan oleh para petani dan pelaku usaha perkebunan.',
+    en: 'PT Diesel Agri Sukses Sejahtera (PT DASS) is a dedicated partner in advancing Indonesia\u2019s agriculture and plantation sectors. As a leading distributor and retailer, we specialise in supplying high-quality agricultural machinery, equipment, and agricultural drones that farmers and plantation businesses can rely on.',
+    zh: 'PT Diesel Agri Sukses Sejahtera（PT DASS）致力于推动印尼农业与种植业的发展。作为领先的经销商与零售商，我们专注于提供高品质的农业机械设备与农业无人机，为农户与种植企业提供可靠支持。'
   },
   'tt.p2': {
     id: 'Kami menggabungkan yang terbaik dari dua dunia: teknologi mutakhir dari produsen internasional terpercaya, di samping dukungan bangga untuk peralatan fabrikasi lokal yang luar biasa. Pendekatan ganda ini memungkinkan kami menawarkan solusi yang terbukti secara global namun relevan secara lokal, dibuat untuk realitas pertanian Indonesia.',
