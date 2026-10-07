@@ -272,7 +272,7 @@ a.produk-card { color: inherit; text-decoration: none; }
    ========================================= */
 /* Hero gelap ala studio (khusus Zoomlion) */
 body[data-brand="zoomlion"] .detail-hero {
-  background: radial-gradient(70% 90% at 25% 30%, #343d4a 0%, #1a2029 55%, #0d1117 100%);
+  background: radial-gradient(70% 90% at 25% 30%, #2a4a2c 0%, #16301a 55%, #0b1c0e 100%);
   border-bottom: 0;
 }
 body[data-brand="zoomlion"] .detail-crumb,

@@ -2479,8 +2479,8 @@ body[data-brand="eavision"] .produk-grid {
 
 /* Gaya "studio gelap" (pop-up & halaman detail Zoomlion): latar gelap + sorot lampu + podium + pantulan lantai */
 .putar--gelap {
-  background: radial-gradient(90% 80% at 50% 25%, #3a4350 0%, #1c222b 55%, #0d1117 100%);
-  border-bottom-color: #0d1117;
+  background: radial-gradient(90% 80% at 50% 25%, #2a4a2c 0%, #16301a 55%, #0b1c0e 100%);
+  border-bottom-color: #0b1c0e;
   padding-bottom: 80px;
 }
 .putar__sorot {
@@ -2492,7 +2492,7 @@ body[data-brand="eavision"] .produk-grid {
 .putar__podium {
   position: absolute; left: 14%; right: 14%; bottom: 7%; height: 18%;
   border-radius: 50%;
-  background: radial-gradient(closest-side, #4a5361 0%, #2b323c 65%, #161b22 100%);
+  background: radial-gradient(closest-side, #3b5e3d 0%, #223f25 65%, #102313 100%);
   box-shadow: 0 0 40px rgba(141,198,63,.18), inset 0 -6px 12px rgba(0,0,0,.25);
   pointer-events: none;
 }

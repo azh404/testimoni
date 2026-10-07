@@ -187,7 +187,7 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   tetap foto biasa. DITOLAK: efek "kamera drone", penampil 3D .glb dengan model uji, gambar 17 sudut dari ChatGPT
   (DL2004: hasil tidak konsisten, kena limit).
 - **Gaya "studio gelap" Zoomlion (7 Okt, dipilih pengguna dari 8 contoh)**: pop-up & foto utama halaman detail produk
-  Zoomlion memakai `htmlPutar()` (filter-produk.js; detail via `initPutarDetail()` di main.js): latar gelap + sorot lampu +
+  Zoomlion memakai `htmlPutar()` (filter-produk.js; detail via `initPutarDetail()` di main.js): latar HIJAU GELAP (#16301a, dipilih 7 Okt; hitam & navy & terang tidak dipilih) + sorot lampu +
   podium + pantulan lantai (`.putar--gelap`, pages.css). Ditolak/tidak dipilih: podium terang, zoom kaca pembesar, chip
   spesifikasi, latar lahan CSS, lantai cermin, cincin hijau, meja putar.
 - **Desain halaman detail produk (7 Okt)**: Zoomlion = hero gelap selebar layar (`body[data-brand="zoomlion"] .detail-hero`);
