@@ -1096,7 +1096,73 @@
 .landing__artikel { padding-left: 1.2em; }
 .landing__artikel li { margin-bottom: var(--sp-2); }
 .landing__artikel a { color: var(--color-primary); font-weight: var(--fw-semibold); }
-.landing__cta { margin-top: var(--sp-7); text-align: center; }
+/* Ajakan WA di akhir halaman kata kunci: kotak biru seperti banner beranda */
+.landing__cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-5);
+  margin-top: var(--sp-7);
+  padding: var(--sp-6);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 60%, #1F6F5C 100%);
+  color: var(--color-white);
+}
+.landing__cta-judul { font-size: var(--fs-xl); color: var(--color-white); margin: 0 0 var(--sp-1); }
+.landing__cta-desc { margin: 0; color: rgba(255, 255, 255, .8); font-size: var(--fs-sm); }
+.landing__cta .btn { flex-shrink: 0; }
+@media (max-width: 640px) {
+  .landing__cta { flex-direction: column; align-items: stretch; text-align: center; }
+}
+
+/* --- Halaman kata kunci (body.halaman-landing): kartu bernomor & berwarna --- */
+.halaman-landing { --tema: #2E7D32; --tema-muda: #E6F4E2; --tema-latar: linear-gradient(180deg, #F6FAF1 0%, #E4F2D8 100%); }
+.halaman-landing.tema-biru { --tema: #1D5296; --tema-muda: #E3EDF8; --tema-latar: linear-gradient(180deg, #F2F7FD 0%, #DCEAF8 100%); }
+/* Kotak pertama = tips memilih: nomor bulat warna tema */
+.halaman-landing [data-bahasa] > .landing__unggul:nth-of-type(2) { counter-reset: tips; }
+.halaman-landing [data-bahasa] > .landing__unggul:nth-of-type(2) .feature {
+  position: relative;
+  padding-left: calc(var(--sp-6) + 44px);
+  counter-increment: tips;
+}
+.halaman-landing [data-bahasa] > .landing__unggul:nth-of-type(2) .feature::before {
+  content: counter(tips);
+  position: absolute;
+  left: var(--sp-5);
+  top: var(--sp-6);
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--tema);
+  color: #fff;
+  font-weight: 700;
+}
+/* Kotak kedua = kenapa DASS: garis kiri 4 warna merek */
+.halaman-landing [data-bahasa] > .landing__unggul:nth-of-type(3) .feature { border-left: 4px solid var(--c, var(--tema)); }
+.halaman-landing [data-bahasa] > .landing__unggul:nth-of-type(3) .feature:nth-child(1) { --c: #43A047; }
+.halaman-landing [data-bahasa] > .landing__unggul:nth-of-type(3) .feature:nth-child(2) { --c: var(--color-primary); }
+.halaman-landing [data-bahasa] > .landing__unggul:nth-of-type(3) .feature:nth-child(3) { --c: #E0A030; }
+.halaman-landing [data-bahasa] > .landing__unggul:nth-of-type(3) .feature:nth-child(4) { --c: #1F8A70; }
+.halaman-landing .landing__judul { position: relative; padding-left: var(--sp-4); }
+.halaman-landing .landing__judul::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: .2em;
+  bottom: .2em;
+  width: 4px;
+  border-radius: 4px;
+  background: var(--tema);
+}
+/* Katalog unit: latar lembut warna tema, tepi atas melengkung */
+.halaman-landing .landing-katalog {
+  position: relative;
+  background: var(--tema-latar);
+  border-radius: 48px 48px 0 0;
+}
+.halaman-landing .landing-katalog .section-header__eyebrow { color: var(--tema); }
 .brand-hero .btn { margin-top: var(--sp-2); }
 /* Teks tombol panjang boleh turun baris di layar HP */
 .brand-hero .btn,
