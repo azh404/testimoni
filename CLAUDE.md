@@ -178,9 +178,9 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   (UU PDP), kolom jebakan bot `situs`. Kirim `fetch` no-cors text/plain ke Apps Script (`tools/leads-apps-script.gs`,
   dipasang di Sheet "Leads Website DASS" (URL /exec sudah di config.js, AKTIF sejak 6 Okt) id `1R1BZvf173lVX2NPnQrlQJ4CGMQOjrg7aRnNnMZslXnE` milik pengguna, tab
   "Leads"). Website TIDAK mewajibkan login (sudah dijelaskan: buruk untuk SEO). Kebijakan Privasi belum dibuat.
-  Pesan setelah kirim form (7 Okt, pengguna minta lebih profesional & menjaga kesan rahasia): "Terima kasih atas minat
-  Anda — Permintaan Anda telah berhasil dikirim. Perwakilan kami akan segera menindaklanjuti. Seluruh informasi Anda
-  dijaga kerahasiaannya…" (kunci `lead.terima`/`lead.terimaDesc`). Jangan pakai "data Anda sudah kami terima".
+  Pesan setelah kirim form (7 Okt, dipilih pengguna): "Terima kasih atas minat Anda — Permintaan Anda telah berhasil
+  dikirim. Untuk respons lebih cepat, silakan hubungi kami langsung melalui WhatsApp." Jangan menyebut data/database/
+  kerahasiaan (pengguna tidak mau kesan "database") maupun "data Anda sudah kami terima".
 - CAPTCHA tidak dipasang (tidak ada form yang mengirim ke server; form kontak membuka WA).
 
 ## Cara kerja dengan pengguna (pelajaran dari sesi sebelumnya)
