@@ -390,6 +390,25 @@ function jalankanSlider(wrap) {
    PUTAR FOTO (pop-up produk Zoomlion)
    Foto digeser kiri-kanan -> miring 3D (perspektif), bentuk foto tidak diubah.
    ========================================= */
+/* Gaya tambahan pop-up (CONTOH/pratinjau): 'podium' | 'zoom' | 'chip' | 'lahan' */
+function gayaPutar() { return Array.isArray(window.GAYA_POPUP) ? window.GAYA_POPUP : []; }
+function lahanProduk(p) {
+  if (['harvester', 'planter'].includes(p.kategori)) return 'sawah';
+  if (p.kategori === 'sugarcane') return 'tebu';
+  return 'kebun';
+}
+function chipSpesifikasi(p) {
+  const pola = [/daya|tenaga|power/i, /transmisi/i, /kecepatan/i, /kapasitas|lebar kerja|baris/i, /mesin/i];
+  const spek = p.spesifikasi || [], pilih = [];
+  pola.forEach(re => {
+    if (pilih.length >= 3) return;
+    const s = spek.find(x => re.test(x.label) && String(x.nilai).length <= 16 && !pilih.includes(x));
+    if (s) pilih.push(s);
+  });
+  return pilih.map((s, i) =>
+    `<span class="putar__chip putar__chip--${i + 1}"><small>${labelSpec(s.label)}</small>${nilaiSpec(s.nilai)}</span>`).join('');
+}
+
 function jalankanPutar(el) {
   if (!el) return;
   const unit = el.querySelector('.putar__unit');
@@ -410,12 +429,41 @@ function jalankanPutar(el) {
   function ke(v) { target = batasi(v); if (!jalan) { jalan = true; requestAnimationFrame(gambar); } }
   function sudahDipakai() { el.classList.add('is-dipakai'); }
 
+  // Mode zoom (kaca pembesar): tombol 🔍, lalu arahkan mouse / geser jari di foto
+  const tombolZoom = el.querySelector('[data-zoom]');
+  const lensa = el.querySelector('.putar__lensa');
+  let modeZoom = false;
+  function aturLensa(e) {
+    const r = unit.getBoundingClientRect(), m = el.getBoundingClientRect(), Z = 2.6, R = lensa.offsetWidth / 2;
+    const x = e.clientX - r.left, y = e.clientY - r.top;
+    const di = x >= 0 && y >= 0 && x <= r.width && y <= r.height;
+    lensa.classList.toggle('is-tampil', di);
+    if (!di) return;
+    lensa.style.left = (e.clientX - m.left - R) + 'px';
+    lensa.style.top  = (e.clientY - m.top - R) + 'px';
+    lensa.style.backgroundImage = `url("${unit.currentSrc || unit.src}")`;
+    lensa.style.backgroundSize = `${r.width * Z}px ${r.height * Z}px`;
+    lensa.style.backgroundPosition = `${R - x * Z}px ${R - y * Z}px`;
+  }
+  if (tombolZoom) {
+    tombolZoom.addEventListener('pointerdown', e => e.stopPropagation());
+    tombolZoom.addEventListener('click', () => {
+      modeZoom = !modeZoom; sudahDipakai();
+      el.classList.toggle('is-zoom', modeZoom);
+      tombolZoom.setAttribute('aria-pressed', modeZoom);
+      if (modeZoom) ke(0); else lensa.classList.remove('is-tampil');
+    });
+    el.addEventListener('pointermove', e => { if (modeZoom) aturLensa(e); });
+    el.addEventListener('pointerleave', () => lensa.classList.remove('is-tampil'));
+  }
+
   el.addEventListener('pointerdown', e => {
+    if (modeZoom) { el.setPointerCapture(e.pointerId); aturLensa(e); return; }
     geser = true; awalX = e.clientX; awalSudut = target;
     el.setPointerCapture(e.pointerId); el.classList.add('is-geser'); sudahDipakai(); ke(target);
   });
   el.addEventListener('pointermove', e => {
-    if (!geser) return;
+    if (!geser || modeZoom) return;
     ke(awalSudut + (e.clientX - awalX) * (MAKS * 2 / Math.max(el.clientWidth, 1)));
   });
   const lepas = () => { geser = false; el.classList.remove('is-geser'); };
@@ -462,9 +510,13 @@ function initModalProduk() {
       <div class="modal__grid">
 
         ${p.brand === 'zoomlion' ? `
-        <div class="modal__media putar" data-putar tabindex="0" aria-label="${teks('putar.petunjuk', 'Geser untuk memutar')}">
+        <div class="modal__media putar ${gayaPutar().map(g => 'putar--' + g).join(' ')}" data-putar data-lahan="${lahanProduk(p)}" tabindex="0" aria-label="${teks('putar.petunjuk', 'Geser untuk memutar')}">
+          ${gayaPutar().includes('lahan') ? '<div class="putar__lahan" aria-hidden="true"><i></i><i></i></div>' : ''}
+          ${gayaPutar().includes('podium') ? '<div class="putar__sorot" aria-hidden="true"></div><div class="putar__podium" aria-hidden="true"></div>' : ''}
           <div class="putar__bayangan"></div>
           <img class="putar__unit" src="${base}${gambarWeb(p.gambar)}" alt="${altProduk(p)}" draggable="false" onerror="this.style.visibility='hidden'">
+          ${gayaPutar().includes('chip') ? chipSpesifikasi(p) : ''}
+          ${gayaPutar().includes('zoom') ? `<button type="button" class="putar__tombol-zoom" data-zoom aria-pressed="false">&#128269; Zoom</button><div class="putar__lensa" aria-hidden="true"></div>` : ''}
           <span class="putar__petunjuk">&#8592; ${teks('putar.petunjuk', 'Geser untuk memutar')} &#8594;</span>
         </div>` : `
         <div class="modal__media">

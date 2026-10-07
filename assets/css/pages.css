@@ -836,6 +836,80 @@
 }
 .putar.is-dipakai .putar__petunjuk { opacity: 0; }
 
+/* --- Gaya tambahan pop-up (pratinjau) --- */
+/* Podium showroom */
+.putar--podium { background: radial-gradient(120% 90% at 50% 0%, #ffffff 0%, #eef1f5 55%, #dfe4ea 100%); }
+.putar__sorot {
+  position: absolute; left: 50%; top: -10%; width: 70%; height: 90%;
+  transform: translateX(-50%);
+  background: radial-gradient(50% 60% at 50% 0%, rgba(255,255,255,.95), rgba(255,255,255,0) 70%);
+  pointer-events: none;
+}
+.putar__podium {
+  position: absolute; left: 14%; right: 14%; bottom: 7%; height: 18%;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, #ffffff 0%, #e6eaef 60%, #cfd6de 100%);
+  box-shadow: 0 10px 24px rgba(15,23,42,.12), inset 0 -6px 12px rgba(15,23,42,.08);
+  pointer-events: none;
+}
+.putar--podium .putar__bayangan { bottom: 13%; }
+
+/* Zoom (kaca pembesar) */
+.putar__tombol-zoom {
+  position: absolute; top: 12px; left: 12px; z-index: 3;
+  padding: 6px 12px; border: 1px solid var(--color-border); border-radius: 999px;
+  background: rgba(255,255,255,.92); font-size: var(--fs-xs); font-weight: 600; cursor: pointer;
+}
+.putar__tombol-zoom[aria-pressed="true"] { background: var(--color-primary); border-color: var(--color-primary); color: #fff; }
+.putar.is-zoom { cursor: zoom-in; touch-action: none; }
+.putar__lensa {
+  position: absolute; z-index: 3; width: 170px; height: 170px;
+  border-radius: 50%; border: 3px solid #fff;
+  box-shadow: 0 8px 24px rgba(0,0,0,.25);
+  background: #fff no-repeat;
+  opacity: 0; pointer-events: none; transition: opacity .15s ease;
+}
+.putar__lensa.is-tampil { opacity: 1; }
+
+/* Chip spesifikasi melayang */
+.putar__chip {
+  position: absolute; z-index: 2;
+  display: flex; flex-direction: column; line-height: 1.2;
+  padding: 6px 12px; border-radius: 12px;
+  background: rgba(255,255,255,.94); border: 1px solid var(--color-border);
+  box-shadow: 0 6px 16px rgba(15,23,42,.10);
+  font-size: var(--fs-sm); font-weight: 700; color: var(--color-text, #111827);
+  pointer-events: none;
+  animation: putarMelayang 4s ease-in-out infinite;
+}
+.putar__chip small { font-size: 10px; font-weight: 500; color: var(--color-text-muted, #6b7280); text-transform: uppercase; letter-spacing: .04em; }
+.putar__chip::before { content: ""; position: absolute; left: 0; top: 8px; bottom: 8px; width: 3px; border-radius: 3px; background: var(--color-primary); }
+.putar__chip--1 { top: 14%; left: 6%; }
+.putar__chip--2 { top: 12%; right: 6%; animation-delay: -1.3s; }
+.putar__chip--3 { bottom: 16%; right: 8%; animation-delay: -2.6s; }
+@keyframes putarMelayang { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+
+/* Latar suasana lahan (digambar CSS, dibuat buram) */
+.putar--lahan { background: #dfeef7; }
+.putar__lahan { position: absolute; inset: 0; overflow: hidden; filter: blur(3px); transform: scale(1.06); pointer-events: none; }
+.putar__lahan::before {           /* langit + bukit */
+  content: ""; position: absolute; inset: 0;
+  background:
+    radial-gradient(60% 40% at 20% 62%, #9cc79a 0 60%, transparent 61%),
+    radial-gradient(70% 45% at 80% 64%, #8fbf8c 0 60%, transparent 61%),
+    linear-gradient(#bfe0f5 0%, #e6f3fb 55%, #f4f8f2 62%);
+}
+.putar__lahan::after {            /* tanah / barisan tanaman */
+  content: ""; position: absolute; left: -20%; right: -20%; bottom: 0; height: 42%;
+  transform: perspective(300px) rotateX(38deg); transform-origin: bottom;
+  background: repeating-linear-gradient(90deg, #79b35a 0 26px, #6aa24d 26px 40px);
+}
+.putar__lahan i { display: none; }
+.putar--lahan[data-lahan="sawah"] .putar__lahan::after { background: repeating-linear-gradient(90deg, #a9cf6b 0 18px, #8fbb5a 18px 24px, #b9d9e6 24px 27px); }
+.putar--lahan[data-lahan="tebu"] .putar__lahan::after  { background: repeating-linear-gradient(90deg, #6f9e45 0 30px, #c8b27a 30px 40px); }
+.putar--lahan .putar__unit { filter: drop-shadow(0 18px 18px rgba(0,0,0,.25)); }
+.putar--lahan .putar__bayangan { background: radial-gradient(closest-side, rgba(0,0,0,.35), transparent); }
+
 .modal__body { padding: var(--sp-7) var(--sp-6); }
 .modal__brand { height: 26px; width: auto; margin-bottom: var(--sp-4); }
 .modal__seri {
@@ -2476,3 +2550,10 @@ body[data-brand="eavision"] .produk-grid {
 .kt-kartu__label { font-size: 0.72rem; }
 .kt-kartu__nilai { font-size: 0.98rem; }
 .kt-kartu__status { font-size: 0.78rem; }
+@media (max-width: 768px) {
+  .putar__chip { padding: 4px 9px; font-size: 12px; }
+  .putar__chip small { font-size: 9px; }
+  .putar__chip--1 { top: 10px; left: 10px; }
+  .putar__chip--2 { top: auto; bottom: 46px; left: 10px; right: auto; }
+  .putar__chip--3 { bottom: 46px; right: 10px; }
+}
