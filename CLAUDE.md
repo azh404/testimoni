@@ -63,7 +63,8 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
 - **Bahasa bawaan = ENGLISH di SEMUA halaman (8 Okt 2026, permintaan tegas pengguna setelah risiko SEO dijelaskan 2×)**:
   i18n.js `BAHASA = localStorage 'bahasa-v2' || 'en'` (kunci lama 'bahasa' dihapus agar pengunjung lama juga EN). Teks HTML tetap ID (Google bisa membaca JS → kemungkinan mengindeks
   versi EN; risiko turun peringkat kueri Indonesia sudah disampaikan). Aturan lama "beranda selalu ID" DIHAPUS. Pilihan
-  bendera pengunjung tetap disimpan. Bila peringkat Search Console turun, ingatkan pengguna soal ini.
+  bendera pengunjung tetap disimpan. Di HP (≤992px) bendera tampil di navbar samping tombol cari (`#langSlotHp`,
+  dipindah oleh `posisikanMenuBahasa()` i18n.js), bukan di dalam menu ☰. Bila peringkat Search Console turun, ingatkan pengguna soal ini.
 - Foto produk: PNG 1200×900 transparan (asli, untuk PDF) + `.webp` + `-kecil.webp` +
   `-og.jpg`. Foto baru dari pengguna dikirim lewat folder `foto-baru/` (git push).
   Foto HD 1448×1086 (11 foto Zoomlion, Sep 2026): PNG disimpan HD, .webp 1200×900 q80.

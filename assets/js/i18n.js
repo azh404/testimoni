@@ -119,6 +119,8 @@ function bangunMenuBahasa() {
 
   const aktif = DAFTAR_BAHASA.find(b => b.kode === BAHASA) || DAFTAR_BAHASA[0];
 
+  /* Saat dibangun ulang (ganti bahasa), menu lama bisa berada di navbar HP: buang dulu */
+  document.getElementById('langDrop')?.remove();
   slot.innerHTML =
     '<div class="lang-drop" id="langDrop">' +
       '<button class="lang-trigger" id="langTrigger" aria-expanded="false" aria-label="Pilih bahasa">' +
@@ -139,7 +141,21 @@ function bangunMenuBahasa() {
     '</div>';
 
   pasangEventDropdown();
+  posisikanMenuBahasa();
 }
+
+/* Layar ≤992px (HP/tablet): bendera dipindah ke navbar (#langSlotHp), di samping tombol cari.
+   Layar lebar: tetap di daftar menu (#langSlot). */
+const MQ_HP_BAHASA = window.matchMedia('(max-width: 992px)');
+function posisikanMenuBahasa() {
+  const drop = document.getElementById('langDrop');
+  const hp = document.getElementById('langSlotHp');
+  const lebar = document.getElementById('langSlot');
+  if (!drop || !hp || !lebar) return;
+  const tujuan = MQ_HP_BAHASA.matches ? hp : lebar;
+  if (drop.parentElement !== tujuan) tujuan.appendChild(drop);
+}
+MQ_HP_BAHASA.addEventListener?.('change', posisikanMenuBahasa);
 
 /* Terapkan terjemahan ke seluruh elemen ber-atribut data-i18n */
 function terapkanBahasa() {

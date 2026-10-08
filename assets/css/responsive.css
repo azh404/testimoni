@@ -303,3 +303,22 @@
   .hero__dot { width: 22px; height: 3px; }
   .hero__dot.is-active { width: 40px; }
 }
+
+/* ===== Bendera bahasa di navbar HP (8 Okt 2026) ===== */
+.lang-hp { display: none; }
+@media (max-width: 992px) {
+  .lang-hp { display: flex; align-items: center; margin-left: auto; }
+  .nav__item--lang { display: none; }
+  .lang-hp ~ .cari-tombol { margin-left: 0; }
+  .lang-hp .lang-drop {
+    margin: 0; padding: 0;
+    border: 0;
+  }
+  .lang-hp .lang-trigger { width: auto; padding: 6px; }
+  .lang-hp .lang-flag { width: 24px; height: 16px; }
+  .lang-hp .lang-menu {
+    left: auto; right: 0;
+    min-width: 170px;
+    top: calc(100% + 8px);
+  }
+}
