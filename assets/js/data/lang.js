@@ -32,6 +32,12 @@ const TEKS = {
   'nav.layanan': { id: 'Layanan',          en: 'Services',        zh: '服务' },
   'nav.artikel': { id: 'Berita & Artikel', en: 'News & Articles', zh: '新闻与文章' },
   'nav.kontak':  { id: 'Kontak',           en: 'Contact',         zh: '联系我们' },
+  'nav.layanan': { id: 'Sparepart & Servis', en: 'Parts & Service', zh: '配件与服务' },
+  'segera.label':   { id: 'Segera Hadir', en: 'Coming Soon', zh: '即将推出' },
+  'segera.judul':   { id: 'Sparepart & Servis', en: 'Parts & Service', zh: '配件与服务' },
+  'segera.teks':    { id: 'Kami sedang menyiapkan layanan sparepart dan servis untuk unit Zoomlion, EAVision, dan VectorAgr. Nantikan segera.', en: 'We are preparing spare parts and service support for Zoomlion, EAVision, and VectorAgr units. Stay tuned.', zh: '我们正在筹备中联重科、EAVision 和 VectorAgr 机型的配件与维修服务，敬请期待。' },
+  'segera.wa':      { id: 'Tanya via WhatsApp', en: 'Ask via WhatsApp', zh: '通过WhatsApp咨询' },
+  'segera.kembali': { id: 'Kembali ke Beranda', en: 'Back to Home', zh: '返回首页' },
   'nav.kalkulator': { id: 'Kalkulator',    en: 'Calculator',      zh: '计算器' },
 
   'nav.zoomlionSub':  { id: 'Alat berat & mesin pertanian', en: 'Heavy & agricultural machinery', zh: '重型农业机械' },

@@ -99,6 +99,10 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   unit (2 di HP), baris nama menempel saat scroll.
 - Menu WA pintar: harga / konsultasi / brosur / lain + status jam kerja
   (`COMPANY.jamKerja`). **Tidak ada pilihan servis/sparepart.**
+- **UPDATE 8 Okt 2026: DASS AKAN menjual sparepart & servis.** Menu navbar baru "Sparepart & Servis" (`nav.layanan`,
+  EN "Parts & Service") → `sparepart-servis.html` = halaman "Segera Hadir/Coming Soon" (noindex, tidak di sitemap, CSS
+  `.segera`, kunci `segera.*`). Saat layanan resmi dibuka: isi halaman, hapus noindex, tambah ke sitemap, dan baru boleh
+  menulis klaim servis/sparepart di halaman lain. Sampai itu, aturan lama di bawah tetap berlaku.
 - **Perusahaan TIDAK menyediakan servis/sparepart** (dikonfirmasi pengguna). Semua klaim
   servis/sparepart/purna jual sudah dihapus (beranda, landing, kontak, footer, artikel, meta).
   Penggantinya: "Distributor Resmi", "Spesifikasi Lengkap", "Tanya Cepat via WhatsApp".
