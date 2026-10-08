@@ -16,7 +16,7 @@ function initArtikelHalaman() {
   blok.forEach(el => { el.hidden = el.dataset.bahasa !== aktif; });
 
   /* Judul tab browser ikut bahasa aktif */
-  const h1 = document.querySelector(`[data-bahasa="${aktif}"] h1`);
+  const h1 = document.querySelector(`[data-bahasa="${aktif}"] h1, [data-bahasa="${aktif}"] .h1`);
   if (!h1) return;   /* mis. halaman produk: judul diatur produk-detail.js */
   if (JUDUL_ASLI_ARTIKEL === null) JUDUL_ASLI_ARTIKEL = document.title;
   document.title = aktif === 'id' ? JUDUL_ASLI_ARTIKEL : `${h1.textContent} | DASS`;

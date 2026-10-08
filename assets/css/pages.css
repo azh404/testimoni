@@ -2629,3 +2629,29 @@ a.produk-card:hover .produk-card__body::after { background: #8DC63F; color: #fff
   .kf .kf-baris { grid-template-columns: 1fr; }
   .kf--a .kf-kepala, .kf--a .kf-badan { padding: var(--sp-5); }
 }
+
+/* ===== PANDUAN MEMILIH (produk) & PROFIL MEREK — dibuat tools/buat-panduan.js ===== */
+.panduan__grid {
+  display: grid; grid-template-columns: 1.35fr 1fr; gap: clamp(1.5rem, 4vw, 3.5rem); align-items: start;
+}
+.panduan__eyebrow {
+  display: inline-block; font-size: .8rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--color-primary, #1E7A3C); margin-bottom: var(--sp-2);
+}
+.panduan__teks h2 { font-size: clamp(1.45rem, 2.6vw, 2rem); margin: 0 0 var(--sp-4); }
+.panduan__teks h2::after {
+  content: ''; display: block; width: 56px; height: 3px; border-radius: 3px; margin-top: var(--sp-3);
+  background: linear-gradient(90deg, #43A047, #1E88E5);
+}
+.panduan__teks p { color: var(--color-body); line-height: 1.8; }
+.panduan__kotak {
+  background: #fff; border: 1px solid rgba(0, 0, 0, .07); border-left: 4px solid #43A047;
+  border-radius: 16px; padding: clamp(1.25rem, 3vw, 1.75rem); box-shadow: 0 10px 30px rgba(16, 40, 24, .06);
+}
+.panduan__kotak h3 { font-size: 1.1rem; margin: 0 0 var(--sp-4); }
+.panduan__kotak .check-list { margin: 0; }
+.panduan__kotak .check-list li { line-height: 1.6; }
+.panduan--merek .panduan__kotak { border-left-color: #1E88E5; }
+@media (max-width: 860px) {
+  .panduan__grid { grid-template-columns: 1fr; }
+}

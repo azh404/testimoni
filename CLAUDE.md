@@ -56,6 +56,8 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
     produk/*.html (di antara penanda `<!-- LIHAT-JUGA -->`) + sitemap.
   - `python tools/optimasi-gambar.py` — `-kecil.webp` (kartu), `-og.jpg` (pratinjau link).
   - `node tools/seo-gambar.js` — teks alt foto produk + `sitemap-gambar.xml`.
+  - `node tools/buat-panduan.js` — bagian "Untuk Siapa …" (12 produk tipis) & "Tentang <Merek>" (3 halaman merek) dari
+    `tools/data-panduan.js` (ID/EN/ZH, di antara penanda `<!-- PANDUAN -->`, CSS `.panduan`; 9 Okt, untuk isi halaman ≥300 kata).
   - `python tools/ubah-video.py foto-baru/<nama>.mp4` — video hero → WebM+MP4 (HD & `-hp`) + sampul webp.
 
 ## Konvensi penting
