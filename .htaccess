@@ -29,6 +29,8 @@ RewriteRule ^artikel/(perawatan-traktor-jelang-musim-hujan|perawatan-drone-spray
 RewriteRule ^(tools|DASS-WEB|foto-baru|\.git[^/]*|\.vscode)(/.*)?$ - [F,L]
 RewriteRule (^|/)(PETUNJUK\.txt|README\.md|\.gitignore)$ - [F,L]
 RewriteRule \.(py|md|sh|log|bak)$ - [F,L]
+# Chatbot: di folder api/ hanya chat.php yang boleh dibuka (kunci API, pustaka & data tertutup)
+RewriteRule ^api/(?!chat\.php$). - [F,L]
 
 # Kompres teks (HTML, CSS, JS, XML) sebelum dikirim — ukuran turun ±70%
 <IfModule mod_deflate.c>

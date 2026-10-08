@@ -252,6 +252,18 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   menjalankan `powershell -ExecutionPolicy Bypass -File tools\indexnow.ps1` (atau `node tools/indexnow.js`) dari laptop
   setelah upload: kirim semua URL sitemap.xml ke Bing/Yandex. Sandbox TIDAK bisa (api.indexnow.org diblokir). Google tidak
   mendukung IndexNow; Request Indexing Google tetap manual di Search Console (tidak ada API untuk halaman biasa).
+- **Chatbot AI "Mas DASS" (10 Okt, pilihan pengguna: AI; nama "Mas DASS", tombol "Tanya Mas DASS")**: `assets/js/chatbot.js` (dimuat main.js bila `COMPANY.chatbotUrl`
+  = "/api/chat.php"; tombol navy+lencana "AI" di atas tombol WA, panel 380px / layar penuh di HP, saran 4 chip, riwayat
+  sessionStorage, tombol "Lanjut di WhatsApp" & catatan "asisten AI dapat keliru" DIHAPUS atas permintaan, teks `chat.*` di lang.js; gaya bot sopan "Bapak/Ibu", tanpa emoji) → `api/chat.php` (PHP 8.1+, SDK resmi
+  `anthropic-ai/sdk` + guzzle di `api/vendor/`, di-commit karena pengguna upload lewat File Manager) → Claude `claude-opus-5-5`,
+  effort low, maxTokens 2000, `fallbacks: 'default'` (beta server-side-fallback-2026-07-01), system = instruksi + `api/data/pengetahuan.txt`
+  (cache). Pengetahuan dibuat ulang: `node tools/buat-pengetahuan-chatbot.js` (produk, FAQ, artikel, kontak) — jalankan setelah data berubah.
+  Kunci API HANYA di `api/config.php` di Hostinger (contoh: `api/config.contoh.php`, di .gitignore). Batas: 30 pesan/IP/jam, 1500/hari
+  (`api/data/batas.json`, IP di-hash). Aturan bot: tanpa harga/stok/janji kirim, tanpa klaim servis/sparepart/garansi, hanya dari pengetahuan.
+  Maskot = gambar dari pengguna (anime, pria berkacamata, kemeja navy logo DASS; asli di foto-baru/maskot-asisten-dass.jpg,
+  DIBALIK horizontal karena logo di baju terbalik) → `assets/images/chatbot/maskot-avatar.webp` 256px: dipakai di tombol (bergoyang
+  pelan), kepala panel, sambutan, dan wajah kecil di samping jawaban bot. 4 maskot vektor buatan Claude tidak dipilih.
+  `.htaccess` root & `api/.htaccess`: hanya chat.php yang bisa diakses. Biaya ±Rp 250/pesan (cache hangat), ±Rp 2.000 pesan pertama setelah sepi.
 - CAPTCHA tidak dipasang (tidak ada form yang mengirim ke server; form kontak membuka WA).
 
 ## Cara kerja dengan pengguna (pelajaran dari sesi sebelumnya)
