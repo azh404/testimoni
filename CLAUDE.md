@@ -214,6 +214,10 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   sektor.eyebrow/judul/1–3.teks, mitra.eyebrow/judul/desc diganti teks dari pengguna (+EN/ZH buatan Claude) di lang.js
   & HTML. Klausa "layanan purnajual berkelanjutan" di unggul.judul SENGAJA dibuang (DASS tidak menyediakan purnajual).
   Teks tampil diambil dari lang.js, bukan HTML — ingatkan pengguna bila ia mengedit HTML langsung.
+- **IndexNow (8 Okt)**: kunci `b963901221a0c688647d3d6f3d058083` (file `<kunci>.txt` di root, wajib ter-upload). Pengguna
+  menjalankan `powershell -ExecutionPolicy Bypass -File tools\indexnow.ps1` (atau `node tools/indexnow.js`) dari laptop
+  setelah upload: kirim semua URL sitemap.xml ke Bing/Yandex. Sandbox TIDAK bisa (api.indexnow.org diblokir). Google tidak
+  mendukung IndexNow; Request Indexing Google tetap manual di Search Console (tidak ada API untuk halaman biasa).
 - CAPTCHA tidak dipasang (tidak ada form yang mengirim ke server; form kontak membuka WA).
 
 ## Cara kerja dengan pengguna (pelajaran dari sesi sebelumnya)
