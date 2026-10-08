@@ -292,7 +292,10 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   TE100-DH = "Combine Harvester Hybrid". Nama "PT DASS" ditambahkan (alternateName schema index/kontak + paragraf
   pertama Tentang ID/EN/ZH) karena ada kueri "pt dass". Kueri teratas 28 hari: "pt diesel agri sukses sejahtera"
   77 klik/118 tayang; kueri model 0 klik (posisi masih rendah).
-- **PageSpeed Insights**: pengguna ingin "hijau semua"; belum mengirim hasil. Sudah dilakukan: sampul
+- **Bing Webmaster Tools (9 Okt)**: SUDAH terdaftar (impor dari GSC); 86 URL dikirim manual via URL Submission (kuota ±100/hari).
+  IndexNow dari laptop sempat 403 (kunci baru di-upload) → skrip kini menampilkan pesan server; minta ulang setelah 30–60 menit.
+  Rekomendasi Bing: backlink sedikit (saran: bio IG/LinkedIn/direktori), "insufficient content" (belum dicek halaman mana).
+- **PageSpeed Insights (9 Okt): pengguna melapor HIJAU SEMUA.** Sebelumnya: pengguna ingin "hijau semua". Sudah dilakukan: sampul
   hero di-preload, video dimuat setelah `load`, versi HP, font tidak menahan tampilan, data artikel tidak
   lagi dimuat di beranda. Video hero kini besar (8–22 MB laptop) atas permintaan kualitas — bila
   PageSpeed buruk, jelaskan kompromi kualitas vs. kecepatan.
