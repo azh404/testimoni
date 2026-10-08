@@ -6,6 +6,15 @@ function initFormKontak() {
   const btn = document.getElementById('btnKirimWA');
   if (!btn) return;
 
+  /* Pilihan produk berupa tombol (chip): isi <select id="fMinat"> yang tersembunyi */
+  document.querySelectorAll('.kf-chip [data-minat]').forEach(c => c.addEventListener('click', () => {
+    const sel = document.getElementById('fMinat');
+    const aktif = !c.classList.contains('is-aktif');
+    document.querySelectorAll('.kf-chip [data-minat]').forEach(x => x.classList.remove('is-aktif'));
+    c.classList.toggle('is-aktif', aktif);
+    if (sel) sel.value = aktif ? c.dataset.minat : '';
+  }));
+
   btn.addEventListener('click', () => {
     const nama       = document.getElementById('fNama')?.value.trim() || '';
     const perusahaan = document.getElementById('fPerusahaan')?.value.trim() || '';

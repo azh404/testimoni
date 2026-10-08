@@ -319,6 +319,7 @@ const TEKS = {
   'form.phOpsional': { id: 'Opsional',              en: 'Optional',               zh: '选填' },
   'form.phPesan':    { id: 'Sampaikan kebutuhan Anda', en: 'Tell us what you need', zh: '请描述您的需求' },
   'form.pilih':      { id: '— Pilih —',             en: '— Select —',             zh: '— 请选择 —' },
+  'form.catatan':    { id: 'Dibalas pada jam kerja, Senin–Jumat 08.00–17.00 WIB.', en: 'We reply during business hours, Monday–Friday, 08:00–17:00 WIB.', zh: '我们将在工作时间内回复：周一至周五 08:00–17:00（西印尼时间）。' },
   'form.lain':       { id: 'Lainnya',               en: 'Other',                  zh: '其他' },
 
   /* ===== HALAMAN TENTANG KAMI ===== */
