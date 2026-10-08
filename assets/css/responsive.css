@@ -200,7 +200,7 @@
   .hero__content { padding-block: var(--sp-7); }
 
   /* --- Hero brand --- */
-  .brand-hero h1 { font-size: clamp(1.75rem, 8vw, 2.25rem); }
+  .brand-hero :is(h1, .h1) { font-size: clamp(1.75rem, 8vw, 2.25rem); }
   .brand-hero__meta { gap: var(--sp-3); }
   .brand-hero__meta div { padding: var(--sp-3) var(--sp-4); }
 

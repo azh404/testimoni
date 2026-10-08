@@ -172,7 +172,7 @@ const ikonBagikan = k => `<svg viewBox="0 0 24 24" fill="currentColor" aria-hidd
 
 function dataBagikan() {
   const url = document.querySelector('link[rel="canonical"]')?.href || location.href.split('#')[0];
-  const h1 = [...document.querySelectorAll('h1')].find(h => h.offsetParent !== null) || document.querySelector('h1');
+  const h1 = [...document.querySelectorAll('h1, .h1')].find(h => h.offsetParent !== null) || document.querySelector('h1');
   return { url, judul: `${h1 ? h1.textContent.trim() : document.title} | PT Diesel Agri Sukses Sejahtera` };
 }
 
