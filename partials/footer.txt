@@ -91,6 +91,8 @@
           <a href="{{base}}combine-harvester-padi.html" data-i18n="footer.combinePadi">Combine Harvester Padi</a>
           <a href="{{base}}traktor-kebun-sawit.html" data-i18n="footer.traktorSawit">Traktor Perkebunan Sawit</a>
           <a href="{{base}}drone-pertanian-sawah.html" data-i18n="footer.droneSawah">Drone Penyemprot Sawah</a>
+          <a href="{{base}}pages/produk/zoomlion.html?kategori=sugarcane" data-i18n="footer.panenTebu">Mesin Panen Tebu</a>
+          <a href="{{base}}pages/produk/zoomlion.html?kategori=dryer" data-i18n="footer.pengeringGabah">Mesin Pengering Gabah</a>
           <a href="{{base}}pages/produk/vectoragr.html?kategori=va-steering" data-i18n="footer.autoSteering">Sistem Auto Steering</a>
         </nav>
       </div>

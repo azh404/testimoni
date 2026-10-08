@@ -180,6 +180,8 @@ const TEKS = {
   'footer.combinePadi':  { id: 'Combine Harvester Padi',    en: 'Rice Combine Harvesters',         zh: '水稻联合收割机' },
   'footer.traktorSawit': { id: 'Traktor Perkebunan Sawit',  en: 'Oil Palm Plantation Tractors',    zh: '油棕种植园拖拉机' },
   'footer.droneSawah':   { id: 'Drone Penyemprot Sawah',    en: 'Rice Field Spraying Drones',      zh: '稻田植保无人机' },
+  'footer.panenTebu':      { id: 'Mesin Panen Tebu',      en: 'Sugarcane Harvesters', zh: '甘蔗收获机' },
+  'footer.pengeringGabah': { id: 'Mesin Pengering Gabah', en: 'Grain Dryers',         zh: '谷物烘干机' },
   'footer.autoSteering': { id: 'Sistem Auto Steering',      en: 'Tractor Auto Steering',           zh: '拖拉机自动导航系统' },
   'footer.kalkulator':  { id: 'Kalkulator Pertanian',         en: 'Agricultural Calculator',            zh: '农业计算器' },
 
