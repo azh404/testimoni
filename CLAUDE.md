@@ -60,9 +60,10 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   blok `[data-bahasa="id|en|zh"]` (ID tampil bawaan agar terbaca Google). Fungsi yang
   merender ulang saat ganti bahasa didaftarkan di `gantiBahasa()` (i18n.js).
 - Pesan WhatsApp ke tim selalu bahasa Indonesia.
-- **Beranda selalu dibuka dalam bahasa Indonesia** (7 Okt, i18n.js), walau pengunjung pernah memilih EN/ZH; pilihan
-  itu tetap berlaku di halaman lain. Pengguna sempat minta halaman lain default EN — ditolak setelah dijelaskan
-  risiko SEO (Google membaca versi bawaan). Jangan ubah bawaan halaman lain dari ID.
+- **Bahasa bawaan = ENGLISH di SEMUA halaman (8 Okt 2026, permintaan tegas pengguna setelah risiko SEO dijelaskan 2×)**:
+  i18n.js `BAHASA = localStorage 'bahasa' || 'en'`. Teks HTML tetap ID (Google bisa membaca JS → kemungkinan mengindeks
+  versi EN; risiko turun peringkat kueri Indonesia sudah disampaikan). Aturan lama "beranda selalu ID" DIHAPUS. Pilihan
+  bendera pengunjung tetap disimpan. Bila peringkat Search Console turun, ingatkan pengguna soal ini.
 - Foto produk: PNG 1200×900 transparan (asli, untuk PDF) + `.webp` + `-kecil.webp` +
   `-og.jpg`. Foto baru dari pengguna dikirim lewat folder `foto-baru/` (git push).
   Foto HD 1448×1086 (11 foto Zoomlion, Sep 2026): PNG disimpan HD, .webp 1200×900 q80.
@@ -122,10 +123,11 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
 - **Hero slide 2–5 SEMENTARA DISEMBUNYIKAN (6 Okt 2026, permintaan pengguna)**: dibungkus komentar HTML di
   index.html (slide + indikator). Hanya hero-zoomlion-1 yang tampil; slider.js mode satu slide = video `loop`,
   indikator disembunyikan. Untuk menampilkan lagi: hapus 2 pasang penanda komentar itu. File video tetap ada.
-- **Hero beranda 8 Okt 2026 = 4 slide**: video hero-zoomlion-1 lalu 3 FOTO dari pengguna (5 dtk): `hero-zoomlion-paddy`
-  (`data-teks-sendiri`: foto utuh + kalimat hero disembunyikan, indikator pindah kanan), `hero-zoomlion-transplanter` &
-  `hero-zoomlion-baler` (versi edit Canva pengguna: logo kiri atas dihapus, tulisan kanan bawah; `data-utuh` = foto utuh
-  `background-size: contain`, sisa ruang hijau gelap #0b1c0e). slider.js men-toggle `.hero--teks-foto`. Sumber di `foto-baru/`.
+- **Hero beranda 8 Okt 2026 = 2 slide**: video hero-zoomlion-1 lalu foto `hero-zoomlion-paddy` (5 dtk, `data-teks-sendiri`:
+  kalimat hero disembunyikan, indikator pindah kanan, cover + `background-position: center bottom` agar tulisan PADDY FIELD
+  utuh di layar lebar). slider.js men-toggle `.hero--teks-foto`. Rice Transplanter & Baler 9YY-2200 sempat dipasang lalu
+  DIHAPUS atas permintaan (versi contain = pinggir hitam di layar lebar, ditolak). Sumber foto di `foto-baru/`.
+- `--container-pad` = clamp(1.25rem, 3.2vw, 3rem) (8 Okt): logo navbar & isi tidak mepet kiri di laptop 1280 (keluhan pengguna).
 - **Canva tersambung (8 Okt)**: akun Canva pengguna (desain "Hero Rice Transplanter/Baler - bisa diedit", id DAHXZWV8XYE &
   DAHXZQSk624). Upload ke Canva lewat `upload-asset-from-url` (raw.githubusercontent repo publik). Domain canva.com &
   export-download.canva.com DIBLOKIR jaringan sandbox → hasil export tidak bisa diunduh; pengguna download sendiri ke
