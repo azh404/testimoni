@@ -201,6 +201,10 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   (UU PDP), kolom jebakan bot `situs`. Kirim `fetch` no-cors text/plain ke Apps Script (`tools/leads-apps-script.gs`,
   dipasang di Sheet "Leads Website DASS" (URL /exec sudah di config.js, AKTIF sejak 6 Okt) id `1R1BZvf173lVX2NPnQrlQJ4CGMQOjrg7aRnNnMZslXnE` milik pengguna, tab
   "Leads"). Website TIDAK mewajibkan login (sudah dijelaskan: buruk untuk SEO). Kebijakan Privasi belum dibuat.
+  **Tampilan Sheet leads (8 Okt)**: tab "Leads" diberi header hijau, baris belang, freeze, filter, kolom tambahan K "Status
+  Tindak Lanjut" (dropdown berwarna: Baru/Sudah dihubungi/Kirim penawaran/Negosiasi/Deal/Tidak jadi) & L "Catatan Sales"
+  (Apps Script tetap hanya menulis A–J). Tab baru "Ringkasan" (paling kiri): angka utama, minat produk, status, sumber + 2 grafik.
+  Locale Sheet = Indonesia → pemisah argumen rumus `;` (bukan `,`).
   Pesan setelah kirim form (7 Okt, dipilih pengguna): "Terima kasih atas minat Anda — Permintaan Anda telah berhasil
   dikirim. Untuk respons lebih cepat, silakan hubungi kami langsung melalui WhatsApp." Jangan menyebut data/database/
   kerahasiaan (pengguna tidak mau kesan "database") maupun "data Anda sudah kami terima".
