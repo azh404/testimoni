@@ -174,10 +174,13 @@ const TEKS = {
     zh: '请告知我们您的需求。从选型到报价，我们全程为您提供支持'
   },
   'footer.btnTanya': { id: 'Hubungi via WhatsApp', en: 'Contact via WhatsApp', zh: '通过 WhatsApp 联系' },
-  'footer.jualTraktor': { id: 'Jual Traktor Jakarta',         en: 'Tractors for Sale in Jakarta',       zh: '雅加达拖拉机销售' },
-  'footer.jualDrone':   { id: 'Jual Drone Pertanian Jakarta', en: 'Agricultural Drones in Jakarta',     zh: '雅加达农业无人机销售' },
-  'footer.jualMesin':   { id: 'Jual Mesin Pertanian Jakarta', en: 'Agricultural Machinery in Jakarta',  zh: '雅加达农业机械销售' },
-  'footer.combinePadi': { id: 'Combine Harvester Padi',       en: 'Rice Combine Harvesters',            zh: '水稻联合收割机' },
+  'footer.jualTraktor':  { id: 'Traktor Pertanian Jakarta', en: 'Farm Tractors in Jakarta',        zh: '雅加达农用拖拉机' },
+  'footer.jualDrone':    { id: 'Drone Pertanian Jakarta',   en: 'Agricultural Drones in Jakarta',  zh: '雅加达农业无人机' },
+  'footer.jualMesin':    { id: 'Mesin Pertanian Jakarta',   en: 'Farm Machinery in Jakarta',       zh: '雅加达农业机械' },
+  'footer.combinePadi':  { id: 'Combine Harvester Padi',    en: 'Rice Combine Harvesters',         zh: '水稻联合收割机' },
+  'footer.traktorSawit': { id: 'Traktor Perkebunan Sawit',  en: 'Oil Palm Plantation Tractors',    zh: '油棕种植园拖拉机' },
+  'footer.droneSawah':   { id: 'Drone Penyemprot Sawah',    en: 'Rice Field Spraying Drones',      zh: '稻田植保无人机' },
+  'footer.autoSteering': { id: 'Sistem Auto Steering',      en: 'Tractor Auto Steering',           zh: '拖拉机自动导航系统' },
   'footer.kalkulator':  { id: 'Kalkulator Pertanian',         en: 'Agricultural Calculator',            zh: '农业计算器' },
 
   /* ===== MODAL PRODUK ===== */
