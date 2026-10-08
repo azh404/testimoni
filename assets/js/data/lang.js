@@ -44,11 +44,7 @@ const TEKS = {
     en: 'Tractor & Agricultural Drone Distributor in Jakarta',
     zh: '雅加达拖拉机与农业无人机经销商'
   },
-  'hero.desc': {
-    id: 'Distributor resmi Zoomlion, EAVision, dan VectorAgr. Setiap proyek, satu solusi.',
-    en: 'Authorised distributor of Zoomlion, EAVision, and VectorAgr. Every project, one solution.',
-    zh: '中联重科、EAVision、VectorAgr 授权经销商。每个项目，一站式解决方案。'
-  },
+  'hero.desc': { id: 'Distributor Resmi Zoomlion, EAVision, dan VectorAgr. Menghadirkan solusi terintegrasi untuk setiap kebutuhan proyek Anda.', en: 'Authorised distributor of Zoomlion, EAVision, and VectorAgr, delivering integrated solutions for every project need.', zh: '中联重科、EAVision、VectorAgr 授权经销商，为您的每个项目需求提供一体化解决方案。' },
 
   /* ===== TENTANG SINGKAT (BERANDA) ===== */
   'tentang.eyebrow': { id: 'Tentang Kami', en: 'About Us', zh: '关于我们' },
@@ -101,41 +97,33 @@ const TEKS = {
 
   /* ===== KEUNGGULAN ===== */
   'unggul.eyebrow': { id: 'Mengapa Kami',               en: 'Why Choose Us',           zh: '为何选择我们' },
-  'unggul.judul':   { id: 'Bukan Sekadar Penjual Unit', en: 'More Than Just a Seller', zh: '不仅仅是销售商' },
+  'unggul.judul': { id: 'Mitra Tepercaya untuk Solusi Alat Berat dan Agrikultur dengan Kualitas Terjamin', en: 'A Trusted Partner for Heavy Equipment and Agricultural Solutions with Assured Quality', zh: '值得信赖的重型机械与农业解决方案合作伙伴，品质有保障' },
 
   'unggul.1.judul': { id: 'Dokumen Resmi Lengkap', en: 'Complete Official Documents', zh: '正规文件齐全' },
-  'unggul.1.teks':  { id: 'Unit resmi dari prinsipal, disertai dokumen pembelian lengkap', en: 'Official units from the principal, with complete purchase documentation', zh: '厂商正品机型，附完整购买文件' },
+  'unggul.1.teks': { id: 'Investasi aman dan tepercaya. Kami menghadirkan unit orisinal langsung dari prinsipal dengan jaminan legalitas dan dokumen pembelian yang komprehensif.', en: 'A safe, trustworthy investment. We supply original units directly from the principal, with assured legality and comprehensive purchase documents.', zh: '投资安全可靠。我们提供厂商直供的原装机型，合法合规，购买文件齐全。' },
   'unggul.2.judul': { id: 'Distributor Resmi', en: 'Authorised Distributor', zh: '授权经销商' },
   'unggul.2.teks':  { id: 'Unit asli dari Zoomlion, EAVision, dan VectorAgr, dijual langsung oleh distributor resminya', en: 'Genuine Zoomlion, EAVision, and VectorAgr units, sold directly by their authorised distributor', zh: '中联重科、EAVision 和 VectorAgr 正品机型，由授权经销商直接销售' },
   'unggul.3.judul': { id: 'Spesifikasi Lengkap', en: 'Full Specifications', zh: '参数齐全' },
   'unggul.3.teks':  { id: 'Data teknis, brosur PDF, dan fitur bandingkan unit tersedia langsung di website', en: 'Technical data, PDF brochures, and a unit comparison tool right on our website', zh: '网站直接提供技术参数、PDF 宣传册和机型对比功能' },
   'unggul.4.judul': { id: 'Konsultasi Teknis', en: 'Technical Consultation', zh: '技术咨询' },
-  'unggul.4.teks':  { id: 'Kami bantu menentukan unit yang sesuai luas lahan dan jenis pekerjaan', en: 'We help you choose the right unit for your land size and job type', zh: '协助您根据地块面积与作业类型选择合适机型' },
+  'unggul.4.teks': { id: 'Pastikan investasi Anda tepat sasaran. Kami mendampingi Anda dalam menganalisis kebutuhan operasional dan memilih unit dengan spesifikasi terbaik untuk lahan Anda.', en: 'Make sure your investment hits the mark. We help you analyse your operational needs and choose the unit with the best specifications for your land.', zh: '确保您的投资精准到位。我们协助您分析作业需求，为您的土地选择规格最合适的机型。' },
 
   /* ===== SEKTOR ===== */
-  'sektor.eyebrow': { id: 'Sektor Layanan',               en: 'Sectors We Serve',                  zh: '服务领域' },
-  'sektor.judul':   { id: 'Melayani Beragam Skala Usaha', en: 'Serving Businesses of Every Scale', zh: '服务各类规模的企业' },
+  'sektor.eyebrow': { id: 'Jangkauan Layanan Kami', en: 'Our Reach', zh: '服务范围' },
+  'sektor.judul': { id: 'Berkomitmen menjawab tantangan operasional di berbagai sektor. Kami siap melayani dan mendampingi kesuksesan proyek untuk segala skala usaha.', en: 'Committed to meeting operational challenges across every sector. We are ready to serve and support project success for businesses of every scale.', zh: '致力于应对各行业的作业挑战，随时为各种规模的企业提供服务，助力项目成功。' },
 
   'sektor.1.judul': { id: 'Perkebunan',       en: 'Plantations',  zh: '种植园' },
   'sektor.2.judul': { id: 'Pertanian Pangan', en: 'Food Crops',   zh: '粮食作物' },
   'sektor.3.judul': { id: 'Hortikultura',     en: 'Horticulture', zh: '园艺种植' },
-  'sektor.1.teks':  { id: 'Traktor 4WD bertenaga besar dan auto steering untuk kebun sawit, tebu, dan karet.', en: 'High-horsepower 4WD tractors and auto steering for oil palm, sugarcane, and rubber estates.', zh: '适用于油棕、甘蔗和橡胶种植园的大马力四驱拖拉机与自动导航系统。' },
-  'sektor.2.teks':  { id: 'Traktor, mesin tanam, combine harvester, dan pengering gabah untuk padi dan jagung.', en: 'Tractors, transplanters, combine harvesters, and grain dryers for rice and corn.', zh: '适用于水稻和玉米的拖拉机、插秧机、联合收割机和谷物烘干机。' },
-  'sektor.3.teks':  { id: 'Drone penyemprot dan traktor kompak untuk sayur, buah, dan lahan yang terbatas.', en: 'Spraying drones and compact tractors for vegetables, fruit, and smaller plots.', zh: '适用于蔬菜、水果及小地块的植保无人机和紧凑型拖拉机。' },
+  'sektor.1.teks': { id: 'Mengusung konsep Smart Farming dengan sistem auto-steering terintegrasi. Traktor 4WD bertenaga besar ini adalah investasi armada terbaik untuk skala industri perkebunan sawit, tebu, dan karet.', en: 'Embracing smart farming with integrated auto-steering systems. These high-horsepower 4WD tractors are the ideal fleet investment for industrial-scale oil palm, sugarcane, and rubber plantations.', zh: '秉承智慧农业理念，配备集成自动导航系统。大马力四驱拖拉机是油棕、甘蔗和橡胶等工业化种植园的理想机队投资。' },
+  'sektor.2.teks': { id: 'Traktor, planter, combine harvester, dan pengering gabah untuk padi dan jagung.', en: 'Tractors, planters, combine harvesters, and grain dryers for rice and corn.', zh: '适用于水稻和玉米的拖拉机、插秧机、联合收割机和谷物烘干机。' },
+  'sektor.3.teks': { id: 'Inovasi Mekanisasi untuk Lahan Terbatas. Paduan sempurna traktor kompak yang lincah dan drone penyemprot presisi untuk optimalkan hasil panen sayur dan buah Anda.', en: 'Mechanisation innovation for limited land. Agile compact tractors paired with precision spraying drones to optimise your vegetable and fruit harvests.', zh: '面向有限土地的机械化创新。灵活的紧凑型拖拉机搭配精准植保无人机，助您提升蔬果产量。' },
   'sektor.lihat':   { id: 'Lihat unit', en: 'View units', zh: '查看机型' },
 
   /* ===== MITRA ===== */
-  'mitra.eyebrow': { id: 'Kemitraan', en: 'Partnership', zh: '合作伙伴' },
-  'mitra.judul': {
-    id: 'Membangun Kolaborasi Jangka Panjang',
-    en: 'Building Long-Term Collaboration',
-    zh: '建立长期合作关系'
-  },
-  'mitra.desc': {
-    id: 'Kami membuka peluang kemitraan strategis dengan pelaku usaha agrikultur, penyedia jasa mekanisasi, serta jaringan dealer di seluruh Indonesia',
-    en: 'We are open to strategic partnerships with agricultural enterprises, mechanisation service providers, and dealer networks across Indonesia',
-    zh: '我们诚邀印尼各地的农业企业、机械化服务商及经销商网络建立战略合作关系'
-  },
+  'mitra.eyebrow': { id: 'Program Kemitraan', en: 'Partnership Programme', zh: '合作伙伴计划' },
+  'mitra.judul': { id: 'Membangun Kemitraan Strategis Berkelanjutan', en: 'Building Sustainable Strategic Partnerships', zh: '建立可持续的战略合作伙伴关系' },
+  'mitra.desc': { id: 'Peluang Kemitraan Strategis Terbuka Lebar! Bergabunglah bersama jaringan kami sebagai mitra bisnis agrikultur, jasa mekanisasi, atau dealer resmi di seluruh Indonesia.', en: 'Strategic partnership opportunities are wide open! Join our network as an agribusiness partner, mechanisation service provider, or authorised dealer across Indonesia.', zh: '战略合作机会广泛开放！欢迎以农业企业伙伴、机械化服务商或授权经销商的身份加入我们遍布印尼的网络。' },
   'mitra.btn': { id: 'Hubungi Kami', en: 'Contact Us', zh: '联系我们' },
 
   /* Beranda: angka, kategori, unit pilihan, ajakan, artikel */
@@ -162,8 +150,8 @@ const TEKS = {
   'beli.4.judul':  { id: 'Proses Pembelian', en: 'Complete the Purchase', zh: '完成购买' },
   'beli.4.teks':   { id: 'Konfirmasi pesanan dan lengkapi dokumen pembelian bersama tim kami.', en: 'Confirm your order and complete the purchase documents with our team.', zh: '确认订单，并与我们的团队完成购买文件。' },
   'beli.cta':      { id: 'Mulai Konsultasi', en: 'Start a Consultation', zh: '开始咨询' },
-  'cta.judul':     { id: 'Bingung Memilih Unit yang Tepat?', en: 'Not Sure Which Unit Is Right?', zh: '不确定选择哪款机型？' },
-  'cta.desc':      { id: 'Ceritakan luas lahan dan jenis pekerjaan Anda. Tim kami bantu merekomendasikan unit yang sesuai.', en: 'Tell us your land size and type of work. Our team will help recommend the right unit.', zh: '告诉我们您的土地面积和作业类型，我们的团队将帮助推荐合适的机型。' },
+  'cta.judul': { id: 'Temukan Unit Paling Ideal untuk Proyek Anda', en: 'Find the Ideal Unit for Your Project', zh: '为您的项目找到最理想的机型' },
+  'cta.desc': { id: 'Beritahu kami luas lahan dan jenis pekerjaan Anda. Dapatkan rekomendasi unit terbaik langsung dari ahlinya.', en: 'Tell us your land size and type of work, and get the best unit recommendation straight from the experts.', zh: '告诉我们您的土地面积和作业类型，由专家直接为您推荐最合适的机型。' },
   'cta.wa':        { id: 'Konsultasi via WhatsApp', en: 'Consult via WhatsApp', zh: '通过WhatsApp咨询' },
   'cta.kalkulator':{ id: 'Kalkulator Pertanian', en: 'Farming Calculator', zh: '农业计算器' },
   'cta.bandingkan':{ id: 'Bandingkan Unit', en: 'Compare Units', zh: '对比机型' },

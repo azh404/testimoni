@@ -210,6 +210,10 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   semua 62 halaman: menu lompat menempel (`.detail-tab`, dibuat `buatMenuDetail()` di produk-detail.js, kunci
   `detail.tabKalk/tabLabel`), judul bagian bergaris aksen, Keunggulan = kartu bernomor 01–06. Strip "4 spesifikasi utama"
   di bawah hero DITOLAK (kepanjangan).
+- **Copywriting beranda (8 Okt, versi pengguna dipasang)**: hero.desc, unggul.judul/1.teks/4.teks, cta.judul/desc,
+  sektor.eyebrow/judul/1–3.teks, mitra.eyebrow/judul/desc diganti teks dari pengguna (+EN/ZH buatan Claude) di lang.js
+  & HTML. Klausa "layanan purnajual berkelanjutan" di unggul.judul SENGAJA dibuang (DASS tidak menyediakan purnajual).
+  Teks tampil diambil dari lang.js, bukan HTML — ingatkan pengguna bila ia mengedit HTML langsung.
 - CAPTCHA tidak dipasang (tidak ada form yang mengirim ke server; form kontak membuka WA).
 
 ## Cara kerja dengan pengguna (pelajaran dari sesi sebelumnya)
