@@ -36,7 +36,7 @@ function bukaFormLead(mode) {
     <div class="lead__kotak" role="dialog" aria-modal="true" aria-labelledby="${id}">
       <button type="button" class="lead__x" data-lead-tutup aria-label="${t('lead.tutup')}">&times;</button>
       <aside class="lead__sisi">
-        <img class="lead__foto" src="${base}assets/images/hero/hero-tractor.webp?v=2" alt="" aria-hidden="true">
+        <img class="lead__foto" src="${base}${window.FOTO_LEAD || 'assets/images/hero/hero-tractor.webp?v=2'}" alt="" aria-hidden="true">
         <div class="lead__sisi-isi">
           <img class="lead__logo" src="${base}assets/images/logo/logo-dass-putih.png" alt="DASS">
           <ul class="lead__manfaat">${manfaat}</ul>
@@ -83,7 +83,6 @@ function bukaFormLead(mode) {
 
         <p class="lead__pesan" role="alert" hidden></p>
         <button type="submit" class="btn btn--lg lead__kirim">${t(brosur ? 'lead.kirimBrosur' : 'lead.kirim')}</button>
-        <p class="lead__aman">${t('lead.aman')}</p>
       </form>
     </div>`;
   document.body.appendChild(wadah);
