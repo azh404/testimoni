@@ -16,7 +16,7 @@
   background-color: var(--color-dark);
   color: rgba(255, 255, 255, 0.75);
 }
-.section--dark h1,
+.section--dark :is(h1, .h1),
 .section--dark h2,
 .section--dark h3 { color: var(--color-white); }
 

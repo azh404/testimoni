@@ -165,7 +165,7 @@ ${BAHASA_HALAMAN.map(b => { const v = versi(a, b); return `
             </nav>
 
             <span class="artikel-card__badge">${(b !== 'id' && kat[b]) || kat.nama || ''}</span>
-            <h1 class="artikel-detail__judul">${v.judul}</h1>
+            ${b === 'id' ? `<h1 class="artikel-detail__judul">${v.judul}</h1>` : `<div class="artikel-detail__judul h1" role="heading" aria-level="1">${v.judul}</div>`}
             <p class="artikel-halaman__subjudul">${v.ringkas}</p>
             <p class="artikel-detail__meta">${formatTanggal(a.tanggal, b)} &middot; ${(b !== 'id' && PENULIS[a.penulis] && PENULIS[a.penulis][b]) || a.penulis || ''}</p>
           </div>`; }).join('\n')}

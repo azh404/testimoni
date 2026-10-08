@@ -622,7 +622,7 @@ ${JSON.stringify(jsonLd, null, 2)}
         <div class="brand-hero__left">
           <span class="brand-hero__eyebrow">PT Diesel Agri Sukses Sejahtera</span>
 ${BAHASA.map(b => `          ${blok(b, `
-            <h1>${h[b].h1}</h1>
+            ${b === 'id' ? `<h1>${h[b].h1}</h1>` : `<div class="h1" role="heading" aria-level="1">${h[b].h1}</div>`}
             <p>${h[b].sub}</p>
             <a href="#" class="btn btn--accent btn--lg" data-wa-link data-wa-pesan="${esc(h.waPesan)}">${h[b].cta}</a>
           `)}`).join('\n')}

@@ -62,6 +62,9 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
 - **3 bahasa (ID/EN/ZH)** untuk semua teks baru: kunci di `lang.js` + `data-i18n`, atau
   blok `[data-bahasa="id|en|zh"]` (ID tampil bawaan agar terbaca Google). Fungsi yang
   merender ulang saat ganti bahasa didaftarkan di `gantiBahasa()` (i18n.js).
+- **SATU `<h1>` per halaman (9 Okt, SEO)**: di blok `[data-bahasa]`, hanya versi ID yang `<h1>`; versi EN/ZH =
+  `<div class="h1" role="heading" aria-level="1">` (CSS: semua selektor h1 ditulis `:is(h1, .h1)`). Generator artikel &
+  landing sudah mengikuti aturan ini — terapkan juga di halaman baru.
 - Pesan WhatsApp ke tim selalu bahasa Indonesia.
 - **Bahasa bawaan = ENGLISH di SEMUA halaman (8 Okt 2026, permintaan tegas pengguna setelah risiko SEO dijelaskan 2×)**:
   i18n.js `BAHASA = localStorage 'bahasa-v2' || 'en'` (kunci lama 'bahasa' dihapus agar pengunjung lama juga EN). Teks HTML tetap ID (Google bisa membaca JS → kemungkinan mengindeks
