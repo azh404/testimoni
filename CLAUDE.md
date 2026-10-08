@@ -127,7 +127,7 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   kalimat hero disembunyikan, indikator pindah kanan, cover + `background-position: center bottom` agar tulisan PADDY FIELD
   utuh di layar lebar). slider.js men-toggle `.hero--teks-foto`. Rice Transplanter & Baler 9YY-2200 sempat dipasang lalu
   DIHAPUS atas permintaan (versi contain = pinggir hitam di layar lebar, ditolak). Sumber foto di `foto-baru/`.
-- `--container-pad` = clamp(1.25rem, 3.2vw, 3rem) (8 Okt): logo navbar & isi tidak mepet kiri di laptop 1280 (keluhan pengguna).
+- `--container-pad` = clamp(1.25rem, 5vw, 4.5rem) (8 Okt; layar pengguna ±1170px CSS karena skala Windows): logo navbar & isi tidak mepet kiri di laptop 1280 (keluhan pengguna).
 - **Canva tersambung (8 Okt)**: akun Canva pengguna (desain "Hero Rice Transplanter/Baler - bisa diedit", id DAHXZWV8XYE &
   DAHXZQSk624). Upload ke Canva lewat `upload-asset-from-url` (raw.githubusercontent repo publik). Domain canva.com &
   export-download.canva.com DIBLOKIR jaringan sandbox → hasil export tidak bisa diunduh; pengguna download sendiri ke
