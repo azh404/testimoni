@@ -177,6 +177,7 @@ const TEKS = {
   'footer.jualTraktor': { id: 'Jual Traktor Jakarta',         en: 'Tractors for Sale in Jakarta',       zh: '雅加达拖拉机销售' },
   'footer.jualDrone':   { id: 'Jual Drone Pertanian Jakarta', en: 'Agricultural Drones in Jakarta',     zh: '雅加达农业无人机销售' },
   'footer.jualMesin':   { id: 'Jual Mesin Pertanian Jakarta', en: 'Agricultural Machinery in Jakarta',  zh: '雅加达农业机械销售' },
+  'footer.combinePadi': { id: 'Combine Harvester Padi',       en: 'Rice Combine Harvesters',            zh: '水稻联合收割机' },
   'footer.kalkulator':  { id: 'Kalkulator Pertanian',         en: 'Agricultural Calculator',            zh: '农业计算器' },
 
   /* ===== MODAL PRODUK ===== */
