@@ -2585,6 +2585,12 @@ a.produk-card:hover .produk-card__body::after { background: #8DC63F; color: #fff
 }
 @media (max-width: 860px) {
   .tt-profil--foto { grid-template-columns: 1fr; }
-  .tt-profil--foto .tt-foto { order: -1; }
+  /* HP: label + judul dulu, lalu foto, lalu paragraf */
+  .tt-profil--foto { display: flex; flex-direction: column; gap: 0; }
+  .tt-profil--foto .tt-profil__teks { display: contents; }
+  .tt-profil--foto .section-header__eyebrow { order: 1; text-align: left; }
+  .tt-profil--foto .tt-profil__teks h1 { order: 2; }
+  .tt-profil--foto .tt-foto { order: 3; margin: var(--sp-5) 10px var(--sp-7) 0; }
+  .tt-profil--foto .tt-profil__teks p { order: 4; }
   .tt-profil--foto .tt-foto__bingkai::before { inset: 10px -10px -10px 10px; }
 }
