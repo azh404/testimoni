@@ -31,7 +31,7 @@
     <section class="chatbot__panel" id="chatbotPanel" role="dialog" aria-modal="false" hidden>
       <header class="chatbot__kepala">
         <div class="chatbot__avatar"><img src="${MASKOT}" alt=""></div>
-        <div class="chatbot__info"><strong class="chatbot__judul"></strong><span class="chatbot__sub"></span></div>
+        <div class="chatbot__info"><strong class="chatbot__judul"></strong><span class="chatbot__sub"></span><span class="chatbot__aktif"></span></div>
         <button type="button" class="chatbot__ulang" title="">↺</button>
         <button type="button" class="chatbot__tutup" aria-label="">&times;</button>
       </header>
@@ -109,6 +109,7 @@
     tombol.setAttribute('aria-label', tx('chat.buka', 'Tanya Mas DASS'));
     $('.chatbot__judul').textContent = tx('chat.judul', 'Mas DASS');
     $('.chatbot__sub').textContent = tx('chat.sub', 'Asisten virtual DASS');
+    tulisAktif();
     $('.chatbot__tutup').setAttribute('aria-label', tx('chat.tutup', 'Tutup'));
     $('.chatbot__ulang').title = tx('chat.ulang', 'Mulai ulang');
     $('.chatbot__ulang').setAttribute('aria-label', tx('chat.ulang', 'Mulai ulang'));
@@ -119,6 +120,21 @@
   }
   window.gantiBahasaChatbot = pasangTeks;
 
+  /* "Aktivitas terakhir": waktu pesan terakhir di percakapan ini (diperbarui tiap 30 detik) */
+  function tulisAktif() {
+    const terakhir = [...riwayat].reverse().find(p => p.waktu);
+    const el = $('.chatbot__aktif');
+    if (!terakhir) { el.textContent = tx('chat.sekarang', 'Aktif sekarang'); return; }
+    const menit = Math.floor((Date.now() - terakhir.waktu) / 60000);
+    let kapan;
+    if (menit < 1) kapan = tx('chat.baru', 'baru saja');
+    else if (menit < 60) kapan = tx('chat.menit', '{n} menit lalu').replace('{n}', menit);
+    else if (menit < 1440) kapan = tx('chat.jam', '{n} jam lalu').replace('{n}', Math.floor(menit / 60));
+    else kapan = new Date(terakhir.waktu).toLocaleDateString();
+    el.textContent = tx('chat.aktif', 'Aktivitas terakhir: {w}').replace('{w}', kapan);
+  }
+  setInterval(() => { if (!panel.hidden) tulisAktif(); }, 30000);
+
   function buka(terbuka) {
     panel.hidden = !terbuka;
     tombol.setAttribute('aria-expanded', String(terbuka));
@@ -126,6 +142,7 @@
     document.documentElement.classList.toggle('chatbot-terbuka', terbuka);
     if (terbuka) {
       lacak('chatbot_buka');
+      tulisAktif();
       isi.scrollTop = riwayat.length ? isi.scrollHeight : 0;   /* percakapan baru: tampilkan sambutan dari atas */
       if (window.matchMedia('(min-width: 769px)').matches) input.focus();
     }
@@ -137,7 +154,7 @@
     if (!teks || menunggu) return;
     menunggu = true;
     saran.hidden = true;
-    riwayat.push({ peran: 'user', isi: teks });
+    riwayat.push({ peran: 'user', isi: teks, waktu: Date.now() });
     simpan();
     tambahGelembung('user', teks);
     lacak('chatbot_tanya');
@@ -166,7 +183,8 @@
     if (!jawaban) {
       tambahGelembung('assistant', tx('chat.gagal', 'Mohon maaf, Mas DASS sedang tidak dapat merespons.'));
     } else {
-      riwayat.push({ peran: 'assistant', isi: jawaban });
+      riwayat.push({ peran: 'assistant', isi: jawaban, waktu: Date.now() });
+      tulisAktif();
       simpan();
       tambahGelembung('assistant', jawaban);
     }
@@ -175,7 +193,7 @@
 
   tombol.addEventListener('click', () => buka(panel.hidden));
   $('.chatbot__tutup').addEventListener('click', () => buka(false));
-  $('.chatbot__ulang').addEventListener('click', () => { riwayat = []; simpan(); tampilkanSemua(); });
+  $('.chatbot__ulang').addEventListener('click', () => { riwayat = []; simpan(); tampilkanSemua(); tulisAktif(); });
   saran.addEventListener('click', e => { if (e.target.matches('button')) kirim(e.target.textContent); });
   form.addEventListener('submit', e => { e.preventDefault(); const v = input.value; input.value = ''; input.style.height = ''; kirim(v); });
   input.addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); form.requestSubmit(); } });
