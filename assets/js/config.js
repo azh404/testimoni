@@ -40,6 +40,10 @@ const COMPANY = {
      Kosongkan ("") untuk mematikan form leads (pop-up & form sebelum unduh brosur). */
   leadsUrl: "https://script.google.com/macros/s/AKfycbyutgP3pKLyD8leqSIp2yVEG-p09bLrZspXwFPUTC8evY0rsB-Z4BWxdd5sPmlmmcs3/exec",
 
+  /* Alamat server chatbot AI (api/chat.php di Hostinger; kunci API di api/config.php).
+     Kosongkan ("") untuk menyembunyikan chatbot. */
+  chatbotUrl: "/api/chat.php",
+
   sosmed: {
     instagram: "https://www.instagram.com/dass.agriculture",
     /* Google Business Profile: halaman di Google Maps & link minta ulasan */

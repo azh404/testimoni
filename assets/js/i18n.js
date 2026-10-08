@@ -186,6 +186,7 @@ function gantiBahasa(kode) {
   if (typeof initHalamanLanding === 'function') initHalamanLanding();
   if (typeof initKalkulator     === 'function') initKalkulator();
   if (typeof initBandingkan     === 'function') initBandingkan();
+  if (typeof gantiBahasaChatbot === 'function') gantiBahasaChatbot();
   if (typeof isiDataPerusahaan  === 'function') isiDataPerusahaan();
   if (typeof initWaMenu         === 'function') initWaMenu();
   if (typeof initFitur          === 'function') initFitur();

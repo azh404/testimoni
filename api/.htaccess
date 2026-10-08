@@ -1,0 +1,8 @@
+# Folder chatbot: hanya chat.php yang boleh diakses dari browser
+Options -Indexes
+<FilesMatch ".*">
+  Require all denied
+</FilesMatch>
+<Files "chat.php">
+  Require all granted
+</Files>

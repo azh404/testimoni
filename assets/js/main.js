@@ -236,6 +236,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     leads.src = `${BASE}assets/js/leads.js`;
     document.body.appendChild(leads);
   }
+  /* Chatbot AI "Asisten DASS" — hanya bila COMPANY.chatbotUrl diisi */
+  if (COMPANY.chatbotUrl) {
+    const chat = document.createElement('script');
+    chat.src = `${BASE}assets/js/chatbot.js`;
+    document.body.appendChild(chat);
+  }
   if (typeof initKalkulator    === 'function') initKalkulator();
   if (typeof initBandingkan    === 'function') initBandingkan();
 });
