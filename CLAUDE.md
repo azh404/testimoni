@@ -197,16 +197,16 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   Pesan setelah kirim form (7 Okt, dipilih pengguna): "Terima kasih atas minat Anda — Permintaan Anda telah berhasil
   dikirim. Untuk respons lebih cepat, silakan hubungi kami langsung melalui WhatsApp." Jangan menyebut data/database/
   kerahasiaan (pengguna tidak mau kesan "database") maupun "data Anda sudah kami terima".
-- **Pop-up produk Zoomlion: foto bisa digeser kiri-kanan (7 Okt)**: `jalankanPutar()` di filter-produk.js, CSS `.putar*`
+- **[DIBATALKAN 8 Okt: pop-up & halaman detail kembali normal (foto biasa, hero terang) atas permintaan pengguna]** Pop-up produk Zoomlion: foto bisa digeser kiri-kanan (7 Okt): `jalankanPutar()` di filter-produk.js, CSS `.putar*`
   (pages.css), kunci `putar.petunjuk`. Efek miring 3D ±35° (perspektif, bayangan & cahaya ikut), goyang contoh saat dibuka,
   panah keyboard, klik ganda = lurus. BUKAN 360° asli (1 foto tidak punya sisi belakang; sudah dijelaskan). EAVision/VectorAgr
   tetap foto biasa. DITOLAK: efek "kamera drone", penampil 3D .glb dengan model uji, gambar 17 sudut dari ChatGPT
   (DL2004: hasil tidak konsisten, kena limit).
-- **Gaya "studio gelap" Zoomlion (7 Okt, dipilih pengguna dari 8 contoh)**: pop-up & foto utama halaman detail produk
+- **[DIBATALKAN 8 Okt]** Gaya "studio gelap" Zoomlion (7 Okt, dipilih pengguna dari 8 contoh)**: pop-up & foto utama halaman detail produk
   Zoomlion memakai `htmlPutar()` (filter-produk.js; detail via `initPutarDetail()` di main.js): latar HIJAU GELAP (#16301a, dipilih 7 Okt; hitam & navy & terang tidak dipilih) + sorot lampu +
   podium + pantulan lantai (`.putar--gelap`, pages.css). Ditolak/tidak dipilih: podium terang, zoom kaca pembesar, chip
   spesifikasi, latar lahan CSS, lantai cermin, cincin hijau, meja putar.
-- **Desain halaman detail produk (7 Okt)**: Zoomlion = hero gelap selebar layar (`body[data-brand="zoomlion"] .detail-hero`);
+- **Desain halaman detail produk (7 Okt)**: Zoomlion hero gelap DIBATALKAN 8 Okt (kembali terang seperti awal);
   semua 62 halaman: menu lompat menempel (`.detail-tab`, dibuat `buatMenuDetail()` di produk-detail.js, kunci
   `detail.tabKalk/tabLabel`), judul bagian bergaris aksen, Keunggulan = kartu bernomor 01–06. Strip "4 spesifikasi utama"
   di bawah hero DITOLAK (kepanjangan).

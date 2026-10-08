@@ -221,7 +221,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   if (typeof initHalamanBrand  === 'function') initHalamanBrand();
   if (typeof initBrandGallery  === 'function') initBrandGallery();
   if (typeof initModalProduk   === 'function') initModalProduk();
-  if (typeof initPutarDetail   === 'function') initPutarDetail();
   if (typeof initHalamanDetail === 'function') initHalamanDetail();
   if (typeof initImageFallback === 'function') initImageFallback();
     if (typeof initFormKontak === 'function') initFormKontak();

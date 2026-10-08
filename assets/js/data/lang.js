@@ -178,7 +178,6 @@ const TEKS = {
   'modal.spesifikasi': { id: 'Spesifikasi',        en: 'Specifications',   zh: '技术参数' },
   'modal.tanyaWA':     { id: 'Tanya via WhatsApp', en: 'Ask via WhatsApp', zh: '通过 WhatsApp 咨询' },
   'modal.tutup':       { id: 'Tutup',              en: 'Close',            zh: '关闭' },
-  'putar.petunjuk':    { id: 'Geser untuk memutar', en: 'Drag to rotate', zh: '拖动旋转' },
   'modal.brosur':      { id: 'Download PDF',       en: 'Download PDF',     zh: '下载 PDF' },
   'modal.detail':      { id: 'Lihat Halaman Lengkap', en: 'View Full Page', zh: '查看完整页面' },
 

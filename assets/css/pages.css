@@ -798,43 +798,6 @@
 }
 .modal__media img { max-width: 100%; max-height: 300px; object-fit: contain; }
 
-/* Putar foto (pop-up Zoomlion): geser kiri-kanan -> miring 3D */
-.putar {
-  position: relative;
-  perspective: 900px;
-  cursor: grab;
-  touch-action: pan-y;
-  user-select: none;
-  -webkit-user-select: none;
-  overflow: hidden;
-  outline: none;
-}
-.putar.is-geser { cursor: grabbing; }
-.putar:focus-visible { box-shadow: inset 0 0 0 3px var(--color-primary); }
-.putar__unit { position: relative; z-index: 1; will-change: transform; pointer-events: none; }
-.putar__bayangan {
-  position: absolute;
-  left: 22%; right: 22%; bottom: 14%;
-  height: 26px;
-  border-radius: 50%;
-  background: radial-gradient(closest-side, rgba(0,0,0,.22), transparent);
-  pointer-events: none;
-}
-.putar__petunjuk {
-  position: absolute;
-  left: 50%; bottom: 10px;
-  transform: translateX(-50%);
-  z-index: 2;
-  padding: 4px 12px;
-  border-radius: 999px;
-  background: rgba(17,24,39,.72);
-  color: #fff;
-  font-size: var(--fs-xs);
-  white-space: nowrap;
-  pointer-events: none;
-  transition: opacity .4s ease;
-}
-.putar.is-dipakai .putar__petunjuk { opacity: 0; }
 
 .modal__body { padding: var(--sp-7) var(--sp-6); }
 .modal__brand { height: 26px; width: auto; margin-bottom: var(--sp-4); }
@@ -2477,45 +2440,6 @@ body[data-brand="eavision"] .produk-grid {
 .kt-kartu__nilai { font-size: 0.98rem; }
 .kt-kartu__status { font-size: 0.78rem; }
 
-/* Gaya "studio gelap" (pop-up & halaman detail Zoomlion): latar gelap + sorot lampu + podium + pantulan lantai */
-.putar--gelap {
-  background: radial-gradient(90% 80% at 50% 25%, #2a4a2c 0%, #16301a 55%, #0b1c0e 100%);
-  border-bottom-color: #0b1c0e;
-  padding-bottom: 80px;
-}
-.putar__sorot {
-  position: absolute; left: 50%; top: -10%; width: 70%; height: 90%;
-  transform: translateX(-50%);
-  background: radial-gradient(45% 60% at 50% 0%, rgba(255,255,255,.28), rgba(255,255,255,0) 70%);
-  pointer-events: none;
-}
-.putar__podium {
-  position: absolute; left: 14%; right: 14%; bottom: 7%; height: 18%;
-  border-radius: 50%;
-  background: radial-gradient(closest-side, #3b5e3d 0%, #223f25 65%, #102313 100%);
-  box-shadow: 0 0 40px rgba(141,198,63,.18), inset 0 -6px 12px rgba(0,0,0,.25);
-  pointer-events: none;
-}
-.putar--gelap .putar__bayangan { bottom: 13%; background: radial-gradient(closest-side, rgba(0,0,0,.45), transparent); }
-.putar__pantul {
-  position: absolute; left: 50%;
-  height: auto; max-height: none;
-  opacity: .28; pointer-events: none;
-  -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,.85), transparent 40%);
-          mask-image: linear-gradient(to top, rgba(0,0,0,.85), transparent 40%);
-}
-.putar--gelap .putar__petunjuk { background: rgba(255,255,255,.16); }
-
-/* Halaman detail produk Zoomlion: kotak studio gelap membulat */
-.detail-media--putar { padding: 0; }
-.detail-putar {
-  width: 100%; height: 100%;
-  display: grid; place-items: center;
-  border-radius: 20px;
-  padding: 40px 40px 88px;
-}
-.detail-putar .putar__unit { max-width: 100%; max-height: 100%; object-fit: contain; }
-.detail-media .detail-putar .putar__pantul { max-height: none; filter: none; }
 
 /* (Dipakai bila slide hero diberi data-teks-sendiri: kalimat hero disembunyikan; saat ini tidak ada slide begitu) */
 .hero__content { transition: opacity .5s ease; }
