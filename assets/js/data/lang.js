@@ -103,6 +103,7 @@ const TEKS = {
 
   /* ===== KEUNGGULAN ===== */
   'unggul.eyebrow': { id: 'Mengapa Kami',               en: 'Why Choose Us',           zh: '为何选择我们' },
+  'tt.fotoKet':     { id: 'Tim DASS di kantor kami, Cakung, Jakarta Timur', en: 'The DASS team at our office in Cakung, East Jakarta', zh: 'DASS 团队摄于雅加达东区 Cakung 办公室' },
   'unggul.judul': { id: 'Mitra Tepercaya untuk Solusi Alat Berat dan Agrikultur dengan Kualitas Terjamin', en: 'A Trusted Partner for Heavy Equipment and Agricultural Solutions with Assured Quality', zh: '值得信赖的重型机械与农业解决方案合作伙伴，品质有保障' },
 
   'unggul.1.judul': { id: 'Dokumen Resmi Lengkap', en: 'Complete Official Documents', zh: '正规文件齐全' },
