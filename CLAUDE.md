@@ -144,6 +144,9 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   (`.header .brand::before`, clip-path) di semua halaman; menu huruf kapital renggang (.74rem, HP .9rem); menu aktif = kapsul hijau
   #25A244 teks putih; beranda (ada `.hero`) → navbar.js menambah `.header--transparan` + `body.nav-transparan` (padding-top 0):
   transparan gradasi gelap di atas video, berubah putih kaca saat di-scroll. CSS di akhir components.css.
+  10 Okt: pengguna lapor "saat scroll tetap transparan" (tak bisa direproduksi di sandbox) → navbar.js membaca scroll dari
+  window/html/body + event scroll di body & load; kaca saat scroll diperkuat (putih .86 + blur 18px).
+- **Bing Site Scan (10 Okt)**: 119 halaman, 0 error, 0 warning.
 - **Navbar (8 Okt)**: tinggi 62px (HP 58px, sebelumnya 76/68), logo 40px (HP 32px), `.header .header__inner` padding
   clamp(1.25rem, 6vw, 5rem) agar logo tidak mepet pojok. Indikator slide hero (`.hero__dots`) DISEMBUNYIKAN (permintaan).
 - **Kartu produk desain baru (8 Okt)**: lencana logo merek kecil di pojok foto, foto besar di latar abu lembut, seri hanya

@@ -17,8 +17,13 @@ function initNavbar() {
   }
 
   /* Bayangan saat di-scroll */
-  const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 10);
+  /* Posisi scroll dibaca dari beberapa sumber: di sebagian browser/ekstensi yang men-scroll
+     adalah <body>, bukan window, sehingga window.scrollY tetap 0 */
+  const posisi = () => Math.max(window.scrollY || 0, document.documentElement.scrollTop || 0, document.body.scrollTop || 0);
+  const onScroll = () => header.classList.toggle('is-scrolled', posisi() > 10);
   window.addEventListener('scroll', onScroll, { passive: true });
+  document.body.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('load', onScroll);
   onScroll();
 
   if (!toggle || !nav) return;
