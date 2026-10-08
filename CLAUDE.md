@@ -122,6 +122,14 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
 - **Hero slide 2–5 SEMENTARA DISEMBUNYIKAN (6 Okt 2026, permintaan pengguna)**: dibungkus komentar HTML di
   index.html (slide + indikator). Hanya hero-zoomlion-1 yang tampil; slider.js mode satu slide = video `loop`,
   indikator disembunyikan. Untuk menampilkan lagi: hapus 2 pasang penanda komentar itu. File video tetap ada.
+- **Hero beranda 8 Okt 2026 = 4 slide**: video hero-zoomlion-1 lalu 3 FOTO dari pengguna (5 dtk): `hero-zoomlion-paddy`
+  (`data-teks-sendiri`: foto utuh + kalimat hero disembunyikan, indikator pindah kanan), `hero-zoomlion-transplanter` &
+  `hero-zoomlion-baler` (versi edit Canva pengguna: logo kiri atas dihapus, tulisan kanan bawah; `data-utuh` = foto utuh
+  `background-size: contain`, sisa ruang hijau gelap #0b1c0e). slider.js men-toggle `.hero--teks-foto`. Sumber di `foto-baru/`.
+- **Canva tersambung (8 Okt)**: akun Canva pengguna (desain "Hero Rice Transplanter/Baler - bisa diedit", id DAHXZWV8XYE &
+  DAHXZQSk624). Upload ke Canva lewat `upload-asset-from-url` (raw.githubusercontent repo publik). Domain canva.com &
+  export-download.canva.com DIBLOKIR jaringan sandbox → hasil export tidak bisa diunduh; pengguna download sendiri ke
+  `foto-baru/` lalu push (atau izinkan domain di pengaturan Network access environment).
 - Judul hero beranda (H1 "Distributor Traktor & Drone Pertanian di Jakarta") DISEMBUNYIKAN
   dari tampilan dengan `.sr-only`; kalimat "Distributor resmi Zoomlion…" TAMPIL di kiri bawah video
   (HP: juga di atas video, kiri bawah) atas permintaan pengguna (tetap di HTML untuk

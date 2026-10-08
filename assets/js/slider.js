@@ -123,6 +123,8 @@ function initHeroSlider() {
     muat(slides[n]);
     muatBerikut(n);
     slides.forEach((s, k) => s.classList.toggle('is-active', k === n));
+    /* Foto yang sudah punya tulisan sendiri: kalimat hero disembunyikan supaya tidak bertumpuk */
+    if (hero) hero.classList.toggle('hero--teks-foto', 'teksSendiri' in slides[n].dataset);
     dots.forEach((d, k) => d.classList.toggle('is-active', k === n));
     index = n;
     ulangProgres();
