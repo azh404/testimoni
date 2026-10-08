@@ -409,7 +409,12 @@ const TEKS = {
   /* Chatbot AI "Mas DASS" (chatbot.js) */
   'chat.buka':     { id: 'Tanya Mas DASS', en: 'Ask Mas DASS', zh: '咨询 Mas DASS' },
   'chat.judul':    { id: 'Mas DASS', en: 'Mas DASS', zh: 'Mas DASS' },
-  'chat.sub':      { id: 'Asisten virtual DASS · online 24 jam', en: 'DASS virtual assistant · online 24/7', zh: 'DASS虚拟助手 · 24小时在线' },
+  'chat.sub':      { id: 'Asisten virtual DASS', en: 'DASS virtual assistant', zh: 'DASS虚拟助手' },
+  'chat.sekarang': { id: 'Aktif sekarang', en: 'Active now', zh: '当前在线' },
+  'chat.aktif':    { id: 'Aktivitas terakhir: {w}', en: 'Last activity: {w}', zh: '最近活动：{w}' },
+  'chat.baru':     { id: 'baru saja', en: 'just now', zh: '刚刚' },
+  'chat.menit':    { id: '{n} menit lalu', en: '{n} min ago', zh: '{n}分钟前' },
+  'chat.jam':      { id: '{n} jam lalu', en: '{n} h ago', zh: '{n}小时前' },
   'chat.sapa':     { id: 'Halo, saya Mas DASS. Saya siap membantu Anda memilih traktor, combine harvester, atau drone yang paling sesuai dengan lahan Anda. Silakan ceritakan luas lahan, jenis tanaman, dan lokasinya.', en: "Hi, I'm Mas DASS. I can help you choose the tractor, combine harvester, or drone that best fits your land. Tell me the size of your land, the crop you grow, and its location.", zh: '您好，我是 Mas DASS。我可以帮您挑选最适合您土地的拖拉机、联合收割机或无人机。请告诉我您的土地面积、作物种类和所在地区。' },
   'chat.saran1':   { id: 'Rekomendasi traktor untuk sawah', en: 'Recommend a tractor for rice fields', zh: '推荐适合稻田的拖拉机' },
   'chat.saran2':   { id: 'Drone untuk menyemprot padi', en: 'Drone for spraying rice', zh: '水稻喷洒无人机' },
