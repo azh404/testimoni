@@ -1008,3 +1008,5 @@ body.nav-transparan { padding-top: 0; }
 .chatbot__baris { display: flex; align-items: flex-end; gap: 8px; max-width: 94%; }
 .chatbot__baris .chatbot__msg { max-width: none; }
 .chatbot__mini { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 1.5px solid #fff; box-shadow: 0 1px 4px rgba(0, 0, 0, .15); }
+.chatbot__ulang, .chatbot__tutup { display: grid; place-items: center; padding: 0; flex-shrink: 0; }
+.chatbot__ulang svg, .chatbot__tutup svg { width: 16px; height: 16px; display: block; }

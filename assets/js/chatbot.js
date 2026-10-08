@@ -32,8 +32,8 @@
       <header class="chatbot__kepala">
         <div class="chatbot__avatar"><img src="${MASKOT}" alt=""></div>
         <div class="chatbot__info"><strong class="chatbot__judul"></strong><span class="chatbot__sub"></span><span class="chatbot__aktif"></span></div>
-        <button type="button" class="chatbot__ulang" title="">↺</button>
-        <button type="button" class="chatbot__tutup" aria-label="">&times;</button>
+        <button type="button" class="chatbot__ulang" title=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M4 4v5h5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <button type="button" class="chatbot__tutup" aria-label=""><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
       </header>
       <div class="chatbot__isi" aria-live="polite"></div>
       <div class="chatbot__saran"></div>
