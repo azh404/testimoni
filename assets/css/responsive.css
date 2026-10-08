@@ -28,6 +28,9 @@
     box-shadow: var(--shadow-lg);
     transition: right var(--transition);
     z-index: 1;
+    /* Isi menu mulai dari atas: kalau ditengah-kan, di layar pendek bendera bahasa terpotong & tak bisa di-scroll */
+    align-items: flex-start;
+    justify-content: flex-start;
   }
   .nav.is-open { right: 0; }
 
