@@ -3,16 +3,13 @@
    Menu dibangun oleh JavaScript
    ========================================= */
 
-/* Bawaan bahasa Indonesia: pengunjung dan Google (yang tidak
-   punya pilihan tersimpan) melihat teks Indonesia, sesuai
-   kata kunci yang dicari orang di Indonesia. */
+/* Teks di HTML ditulis dalam bahasa Indonesia; bahasa tampilan bawaan diatur di bawah. */
 let BAHASA = 'id';
 let JUDUL_ASLI = null;   /* <title> bawaan halaman (bahasa Indonesia) */
-try { BAHASA = localStorage.getItem('bahasa') || 'id'; } catch (e) { BAHASA = 'id'; }
-/* Beranda selalu dibuka dalam bahasa Indonesia (permintaan pemilik, Okt 2026).
-   Pilihan bahasa pengunjung tetap tersimpan dan berlaku di halaman lain;
-   di beranda pengunjung masih bisa mengganti bahasa lewat menu bendera. */
-if (/(^|\/)(index\.html)?$/.test(location.pathname)) BAHASA = 'id';
+/* Bawaan saat website dibuka = ENGLISH di semua halaman (permintaan pemilik, 8 Okt 2026,
+   setelah dijelaskan risiko SEO). Teks HTML tetap bahasa Indonesia; JS menggantinya ke EN.
+   Bila pengunjung memilih bahasa lewat menu bendera, pilihan itu disimpan & dipakai. */
+try { BAHASA = localStorage.getItem('bahasa') || 'en'; } catch (e) { BAHASA = 'en'; }
 
 /* --- Definisi bahasa + bendera --- */
 const DAFTAR_BAHASA = [
