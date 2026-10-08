@@ -117,7 +117,7 @@ function kartuProduk(p, brand, base, i = 0) {
         <img src="${base}${gambarKecil(p.gambar)}" alt="${altProduk(p)}" onerror="this.style.visibility='hidden'" loading="lazy" decoding="async">
       </div>
       <div class="produk-card__body">
-        <p class="produk-card__seri mb-0">${p.seri || ''}</p>
+        ${p.seri && p.seri !== p.nama ? `<p class="produk-card__seri mb-0">${p.seri}</p>` : ''}
         <h3 class="produk-card__nama">${p.nama}</h3>
         <p class="produk-card__kategori mb-0">${namaKategori(p.kategori, p.brand)}</p>
       </div>

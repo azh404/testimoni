@@ -530,7 +530,7 @@ function kartu(p) {
             <div class="produk-card__brand"><img src="${brand.logo}" alt="${esc(brand.nama)}" loading="lazy"></div>
             <div class="produk-card__media"><img src="${p.gambar.replace(/\.png$/, '-kecil.webp')}" alt="${esc([ALT_KATEGORI[p.kategori], brand.nama, p.nama].filter(Boolean).join(' '))}" loading="lazy" decoding="async"></div>
             <div class="produk-card__body">
-              <p class="produk-card__seri mb-0">${esc(p.seri || '')}</p>
+              ${p.seri && p.seri !== p.nama ? `<p class="produk-card__seri mb-0">${esc(p.seri)}</p>` : ''}
               <h3 class="produk-card__nama">${esc(p.nama)}</h3>
               <p class="produk-card__kategori mb-0">${esc(kat)}</p>
             </div>
