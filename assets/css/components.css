@@ -977,8 +977,6 @@ body.nav-transparan { padding-top: 0; }
   background: #25A244; color: #fff; display: grid; place-items: center;
 }
 .chatbot__kirim svg { width: 19px; height: 19px; }
-.chatbot__kaki { padding: 0 12px 12px; display: flex; flex-direction: column; gap: 6px; }
-.chatbot__catatan { color: #7b8794; font-size: .7rem; line-height: 1.35; text-align: center; }
 
 @media (max-width: 768px) {
   .chatbot__buka { right: 16px; bottom: 78px; width: 50px; height: 50px; }

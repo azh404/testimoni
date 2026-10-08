@@ -41,9 +41,6 @@
         <textarea rows="1" maxlength="1000" required></textarea>
         <button type="submit" class="chatbot__kirim" aria-label="">${IKON_KIRIM}</button>
       </form>
-      <footer class="chatbot__kaki">
-        <small class="chatbot__catatan"></small>
-      </footer>
     </section>`;
   document.body.appendChild(akar);
 
@@ -117,7 +114,6 @@
     $('.chatbot__ulang').setAttribute('aria-label', tx('chat.ulang', 'Mulai ulang'));
     input.placeholder = tx('chat.ketik', 'Tulis pertanyaan…');
     $('.chatbot__kirim').setAttribute('aria-label', tx('chat.kirim', 'Kirim'));
-    $('.chatbot__catatan').textContent = tx('chat.catatan', '');
     saran.innerHTML = [1, 2, 3, 4].map(i => `<button type="button">${esc(tx('chat.saran' + i, ''))}</button>`).join('');
     tampilkanSemua();
   }

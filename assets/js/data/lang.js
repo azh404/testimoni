@@ -419,7 +419,6 @@ const TEKS = {
   'chat.kirim':    { id: 'Kirim', en: 'Send', zh: '发送' },
   'chat.tutup':    { id: 'Tutup percakapan', en: 'Close chat', zh: '关闭对话' },
   'chat.ulang':    { id: 'Mulai percakapan baru', en: 'Start a new chat', zh: '开始新对话' },
-  'chat.catatan':  { id: 'Mas DASS adalah asisten AI dan dapat keliru. Harga dan ketersediaan unit dikonfirmasi langsung oleh tim kami.', en: 'Mas DASS is an AI assistant and may make mistakes. Prices and availability are confirmed directly by our team.', zh: 'Mas DASS 是AI助手，回答可能有误。价格与库存以我们团队的确认为准。' },
   'chat.gagal':    { id: 'Mohon maaf, Mas DASS sedang tidak dapat merespons. Silakan hubungi tim kami melalui WhatsApp di 0811-1660-2926.', en: 'Sorry, Mas DASS is unable to respond right now. Please contact our team on WhatsApp at +62 811-1660-2926.', zh: '抱歉，Mas DASS 暂时无法回复。请通过 WhatsApp（+62 811-1660-2926）联系我们的团队。' },
   'wa.online':         { id: 'Tim kami sedang online', en: 'Our team is online', zh: '团队在线' },
   'wa.offline':        { id: 'Di luar jam kerja — kami balas di jam kerja berikutnya', en: 'Outside working hours — we will reply during the next working hours', zh: '非工作时间，我们将在下个工作时段回复' },
