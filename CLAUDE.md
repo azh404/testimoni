@@ -184,7 +184,7 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   → Visi (kotak kutipan gradasi) + Misi 6 kartu bernomor → Mengapa Kami (kunci `unggul.*`)
   → Kemitraan. CSS awalan `.tt-`.
 - Halaman Kontak didesain ulang (6 Okt 2026): judul di tengah tanpa banner (H1 + garis hijau) → 3 kartu
-  kontak cepat (WhatsApp hijau + status online otomatis `[data-wa-status]` dari `sedangJamKerja()`,
+  kontak cepat 2 baris saja (label + isi; 8 Okt: status online WA & keterangan IG dihapus atas permintaan) (WhatsApp hijau,
   Instagram @dass.agriculture (menggantikan kartu Telepon atas permintaan), Email; kartu ringkas mendatar
   ikon-kiri + H1 kecil, versi besar dinilai "terlalu besar") → form "Kirim Pesan" (kiri)
   + peta & alamat/jam & tombol Google Maps/Ulasan (kanan). CSS awalan `.kt-`.
