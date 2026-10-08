@@ -2516,3 +2516,16 @@ body[data-brand="eavision"] .produk-grid {
 }
 .detail-putar .putar__unit { max-width: 100%; max-height: 100%; object-fit: contain; }
 .detail-media .detail-putar .putar__pantul { max-height: none; filter: none; }
+
+/* Slide hero berupa foto yang sudah punya tulisan sendiri (data-teks-sendiri): kalimat hero disembunyikan */
+.hero__content { transition: opacity .5s ease; }
+.hero--teks-foto .hero__content { opacity: 0; }
+/* Foto bertulisan ditampilkan utuh (tidak terpotong); sisa ruang diisi hijau gelap */
+.hero__slide[data-teks-sendiri] {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #0b1c0e;
+}
+.hero__overlay { transition: opacity .5s ease; }
+.hero--teks-foto .hero__overlay { opacity: 0; }
+.hero--teks-foto .hero__dots { justify-content: flex-end; }
