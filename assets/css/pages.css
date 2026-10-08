@@ -2569,14 +2569,8 @@ a.produk-card:hover .produk-card__body::after { background: #8DC63F; color: #fff
   border-radius: 20px;
   box-shadow: 0 20px 44px rgba(15, 23, 42, .16);
 }
-.tt-foto figcaption {
-  margin-top: var(--sp-3);
-  font-size: var(--fs-sm); color: var(--color-muted);
-  display: flex; align-items: center; gap: 8px;
-}
-.tt-foto figcaption::before { content: ""; width: 18px; height: 2px; border-radius: 2px; background: #8DC63F; flex-shrink: 0; }
 
-/* A. Di samping teks profil */
+/* Foto tim di samping teks profil */
 .tt-profil--foto { grid-template-columns: 1.1fr .9fr; max-width: 1120px; margin-inline: auto; gap: clamp(2rem, 5vw, 4.5rem); }
 .tt-profil--foto .tt-profil__teks h1::after {
   content: ''; display: block; width: 80px; height: 4px; margin-top: var(--sp-4);
@@ -2589,16 +2583,8 @@ a.produk-card:hover .produk-card__body::after { background: #8DC63F; color: #fff
   background: linear-gradient(135deg, #8DC63F, var(--color-primary));
   opacity: .9;
 }
-.tt-profil--foto .tt-foto figcaption { margin-top: calc(var(--sp-3) + 22px); }
-/* B. Di samping kotak Visi */
-.tt-visi-foto { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-7); align-items: center; max-width: 1100px; margin: 0 auto var(--sp-8); }
-.tt-visi-foto .tt-visi { margin: 0; }
-/* C. Bagian "Kantor Kami" di antara profil & visi */
-.tt-kantor { max-width: 900px; margin-inline: auto; }
-.tt-kantor .tt-foto__bingkai img { aspect-ratio: 16 / 10; object-fit: cover; object-position: center top; }
-
 @media (max-width: 860px) {
-  .tt-profil--foto, .tt-visi-foto { grid-template-columns: 1fr; }
+  .tt-profil--foto { grid-template-columns: 1fr; }
   .tt-profil--foto .tt-foto { order: -1; }
   .tt-profil--foto .tt-foto__bingkai::before { inset: 10px -10px -10px 10px; }
 }
