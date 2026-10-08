@@ -978,11 +978,6 @@ body.nav-transparan { padding-top: 0; }
 }
 .chatbot__kirim svg { width: 19px; height: 19px; }
 .chatbot__kaki { padding: 0 12px 12px; display: flex; flex-direction: column; gap: 6px; }
-.chatbot__wa {
-  display: flex; align-items: center; justify-content: center; gap: 8px; padding: 8px; border-radius: 12px;
-  background: #EAF7EE; color: #1B7A3A; font-weight: 700; font-size: .84rem;
-}
-.chatbot__wa svg { width: 18px; height: 18px; }
 .chatbot__catatan { color: #7b8794; font-size: .7rem; line-height: 1.35; text-align: center; }
 
 @media (max-width: 768px) {

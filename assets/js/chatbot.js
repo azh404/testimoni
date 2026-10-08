@@ -1,5 +1,5 @@
 /* =========================================
-   CHATBOT AI "ASISTEN DASS"
+   CHATBOT AI "MAS DASS"
    Tombol bulat di atas tombol WhatsApp → panel chat. Pertanyaan dikirim ke
    COMPANY.chatbotUrl (api/chat.php di Hostinger), yang meneruskannya ke Claude.
    Riwayat percakapan disimpan di sessionStorage (hilang saat tab ditutup).
@@ -16,10 +16,9 @@
   const lacak = (nama) => { if (typeof gtag === 'function') gtag('event', nama); };
 
   const IKON_KIRIM = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3.4 20.4l17.4-7.5c.8-.4.8-1.5 0-1.8L3.4 3.6c-.7-.3-1.4.3-1.3 1l.9 5.6c.1.5.5.8 1 .9L14 12l-10 .9c-.5.1-.9.4-1 .9l-.9 5.6c-.1.7.6 1.3 1.3 1z"/></svg>';
-  const IKON_WA = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>';
 
   const base = document.body.dataset.base || '';
-  /* Maskot Asisten DASS (gambar dari pengguna, 10 Okt 2026) */
+  /* Maskot Mas DASS (gambar dari pengguna, 10 Okt 2026) */
   const MASKOT = `${base}assets/images/chatbot/maskot-avatar.webp`;
   const akar = document.createElement('div');
   akar.id = 'chatbot';
@@ -43,7 +42,6 @@
         <button type="submit" class="chatbot__kirim" aria-label="">${IKON_KIRIM}</button>
       </form>
       <footer class="chatbot__kaki">
-        <a class="chatbot__wa" target="_blank" rel="noopener">${IKON_WA}<span></span></a>
         <small class="chatbot__catatan"></small>
       </footer>
     </section>`;
@@ -103,35 +101,25 @@
   }
 
   function tampilkanSemua() {
-    isi.innerHTML = `<div class="chatbot__sambut"><img src="${MASKOT}" alt=""><strong>${esc(tx('chat.judul', 'Asisten DASS'))}</strong><span>${esc(tx('chat.sub', ''))}</span></div>`;
-    tambahGelembung('assistant', tx('chat.sapa', 'Halo! Saya Asisten DASS.'));
+    isi.innerHTML = `<div class="chatbot__sambut"><img src="${MASKOT}" alt=""><strong>${esc(tx('chat.judul', 'Mas DASS'))}</strong><span>${esc(tx('chat.sub', ''))}</span></div>`;
+    tambahGelembung('assistant', tx('chat.sapa', 'Halo, saya Mas DASS.'));
     riwayat.forEach(p => tambahGelembung(p.peran, p.isi));
     saran.hidden = riwayat.length > 0;
   }
 
-  function linkWA() {
-    const terakhir = [...riwayat].reverse().find(p => p.peran === 'user');
-    const pesan = terakhir
-      ? `Halo DASS, saya dari chat website. Pertanyaan saya: ${terakhir.isi}`
-      : 'Halo DASS, saya ingin bertanya mengenai produk Anda';
-    $('.chatbot__wa').href = `https://wa.me/${typeof nomorWA === 'function' ? nomorWA() : '6281116602926'}?text=${encodeURIComponent(pesan)}`;
-  }
-
   function pasangTeks() {
-    $('.chatbot__label').textContent = tx('chat.buka', 'Tanya Asisten DASS');
-    tombol.setAttribute('aria-label', tx('chat.buka', 'Tanya Asisten DASS'));
-    $('.chatbot__judul').textContent = tx('chat.judul', 'Asisten DASS');
-    $('.chatbot__sub').textContent = tx('chat.sub', 'Asisten AI');
+    $('.chatbot__label').textContent = tx('chat.buka', 'Tanya Mas DASS');
+    tombol.setAttribute('aria-label', tx('chat.buka', 'Tanya Mas DASS'));
+    $('.chatbot__judul').textContent = tx('chat.judul', 'Mas DASS');
+    $('.chatbot__sub').textContent = tx('chat.sub', 'Asisten virtual DASS');
     $('.chatbot__tutup').setAttribute('aria-label', tx('chat.tutup', 'Tutup'));
     $('.chatbot__ulang').title = tx('chat.ulang', 'Mulai ulang');
     $('.chatbot__ulang').setAttribute('aria-label', tx('chat.ulang', 'Mulai ulang'));
     input.placeholder = tx('chat.ketik', 'Tulis pertanyaan…');
     $('.chatbot__kirim').setAttribute('aria-label', tx('chat.kirim', 'Kirim'));
-    $('.chatbot__wa span').textContent = tx('chat.wa', 'Lanjut di WhatsApp');
     $('.chatbot__catatan').textContent = tx('chat.catatan', '');
     saran.innerHTML = [1, 2, 3, 4].map(i => `<button type="button">${esc(tx('chat.saran' + i, ''))}</button>`).join('');
     tampilkanSemua();
-    linkWA();
   }
   window.gantiBahasaChatbot = pasangTeks;
 
@@ -142,7 +130,7 @@
     document.documentElement.classList.toggle('chatbot-terbuka', terbuka);
     if (terbuka) {
       lacak('chatbot_buka');
-      isi.scrollTop = isi.scrollHeight;
+      isi.scrollTop = riwayat.length ? isi.scrollHeight : 0;   /* percakapan baru: tampilkan sambutan dari atas */
       if (window.matchMedia('(min-width: 769px)').matches) input.focus();
     }
   }
@@ -156,7 +144,6 @@
     riwayat.push({ peran: 'user', isi: teks });
     simpan();
     tambahGelembung('user', teks);
-    linkWA();
     lacak('chatbot_tanya');
 
     const ketik = document.createElement('div');
@@ -181,7 +168,7 @@
     } catch (e) { jawaban = ''; }
     ketik.remove();
     if (!jawaban) {
-      tambahGelembung('assistant', tx('chat.gagal', 'Maaf, asisten sedang tidak bisa dihubungi.'));
+      tambahGelembung('assistant', tx('chat.gagal', 'Mohon maaf, Mas DASS sedang tidak dapat merespons.'));
     } else {
       riwayat.push({ peran: 'assistant', isi: jawaban });
       simpan();
@@ -192,8 +179,7 @@
 
   tombol.addEventListener('click', () => buka(panel.hidden));
   $('.chatbot__tutup').addEventListener('click', () => buka(false));
-  $('.chatbot__ulang').addEventListener('click', () => { riwayat = []; simpan(); tampilkanSemua(); linkWA(); });
-  $('.chatbot__wa').addEventListener('click', () => lacak('chatbot_ke_whatsapp'));
+  $('.chatbot__ulang').addEventListener('click', () => { riwayat = []; simpan(); tampilkanSemua(); });
   saran.addEventListener('click', e => { if (e.target.matches('button')) kirim(e.target.textContent); });
   form.addEventListener('submit', e => { e.preventDefault(); const v = input.value; input.value = ''; input.style.height = ''; kirim(v); });
   input.addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); form.requestSubmit(); } });
@@ -202,7 +188,7 @@
 
   pasangTeks();
 
-  /* Label "Tanya Asisten DASS" muncul sebentar di samping tombol (sekali per sesi) */
+  /* Label "Tanya Mas DASS" muncul sebentar di samping tombol (sekali per sesi) */
   try {
     if (!sessionStorage.getItem('dass-chat-label')) {
       setTimeout(() => akar.classList.add('chatbot--label'), 2500);

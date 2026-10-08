@@ -1,6 +1,6 @@
 <?php
 /* =========================================
-   CHATBOT AI "ASISTEN DASS" — server (PHP, Hostinger)
+   CHATBOT AI "MAS DASS" — server (PHP, Hostinger)
    Menerima percakapan dari assets/js/chatbot.js, meneruskannya ke Claude (Anthropic API),
    lalu mengembalikan jawaban. Kunci API disimpan di api/config.php (TIDAK ikut GitHub).
    Basis pengetahuan: api/data/pengetahuan.txt (dibuat ulang: node tools/buat-pengetahuan-chatbot.js).
@@ -19,7 +19,7 @@ function balas(int $kode, array $isi): never
     exit;
 }
 
-$PESAN_GAGAL = 'Maaf, asisten sedang tidak bisa menjawab. Silakan hubungi tim kami langsung lewat WhatsApp 0811-1660-2926.';
+$PESAN_GAGAL = 'Mohon maaf, Mas DASS sedang tidak dapat merespons. Silakan hubungi tim kami melalui WhatsApp di 0811-1660-2926.';
 
 /* --- Konfigurasi --- */
 $fileConfig = __DIR__ . '/config.php';
@@ -81,7 +81,7 @@ function cekBatas(string $ip, int $perJam, int $perHari): bool
 }
 date_default_timezone_set('Asia/Jakarta');
 if (!cekBatas($_SERVER['REMOTE_ADDR'] ?? '0', $batasPerJam, $batasPerHari)) {
-    balas(429, ['error' => 'batas', 'jawaban' => 'Batas pertanyaan untuk saat ini sudah tercapai. Silakan lanjutkan percakapan dengan tim kami lewat WhatsApp 0811-1660-2926.']);
+    balas(429, ['error' => 'batas', 'jawaban' => 'Batas pertanyaan untuk saat ini sudah tercapai. Silakan lanjutkan percakapan dengan tim kami melalui WhatsApp di 0811-1660-2926.']);
 }
 
 /* --- Baca & periksa percakapan --- */
@@ -116,13 +116,14 @@ $pengetahuan = (string) @file_get_contents(__DIR__ . '/data/pengetahuan.txt');
 $namaBahasa = ['id' => 'Bahasa Indonesia', 'en' => 'English', 'zh' => '简体中文'][$bahasa];
 
 $instruksi = <<<TXT
-Anda adalah "Asisten DASS", asisten virtual di website PT Diesel Agri Sukses Sejahtera (DASS), distributor resmi mesin pertanian Zoomlion, drone EAVision, dan teknologi pertanian presisi VectorAgr di Cakung, Jakarta Timur.
+Anda adalah "Mas DASS", asisten virtual di website PT Diesel Agri Sukses Sejahtera (DASS), distributor resmi mesin pertanian Zoomlion, drone EAVision, dan teknologi pertanian presisi VectorAgr di Cakung, Jakarta Timur.
 
 Tugas Anda: membantu pengunjung menemukan unit yang sesuai kebutuhan lahannya, menjelaskan produk dan spesifikasinya, lalu mengarahkan mereka ke tim DASS lewat WhatsApp untuk harga dan pembelian.
 
 Cara menjawab:
 - Jawab dalam bahasa yang dipakai pengunjung. Bila tidak jelas, pakai {$namaBahasa} (bahasa yang dipilih di website).
-- Singkat, ramah, dan profesional: umumnya 2–5 kalimat atau daftar pendek, tanpa judul besar. Gunakan **tebal** seperlunya.
+- Gaya bicara: sopan, hangat, dan profesional seperti staf penjualan berpengalaman. Sapa pengunjung dengan "Bapak/Ibu" atau "Anda" (bukan "kamu"), tanpa bahasa gaul dan tanpa emoji.
+- Singkat dan jelas: umumnya 2–5 kalimat atau daftar pendek, tanpa judul besar. Gunakan **tebal** seperlunya. Jangan mengulang sapaan perkenalan di setiap jawaban.
 - Gunakan HANYA informasi di bagian PENGETAHUAN. Jangan mengarang model, angka, atau fitur. Bila informasinya tidak ada, katakan terus terang dan sarankan bertanya ke tim lewat WhatsApp.
 - Saat merekomendasikan unit, sebutkan 1–3 pilihan yang paling cocok beserta alasannya, dan sertakan alamat halaman produknya (URL lengkap dari PENGETAHUAN). Bila kebutuhan belum jelas, ajukan satu pertanyaan singkat (mis. luas lahan, jenis tanaman, atau lokasi).
 - Harga, stok, diskon, cicilan, ongkos kirim, dan waktu pengiriman: jangan menyebut angka atau janji apa pun. Arahkan ke WhatsApp tim (0811-1660-2926) agar dibuatkan penawaran.
@@ -162,7 +163,7 @@ try {
     );
 
     if ($jawaban->stopReason === 'refusal') {
-        balas(200, ['jawaban' => 'Maaf, saya tidak bisa membantu pertanyaan tersebut. Untuk informasi produk DASS, silakan tanyakan hal lain atau hubungi tim kami lewat WhatsApp 0811-1660-2926.']);
+        balas(200, ['jawaban' => 'Mohon maaf, saya tidak dapat membantu pertanyaan tersebut. Silakan ajukan pertanyaan seputar produk DASS, atau hubungi tim kami melalui WhatsApp di 0811-1660-2926.']);
     }
 
     $teks = '';
@@ -174,7 +175,7 @@ try {
     $teks = trim($teks);
     balas(200, ['jawaban' => $teks !== '' ? $teks : $PESAN_GAGAL]);
 } catch (RateLimitException $e) {
-    balas(503, ['error' => 'sibuk', 'jawaban' => 'Asisten sedang ramai. Coba lagi sebentar, atau hubungi tim kami lewat WhatsApp 0811-1660-2926.']);
+    balas(503, ['error' => 'sibuk', 'jawaban' => 'Mas DASS sedang melayani banyak pertanyaan. Silakan coba beberapa saat lagi, atau hubungi tim kami melalui WhatsApp di 0811-1660-2926.']);
 } catch (APIStatusException $e) {
     error_log('Chatbot DASS: ' . ($e->type?->value ?? 'api_error') . ' ' . $e->getMessage());
     balas(502, ['error' => 'api', 'jawaban' => $PESAN_GAGAL]);
