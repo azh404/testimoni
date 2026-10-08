@@ -24,19 +24,18 @@ function bukaFormLead(mode) {
   const id = 'leadJudul';
 
   const base = document.body.dataset.base || '';
-  const gaya = window.GAYA_LEAD || 'a';   /* PRATINJAU: a | b | c */
   const ikonCek = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
   const manfaat = ['lead.untung1', 'lead.untung2', 'lead.untung3']
     .map(k => `<li>${ikonCek}<span>${t(k)}</span></li>`).join('');
 
   const wadah = document.createElement('div');
-  wadah.className = 'lead lead--' + gaya + (brosur ? ' lead--brosur' : '');
+  wadah.className = 'lead lead--a' + (brosur ? ' lead--brosur' : '');
   wadah.innerHTML = `
     <div class="lead__latar" data-lead-tutup></div>
     <div class="lead__kotak" role="dialog" aria-modal="true" aria-labelledby="${id}">
       <button type="button" class="lead__x" data-lead-tutup aria-label="${t('lead.tutup')}">&times;</button>
       <aside class="lead__sisi">
-        <img class="lead__foto" src="${base}${window.FOTO_LEAD || 'assets/images/hero/hero-tractor.webp?v=2'}" alt="" aria-hidden="true">
+        <img class="lead__foto" src="${base}assets/images/leads/lead-pq-series.webp" alt="" aria-hidden="true">
         <div class="lead__sisi-isi">
           <img class="lead__logo" src="${base}assets/images/logo/logo-dass-putih.png" alt="DASS">
           <ul class="lead__manfaat">${manfaat}</ul>

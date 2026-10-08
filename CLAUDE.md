@@ -192,7 +192,10 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   (3 baris Rewrite diberi #; hapus # untuk menutup website dengan 503). Pengguna mengaktifkannya
   langsung di File Manager Hostinger.
 - **Form leads → Google Sheets (6 Okt 2026)**: `assets/js/leads.js` (dimuat main.js HANYA bila `COMPANY.leadsUrl`
-  diisi): pop-up "Dapatkan Brosur & Penawaran Harga" sekali setelah 25 dtk (tidak di kontak/404/perbaikan; ditutup →
+  diisi): pop-up "Dapatkan Brosur & Penawaran Harga Terbaru" sekali setelah 10 dtk (8 Okt; desain A: panel kiri foto
+  `assets/images/leads/lead-pq-series.webp` (potongan poster Marketing PQ Series) + logo + 3 manfaat `lead.untung1-3`, form kanan,
+  eyebrow "Gratis & tanpa komitmen", tombol hijau "Kirim ke WhatsApp Saya"; persetujuan = "Saya bersedia dihubungi tim DASS
+  melalui WhatsApp…" (TANPA kata data/disimpan); kalimat "tanpa spam" DIHAPUS atas permintaan) (tidak di kontak/404/perbaikan; ditutup →
   7 hari tidak muncul; sudah isi → tidak muncul lagi, localStorage `dass-lead-terkirim`) + `gerbangLead()` wajib isi
   sekali sebelum unduh brosur (brosur-pdf.js). Kolom: nama, WA, perusahaan, minat, lokasi, centang persetujuan
   (UU PDP), kolom jebakan bot `situs`. Kirim `fetch` no-cors text/plain ke Apps Script (`tools/leads-apps-script.gs`,
@@ -295,6 +298,9 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
 - Google AI Overview menampilkan alamat salah (Epiwalk, Rasuna Said) & merek salah (Shaktiman, John
   Deere) dari LinkedIn direktur (Anjar Sana Kusuma Wiwaha) — pengguna disarankan cek apakah Epiwalk
   alamat legal, perbarui LinkedIn, buat LinkedIn Company Page, laporkan ke Google. Belum ada kabar.
+- **Poster Marketing (8 Okt)**: folder Drive "IMAGE" (id `1fPkvJf0AUWDzFOt5EdhbjN0RG1vdP0mI`, milik dass.marcomm) berisi ±30
+  poster resmi Zoomlion 3426×1928 (logo ZOOMLION kiri atas + tulisan "<MODEL> VISION CREATES FUTURE" di bawah). File ≤6 MB bisa
+  diunduh lewat konektor Drive (hasil tersimpan ke tool-results, decode base64); file ±9–11 MB gagal → minta pengguna taruh di foto-baru/.
 - Ide yang ditawarkan tapi belum dikerjakan: Kebijakan Privasi (UU PDP, perlu cek legal),
   galeri pengiriman unit/testimoni (perlu foto sales), Google Merchant Center (perlu
   keputusan harga), Bing Webmaster Tools, konten artikel rutin.
