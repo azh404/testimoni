@@ -140,6 +140,10 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   kalimat hero "Authorised distributor…" TETAP tampil (permintaan 8 Okt), cover + `background-position: center bottom` agar tulisan PADDY FIELD
   utuh di layar lebar). slider.js men-toggle `.hero--teks-foto`. Rice Transplanter & Baler 9YY-2200 sempat dipasang lalu
   DIHAPUS atas permintaan (versi contain = pinggir hitam di layar lebar, ditolak). Sumber foto di `foto-baru/`.
+- **Gaya navbar (9 Okt, dipilih dari 20 pratinjau = gabungan no. 5+9+12+19)**: logo PUTIH (filter invert) dalam blok navy miring
+  (`.header .brand::before`, clip-path) di semua halaman; menu huruf kapital renggang (.74rem, HP .9rem); menu aktif = kapsul hijau
+  #25A244 teks putih; beranda (ada `.hero`) → navbar.js menambah `.header--transparan` + `body.nav-transparan` (padding-top 0):
+  transparan gradasi gelap di atas video, berubah putih kaca saat di-scroll. CSS di akhir components.css.
 - **Navbar (8 Okt)**: tinggi 62px (HP 58px, sebelumnya 76/68), logo 40px (HP 32px), `.header .header__inner` padding
   clamp(1.25rem, 6vw, 5rem) agar logo tidak mepet pojok. Indikator slide hero (`.hero__dots`) DISEMBUNYIKAN (permintaan).
 - **Kartu produk desain baru (8 Okt)**: lencana logo merek kecil di pojok foto, foto besar di latar abu lembut, seri hanya

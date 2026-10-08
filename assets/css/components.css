@@ -821,3 +821,63 @@ body.lead-terbuka { overflow: hidden; }
   .lead__form { padding: var(--sp-5); }
   .lead__judul { font-size: 1.25rem; }
 }
+
+/* =========================================
+   GAYA NAVBAR (9 Okt 2026): logo dalam blok navy miring, menu huruf kapital,
+   menu aktif berlatar hijau, transparan di atas video beranda (.header--transparan)
+   ========================================= */
+.nav__link,
+.nav__link--drop {
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  font-size: .74rem;
+  font-weight: 600;
+  border-radius: 999px;
+}
+.nav__link:hover { background-color: #EAF4EC; color: #1E7A3C; }
+.nav__link.is-active,
+.nav__link.is-active:hover { background-color: #25A244; color: #fff; }
+
+/* Logo di dalam blok navy miring (blok memanjang sampai tepi kiri layar) */
+.header .brand {
+  position: relative;
+  z-index: 0;
+  align-self: stretch;
+  padding-right: 40px;
+  flex-shrink: 0;
+}
+.header .brand::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: -100vw;
+  right: 0;
+  background: linear-gradient(90deg, #0C2749, #123A6B);
+  clip-path: polygon(0 0, 100% 0, calc(100% - 28px) 100%, 0 100%);
+}
+.header .brand__logo { filter: brightness(0) invert(1); }
+
+/* Transparan di atas video (hanya beranda, sebelum di-scroll) */
+body.nav-transparan { padding-top: 0; }
+.header--transparan:not(.is-scrolled) { border-bottom-color: transparent; }
+.header--transparan:not(.is-scrolled)::before {
+  background: linear-gradient(180deg, rgba(5, 15, 30, .62), rgba(5, 15, 30, 0));
+}
+.header--transparan:not(.is-scrolled) .brand::before { background: rgba(12, 39, 73, .92); }
+.header--transparan:not(.is-scrolled) .cari-tombol { color: #fff; }
+.header--transparan:not(.is-scrolled) .cari-tombol:hover { background-color: rgba(255, 255, 255, .12); color: #fff; }
+.header--transparan:not(.is-scrolled) .nav-toggle:not(.is-open) span { background-color: #fff; }
+@media (min-width: 993px) {
+  .header--transparan:not(.is-scrolled) .nav__link:not(.is-active),
+  .header--transparan:not(.is-scrolled) .lang-trigger { color: #fff; }
+  .header--transparan:not(.is-scrolled) .nav__link:not(.is-active):hover,
+  .header--transparan:not(.is-scrolled) .lang-trigger:hover { background-color: rgba(255, 255, 255, .14); color: #fff; }
+  .header--transparan:not(.is-scrolled) .lang-drop { border-left-color: rgba(255, 255, 255, .3); }
+}
+/* Menu HP: tulisan tetap normal (bukan kapital kecil) agar mudah dibaca */
+@media (max-width: 992px) {
+  .nav__link, .nav__link--drop { font-size: .9rem; letter-spacing: .06em; }
+  .header .brand { padding-right: 32px; }
+}
