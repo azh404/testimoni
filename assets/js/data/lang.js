@@ -485,7 +485,7 @@ const TEKS = {
    ===================================================================== */
 const KATEGORI_TEKS = {
   /* --- Zoomlion --- */
-  'hybrid':    { id: 'Mesin Hybrid',      en: 'Hybrid Product',      zh: '混合动力产品' },
+  'hybrid':    { id: 'Mesin Hybrid',      en: 'Hybrid Machinery',    zh: '混合动力机械' },
   'tractor':   { id: 'Traktor',             en: 'Tractor',             zh: '拖拉机' },
   'planter':   { id: 'Mesin Tanam Padi',   en: 'Rice Transplanter',   zh: '水稻插秧机' },
   'harvester': { id: 'Combine Harvester',   en: 'Combine Harvester',   zh: '联合收割机' },

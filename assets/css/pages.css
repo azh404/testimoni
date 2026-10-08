@@ -2527,3 +2527,72 @@ body[data-brand="eavision"] .produk-grid {
 .hero__overlay { transition: opacity .5s ease; }
 .hero--teks-foto .hero__overlay { opacity: 0; }
 .hero--teks-foto .hero__dots { justify-content: flex-end; }
+
+/* =========================================
+   KARTU PRODUK — desain baru (8 Okt 2026)
+   Logo merek jadi lencana kecil, foto lebih besar di latar lembut,
+   kategori berupa chip, panah di pojok. Selektor a.produk-card supaya
+   menang dari aturan lama (termasuk responsive.css & khusus VectorAgr).
+   ========================================= */
+a.produk-card { position: relative; border-radius: 16px; }
+a.produk-card:hover {
+  border-color: #8DC63F;
+  box-shadow: 0 14px 30px rgba(15, 23, 42, .10);
+}
+a.produk-card .produk-card__brand {
+  position: absolute; top: 12px; left: 12px; z-index: 2;
+  display: flex; align-items: center;
+  height: auto; padding: 5px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .94);
+  box-shadow: 0 1px 4px rgba(15, 23, 42, .10);
+}
+a.produk-card .produk-card__brand img { max-height: 14px; max-width: 84px; }
+a.produk-card .produk-card__media {
+  aspect-ratio: 4 / 3;
+  padding: 38px 14px 10px;
+  background: radial-gradient(80% 70% at 50% 62%, #ffffff 0%, #f3f6f9 68%, #e8edf2 100%);
+}
+a.produk-card .produk-card__body {
+  position: relative;
+  text-align: left;
+  border-top: 0;
+  padding: 14px 16px 16px;
+}
+a.produk-card .produk-card__seri { font-size: 11px; color: var(--color-muted); font-weight: 600; margin-bottom: 2px; padding-right: 34px; }
+a.produk-card .produk-card__nama {
+  font-size: 1.05rem; font-weight: 700; line-height: 1.25;
+  margin-bottom: 8px; padding-right: 34px;
+}
+a.produk-card .produk-card__kategori {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+  font-size: 11px; font-weight: 600;
+}
+a.produk-card .produk-card__body::after {
+  content: "\2192";
+  position: absolute; top: 14px; right: 14px;
+  width: 28px; height: 28px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: #f1f4f7; color: var(--color-primary);
+  font-weight: 700;
+  transition: background-color .25s ease, color .25s ease, transform .25s ease;
+}
+a.produk-card:hover .produk-card__body::after { background: #8DC63F; color: #fff; transform: translateX(2px); }
+@media (max-width: 640px) {
+  a.produk-card .produk-card__brand { top: 8px; left: 8px; padding: 4px 8px; }
+  a.produk-card .produk-card__brand img { max-height: 11px; max-width: 64px; }
+  a.produk-card .produk-card__media { padding: 30px 8px 6px; }
+  a.produk-card .produk-card__body { padding: 10px 12px 12px; }
+  a.produk-card .produk-card__nama { font-size: .92rem; padding-right: 26px; }
+  a.produk-card .produk-card__seri { padding-right: 26px; }
+  a.produk-card .produk-card__body::after { width: 22px; height: 22px; top: 10px; right: 10px; font-size: 12px; }
+}
+
+/* Navbar (8 Okt 2026): logo & menu lebih ke dalam, tidak mepet pojok */
+.header .header__inner { padding-inline: clamp(1.25rem, 6vw, 5rem); }
+/* Indikator slide hero (garis-garis di kiri bawah) disembunyikan atas permintaan pemilik */
+.hero__dots { display: none !important; }

@@ -53,7 +53,7 @@
   /* ===== LAYOUT ===== */
   --container:      1200px;
   --container-pad:  clamp(1.25rem, 5vw, 4.5rem);   /* laptop: logo & isi tidak mepet ke pinggir */
-  --header-height:  76px;
+  --header-height:  62px;
 
   /* ===== RADIUS & BAYANGAN ===== */
   --radius-sm:   6px;
