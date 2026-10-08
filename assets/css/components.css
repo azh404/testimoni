@@ -777,3 +777,70 @@ body.lead-terbuka { overflow: hidden; }
   .nav__link { padding-inline: 10px; font-size: 0.84rem; }
   .lang-drop { margin-left: 4px; padding-left: 8px; }
 }
+
+/* =========================================
+   FORM LEADS — desain baru (pratinjau 8 Okt 2026)
+   ========================================= */
+.lead__kotak { padding: 0; border-top: 0; border-radius: 22px; overflow: hidden; display: flex; box-shadow: 0 30px 70px rgba(10,20,35,.35); }
+.lead__form { flex: 1; min-width: 0; padding: var(--sp-6); overflow-y: auto; max-height: calc(100vh - 2 * var(--sp-4)); }
+.lead__x { z-index: 3; top: 12px; right: 12px; width: 34px; height: 34px; border-radius: 50%; background: rgba(15,23,42,.06); font-size: 1.4rem; }
+.lead__eyebrow { display: inline-block; font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #2E7D32; background: #EAF5E1; padding: 4px 10px; border-radius: 999px; margin-bottom: var(--sp-3); }
+.lead__judul { font-size: 1.45rem; line-height: 1.25; }
+.lead__desc { color: var(--color-muted); line-height: 1.6; }
+.lead__label b { color: #E5484D; font-weight: 700; }
+.lead__label { font-size: .8rem; }
+.lead__input { padding: 11px 13px; border-radius: 12px; background: #F6F8FA; border-color: #E4E9EF; transition: border-color .2s, box-shadow .2s, background-color .2s; }
+.lead__input:focus { outline: none; background: #fff; border-color: #8DC63F; box-shadow: 0 0 0 4px rgba(141,198,63,.18); }
+.lead__input::placeholder { color: #9AA6B2; }
+.lead__kirim { background: #25D366; border-color: #25D366; color: #fff; border-radius: 14px; box-shadow: 0 10px 22px rgba(37,211,102,.3); }
+.lead__kirim:hover { background: #1EBE5A; border-color: #1EBE5A; }
+.lead__aman { margin: var(--sp-3) 0 0; text-align: center; font-size: .75rem; color: var(--color-muted); }
+.lead__manfaat { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.lead__manfaat li { display: flex; gap: 10px; align-items: center; font-size: .9rem; font-weight: 500; }
+.lead__manfaat svg { flex-shrink: 0; width: 22px; height: 22px; padding: 4px; border-radius: 50%; background: #8DC63F; color: #fff; }
+.lead__sisi, .lead__manfaat--atas { display: none; }
+.lead__selesai { padding: var(--sp-6) 0; }
+
+/* A: foto + manfaat di kiri, form di kanan */
+.lead--a .lead__kotak { max-width: 860px; }
+.lead--a .lead__sisi { display: flex; position: relative; flex: 0 0 38%; color: #fff; }
+.lead--a .lead__foto { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.lead--a .lead__sisi::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12,39,73,.25) 0%, rgba(12,39,73,.55) 45%, rgba(10,30,20,.92) 100%); }
+.lead--a .lead__sisi-isi { position: relative; z-index: 1; display: flex; flex-direction: column; justify-content: space-between; padding: var(--sp-6) var(--sp-5); width: 100%; }
+.lead--a .lead__logo { width: 92px; height: auto; }
+.lead--a .lead__sisi .lead__manfaat li { font-size: .92rem; text-shadow: 0 1px 3px rgba(0,0,0,.35); }
+@media (max-width: 720px) {
+  .lead--a .lead__sisi { display: none; }
+  .lead--a .lead__manfaat--atas { display: grid; gap: 6px; margin-bottom: var(--sp-4); }
+  .lead--a .lead__manfaat--atas li { font-size: .82rem; }
+  .lead--a .lead__manfaat--atas svg { width: 18px; height: 18px; padding: 3px; }
+}
+
+/* B: kepala gradasi hijau + manfaat berupa chip */
+.lead--b .lead__kotak { max-width: 540px; }
+.lead--b .lead__form { padding: 0; }
+.lead--b .lead__kepala { padding: var(--sp-6) var(--sp-6) var(--sp-5); color: #fff; background: radial-gradient(120% 140% at 0% 0%, #2E9A55 0%, #1E7B46 45%, #123A6B 100%); margin-bottom: var(--sp-5); }
+.lead--b .lead__eyebrow { background: rgba(255,255,255,.16); color: #DFF3C9; }
+.lead--b .lead__judul { color: #fff; }
+.lead--b .lead__desc { color: rgba(255,255,255,.82); margin-bottom: var(--sp-4); }
+.lead--b .lead__manfaat--atas { display: flex; flex-wrap: wrap; gap: 6px; }
+.lead--b .lead__manfaat--atas li { font-size: .76rem; padding: 5px 10px 5px 6px; border-radius: 999px; background: rgba(255,255,255,.14); gap: 6px; }
+.lead--b .lead__manfaat--atas svg { width: 16px; height: 16px; padding: 2px; }
+.lead--b .lead__form > :not(.lead__kepala) { margin-inline: var(--sp-6); }
+.lead--b .lead__kirim { display: flex; width: calc(100% - 2 * var(--sp-6)); }
+.lead--b .lead__aman { margin-bottom: var(--sp-5); }
+.lead--b .lead__x { background: rgba(255,255,255,.18); color: #fff; }
+
+/* C: putih bersih, manfaat sebaris dengan centang hijau */
+.lead--c .lead__kotak { max-width: 520px; border-top: 6px solid #8DC63F; }
+.lead--c .lead__manfaat--atas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: var(--sp-5); }
+.lead--c .lead__manfaat--atas li { flex-direction: column; text-align: center; gap: 6px; font-size: .74rem; line-height: 1.35; padding: 10px 6px; border-radius: 12px; background: #F4F9EE; color: #2F4A1B; }
+
+@media (max-width: 480px) {
+  .lead__form, .lead--b .lead__kepala { padding: var(--sp-5); }
+  .lead--b .lead__form > :not(.lead__kepala) { margin-inline: var(--sp-5); }
+  .lead--b .lead__kirim { width: calc(100% - 2 * var(--sp-5)); }
+  .lead--c .lead__manfaat--atas { grid-template-columns: 1fr; }
+  .lead--c .lead__manfaat--atas li { flex-direction: row; text-align: left; padding: 6px 10px; }
+  .lead__judul { font-size: 1.25rem; }
+}
