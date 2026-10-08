@@ -881,3 +881,12 @@ body.nav-transparan { padding-top: 0; }
   .nav__link, .nav__link--drop { font-size: .9rem; letter-spacing: .06em; }
   .header .brand { padding-right: 32px; }
 }
+/* Saat di-scroll (semua halaman, termasuk beranda): kaca buram putih yang jelas terlihat */
+.header.is-scrolled::before,
+.header--transparan.is-scrolled::before {
+  background: rgba(255, 255, 255, .86);
+  -webkit-backdrop-filter: saturate(180%) blur(18px);
+  backdrop-filter: saturate(180%) blur(18px);
+}
+.header--transparan { transition: box-shadow var(--transition), border-color var(--transition); }
+.header--transparan::before { transition: background .3s ease; }
