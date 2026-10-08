@@ -1,7 +1,7 @@
 /* =========================================
    FORM LEADS → GOOGLE SHEETS
    Dimuat otomatis oleh main.js bila COMPANY.leadsUrl diisi.
-   1. Pop-up tawaran brosur & harga, muncul sekali setelah 25 detik
+   1. Pop-up tawaran brosur & harga, muncul sekali setelah 10 detik
       (tidak muncul lagi 7 hari bila ditutup, selamanya bila sudah mengisi).
    2. gerbangLead(): form wajib diisi sekali sebelum unduh brosur PDF.
    Data dikirim ke Google Apps Script (tools/leads-apps-script.gs).
@@ -9,7 +9,7 @@
 
 const LEAD_KUNCI_ISI   = 'dass-lead-terkirim';
 const LEAD_KUNCI_TUTUP = 'dass-lead-ditutup';
-const LEAD_JEDA_POPUP  = 25000;                    /* 25 detik */
+const LEAD_JEDA_POPUP  = 10000;                    /* 10 detik */
 const LEAD_JEDA_ULANG  = 7 * 24 * 60 * 60 * 1000;  /* 7 hari */
 
 const simpanLead = (k, v) => { try { localStorage.setItem(k, v); } catch (e) {} };
@@ -23,25 +23,40 @@ function bukaFormLead(mode) {
   const brosur = mode !== 'popup';
   const id = 'leadJudul';
 
+  const base = document.body.dataset.base || '';
+  const ikonCek = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  const manfaat = ['lead.untung1', 'lead.untung2', 'lead.untung3']
+    .map(k => `<li>${ikonCek}<span>${t(k)}</span></li>`).join('');
+
   const wadah = document.createElement('div');
-  wadah.className = 'lead';
+  wadah.className = 'lead lead--a' + (brosur ? ' lead--brosur' : '');
   wadah.innerHTML = `
     <div class="lead__latar" data-lead-tutup></div>
     <div class="lead__kotak" role="dialog" aria-modal="true" aria-labelledby="${id}">
       <button type="button" class="lead__x" data-lead-tutup aria-label="${t('lead.tutup')}">&times;</button>
+      <aside class="lead__sisi">
+        <img class="lead__foto" src="${base}assets/images/leads/lead-pq-series.webp" alt="" aria-hidden="true">
+        <div class="lead__sisi-isi">
+          <img class="lead__logo" src="${base}assets/images/logo/logo-dass-putih.png" alt="DASS">
+          <ul class="lead__manfaat">${manfaat}</ul>
+        </div>
+      </aside>
       <form class="lead__form" novalidate>
-        <h2 class="lead__judul" id="${id}">${t(brosur ? 'lead.judulBrosur' : 'lead.judul')}</h2>
-        <p class="lead__desc">${t(brosur ? 'lead.descBrosur' : 'lead.desc')}</p>
+        <div class="lead__kepala">
+          <span class="lead__eyebrow">${t('lead.eyebrow')}</span>
+          <h2 class="lead__judul" id="${id}">${t(brosur ? 'lead.judulBrosur' : 'lead.judul')}</h2>
+          <p class="lead__desc">${t(brosur ? 'lead.descBrosur' : 'lead.desc')}</p>
+          <ul class="lead__manfaat lead__manfaat--atas">${manfaat}</ul>
+        </div>
 
-        <label class="lead__label">${t('lead.nama')} *
-          <input class="lead__input" name="nama" type="text" maxlength="80" autocomplete="name" required>
-        </label>
-        <label class="lead__label">${t('lead.wa')} *
-          <input class="lead__input" name="wa" type="tel" maxlength="20" autocomplete="tel" inputmode="tel" placeholder="08xx-xxxx-xxxx" required>
-        </label>
-        <label class="lead__label">${t('lead.perusahaan')}
-          <input class="lead__input" name="perusahaan" type="text" maxlength="100" autocomplete="organization">
-        </label>
+        <div class="lead__baris">
+          <label class="lead__label">${t('lead.nama')} <b>*</b>
+            <input class="lead__input" name="nama" type="text" maxlength="80" autocomplete="name" placeholder="${t('lead.phNama')}" required>
+          </label>
+          <label class="lead__label">${t('lead.wa')} <b>*</b>
+            <input class="lead__input" name="wa" type="tel" maxlength="20" autocomplete="tel" inputmode="tel" placeholder="08xx-xxxx-xxxx" required>
+          </label>
+        </div>
         <div class="lead__baris">
           <label class="lead__label">${t('lead.minat')}
             <select class="lead__input" name="minat">
@@ -51,9 +66,12 @@ function bukaFormLead(mode) {
             </select>
           </label>
           <label class="lead__label">${t('lead.lokasi')}
-            <input class="lead__input" name="lokasi" type="text" maxlength="80" autocomplete="address-level2">
+            <input class="lead__input" name="lokasi" type="text" maxlength="80" autocomplete="address-level2" placeholder="${t('lead.phLokasi')}">
           </label>
         </div>
+        <label class="lead__label">${t('lead.perusahaan')}
+          <input class="lead__input" name="perusahaan" type="text" maxlength="100" autocomplete="organization">
+        </label>
         <!-- Kolom jebakan bot: disembunyikan dari manusia -->
         <input class="lead__jebakan" name="situs" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
 
@@ -63,7 +81,7 @@ function bukaFormLead(mode) {
         </label>
 
         <p class="lead__pesan" role="alert" hidden></p>
-        <button type="submit" class="btn btn--primary btn--lg lead__kirim">${t(brosur ? 'lead.kirimBrosur' : 'lead.kirim')}</button>
+        <button type="submit" class="btn btn--lg lead__kirim">${t(brosur ? 'lead.kirimBrosur' : 'lead.kirim')}</button>
       </form>
     </div>`;
   document.body.appendChild(wadah);
@@ -162,7 +180,7 @@ function gerbangLead(sumber) {
   return bukaFormLead(sumber || 'brosur');
 }
 
-/* Pop-up sekali setelah 25 detik di halaman */
+/* Pop-up sekali setelah 10 detik di halaman */
 (function jadwalPopupLead() {
   if (!COMPANY.leadsUrl || sudahIsiLead()) return;
   const halaman = document.body.dataset.page || '';
