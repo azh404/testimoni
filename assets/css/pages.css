@@ -2517,10 +2517,10 @@ body[data-brand="eavision"] .produk-grid {
 .detail-putar .putar__unit { max-width: 100%; max-height: 100%; object-fit: contain; }
 .detail-media .detail-putar .putar__pantul { max-height: none; filter: none; }
 
-/* Slide hero berupa foto yang sudah punya tulisan sendiri (data-teks-sendiri): kalimat hero disembunyikan */
+/* (Dipakai bila slide hero diberi data-teks-sendiri: kalimat hero disembunyikan; saat ini tidak ada slide begitu) */
 .hero__content { transition: opacity .5s ease; }
 .hero--teks-foto .hero__content { opacity: 0; }
-.hero__slide[data-teks-sendiri] {
+.hero__slide[data-bawah] {
   /* Foto bertulisan di bawah: memenuhi layar, yang terpotong hanya bagian atas (langit) */
   background-position: center bottom;
 }

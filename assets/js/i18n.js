@@ -141,21 +141,7 @@ function bangunMenuBahasa() {
     '</div>';
 
   pasangEventDropdown();
-  posisikanMenuBahasa();
 }
-
-/* Layar ≤992px (HP/tablet): bendera dipindah ke navbar (#langSlotHp), di samping tombol cari.
-   Layar lebar: tetap di daftar menu (#langSlot). */
-const MQ_HP_BAHASA = window.matchMedia('(max-width: 992px)');
-function posisikanMenuBahasa() {
-  const drop = document.getElementById('langDrop');
-  const hp = document.getElementById('langSlotHp');
-  const lebar = document.getElementById('langSlot');
-  if (!drop || !hp || !lebar) return;
-  const tujuan = MQ_HP_BAHASA.matches ? hp : lebar;
-  if (drop.parentElement !== tujuan) tujuan.appendChild(drop);
-}
-MQ_HP_BAHASA.addEventListener?.('change', posisikanMenuBahasa);
 
 /* Terapkan terjemahan ke seluruh elemen ber-atribut data-i18n */
 function terapkanBahasa() {

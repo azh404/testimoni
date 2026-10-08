@@ -63,8 +63,8 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
 - **Bahasa bawaan = ENGLISH di SEMUA halaman (8 Okt 2026, permintaan tegas pengguna setelah risiko SEO dijelaskan 2×)**:
   i18n.js `BAHASA = localStorage 'bahasa-v2' || 'en'` (kunci lama 'bahasa' dihapus agar pengunjung lama juga EN). Teks HTML tetap ID (Google bisa membaca JS → kemungkinan mengindeks
   versi EN; risiko turun peringkat kueri Indonesia sudah disampaikan). Aturan lama "beranda selalu ID" DIHAPUS. Pilihan
-  bendera pengunjung tetap disimpan. Di HP (≤992px) bendera tampil di navbar samping tombol cari (`#langSlotHp`,
-  dipindah oleh `posisikanMenuBahasa()` i18n.js), bukan di dalam menu ☰. Bila peringkat Search Console turun, ingatkan pengguna soal ini.
+  bendera pengunjung tetap disimpan. Di HP bendera ada di DALAM menu ☰, paling atas di atas Home
+  (pengguna menolak bendera di navbar HP). Bila peringkat Search Console turun, ingatkan pengguna soal ini.
 - Foto produk: PNG 1200×900 transparan (asli, untuk PDF) + `.webp` + `-kecil.webp` +
   `-og.jpg`. Foto baru dari pengguna dikirim lewat folder `foto-baru/` (git push).
   Foto HD 1448×1086 (11 foto Zoomlion, Sep 2026): PNG disimpan HD, .webp 1200×900 q80.
@@ -124,8 +124,8 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
 - **Hero slide 2–5 SEMENTARA DISEMBUNYIKAN (6 Okt 2026, permintaan pengguna)**: dibungkus komentar HTML di
   index.html (slide + indikator). Hanya hero-zoomlion-1 yang tampil; slider.js mode satu slide = video `loop`,
   indikator disembunyikan. Untuk menampilkan lagi: hapus 2 pasang penanda komentar itu. File video tetap ada.
-- **Hero beranda 8 Okt 2026 = 2 slide**: video hero-zoomlion-1 lalu foto `hero-zoomlion-paddy` (5 dtk, `data-teks-sendiri`:
-  kalimat hero disembunyikan, indikator pindah kanan, cover + `background-position: center bottom` agar tulisan PADDY FIELD
+- **Hero beranda 8 Okt 2026 = 2 slide**: video hero-zoomlion-1 lalu foto `hero-zoomlion-paddy` (5 dtk, `data-bawah`;
+  kalimat hero "Authorised distributor…" TETAP tampil (permintaan 8 Okt), cover + `background-position: center bottom` agar tulisan PADDY FIELD
   utuh di layar lebar). slider.js men-toggle `.hero--teks-foto`. Rice Transplanter & Baler 9YY-2200 sempat dipasang lalu
   DIHAPUS atas permintaan (versi contain = pinggir hitam di layar lebar, ditolak). Sumber foto di `foto-baru/`.
 - **Navbar (8 Okt)**: tinggi 62px (HP 58px, sebelumnya 76/68), logo 40px (HP 32px), `.header .header__inner` padding
