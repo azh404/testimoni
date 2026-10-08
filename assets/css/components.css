@@ -859,44 +859,34 @@ body.lead-terbuka { overflow: hidden; }
 }
 .header .brand__logo { filter: brightness(0) invert(1); }
 
-/* Transparan di atas video (hanya beranda): tulisan putih selama masih di atas video */
-body.nav-transparan { padding-top: 0; }
-.header--transparan:not(.lewat-hero) { border-bottom-color: transparent; }
-.header--transparan:not(.lewat-hero)::before {
+/* Navbar TRANSPARAN di semua halaman (permintaan pengguna 10 Okt): tanpa latar, blur, maupun bayangan, juga saat di-scroll.
+   navbar.js memeriksa warna latar di bawah navbar: gelap → .di-atas-gelap (tulisan putih), terang → tulisan gelap. */
+.header--transparan,
+.header--transparan.is-scrolled { box-shadow: none; border-bottom-color: transparent; }
+.header--transparan::before,
+.header--transparan.is-scrolled::before {
+  background: transparent;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  transition: background .3s ease;
+}
+/* Beranda paling atas: bayangan gelap tipis agar menu terbaca di atas video */
+body.nav-transparan .header--transparan:not(.is-scrolled)::before {
   background: linear-gradient(180deg, rgba(5, 15, 30, .62), rgba(5, 15, 30, 0));
 }
-.header--transparan:not(.lewat-hero) .brand::before { background: rgba(12, 39, 73, .92); }
-.header--transparan:not(.lewat-hero) .cari-tombol { color: #fff; }
-.header--transparan:not(.lewat-hero) .cari-tombol:hover { background-color: rgba(255, 255, 255, .12); color: #fff; }
-.header--transparan:not(.lewat-hero) .nav-toggle:not(.is-open) span { background-color: #fff; }
+body.nav-transparan { padding-top: 0; }
+.header--transparan.di-atas-gelap .cari-tombol { color: #fff; }
+.header--transparan.di-atas-gelap .cari-tombol:hover { background-color: rgba(255, 255, 255, .12); color: #fff; }
+.header--transparan.di-atas-gelap .nav-toggle:not(.is-open) span { background-color: #fff; }
 @media (min-width: 993px) {
-  .header--transparan:not(.lewat-hero) .nav__link:not(.is-active),
-  .header--transparan:not(.lewat-hero) .lang-trigger { color: #fff; }
-  .header--transparan:not(.lewat-hero) .nav__link:not(.is-active):hover,
-  .header--transparan:not(.lewat-hero) .lang-trigger:hover { background-color: rgba(255, 255, 255, .14); color: #fff; }
-  .header--transparan:not(.lewat-hero) .lang-drop { border-left-color: rgba(255, 255, 255, .3); }
+  .header--transparan.di-atas-gelap .nav__link:not(.is-active),
+  .header--transparan.di-atas-gelap .lang-trigger { color: #fff; }
+  .header--transparan.di-atas-gelap .nav__link:not(.is-active):hover,
+  .header--transparan.di-atas-gelap .lang-trigger:hover { background-color: rgba(255, 255, 255, .14); color: #fff; }
+  .header--transparan.di-atas-gelap .lang-drop { border-left-color: rgba(255, 255, 255, .3); }
 }
 /* Menu HP: tulisan tetap normal (bukan kapital kecil) agar mudah dibaca */
 @media (max-width: 992px) {
   .nav__link, .nav__link--drop { font-size: .9rem; letter-spacing: .06em; }
   .header .brand { padding-right: 32px; }
 }
-/* Saat di-scroll (semua halaman, termasuk beranda): kaca buram putih yang jelas terlihat */
-.header.is-scrolled:not(.header--transparan)::before {
-  background: rgba(255, 255, 255, .86);
-  -webkit-backdrop-filter: saturate(180%) blur(18px);
-  backdrop-filter: saturate(180%) blur(18px);
-}
-.header--transparan { transition: box-shadow var(--transition), border-color var(--transition); }
-.header--transparan::before { transition: background .3s ease; }
-
-/* Beranda: navbar TETAP transparan saat di-scroll (tanpa latar, tanpa blur, tanpa bayangan) — permintaan pengguna 10 Okt.
-   Setelah melewati video, tulisan menu berubah gelap agar tetap terbaca di atas latar terang. */
-.header--transparan,
-.header--transparan.is-scrolled { box-shadow: none; border-bottom-color: transparent; }
-.header--transparan.lewat-hero::before {
-  background: transparent;
-  -webkit-backdrop-filter: none;
-  backdrop-filter: none;
-}
-.header--transparan.is-scrolled::before { -webkit-backdrop-filter: none; backdrop-filter: none; }
