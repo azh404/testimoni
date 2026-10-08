@@ -980,7 +980,7 @@ body.nav-transparan { padding-top: 0; }
 
 @media (max-width: 768px) {
   .chatbot__buka { right: 16px; bottom: 78px; width: 50px; height: 50px; }
-  .chatbot__label { display: none; }
+  .chatbot__label { right: 60px; font-size: .76rem; padding: 7px 12px; }
   .chatbot__panel { inset: 0; width: 100%; height: 100%; max-height: 100dvh; border-radius: 0; height: 100dvh; }
   html.chatbot-terbuka, html.chatbot-terbuka body { overflow: hidden; }
   .chatbot.is-open .chatbot__buka { display: none; }

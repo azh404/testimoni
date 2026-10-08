@@ -252,7 +252,7 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   menjalankan `powershell -ExecutionPolicy Bypass -File tools\indexnow.ps1` (atau `node tools/indexnow.js`) dari laptop
   setelah upload: kirim semua URL sitemap.xml ke Bing/Yandex. Sandbox TIDAK bisa (api.indexnow.org diblokir). Google tidak
   mendukung IndexNow; Request Indexing Google tetap manual di Search Console (tidak ada API untuk halaman biasa).
-- **Chatbot AI "Mas DASS" (10 Okt, pilihan pengguna: AI; nama "Mas DASS", tombol "Tanya Mas DASS")**: `assets/js/chatbot.js` (dimuat main.js bila `COMPANY.chatbotUrl`
+- **Chatbot AI "Mas DASS" (10 Okt, pilihan pengguna: AI; nama "Mas DASS", tombol "Tanya Mas DASS"; label muncul berulang tiap 5 dtk ±3 dtk di laptop & HP, berhenti saat panel terbuka)**: `assets/js/chatbot.js` (dimuat main.js bila `COMPANY.chatbotUrl`
   = "/api/chat.php"; tombol navy+lencana "AI" di atas tombol WA, panel 380px / layar penuh di HP, saran 4 chip, riwayat
   sessionStorage, tombol "Lanjut di WhatsApp" & catatan "asisten AI dapat keliru" DIHAPUS atas permintaan, teks `chat.*` di lang.js; gaya bot sopan "Bapak/Ibu", tanpa emoji) → `api/chat.php` (PHP 8.1+, SDK resmi
   `anthropic-ai/sdk` + guzzle di `api/vendor/`, di-commit karena pengguna upload lewat File Manager) → Claude `claude-opus-5-5`,

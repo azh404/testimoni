@@ -184,12 +184,10 @@
 
   pasangTeks();
 
-  /* Label "Tanya Mas DASS" muncul sebentar di samping tombol (sekali per sesi) */
-  try {
-    if (!sessionStorage.getItem('dass-chat-label')) {
-      setTimeout(() => akar.classList.add('chatbot--label'), 2500);
-      setTimeout(() => akar.classList.remove('chatbot--label'), 9000);
-      sessionStorage.setItem('dass-chat-label', '1');
-    }
-  } catch (e) {}
+  /* Label "Tanya Mas DASS" muncul berulang: tiap 5 detik tampil ±3 detik (laptop & HP), berhenti saat panel terbuka */
+  setInterval(() => {
+    if (!panel.hidden) return;
+    akar.classList.add('chatbot--label');
+    setTimeout(() => akar.classList.remove('chatbot--label'), 3000);
+  }, 5000);
 })();
