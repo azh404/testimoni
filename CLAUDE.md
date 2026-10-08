@@ -61,7 +61,7 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   merender ulang saat ganti bahasa didaftarkan di `gantiBahasa()` (i18n.js).
 - Pesan WhatsApp ke tim selalu bahasa Indonesia.
 - **Bahasa bawaan = ENGLISH di SEMUA halaman (8 Okt 2026, permintaan tegas pengguna setelah risiko SEO dijelaskan 2×)**:
-  i18n.js `BAHASA = localStorage 'bahasa' || 'en'`. Teks HTML tetap ID (Google bisa membaca JS → kemungkinan mengindeks
+  i18n.js `BAHASA = localStorage 'bahasa-v2' || 'en'` (kunci lama 'bahasa' dihapus agar pengunjung lama juga EN). Teks HTML tetap ID (Google bisa membaca JS → kemungkinan mengindeks
   versi EN; risiko turun peringkat kueri Indonesia sudah disampaikan). Aturan lama "beranda selalu ID" DIHAPUS. Pilihan
   bendera pengunjung tetap disimpan. Bila peringkat Search Console turun, ingatkan pengguna soal ini.
 - Foto produk: PNG 1200×900 transparan (asli, untuk PDF) + `.webp` + `-kecil.webp` +
