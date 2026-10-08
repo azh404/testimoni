@@ -14,6 +14,9 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   Live Server). Setelah merge, pengguna menjalankan `git pull` lalu upload ke Hostinger
   (paling aman: ZIP semua isi folder kecuali `.git`, hapus isi `public_html`, extract).
   `.htaccess` adalah file tersembunyi — ingatkan "Show hidden files" di File Manager.
+  **9 Okt**: pengguna sempat meng-upload ZIP 1,6 GB (ikut `.git` 1,2 GB) dan di `public_html` ada folder `.git`, `.git.92`,
+  `.git.328`, dst. sisa upload lama → minta hapus. Situs tanpa `.git`/`foto-baru` ±320 MB (video 227 MB; hanya
+  hero-zoomlion-1 ±20 MB yang dipakai, video slide 2–5 boleh tidak di-upload). `.htaccess` kini memblokir `.git*`, `foto-baru`, `.vscode`.
 - Kontak: WA/telepon `0811-1660-2926` (`nomorWA()` di config.js mengubah ke 62…),
   Instagram `dass.agriculture`, Google Business Profile (terverifikasi, Okt 2026):
   `https://g.page/r/CX_ykRcjTf7sEBM` (+ `/review` untuk ulasan) di `COMPANY.sosmed.googleMaps/ulasan`,
