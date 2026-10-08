@@ -5,7 +5,7 @@
 /* ===== TABLET & MOBILE (≤ 992px) ===== */
 @media (max-width: 992px) {
 
-  :root { --header-height: 68px; }
+  :root { --header-height: 58px; }
 
   /* --- Navbar --- */
   /* PENTING: header dinaikkan di atas overlay,
@@ -190,7 +190,7 @@
   .artikel-card--utama .artikel-card__ringkas { font-size: var(--fs-sm); }
 
   /* --- Navbar --- */
-  .brand__logo { height: 38px; }
+  .brand__logo { height: 32px; }
   .brand__name { font-size: var(--fs-xs); max-width: 180px; }
 
   /* --- Hero --- */
