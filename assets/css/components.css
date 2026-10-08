@@ -768,3 +768,12 @@ body.lead-terbuka { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
   .lead, .lead__kotak { transition: none; }
 }
+
+/* Navbar 6 menu (8 Okt 2026): jangan pecah 2 baris; di laptop sempit jarak antar-menu dirapatkan */
+@media (min-width: 993px) {
+  .nav__link { white-space: nowrap; }
+}
+@media (min-width: 993px) and (max-width: 1180px) {
+  .nav__link { padding-inline: 10px; font-size: 0.84rem; }
+  .lang-drop { margin-left: 4px; padding-left: 8px; }
+}
