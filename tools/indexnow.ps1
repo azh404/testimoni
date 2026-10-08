@@ -15,10 +15,17 @@ $body = @{
   keyLocation = "https://$host_/$key.txt"
   urlList     = $urls
 } | ConvertTo-Json -Depth 3
-try {
-  $res = Invoke-WebRequest -Uri 'https://api.indexnow.org/indexnow' -Method Post -Body ([Text.Encoding]::UTF8.GetBytes($body)) -ContentType 'application/json; charset=utf-8' -UseBasicParsing
-  Write-Host "Berhasil dikirim. Kode: $($res.StatusCode) (200/202 = OK)"
-} catch {
-  Write-Host "Gagal: $($_.Exception.Message)"
-  Write-Host "Cek: apakah https://$host_/$key.txt sudah bisa dibuka di browser?"
+# Kirim ke 2 alamat: api.indexnow.org (umum) lalu www.bing.com (pesan error lebih jelas)
+foreach ($api in @('https://api.indexnow.org/indexnow', 'https://www.bing.com/indexnow')) {
+  try {
+    $res = Invoke-WebRequest -Uri $api -Method Post -Body ([Text.Encoding]::UTF8.GetBytes($body)) -ContentType 'application/json; charset=utf-8' -UseBasicParsing
+    Write-Host "$api -> Berhasil. Kode: $($res.StatusCode) (200/202 = OK)"
+  } catch {
+    Write-Host "$api -> Gagal: $($_.Exception.Message)"
+    try {
+      $isi = (New-Object IO.StreamReader($_.Exception.Response.GetResponseStream())).ReadToEnd()
+      if ($isi) { Write-Host "  Pesan server: $isi" }
+    } catch {}
+  }
 }
+Write-Host "Bila 403: kunci belum terbaca mesin pencari. Pastikan https://$host_/$key.txt bisa dibuka, kosongkan cache CDN Hostinger, tunggu 30-60 menit, lalu ulangi."
