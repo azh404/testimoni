@@ -233,6 +233,9 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   sektor.eyebrow/judul/1–3.teks, mitra.eyebrow/judul/desc diganti teks dari pengguna (+EN/ZH buatan Claude) di lang.js
   & HTML. Klausa "layanan purnajual berkelanjutan" di unggul.judul SENGAJA dibuang (DASS tidak menyediakan purnajual).
   Teks tampil diambil dari lang.js, bukan HTML — ingatkan pengguna bila ia mengedit HTML langsung.
+- **Copywriting halaman merek (9 Okt)**: eyebrow zl "Mesin Pertanian Zoomlion", ea "Drone Sprayer Pertanian", va "Pertanian Presisi";
+  hero.desc baru (zl/ea/va.hero), katalog "Temukan Unit yang Tepat" (brand.pilihKat/klikKartu); VectorAgr 9 unit. Level: layak B2B,
+  BELUM ada social proof/testimoni/CTA hero (pengguna memilih pasang apa adanya; tawarkan lagi bila ada data bukti dari Marketing).
 - **IndexNow (8 Okt)**: kunci `b963901221a0c688647d3d6f3d058083` (file `<kunci>.txt` di root, wajib ter-upload). Pengguna
   menjalankan `powershell -ExecutionPolicy Bypass -File tools\indexnow.ps1` (atau `node tools/indexnow.js`) dari laptop
   setelah upload: kirim semua URL sitemap.xml ke Bing/Yandex. Sandbox TIDAK bisa (api.indexnow.org diblokir). Google tidak

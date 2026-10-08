@@ -207,37 +207,41 @@ const TEKS = {
   /* ===== HALAMAN BRAND (UMUM) ===== */
   'brand.semuaProduk': { id: 'Semua Produk',               en: 'All Products',        zh: '全部产品' },
   'brand.katalog':     { id: 'Katalog Produk',             en: 'Product Catalogue',   zh: '产品目录' },
-  'brand.pilihKat':    { id: 'Pilih Kategori Unit',        en: 'Select a Category',   zh: '选择产品类别' },
-  'brand.klikKartu':   { id: 'Klik kartu produk untuk melihat kegunaan dan spesifikasi lengkap', en: 'Click a product card to view its applications and full specifications', zh: '点击产品卡片查看用途与详细参数' },
+  'brand.pilihKat': { id: 'Temukan Unit yang Tepat', en: 'Find the Right Unit', zh: '找到合适的机型' },
+  'brand.klikKartu': {
+    id: 'Pilih kategori, lalu buka kartu produk untuk melihat kegunaan, spesifikasi lengkap, dan brosur PDF.',
+    en: 'Choose a category, then open a product card to see its applications, full specifications, and PDF brochure.',
+    zh: '选择类别，点击产品卡片即可查看用途、完整参数和PDF手册。'
+  },
   'brand.kosong':      { id: 'Produk sedang kami siapkan', en: 'Products coming soon', zh: '产品即将上线' },
 
   /* ===== HALAMAN ZOOMLION ===== */
-  'zl.eyebrow': { id: 'Agriculture Machinery', en: 'Agriculture Machinery', zh: '农业机械' },
+  'zl.eyebrow': { id: 'Mesin Pertanian Zoomlion', en: 'Zoomlion Agricultural Machinery', zh: '中联重科农业机械' },
   'zl.h1':      { id: 'Traktor & Mesin Pertanian di Jakarta', en: 'Tractors & Agricultural Machinery in Jakarta', zh: '雅加达拖拉机与农业机械' },
   'zl.hero': {
-    id: 'Lini lengkap mesin pertanian Zoomlion — dari traktor hybrid, combine harvester, mesin tanam padi, pemanen tebu, mesin pengering, hingga baler dan implement. Dijual langsung oleh distributor resmi',
-    en: 'The complete Zoomlion agricultural machinery line — from hybrid tractors and combine harvesters to rice transplanters, sugarcane harvesters, dryers, balers and implements. Sold directly by the authorised distributor',
-    zh: '中联重科农业机械全系列产品——从混合动力拖拉机、联合收割机到水稻插秧机、甘蔗收割机、烘干机、打捆机及农机具。由授权经销商直接销售'
+    id: 'Satu merek untuk seluruh siklus tanam: traktor konvensional dan hybrid, mesin tanam padi, combine harvester, mesin panen tebu, pengering gabah, hingga baler dan implement. Disediakan langsung oleh distributor resmi Zoomlion di Jakarta.',
+    en: 'One brand for the entire crop cycle: conventional and hybrid tractors, rice transplanters, combine harvesters, sugarcane harvesters, grain dryers, balers, and implements. Supplied directly by the authorised Zoomlion distributor in Jakarta.',
+    zh: '一个品牌覆盖整个种植周期：常规与混合动力拖拉机、插秧机、联合收割机、甘蔗收获机、谷物烘干机、打捆机及农机具。由中联重科雅加达授权经销商直接供应。'
   },
   'zl.tipeUnit': { id: 'Tipe Unit', en: 'Machine Types', zh: '机型' },
   'zl.kategori': { id: 'Kategori',  en: 'Categories',    zh: '类别' },
 
   /* ===== HALAMAN EAVISION ===== */
-  'ea.eyebrow': { id: 'Agricultural Sprayer Drone', en: 'Agricultural Sprayer Drone', zh: '农业植保无人机' },
+  'ea.eyebrow': { id: 'Drone Sprayer Pertanian', en: 'Agricultural Spray Drones', zh: '农业植保无人机' },
   'ea.h1':      { id: 'Drone Sprayer Pertanian di Jakarta', en: 'Agricultural Spray Drones in Jakarta', zh: '雅加达农业植保无人机' },
   'ea.hero': {
-    id: 'Drone penyemprot pertanian dengan navigasi otomatis dan sensor penghindar rintangan. Tersedia dalam beberapa kelas kapasitas untuk berbagai skala lahan',
-    en: 'Agricultural sprayer drones with automated navigation and obstacle avoidance sensors. Available in several capacity classes for different field scales',
-    zh: '配备自动导航与避障传感器的农业植保无人机，提供多种容量级别，适配不同规模地块'
+    id: 'Penyemprotan dan penebaran yang lebih cepat, merata, dan aman bagi operator. Drone EAVision dilengkapi penglihatan stereo untuk menghindari rintangan secara otomatis, tersedia dari kelas 30 L hingga flagship 70 L.',
+    en: 'Faster, more even spraying and spreading that keeps operators safe. EAVision drones use stereo vision to avoid obstacles automatically, available from the 30 L class up to the 70 L flagship.',
+    zh: '喷洒和播撒更快、更均匀，同时保障操作人员安全。EAVision无人机采用双目视觉自动避障，提供从30升级到70升旗舰的多种机型。'
   },
 
   /* ===== HALAMAN VECTORAGR ===== */
-  'va.eyebrow': { id: 'Agricultural Drone', en: 'Agricultural Drone', zh: '农业无人机' },
+  'va.eyebrow': { id: 'Pertanian Presisi', en: 'Precision Agriculture', zh: '精准农业' },
   'va.h1':      { id: 'Drone Pertanian & Auto Steering di Jakarta', en: 'Agricultural Drones & Auto Steering in Jakarta', zh: '雅加达农业无人机与自动驾驶系统' },
   'va.hero': {
-    id: 'Teknologi pertanian presisi VectorAgr — drone penyemprot, sistem kemudi otomatis, robot pertanian, hingga solusi digital untuk pengelolaan lahan',
-    en: 'VectorAgr precision agriculture technology — sprayer drones, auto steering systems, agricultural rovers, and digital solutions for land management',
-    zh: 'VectorAgr 精准农业技术——植保无人机、自动驾驶系统、农业机器人及土地管理数字化解决方案'
+    id: 'Ekosistem pertanian presisi dalam satu merek: drone semprot dan tebar, auto steering untuk traktor, robot kebun otonom, serta aplikasi peta lahan berbasis data. Bekerja lebih akurat dengan pemakaian input dan tenaga kerja yang lebih efisien.',
+    en: 'A precision agriculture ecosystem from one brand: spraying and spreading drones, tractor auto steering, autonomous orchard robots, and a data-driven field mapping app. Work more accurately while using inputs and labour more efficiently.',
+    zh: '一个品牌打造的精准农业生态：喷洒与播撒无人机、拖拉机自动导航、自主果园机器人以及基于数据的地块测绘应用。作业更精准，投入与人工更高效。'
   },
 
   /* ===== HALAMAN ARTIKEL ===== */
