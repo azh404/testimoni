@@ -270,22 +270,6 @@ a.produk-card { color: inherit; text-decoration: none; }
 /* =========================================
    DESAIN BARU HALAMAN DETAIL (7 Okt)
    ========================================= */
-/* Hero gelap ala studio (khusus Zoomlion) */
-body[data-brand="zoomlion"] .detail-hero {
-  background: radial-gradient(70% 90% at 25% 30%, #2a4a2c 0%, #16301a 55%, #0b1c0e 100%);
-  border-bottom: 0;
-}
-body[data-brand="zoomlion"] .detail-crumb,
-body[data-brand="zoomlion"] .detail-crumb a { color: rgba(255,255,255,.6); }
-body[data-brand="zoomlion"] .detail-crumb span[aria-current] { color: #fff; }
-body[data-brand="zoomlion"] .detail-info h1 { color: #fff; }
-body[data-brand="zoomlion"] .detail-ringkas { color: rgba(255,255,255,.75); }
-body[data-brand="zoomlion"] .detail-hero .btn--outline { color: #fff; border-color: rgba(255,255,255,.35); background: transparent; }
-body[data-brand="zoomlion"] .detail-hero .btn--outline:hover { background: rgba(255,255,255,.1); }
-body[data-brand="zoomlion"] .detail-banding { color: #8DC63F; }
-body[data-brand="zoomlion"] .detail-bagikan__label { color: rgba(255,255,255,.6); }
-body[data-brand="zoomlion"] .detail-putar { background: transparent; }
-
 /* Menu lompat antar-bagian (menempel di bawah navbar) */
 .detail-tab {
   position: sticky; top: var(--header-height); z-index: 20;
@@ -328,7 +312,3 @@ body[data-brand="zoomlion"] .detail-putar { background: transparent; }
   font-size: var(--fs-xs);
 }
 @media (min-width: 900px) { .detail-body .check-list { gap: var(--sp-4); } }
-body[data-brand="zoomlion"] .detail-putar .putar__sorot {
-  -webkit-mask-image: linear-gradient(transparent, #000 35%);
-          mask-image: linear-gradient(transparent, #000 35%);
-}

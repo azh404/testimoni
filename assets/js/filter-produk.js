@@ -387,100 +387,6 @@ function jalankanSlider(wrap) {
 }
 
 /* =========================================
-   PUTAR FOTO (pop-up & halaman detail produk Zoomlion)
-   Foto digeser kiri-kanan -> miring 3D (perspektif), bentuk foto tidak diubah.
-   ========================================= */
-/* Markup penampil putar gaya "studio gelap" (pop-up & halaman detail produk Zoomlion) */
-function htmlPutar(src, alt, kelas = '') {
-  const petunjuk = (typeof t === 'function' && t('putar.petunjuk')) || 'Geser untuk memutar';
-  return `
-        <div class="${kelas} putar putar--gelap" data-putar tabindex="0" aria-label="${petunjuk}">
-          <div class="putar__sorot" aria-hidden="true"></div>
-          <div class="putar__podium" aria-hidden="true"></div>
-          <img class="putar__pantul" src="${src}" alt="" aria-hidden="true" draggable="false">
-          <div class="putar__bayangan"></div>
-          <img class="putar__unit" src="${src}" alt="${alt}" draggable="false" onerror="this.style.visibility='hidden'">
-          <span class="putar__petunjuk">&#8592; <span data-i18n="putar.petunjuk">${petunjuk}</span> &#8594;</span>
-        </div>`;
-}
-
-/* Halaman detail produk Zoomlion: foto utama memakai penampil putar yang sama */
-function initPutarDetail() {
-  if (document.body.dataset.brand !== 'zoomlion') return;
-  const media = document.querySelector('.detail-media');
-  const img = media && media.querySelector('img');
-  if (!img || media.querySelector('[data-putar]')) return;
-  media.classList.add('detail-media--putar');
-  media.innerHTML = htmlPutar(img.getAttribute('src'), img.getAttribute('alt') || '', 'detail-putar');
-  jalankanPutar(media.querySelector('[data-putar]'));
-}
-
-function jalankanPutar(el) {
-  if (!el) return;
-  const unit = el.querySelector('.putar__unit');
-  const bayangan = el.querySelector('.putar__bayangan');
-  const pantul = el.querySelector('.putar__pantul');
-  // Batas bawah unit di foto (PNG transparan punya ruang kosong di bawah) -> pantulan menempel di roda
-  let batasBawah = 1;
-  function ukurBatasBawah() {
-    try {
-      const c = document.createElement('canvas'), w = 80, h = Math.round(80 * unit.naturalHeight / unit.naturalWidth) || 60;
-      c.width = w; c.height = h;
-      const g = c.getContext('2d'); g.drawImage(unit, 0, 0, w, h);
-      const d = g.getImageData(0, 0, w, h).data;
-      for (let y = h - 1; y >= 0; y--) {
-        for (let x = 0; x < w; x++) if (d[(y * w + x) * 4 + 3] > 40) { batasBawah = (y + 1) / h; ke(target); return; }
-      }
-    } catch (e) {}
-  }
-  if (pantul) { if (unit.complete) ukurBatasBawah(); else unit.addEventListener('load', ukurBatasBawah); }
-  const MAKS = 35;                 // sudut miring maksimal (derajat)
-  let target = 0, sudut = 0, awalX = 0, awalSudut = 0, geser = false, jalan = false;
-
-  const batasi = v => Math.max(-MAKS, Math.min(MAKS, v));
-  function gambar() {
-    sudut += (target - sudut) * 0.14;
-    if (Math.abs(target - sudut) < 0.05) sudut = target;
-    const r = sudut / MAKS;
-    unit.style.transform = `rotateY(${sudut.toFixed(2)}deg) rotateX(${(Math.abs(r) * 4).toFixed(2)}deg) scale(${(1 - Math.abs(r) * 0.04).toFixed(3)})`;
-    unit.style.filter = `drop-shadow(${(-r * 18).toFixed(1)}px 16px 18px rgba(0,0,0,.18)) brightness(${(1 + r * 0.06).toFixed(3)})`;
-    if (pantul) {
-      pantul.style.width = unit.offsetWidth + 'px';
-      pantul.style.top = (unit.offsetTop + unit.offsetHeight * (2 * batasBawah - 1) - 2) + 'px';
-      pantul.style.transform = `translateX(-50%) rotateY(${sudut.toFixed(2)}deg) scaleY(-1)`;
-    }
-    bayangan.style.transform = `translateX(${(-r * 14).toFixed(1)}%) scaleX(${(1 - Math.abs(r) * 0.18).toFixed(3)})`;
-    if (sudut !== target || geser) requestAnimationFrame(gambar); else jalan = false;
-  }
-  function ke(v) { target = batasi(v); if (!jalan) { jalan = true; requestAnimationFrame(gambar); } }
-  function sudahDipakai() { el.classList.add('is-dipakai'); }
-
-  el.addEventListener('pointerdown', e => {
-    geser = true; awalX = e.clientX; awalSudut = target;
-    el.setPointerCapture(e.pointerId); el.classList.add('is-geser'); sudahDipakai(); ke(target);
-  });
-  el.addEventListener('pointermove', e => {
-    if (!geser) return;
-    ke(awalSudut + (e.clientX - awalX) * (MAKS * 2 / Math.max(el.clientWidth, 1)));
-  });
-  const lepas = () => { geser = false; el.classList.remove('is-geser'); };
-  el.addEventListener('pointerup', lepas);
-  el.addEventListener('pointercancel', lepas);
-  el.addEventListener('dblclick', () => ke(0));
-  el.addEventListener('keydown', e => {
-    if (e.key === 'ArrowLeft')  { e.preventDefault(); sudahDipakai(); ke(target - 7); }
-    if (e.key === 'ArrowRight') { e.preventDefault(); sudahDipakai(); ke(target + 7); }
-  });
-
-  ke(0);
-  // Gerak contoh singkat saat pop-up dibuka (tidak untuk "reduce motion")
-  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    [[350, -22], [1050, 22], [1750, 0]].forEach(([ms, v]) =>
-      setTimeout(() => { if (!el.classList.contains('is-dipakai')) ke(v); }, ms));
-  }
-}
-
-/* =========================================
    MODAL DETAIL PRODUK
    ========================================= */
 function initModalProduk() {
@@ -506,11 +412,9 @@ function initModalProduk() {
       <button class="modal__close" data-tutup aria-label="Tutup">&times;</button>
       <div class="modal__grid">
 
-        ${p.brand === 'zoomlion' ? `
-${htmlPutar(base + gambarWeb(p.gambar), altProduk(p), 'modal__media')}` : `
         <div class="modal__media">
           <img src="${base}${gambarWeb(p.gambar)}" alt="${altProduk(p)}" onerror="this.style.visibility='hidden'">
-        </div>`}
+        </div>
 
         <div class="modal__body">
           <img src="${base}${brand.logo}" alt="${brand.nama}" class="modal__brand">
@@ -558,7 +462,6 @@ ${htmlPutar(base + gambarWeb(p.gambar), altProduk(p), 'modal__media')}` : `
     modal.classList.add('is-open');
     document.body.style.overflow = 'hidden';
     if (typeof initImageFallback === 'function') initImageFallback();
-    jalankanPutar(box.querySelector('[data-putar]'));
   }
 
   function tutup() {
