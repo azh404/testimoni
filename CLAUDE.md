@@ -260,6 +260,9 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   (cache). Pengetahuan dibuat ulang: `node tools/buat-pengetahuan-chatbot.js` (produk, FAQ, artikel, kontak) — jalankan setelah data berubah.
   Kunci API HANYA di `api/config.php` di Hostinger (contoh: `api/config.contoh.php`, di .gitignore). Batas: 30 pesan/IP/jam, 1500/hari
   (`api/data/batas.json`, IP di-hash). Aturan bot: tanpa harga/stok/janji kirim, tanpa klaim servis/sparepart/garansi, hanya dari pengetahuan.
+  Maskot = gambar dari pengguna (anime, pria berkacamata, kemeja navy logo DASS; asli di foto-baru/maskot-asisten-dass.jpg,
+  DIBALIK horizontal karena logo di baju terbalik) → `assets/images/chatbot/maskot-avatar.webp` 256px: dipakai di tombol (bergoyang
+  pelan), kepala panel, sambutan, dan wajah kecil di samping jawaban bot. 4 maskot vektor buatan Claude tidak dipilih.
   `.htaccess` root & `api/.htaccess`: hanya chat.php yang bisa diakses. Biaya ±Rp 250/pesan (cache hangat), ±Rp 2.000 pesan pertama setelah sepi.
 - CAPTCHA tidak dipasang (tidak ada form yang mengirim ke server; form kontak membuka WA).
 

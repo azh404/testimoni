@@ -15,22 +15,23 @@
   const simpan = () => { try { sessionStorage.setItem(KUNCI, JSON.stringify(riwayat.slice(-30))); } catch (e) {} };
   const lacak = (nama) => { if (typeof gtag === 'function') gtag('event', nama); };
 
-  const IKON_CHAT = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 3C6.5 3 2 6.8 2 11.5c0 2.4 1.2 4.6 3.1 6.1L4.5 21l3.8-2c1.1.3 2.4.5 3.7.5 5.5 0 10-3.8 10-8.5S17.5 3 12 3zm-4 9.7a1.2 1.2 0 110-2.4 1.2 1.2 0 010 2.4zm4 0a1.2 1.2 0 110-2.4 1.2 1.2 0 010 2.4zm4 0a1.2 1.2 0 110-2.4 1.2 1.2 0 010 2.4z"/></svg>';
   const IKON_KIRIM = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3.4 20.4l17.4-7.5c.8-.4.8-1.5 0-1.8L3.4 3.6c-.7-.3-1.4.3-1.3 1l.9 5.6c.1.5.5.8 1 .9L14 12l-10 .9c-.5.1-.9.4-1 .9l-.9 5.6c-.1.7.6 1.3 1.3 1z"/></svg>';
   const IKON_WA = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3z"/></svg>';
 
   const base = document.body.dataset.base || '';
+  /* Maskot Asisten DASS (gambar dari pengguna, 10 Okt 2026) */
+  const MASKOT = `${base}assets/images/chatbot/maskot-avatar.webp`;
   const akar = document.createElement('div');
   akar.id = 'chatbot';
   akar.className = 'chatbot';
   akar.innerHTML = `
     <button type="button" class="chatbot__buka" aria-expanded="false" aria-controls="chatbotPanel">
-      ${IKON_CHAT}<span class="chatbot__ai">AI</span>
+      <img class="chatbot__wajah" src="${MASKOT}" alt="" width="56" height="56"><span class="chatbot__ai">AI</span>
       <span class="chatbot__label"></span>
     </button>
     <section class="chatbot__panel" id="chatbotPanel" role="dialog" aria-modal="false" hidden>
       <header class="chatbot__kepala">
-        <div class="chatbot__avatar"><img src="${base}assets/images/logo/logo-dass-putih.png" alt=""></div>
+        <div class="chatbot__avatar"><img src="${MASKOT}" alt=""></div>
         <div class="chatbot__info"><strong class="chatbot__judul"></strong><span class="chatbot__sub"></span></div>
         <button type="button" class="chatbot__ulang" title="">↺</button>
         <button type="button" class="chatbot__tutup" aria-label="">&times;</button>
@@ -89,12 +90,20 @@
     div.querySelectorAll('a').forEach(a => {
       if (!/^https?:\/\/(www\.)?dass\.co\.id/.test(a.href)) { a.target = '_blank'; a.rel = 'noopener'; }
     });
-    isi.appendChild(div);
+    if (peran === 'user') { isi.appendChild(div); }
+    else {
+      /* Jawaban bot ditemani wajah kecil maskot */
+      const baris = document.createElement('div');
+      baris.className = 'chatbot__baris';
+      baris.innerHTML = `<img class="chatbot__mini" src="${MASKOT}" alt="">`;
+      baris.appendChild(div);
+      isi.appendChild(baris);
+    }
     isi.scrollTop = isi.scrollHeight;
   }
 
   function tampilkanSemua() {
-    isi.innerHTML = '';
+    isi.innerHTML = `<div class="chatbot__sambut"><img src="${MASKOT}" alt=""><strong>${esc(tx('chat.judul', 'Asisten DASS'))}</strong><span>${esc(tx('chat.sub', ''))}</span></div>`;
     tambahGelembung('assistant', tx('chat.sapa', 'Halo! Saya Asisten DASS.'));
     riwayat.forEach(p => tambahGelembung(p.peran, p.isi));
     saran.hidden = riwayat.length > 0;
@@ -151,8 +160,8 @@
     lacak('chatbot_tanya');
 
     const ketik = document.createElement('div');
-    ketik.className = 'chatbot__msg chatbot__msg--bot chatbot__mengetik';
-    ketik.innerHTML = '<span></span><span></span><span></span>';
+    ketik.className = 'chatbot__baris';
+    ketik.innerHTML = `<img class="chatbot__mini" src="${MASKOT}" alt=""><div class="chatbot__msg chatbot__msg--bot chatbot__mengetik"><span></span><span></span><span></span></div>`;
     isi.appendChild(ketik);
     isi.scrollTop = isi.scrollHeight;
 

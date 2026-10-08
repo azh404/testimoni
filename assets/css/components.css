@@ -998,3 +998,19 @@ body.nav-transparan { padding-top: 0; }
 .chatbot__msg ul { list-style: disc; }
 .chatbot__msg ol { list-style: decimal; }
 .chatbot__msg li { margin: 3px 0; }
+/* Maskot Asisten DASS */
+.chatbot__buka { background: #fff; border: 3px solid #123A6B; padding: 0; overflow: visible; }
+.chatbot__wajah { animation: chatbot-ayun 4s ease-in-out infinite; }
+.chatbot__wajah { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; }
+@keyframes chatbot-ayun { 0%, 86%, 100% { transform: translateY(0) rotate(0); } 90% { transform: translateY(-4px) rotate(-6deg); } 94% { transform: translateY(-4px) rotate(6deg); } }
+.chatbot.is-open .chatbot__wajah { animation: none; }
+@media (prefers-reduced-motion: reduce) { .chatbot__wajah { animation: none; } }
+.chatbot__avatar { background: #fff; overflow: hidden; border: 2px solid rgba(255, 255, 255, .6); }
+.chatbot__avatar img { width: 100%; height: 100%; object-fit: cover; }
+.chatbot__sambut { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 2px; padding: 4px 0 6px; }
+.chatbot__sambut img { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; border: 3px solid #fff; box-shadow: 0 6px 18px rgba(18, 58, 107, .18); margin-bottom: 6px; }
+.chatbot__sambut strong { color: #123A6B; font-size: .95rem; }
+.chatbot__sambut span { color: #7b8794; font-size: .74rem; }
+.chatbot__baris { display: flex; align-items: flex-end; gap: 8px; max-width: 94%; }
+.chatbot__baris .chatbot__msg { max-width: none; }
+.chatbot__mini { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 1.5px solid #fff; box-shadow: 0 1px 4px rgba(0, 0, 0, .15); }
