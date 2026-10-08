@@ -10,6 +10,12 @@ function initNavbar() {
 
   if (!header) return;
 
+  /* Beranda (ada .hero video): navbar transparan di atas video sampai di-scroll */
+  if (document.querySelector('.hero')) {
+    header.classList.add('header--transparan');
+    document.body.classList.add('nav-transparan');
+  }
+
   /* Bayangan saat di-scroll */
   const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 10);
   window.addEventListener('scroll', onScroll, { passive: true });
