@@ -9,7 +9,13 @@ let JUDUL_ASLI = null;   /* <title> bawaan halaman (bahasa Indonesia) */
 /* Bawaan saat website dibuka = ENGLISH di semua halaman (permintaan pemilik, 8 Okt 2026,
    setelah dijelaskan risiko SEO). Teks HTML tetap bahasa Indonesia; JS menggantinya ke EN.
    Bila pengunjung memilih bahasa lewat menu bendera, pilihan itu disimpan & dipakai. */
-try { BAHASA = localStorage.getItem('bahasa') || 'en'; } catch (e) { BAHASA = 'en'; }
+/* Kunci penyimpanan baru (8 Okt 2026): pilihan lama di kunci 'bahasa' (sering 'id' dari masa bawaan Indonesia)
+   diabaikan & dihapus, supaya semua pengunjung lama juga kembali ke bawaan English. */
+const KUNCI_BAHASA = 'bahasa-v2';
+try {
+  localStorage.removeItem('bahasa');
+  BAHASA = localStorage.getItem(KUNCI_BAHASA) || 'en';
+} catch (e) { BAHASA = 'en'; }
 
 /* --- Definisi bahasa + bendera --- */
 const DAFTAR_BAHASA = [
@@ -162,7 +168,7 @@ function gantiBahasa(kode) {
   if (!DAFTAR_BAHASA.some(b => b.kode === kode)) return;
 
   BAHASA = kode;
-  try { localStorage.setItem('bahasa', kode); } catch (e) {}
+  try { localStorage.setItem(KUNCI_BAHASA, kode); } catch (e) {}
 
   bangunMenuBahasa();
   terapkanBahasa();
