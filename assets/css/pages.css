@@ -2521,7 +2521,8 @@ body[data-brand="eavision"] .produk-grid {
 .hero__content { transition: opacity .5s ease; }
 .hero--teks-foto .hero__content { opacity: 0; }
 /* Foto bertulisan ditampilkan utuh (tidak terpotong); sisa ruang diisi hijau gelap */
-.hero__slide[data-teks-sendiri] {
+.hero__slide[data-teks-sendiri],
+.hero__slide[data-utuh] {
   background-size: contain;
   background-repeat: no-repeat;
   background-color: #0b1c0e;
