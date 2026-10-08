@@ -180,7 +180,7 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   combine-harvester-padi, hortikultura → jual-drone) + kalimat `sektor.N.teks`. Saran: jangan beri warna di semua
   bagian — selang-seling berwarna/putih. Kode: `assets/js/beranda.js` (`initBeranda`, juga di gantiBahasa).
 - Halaman Tentang Kami didesain ulang (6 Okt 2026): TANPA hero, strip angka, dan kartu merek (dihapus atas
-  permintaan pengguna). Isi: profil dua kolom: teks kiri + FOTO TIM ASLI kanan (8 Okt, `assets/images/tentang/tim-dass-persegi.webp`; HP: label+judul dulu, lalu foto, lalu paragraf; bingkai gradasi hijau→biru, TANPA keterangan foto; sumber foto-baru/About-Us-dass-1.jpeg; og:image tim-dass-og.jpg; pengguna menolak kolase, foto+logo, foto lebar)
+  permintaan pengguna). Isi: profil SATU KOLOM di tengah (`tt-profil--satu`; foto tim DIHAPUS 9 Okt atas permintaan, file foto & CSS `.tt-foto` masih ada; og:image kembali hero-tractor-og.jpg). Riwayat: sempat profil dua kolom teks kiri + FOTO TIM ASLI kanan (8 Okt, `assets/images/tentang/tim-dass-persegi.webp`; HP: label+judul dulu, lalu foto, lalu paragraf; bingkai gradasi hijau→biru, TANPA keterangan foto; sumber foto-baru/About-Us-dass-1.jpeg; og:image tim-dass-og.jpg; pengguna menolak kolase, foto+logo, foto lebar)
   → Visi (kotak kutipan gradasi) + Misi 6 kartu bernomor → Mengapa Kami (kunci `unggul.*`)
   → Kemitraan. CSS awalan `.tt-`.
 - Halaman Kontak didesain ulang (6 Okt 2026): judul di tengah tanpa banner (H1 + garis hijau) → 3 kartu
