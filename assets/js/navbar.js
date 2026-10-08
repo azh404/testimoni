@@ -20,7 +20,12 @@ function initNavbar() {
   /* Posisi scroll dibaca dari beberapa sumber: di sebagian browser/ekstensi yang men-scroll
      adalah <body>, bukan window, sehingga window.scrollY tetap 0 */
   const posisi = () => Math.max(window.scrollY || 0, document.documentElement.scrollTop || 0, document.body.scrollTop || 0);
-  const onScroll = () => header.classList.toggle('is-scrolled', posisi() > 10);
+  const hero = header.classList.contains('header--transparan') ? document.querySelector('.hero') : null;
+  const onScroll = () => {
+    header.classList.toggle('is-scrolled', posisi() > 10);
+    /* Beranda: tandai bila video hero sudah lewat (tulisan menu berubah gelap, latar tetap transparan) */
+    if (hero) header.classList.toggle('lewat-hero', hero.getBoundingClientRect().bottom <= header.offsetHeight);
+  };
   window.addEventListener('scroll', onScroll, { passive: true });
   document.body.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('load', onScroll);

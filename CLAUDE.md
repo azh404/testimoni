@@ -145,7 +145,9 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   #25A244 teks putih; beranda (ada `.hero`) → navbar.js menambah `.header--transparan` + `body.nav-transparan` (padding-top 0):
   transparan gradasi gelap di atas video, berubah putih kaca saat di-scroll. CSS di akhir components.css.
   10 Okt: pengguna lapor "saat scroll tetap transparan" (tak bisa direproduksi di sandbox) → navbar.js membaca scroll dari
-  window/html/body + event scroll di body & load; kaca saat scroll diperkuat (putih .86 + blur 18px).
+  window/html/body + event scroll di body & load. TERNYATA pengguna MAU tetap transparan: beranda kini TANPA latar/blur/
+  bayangan walau di-scroll; tulisan putih selama di atas video, berubah gelap setelah video lewat (`.lewat-hero`, navbar.js).
+  Halaman lain tetap putih + kaca buram saat scroll (.86, blur 18px). Risiko: menu bisa menumpuk di atas gambar (sudah dijelaskan).
 - **Bing Site Scan (10 Okt)**: 119 halaman, 0 error, 0 warning.
 - **Navbar (8 Okt)**: tinggi 62px (HP 58px, sebelumnya 76/68), logo 40px (HP 32px), `.header .header__inner` padding
   clamp(1.25rem, 6vw, 5rem) agar logo tidak mepet pojok. Indikator slide hero (`.hero__dots`) DISEMBUNYIKAN (permintaan).
