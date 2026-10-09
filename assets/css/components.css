@@ -643,8 +643,28 @@ body.cari-terbuka { overflow: hidden; }
 .footer__icons--label a:hover { color: var(--color-white); transform: translateX(3px); }
 .footer__icons--label svg { width: 26px; height: 26px; flex-shrink: 0; }
 /* Baris ikon sosmed tanpa teks (YouTube, TikTok, LinkedIn) */
-.footer__sosmed { flex-wrap: wrap; gap: var(--sp-4); }
-.footer__sosmed a { width: 34px; height: 34px; }
+.footer__sosmed {
+  display: grid;
+  grid-template-columns: repeat(4, 44px);
+  gap: 10px;
+}
+.footer__sosmed a {
+  width: 44px; height: 44px;
+  display: grid; place-items: center;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, .06);
+  border: 1px solid rgba(255, 255, 255, .1);
+  transition: transform var(--transition), background-color var(--transition);
+}
+.footer__sosmed a:hover { transform: translateY(-3px); background: rgba(255, 255, 255, .14); }
+.footer__sosmed svg { width: 24px; height: 24px; }
+@media (max-width: 640px) {
+  .footer__sosmed { grid-template-columns: repeat(7, 44px); gap: 8px; }
+}
+@media (max-width: 380px) {
+  .footer__sosmed { grid-template-columns: repeat(7, 40px); gap: 6px; }
+  .footer__sosmed a { width: 40px; height: 40px; }
+}
 
 @media (max-width: 640px) {
   .footer__logo img { width: 76px; }
