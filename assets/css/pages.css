@@ -2557,3 +2557,35 @@ a.produk-card:hover .produk-card__body::after { background: #8DC63F; color: #fff
 @media (prefers-reduced-motion: reduce) {
   .ig-kartu, .ig-ikuti { transition: none; }
 }
+
+/* Showcase beranda lebih ringkas (9 Okt: "kebesaran") */
+.showcase.section { padding-block: var(--sp-7); }
+.showcase .section-header { margin-bottom: var(--sp-5); }
+.showcase__tabs { margin-bottom: var(--sp-5); }
+.showcase__tab { padding: 7px 16px; font-size: .88rem; }
+.showcase__panggung { max-width: 980px; margin-inline: auto; padding: var(--sp-5); gap: var(--sp-5); grid-template-columns: 1fr 1fr; }
+.showcase__media { min-height: 270px; }
+.showcase__media img { max-width: 400px; }
+.showcase__bayang { font-size: clamp(2.5rem, 6vw, 5rem); }
+.showcase__logo { height: 20px; margin-bottom: var(--sp-2); }
+.showcase__kategori { font-size: .7rem; padding: 3px 10px; }
+.showcase__nama { font-size: clamp(1.5rem, 2.4vw, 2rem); margin: var(--sp-2) 0; }
+.showcase__ringkas { font-size: .92rem; line-height: 1.55; margin-bottom: var(--sp-3); }
+.showcase__spek { gap: var(--sp-2); margin-bottom: var(--sp-4); }
+.showcase__spek div { padding: var(--sp-2) var(--sp-3); }
+.showcase__spek dt { font-size: .7rem; }
+.showcase__spek dd { font-size: .85rem; }
+.showcase__aksi .btn { padding: .6rem 1.1rem; font-size: .88rem; }
+.showcase__daftar { margin-top: var(--sp-4); }
+.showcase__thumb { width: 104px; font-size: .75rem; }
+@media (max-width: 992px) {
+  .showcase__panggung { grid-template-columns: 1fr; }
+  .showcase__media { min-height: 220px; }
+}
+@media (max-width: 640px) {
+  .showcase.section { padding-block: var(--sp-6); }
+  .showcase__panggung { padding: var(--sp-4); }
+  .showcase__media { min-height: 180px; }
+  .showcase__media img { max-width: 300px; }
+  .showcase__thumb { width: 92px; }
+}
