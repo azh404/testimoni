@@ -858,6 +858,9 @@ body.lead-terbuka { overflow: hidden; }
   clip-path: polygon(0 0, 100% 0, calc(100% - 28px) 100%, 0 100%);
 }
 .header .brand__logo { filter: brightness(0) invert(1); }
+/* Logo lebih besar & seimbang di dalam blok navy (9 Okt: sebelumnya 40px terlihat kecil) */
+.header .brand { padding-right: 52px; }
+.header .header__inner .brand__logo { height: 48px; }
 
 /* Navbar TRANSPARAN di semua halaman (permintaan pengguna 10 Okt): tanpa latar, blur, maupun bayangan, juga saat di-scroll.
    navbar.js memeriksa warna latar di bawah navbar: gelap → .di-atas-gelap (tulisan putih), terang → tulisan gelap. */
@@ -888,7 +891,8 @@ body.nav-transparan { padding-top: 0; }
 /* Menu HP: tulisan tetap normal (bukan kapital kecil) agar mudah dibaca */
 @media (max-width: 992px) {
   .nav__link, .nav__link--drop { font-size: .9rem; letter-spacing: .06em; }
-  .header .brand { padding-right: 32px; }
+  .header .brand { padding-right: 40px; }
+  .header .header__inner .brand__logo { height: 40px; }
 }
 
 /* =========================================
