@@ -1585,7 +1585,9 @@ body[data-brand="eavision"] .produk-grid {
 .stats__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  padding-block: var(--sp-6);
+  padding-block: var(--sp-5);
+  max-width: 1000px;            /* 9 Okt: strip angka diperkecil sedikit */
+  margin-inline: auto;
 }
 .stats__item {
   display: flex;
@@ -1597,14 +1599,14 @@ body[data-brand="eavision"] .produk-grid {
 }
 .stats__item + .stats__item { border-left: 1px solid rgba(255, 255, 255, 0.15); }
 .stats__angka {
-  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-size: clamp(1.4rem, 2.4vw, 1.9rem);
   font-weight: 800;
   line-height: 1.1;
   color: #8DC63F;
 }
 .stats__label {
-  font-size: 0.85rem;
-  letter-spacing: 0.04em;
+  font-size: 0.76rem;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   opacity: 0.85;
 }
@@ -1662,7 +1664,7 @@ body[data-brand="eavision"] .produk-grid {
   .cta-band__aksi { flex-direction: row; flex-wrap: wrap; }
 }
 @media (max-width: 640px) {
-  .stats__grid { grid-template-columns: repeat(2, 1fr); row-gap: var(--sp-5); padding-block: var(--sp-5); }
+  .stats__grid { grid-template-columns: repeat(2, 1fr); row-gap: var(--sp-4); padding-block: var(--sp-4); }
   .stats__item:nth-child(3) { border-left: 0; }
   .cta-band__isi { padding-block: var(--sp-7); }
   .cta-band__aksi, .cta-band__aksi .btn { width: 100%; }
