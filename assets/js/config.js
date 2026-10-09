@@ -44,6 +44,10 @@ const COMPANY = {
      Kosongkan ("") untuk menyembunyikan chatbot. */
   chatbotUrl: "/api/chat.php",
 
+  /* Feed Instagram di beranda ("Ikuti Kami di Instagram"): isi dengan "Feed URL" dari behold.so
+     (format https://feeds.behold.so/XXXX). Kosongkan ("") untuk menyembunyikan bagian itu. */
+  instagramFeedUrl: "",
+
   sosmed: {
     instagram: "https://www.instagram.com/dass.agriculture",
     /* Google Business Profile: halaman di Google Maps & link minta ulasan */
