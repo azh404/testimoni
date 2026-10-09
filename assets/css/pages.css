@@ -2621,3 +2621,6 @@ a.produk-card:hover .produk-card__body::after { background: #8DC63F; color: #fff
 .ig-profil__nama span, .ig-profil__angka span { color: var(--color-muted); }
 .ig-kartu { box-shadow: 0 6px 18px rgba(18, 58, 107, .10); border: 1px solid #E6EAEE; }
 .ig-geser__btn { box-shadow: 0 4px 14px rgba(18, 58, 107, .18); }
+/* Panah geser Instagram: ikon SVG tepat di tengah lingkaran (9 Okt) */
+.ig-geser__btn { display: grid; place-items: center; padding: 0; line-height: 0; }
+.ig-geser__btn svg { width: 20px; height: 20px; display: block; }
