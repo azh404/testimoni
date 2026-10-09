@@ -46,7 +46,7 @@ const COMPANY = {
 
   /* Feed Instagram di beranda ("Ikuti Kami di Instagram"): isi dengan "Feed URL" dari behold.so
      (format https://feeds.behold.so/XXXX). Kosongkan ("") untuk menyembunyikan bagian itu. */
-  instagramFeedUrl: "",
+  instagramFeedUrl: "https://feeds.behold.so/qr829xCt53yGnPHsdYaW",
 
   sosmed: {
     instagram: "https://www.instagram.com/dass.agriculture",

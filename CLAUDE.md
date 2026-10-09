@@ -274,7 +274,7 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
 - **Feed Instagram beranda (9 Okt, contoh dari situs Turtle Wax)**: bagian "Ikuti Kami di Instagram" sebelum footer
   (`#berandaInstagram`, `assets/js/instagram.js`, CSS `.ig-*` di akhir pages.css, kunci `ig.*`): latar navy, profil + tombol Ikuti,
   kartu geser 4/3/1,4 per layar. Sumber = JSON **behold.so** (pilihan pengguna; Elfsight ditolak karena berat/terbatas) di
-  `COMPANY.instagramFeedUrl`; kosong → bagian tersembunyi. Dimuat saat hampir terlihat, cache sessionStorage 1 jam.
+  `COMPANY.instagramFeedUrl` = https://feeds.behold.so/qr829xCt53yGnPHsdYaW (AKTIF 9 Okt; akun Behold masalalukamu26, source @dass.agriculture tipe Basic → angka pengikut mungkin tidak ada); kosong → tersembunyi. feeds.behold.so DIBLOKIR sandbox (uji pakai data tiruan via page.route). Dimuat saat hampir terlihat, cache sessionStorage 1 jam.
 - CAPTCHA tidak dipasang (tidak ada form yang mengirim ke server; form kontak membuka WA).
 
 ## Cara kerja dengan pengguna (pelajaran dari sesi sebelumnya)
