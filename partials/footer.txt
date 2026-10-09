@@ -26,7 +26,7 @@
       </div>
 
       <!-- Kolom 2: Kunjungi Kami -->
-      <div class="footer__col footer__col--kunjungi">
+      <div class="footer__col">
         <h4 class="footer__title" data-i18n="footer.kontak">Kunjungi Kami</h4>
         <div class="footer__icons footer__sosmed">
 

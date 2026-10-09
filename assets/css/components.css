@@ -645,18 +645,14 @@ body.cari-terbuka { overflow: hidden; }
 /* Baris ikon sosmed tanpa teks (YouTube, TikTok, LinkedIn) */
 .footer__sosmed {
   display: grid;
-  grid-template-columns: 32px;   /* logo saja, berbaris ke bawah (HP: sebaris) */
-  justify-content: center;       /* sejajar tengah dengan judul "Kunjungi Kami" */
-  gap: var(--sp-4);
+  grid-template-columns: 24px;   /* logo saja, berbaris ke bawah, rata kiri (HP: sebaris) */
+  gap: var(--sp-3);              /* sama dengan jarak link .footer__seo → tiap logo segaris dengan link Jelajahi */
 }
-.footer__sosmed a { width: 32px; height: 32px; display: grid; place-items: center; }
-.footer__sosmed svg { width: 30px; height: 30px; }
-/* Judul & logo satu poros tengah (laptop) */
-@media (min-width: 641px) {
-  .footer__col--kunjungi { width: max-content; text-align: center; }
-}
+.footer__sosmed a { width: 24px; height: 24px; display: grid; place-items: center; }
+.footer__sosmed svg { width: 24px; height: 24px; }
 @media (max-width: 640px) {
-  .footer__sosmed { grid-template-columns: repeat(7, 32px); justify-content: start; gap: var(--sp-4); }
+  .footer__sosmed { grid-template-columns: repeat(7, 28px); gap: var(--sp-4); }
+  .footer__sosmed a, .footer__sosmed svg { width: 28px; height: 28px; }
 }
 @media (max-width: 380px) {
   .footer__sosmed { gap: var(--sp-3); }
