@@ -267,7 +267,8 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   **STATUS 10 Okt: BELUM AKTIF** — akun Claude Console (Organisasi "PT Diesel Agri Sukses Sejahtera", lokasi Singapura) dibuat,
   pembelian kredit DILEWATI menunggu persetujuan atasan (form cash advance PDF Rp 377.300 = $20 + PPN 11% + cadangan kurs 3%,
   kurs estimasi Rp 16.500, dibuat dari template Form Pengajuan Pengadaan Barang). `api/config.php` belum dibuat → bot membalas pesan
-  gagal; pengguna memilih tombol TETAP TAMPIL. Setelah disetujui: beli kredit, Limits $20/bln, buat API key, buat config.php, tes.
+  gagal; pengguna memilih tombol TETAP TAMPIL. API key sedang dibuat (kedaluwarsa 09/10/2027 — buat key baru sebelum tanggal itu,
+  lalu ganti di config.php). Sisa langkah: beli kredit $20, Limits $20/bln, buat config.php di Hostinger, tes.
 - CAPTCHA tidak dipasang (tidak ada form yang mengirim ke server; form kontak membuka WA).
 
 ## Cara kerja dengan pengguna (pelajaran dari sesi sebelumnya)
