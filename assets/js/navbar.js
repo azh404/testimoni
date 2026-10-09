@@ -10,9 +10,9 @@ function initNavbar() {
 
   if (!header) return;
 
-  /* Navbar transparan di semua halaman. Beranda (ada .hero video): video tampil di belakang navbar. */
-  header.classList.add('header--transparan');
-  if (document.querySelector('.hero')) document.body.classList.add('nav-transparan');
+  /* 9 Okt: navbar SOLID putih di semua halaman (versi transparan dihapus: tulisan halaman menumpuk di belakang menu).
+     Fungsi deteksi latar di bawah ini hanya aktif bila .header--transparan dipasang lagi. */
+  const transparan = header.classList.contains('header--transparan');
 
   /* Posisi scroll dibaca dari beberapa sumber: di sebagian browser/ekstensi yang men-scroll
      adalah <body>, bukan window, sehingga window.scrollY tetap 0 */
@@ -51,7 +51,7 @@ function initNavbar() {
   /* Halaman yang bagian pertamanya gelap (mis. hero halaman merek): bagian itu ikut naik ke belakang navbar,
      jadi tidak ada strip putih di atasnya */
   const pertama = document.querySelector('main > section, main > div');
-  if (pertama && !document.body.classList.contains('nav-transparan') && latarGelap(pertama) === true) {
+  if (transparan && pertama && !document.body.classList.contains('nav-transparan') && latarGelap(pertama) === true) {
     document.body.classList.add('nav-transparan');
     pertama.style.paddingTop = `calc(${getComputedStyle(pertama).paddingTop} + var(--header-height))`;
   }
@@ -61,7 +61,7 @@ function initNavbar() {
     header.classList.toggle('is-scrolled', posisi() > 10);
     if (antre) return;
     antre = true;
-    requestAnimationFrame(() => { antre = false; cekLatar(); });
+    requestAnimationFrame(() => { antre = false; if (transparan) cekLatar(); });
   };
   window.addEventListener('scroll', onScroll, { passive: true });
   document.body.addEventListener('scroll', onScroll, { passive: true });

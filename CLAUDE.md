@@ -141,7 +141,11 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   kalimat hero "Authorised distributor…" TETAP tampil (permintaan 8 Okt), cover + `background-position: center bottom` agar tulisan PADDY FIELD
   utuh di layar lebar). slider.js men-toggle `.hero--teks-foto`. Rice Transplanter & Baler 9YY-2200 sempat dipasang lalu
   DIHAPUS atas permintaan (versi contain = pinggir hitam di layar lebar, ditolak). Sumber foto di `foto-baru/`.
-- **Gaya navbar (9 Okt, dipilih dari 20 pratinjau = gabungan no. 5+9+12+19)**: logo PUTIH (filter invert) dalam blok navy miring
+- **NAVBAR SOLID PUTIH (9 Okt, pilihan A dari 4 pratinjau, saran Claude)**: keluhan "tulisan ketimpa" → navbar.js TIDAK lagi memasang
+  `.header--transparan`/`nav-transparan` (kode deteksi latar tetap ada tapi nonaktif); CSS "NAVBAR SOLID PUTIH" di akhir components.css:
+  latar putih + garis tipis + bayangan saat scroll, logo DASS warna asli 44px (HP 38px), TANPA blok navy miring. Catatan transparan &
+  blok navy di bawah ini = RIWAYAT (sudah diganti). Ditolak/tidak dipilih: navy penuh, dua baris (bar info), putih + blok navy.
+- **[RIWAYAT] Gaya navbar (9 Okt, dipilih dari 20 pratinjau = gabungan no. 5+9+12+19)**: logo PUTIH (filter invert) dalam blok navy miring
   (`.header .brand::before`, clip-path) di semua halaman; menu huruf kapital renggang (.74rem, HP .9rem); menu aktif = kapsul hijau
   #25A244 teks putih; beranda (ada `.hero`) → navbar.js menambah `.header--transparan` + `body.nav-transparan` (padding-top 0):
   transparan gradasi gelap di atas video, berubah putih kaca saat di-scroll. CSS di akhir components.css.
