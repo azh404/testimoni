@@ -36,8 +36,8 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   `bandingkan`, `kamus-pertanian`, `faq`, `404`, `perbaikan` (mode perbaikan), 6 halaman kata kunci `jual-*`,
   `traktor-kebun-sawit`, `combine-harvester-padi`, `drone-pertanian-sawah`),
   `produk/*.html` (62 halaman detail), `artikel/*.html`, `pages/produk/<brand>.html`.
-- Footer 4 kolom (desain baru 6 Okt 2026, garis aksen hijau→biru di atas): logo `logo-dass-putih.png` + nama +
-  tagline + alamat/WA/jam berikon hijau | Kunjungi Kami (9 Okt, dulu "Hubungi Kami"; IKON SAJA tanpa teks (permintaan 9 Okt), berbaris: Email, WhatsApp, Google Maps, Instagram, YouTube, TikTok, LinkedIn (`.footer__sosmed`: logo saja tanpa kotak (kotak DITOLAK), 32px, laptop berbaris ke bawah satu kolom RATA TENGAH dengan judul (`.footer__col--kunjungi`), HP 7 sebaris; alamat di `COMPANY.sosmed`, "#" = tersembunyi)) | Jelajahi (9 link: 3 jual-*, combine padi, kebun sawit, drone sawah, panen tebu & pengering gabah (zoomlion ?kategori=), auto steering VectorAgr; label ringkas profesional 8 Okt) |
+- Footer (desain baru 6 Okt 2026, garis aksen hijau→biru di atas): logo `logo-dass-putih.png` + nama +
+  tagline + alamat/WA/jam berikon hijau | FOOTER KINI 3 KOLOM (9 Okt, pilihan D dari 4 pratinjau): kolom 1 = logo + nama + tagline + alamat/WA/jam + "Kunjungi Kami" (dulu "Hubungi Kami", dulu kolom sendiri) berisi 7 LOGO SAJA satu baris 26px (`.footer__kunjungi`, `.footer__sosmed`; Email, WhatsApp, Google Maps, Instagram, YouTube, TikTok, LinkedIn; alamat di `COMPANY.sosmed`, "#" = tersembunyi; DITOLAK: teks di samping logo, kotak di belakang logo, 4+3, rata tengah, satu kolom ke bawah) | Jelajahi (9 link: 3 jual-*, combine padi, kebun sawit, drone sawah, panen tebu & pengering gabah (zoomlion ?kategori=), auto steering VectorAgr; label ringkas profesional 8 Okt) |
   Panduan (kalkulator, bandingkan, kamus, FAQ); bar bawah hanya "© tahun PT DASS" di tengah.
 - `partials/navbar.txt` & `footer.txt` (isi HTML) dimuat oleh `main.js` (`{{base}}` = `data-base`).
   Sengaja `.txt`: Live Server VS Code menyisipkan script ke file `.html` dan memotong akhirnya.
