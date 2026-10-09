@@ -7,8 +7,8 @@
    ========================================= */
 
 const IG_MAKS = 12;
-/* Angka pengikut/mengikuti disembunyikan (9 Okt: angka masih kecil, kurang meyakinkan untuk B2B). Ubah ke true untuk menampilkan. */
-const IG_TAMPIL_ANGKA = false;
+/* Angka pengikut/mengikuti di profil (false = disembunyikan) */
+const IG_TAMPIL_ANGKA = true;
 let igData = null;
 
 const IG_IKON = '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor"/></svg>';
