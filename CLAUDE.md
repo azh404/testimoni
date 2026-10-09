@@ -264,6 +264,10 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   DIBALIK horizontal karena logo di baju terbalik) → `assets/images/chatbot/maskot-avatar.webp` 256px: dipakai di tombol (bergoyang
   pelan), kepala panel, sambutan, dan wajah kecil di samping jawaban bot. 4 maskot vektor buatan Claude tidak dipilih.
   `.htaccess` root & `api/.htaccess`: hanya chat.php yang bisa diakses. Biaya ±Rp 250/pesan (cache hangat), ±Rp 2.000 pesan pertama setelah sepi.
+  **STATUS 10 Okt: BELUM AKTIF** — akun Claude Console (Organisasi "PT Diesel Agri Sukses Sejahtera", lokasi Singapura) dibuat,
+  pembelian kredit DILEWATI menunggu persetujuan atasan (form cash advance PDF Rp 377.300 = $20 + PPN 11% + cadangan kurs 3%,
+  kurs estimasi Rp 16.500, dibuat dari template Form Pengajuan Pengadaan Barang). `api/config.php` belum dibuat → bot membalas pesan
+  gagal; pengguna memilih tombol TETAP TAMPIL. Setelah disetujui: beli kredit, Limits $20/bln, buat API key, buat config.php, tes.
 - CAPTCHA tidak dipasang (tidak ada form yang mengirim ke server; form kontak membuka WA).
 
 ## Cara kerja dengan pengguna (pelajaran dari sesi sebelumnya)
