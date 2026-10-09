@@ -1669,241 +1669,42 @@ body[data-brand="eavision"] .produk-grid {
 }
 
 /* =========================================
-   BERANDA — PRODUK KAMI (3 panel merek)
+   BERANDA — PRODUK KAMI (logo merek saja, 9 Okt; 3 panel besar dihapus atas permintaan)
    ========================================= */
-.ourproduk {
+.merek-beranda { padding-block: var(--sp-7); }
+.merek-beranda .section-header { margin-bottom: var(--sp-5); }
+.merek-beranda__daftar {
   display: grid;
-  grid-template-columns: 1.1fr 1fr 1fr;
-  min-height: 620px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-5);
+  max-width: 960px;
+  margin-inline: auto;
 }
-.ourproduk__panel {
-  position: relative;
-  padding-bottom: 84px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow: hidden;
-  color: var(--color-dark);
-  isolation: isolate;
+.merek-beranda__item {
+  display: flex; align-items: center; justify-content: center;
+  height: 112px; padding: var(--sp-4) var(--sp-5);
+  background: #fff; border: 1px solid var(--color-border); border-radius: 16px;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
 }
-.ourproduk__panel img { display: block; }
-
-/* Zoomlion: putih → hijau, segitiga hijau, foto dalam lingkaran */
-.ourproduk__panel--zoomlion {
-  align-items: stretch;
-  background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 38%, #DDEFCF 70%, #B5DC98 100%);
+.merek-beranda__item:hover {
+  transform: translateY(-4px); border-color: transparent;
+  box-shadow: 0 14px 30px rgba(18, 58, 107, .12);
 }
-.ourproduk__panel--zoomlion::before {
-  content: '';
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 70%;
-  height: 55%;
-  background: linear-gradient(135deg, #43A047, #2E7D32);
-  clip-path: polygon(100% 0, 100% 100%, 0 100%);
-  z-index: -1;
-}
-.ourproduk__head { padding: var(--sp-7) var(--sp-6) 0; }
-.ourproduk__eyebrow {
-  display: block;
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  color: #E0A030;
-  margin-bottom: var(--sp-2);
-}
-.ourproduk__judul {
-  font-size: clamp(1.5rem, 2.3vw, 2.1rem);
-  color: #12321C;
-  margin: 0 0 var(--sp-2);
-}
-.ourproduk__sub {
-  font-style: italic;
-  color: var(--color-body);
-  margin: 0 0 var(--sp-4);
-}
-.ourproduk__garis {
-  display: block;
-  width: 100px;
-  height: 5px;
-  border-radius: 3px;
-  background: #E0A030;
-}
-.ourproduk__badge {
-  align-self: center;
-  margin: var(--sp-7) 0 var(--sp-5);
-  padding: 14px 22px;
-  background: #8DC63F;
-  border-radius: 4px;
-}
-.ourproduk__badge img {
-  height: 26px;
-  width: auto;
-  filter: brightness(0) opacity(0.85);
-}
-.ourproduk__lingkar {
-  align-self: center;
-  width: min(68%, 300px);
-  aspect-ratio: 1;
-  margin-bottom: var(--sp-6);
-  border-radius: 50%;
-  border: 10px solid #FFFFFF;
-  box-shadow: 0 0 0 6px #43A047, 0 18px 40px rgba(0, 0, 0, 0.18);
-  overflow: hidden;
-}
-.ourproduk__lingkar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 62% 50%;
-  transition: transform 0.5s ease;
-}
-
-/* EAVision: biru muda, logo putih, banner foto */
-.ourproduk__panel--eavision {
-  padding-bottom: 0;
-  background: linear-gradient(180deg, #AFCBE6 0%, #B6D0E7 60%, #C3D9EC 100%);
-}
-.ourproduk__ea-judul {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--sp-1);
-  flex: 1;
-  justify-content: center;
-  padding: var(--sp-6) var(--sp-4) var(--sp-2);
-  color: #3D4A7A;
-  text-align: center;
-  line-height: 1.15;
-}
-.ourproduk__ea-baris {
-  display: inline-flex;
-  align-items: center;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 8px;
-  font-size: clamp(1.5rem, 2.2vw, 2rem);
-}
-.ourproduk__ea-merek { font-weight: 300; letter-spacing: 0.01em; }
-.ourproduk__ea-baris b { font-style: italic; font-weight: 800; }
-.ourproduk__ea-tahun {
-  padding: 2px 8px;
-  border-radius: 6px;
-  background: #3D4A7A;
-  color: #FFFFFF;
-  font-size: 0.6em;
-  font-weight: 700;
-}
-.ourproduk__ea-sub { font-size: clamp(1.3rem, 2vw, 1.75rem); font-weight: 300; }
-.ourproduk__ea-foto {
-  position: relative;
-  flex: none;
-  width: 100%;
-  height: 440px;
-  margin-top: auto;
-  overflow: hidden;
-  -webkit-mask-image: linear-gradient(180deg, transparent 0%, #000 14%);
-          mask-image: linear-gradient(180deg, transparent 0%, #000 14%);
-}
-.ourproduk__ea-foto img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 50% 0;
-  transition: transform 0.5s ease;
-}
-.ourproduk__panel:hover .ourproduk__ea-foto img { transform: scale(1.05); }
-/* VectorAgr: kuning, logo putih, foto produk */
-/* VectorAgr: putih → kuning lembut (pola sama dengan panel Zoomlion), logo berwarna asli */
-.ourproduk__panel--vectoragr {
-  background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 35%, #FDEBC4 72%, #F8D27A 100%);
-  justify-content: center;
-}
-.ourproduk__panel--vectoragr .ourproduk__logo { filter: none; }
-
-.ourproduk__logo {
-  height: 46px;
-  width: auto;
-  max-width: 70%;
-  object-fit: contain;
-  filter: brightness(0) invert(1);
-  transition: transform var(--transition);
-}
-.ourproduk__panel--vectoragr .ourproduk__logo { height: 34px; }
-.ourproduk__banner {
-  width: 100%;
-  margin-top: var(--sp-7);
-  overflow: hidden;
-}
-.ourproduk__banner img {
-  width: 100%;
-  height: auto;
-  transition: transform 0.5s ease;
-}
-.ourproduk__produk {
-  width: 88%;
-  margin-top: var(--sp-6);
-}
-.ourproduk__produk img {
-  width: 100%;
-  height: auto;
-  filter: drop-shadow(0 16px 24px rgba(0, 0, 0, 0.18));
-  transition: transform 0.5s ease;
-}
-
-/* Tombol "Lihat Produk" muncul halus di bawah tiap panel */
-.ourproduk__cta {
-  position: absolute;
-  left: 50%;
-  bottom: var(--sp-5);
-  transform: translateX(-50%);
-  white-space: nowrap;
-  padding: 8px 20px;
-  border-radius: var(--radius-full);
-  background: rgba(255, 255, 255, 0.92);
-  color: var(--color-primary-dark);
-  font-weight: 700;
-  font-size: 0.9rem;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
-  transition: transform var(--transition), background-color var(--transition);
-}
-.ourproduk__cta::after { content: ' →'; }
-.ourproduk__panel:hover .ourproduk__cta { transform: translate(-50%, -3px); background: #FFFFFF; }
-.ourproduk__panel:hover .ourproduk__lingkar img,
-.ourproduk__panel:hover .ourproduk__banner img,
-.ourproduk__panel:hover .ourproduk__produk img { transform: scale(1.05); }
-.ourproduk__panel:hover .ourproduk__logo { transform: scale(1.05); }
-
-@media (max-width: 992px) {
-  .ourproduk { grid-template-columns: 1fr 1fr; }
-  .ourproduk__panel--zoomlion { grid-column: 1 / -1; }
-}
+.merek-beranda__item img { max-width: 100%; height: 44px; width: auto; object-fit: contain; }
+.merek-beranda__item img[src*="eavision"] { height: 56px; }
 @media (max-width: 640px) {
-  .ourproduk { grid-template-columns: 1fr; }
-  .ourproduk__head { padding: var(--sp-6) var(--sp-4) 0; }
-  .ourproduk__badge { margin: var(--sp-6) 0 var(--sp-4); }
-  .ourproduk__lingkar { width: 62%; }
-  .ourproduk__panel--eavision,
-  .ourproduk__panel--vectoragr { min-height: 0; }
-  .ourproduk__panel { padding-top: var(--sp-6); }
-  .ourproduk__panel--zoomlion, .ourproduk__panel--eavision { padding-top: 0; }
-  .ourproduk__ea-judul { padding-top: var(--sp-6); }
-  .ourproduk__ea-foto { height: auto; aspect-ratio: 1396 / 555; }
-  .ourproduk__ea-foto img { object-position: 50% 0; }
-  .ourproduk__logo { height: 38px; }
-  .ourproduk__panel--vectoragr .ourproduk__logo { height: 28px; }
-  .ourproduk__banner { margin-top: var(--sp-5); }
-  .ourproduk__produk { margin-top: var(--sp-4); width: 80%; }
+  .merek-beranda { padding-block: var(--sp-6); }
+  .merek-beranda__daftar { gap: var(--sp-3); }
+  .merek-beranda__item { height: 72px; padding: var(--sp-3); border-radius: 12px; }
+  .merek-beranda__item img { height: 22px; }
+  .merek-beranda__item img[src*="eavision"] { height: 30px; }
 }
+@media (prefers-reduced-motion: reduce) { .merek-beranda__item { transition: none; } }
 
 /* =========================================
    BERANDA — SHOWCASE PRODUK
    ========================================= */
-/* Latar mengikuti merek unit yang tampil, senada dengan panel "Produk Kami" */
+/* Latar mengikuti merek unit yang tampil */
 .showcase {
   background: linear-gradient(180deg, #F6FAF1 0%, #E4F2D8 60%, #CDE8B6 100%);
   transition: background 0.5s ease;

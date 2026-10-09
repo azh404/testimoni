@@ -142,8 +142,6 @@ const TEKS = {
   'mitra.btn': { id: 'Hubungi Kami', en: 'Contact Us', zh: '联系我们' },
 
   /* Beranda: angka, kategori, unit pilihan, ajakan, artikel */
-  'produk.judul2':  { id: 'Agricultural Equipment', en: 'Agricultural Equipment', zh: '农业机械设备' },
-  'produk.sub2':    { id: 'Peralatan Pertanian', en: 'Machinery, Drones & Smart Farming', zh: '农机 · 无人机 · 智慧农业' },
   'tt.merekJudul': { id: 'Distributor Resmi Tiga Merek Global', en: 'Official Distributor of Three Global Brands', zh: '三大全球品牌官方经销商' },
   'stat.merek':    { id: 'Merek Resmi', en: 'Official Brands', zh: '官方品牌' },
   'stat.model':    { id: 'Model Unit', en: 'Unit Models', zh: '机型' },
