@@ -642,10 +642,18 @@ body.cari-terbuka { overflow: hidden; }
 }
 .footer__icons--label a:hover { color: var(--color-white); transform: translateX(3px); }
 .footer__icons--label svg { width: 26px; height: 26px; flex-shrink: 0; }
-
+/* Baris ikon sosmed tanpa teks (YouTube, TikTok, LinkedIn) */
+.footer__sosmed {
+  display: grid;
+  grid-template-columns: 32px;   /* logo saja, berbaris ke bawah (HP: sebaris) */
+  gap: var(--sp-4);
+}
+.footer__sosmed a { width: 32px; height: 32px; }
 @media (max-width: 640px) {
-  .footer__logo img { width: 76px; }
-  .footer__icons--label { grid-template-columns: 1fr 1fr; }
+  .footer__sosmed { grid-template-columns: repeat(7, 32px); gap: var(--sp-4); }
+}
+@media (max-width: 380px) {
+  .footer__sosmed { gap: var(--sp-3); }
 }
 
 /* =========================================
