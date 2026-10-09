@@ -352,6 +352,22 @@
       </div>
     </section>
 
+    <!-- ============ INSTAGRAM (tampil bila COMPANY.instagramFeedUrl diisi; instagram.js) ============ -->
+    <section class="section ig-beranda" id="berandaInstagram" hidden>
+      <div class="container">
+        <div class="ig-beranda__kepala">
+          <h2 data-i18n="ig.judul">Ikuti Kami di Instagram</h2>
+          <p data-i18n="ig.desc">Kabar terbaru unit, kegiatan di lapangan, dan tips mekanisasi pertanian dari tim DASS.</p>
+        </div>
+        <div class="ig-profil" id="igProfil"></div>
+        <div class="ig-geser">
+          <button type="button" class="ig-geser__btn ig-geser__btn--kiri" data-ig-geser="-1" aria-label="Sebelumnya">&#8249;</button>
+          <div class="ig-track" id="igTrack"></div>
+          <button type="button" class="ig-geser__btn ig-geser__btn--kanan" data-ig-geser="1" aria-label="Berikutnya">&#8250;</button>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <div id="site-footer"></div>
@@ -372,6 +388,7 @@
   <script src="assets/js/slider.js"></script>
   <script src="assets/js/filter-produk.js"></script>
   <script src="assets/js/beranda.js"></script>
+  <script src="assets/js/instagram.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 </html>
