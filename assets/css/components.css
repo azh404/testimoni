@@ -645,7 +645,7 @@ body.cari-terbuka { overflow: hidden; }
 /* Baris ikon sosmed tanpa teks (YouTube, TikTok, LinkedIn) */
 .footer__sosmed {
   display: grid;
-  grid-template-columns: repeat(4, 44px);
+  grid-template-columns: 44px;   /* satu kolom, berbaris ke bawah (HP: sebaris, lihat di bawah) */
   gap: 10px;
 }
 .footer__sosmed a {
