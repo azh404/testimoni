@@ -2591,3 +2591,46 @@ a.produk-card:hover .produk-card__body::after { background: #8DC63F; color: #fff
   .showcase__media img { max-width: 300px; }
   .showcase__thumb { width: 92px; }
 }
+
+/* Feed Instagram dirapikan (9 Okt): kartu seragam 4:5, tanpa kepala per kartu, keterangan 2 baris + tanggal, panah di luar kartu */
+.ig-beranda { padding-block: var(--sp-7); }
+.ig-beranda__kepala { margin-bottom: var(--sp-5); }
+.ig-beranda__kepala h2 { font-size: clamp(1.5rem, 2.6vw, 2rem); }
+.ig-profil {
+  width: fit-content; margin: 0 auto var(--sp-6); gap: var(--sp-4);
+  padding: 10px 10px 10px 12px; border-radius: 999px;
+  background: rgba(255, 255, 255, .07); border: 1px solid rgba(255, 255, 255, .12);
+}
+.ig-profil .ig-avatar { width: 52px; height: 52px; }
+.ig-profil__nama b { font-size: 1rem; }
+.ig-profil__nama span { font-size: .78rem; }
+.ig-ikuti { padding: .6rem 1.2rem; border-radius: 999px; font-size: .9rem; }
+.ig-geser { padding-inline: 4px; }
+.ig-track { column-gap: 20px; padding: 4px 0 8px; grid-auto-columns: calc((100% - 3 * 20px) / 4); }
+@media (max-width: 1024px) { .ig-track { grid-auto-columns: calc((100% - 2 * 20px) / 3); } }
+.ig-kartu { border-radius: 16px; box-shadow: 0 10px 26px rgba(0, 0, 0, .22); }
+.ig-kartu__media { position: relative; aspect-ratio: 4 / 5; overflow: hidden; background: #0f2747; }
+.ig-kartu__media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+.ig-kartu:hover .ig-kartu__media img { transform: scale(1.04); }
+.ig-kartu__isi { display: flex; flex-direction: column; gap: 10px; padding: 12px 14px 14px; flex: 1; }
+.ig-kartu__teks {
+  margin: 0; font-size: .84rem; line-height: 1.5; color: var(--color-body);
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; min-height: 2.52rem;
+}
+.ig-kartu__kaki { display: flex; align-items: center; justify-content: space-between; margin-top: auto; }
+.ig-kartu__kaki small { font-size: .75rem; color: var(--color-muted); }
+.ig-kartu__ikon { width: 18px; height: 18px; color: #C13584; }
+.ig-geser__btn { width: 42px; height: 42px; font-size: 1.6rem; }
+.ig-geser__btn--kiri { left: -24px; }
+.ig-geser__btn--kanan { right: -24px; }
+@media (max-width: 1280px) {
+  .ig-geser__btn--kiri { left: -8px; }
+  .ig-geser__btn--kanan { right: -8px; }
+}
+@media (max-width: 640px) {
+  .ig-profil { border-radius: 18px; flex-wrap: nowrap; padding: 10px 12px; gap: 10px; }
+  .ig-profil .ig-avatar { width: 44px; height: 44px; }
+  .ig-profil__nama span { display: none; }
+  .ig-ikuti { padding: .5rem .9rem; }
+  .ig-track { grid-auto-columns: 70%; column-gap: 14px; }
+}

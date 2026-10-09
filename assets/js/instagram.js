@@ -7,6 +7,8 @@
    ========================================= */
 
 const IG_MAKS = 12;
+/* Angka pengikut/mengikuti disembunyikan (9 Okt: angka masih kecil, kurang meyakinkan untuk B2B). Ubah ke true untuk menampilkan. */
+const IG_TAMPIL_ANGKA = false;
 let igData = null;
 
 const IG_IKON = '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor"/></svg>';
@@ -74,11 +76,8 @@ function renderInstagram() {
   const avatar = igData.foto || 'assets/images/logo/logo.png';
   const urlProfil = COMPANY.sosmed.instagram;
   const nama = '@' + igEsc(igData.username);
-  const kepalaKartu = `
-      <span class="ig-avatar ig-avatar--kecil"><img src="${igEsc(avatar)}" alt="" loading="lazy" width="40" height="40"></span>
-      <span class="ig-kartu__nama"><b>${igEsc(igData.username)}</b>`;
 
-  const statistik = [['postingan', igData.postingan], ['pengikut', igData.pengikut], ['mengikuti', igData.mengikuti]]
+  const statistik = !IG_TAMPIL_ANGKA ? '' : [['postingan', igData.postingan], ['pengikut', igData.pengikut], ['mengikuti', igData.mengikuti]]
     .filter(([, n]) => typeof n === 'number')
     .map(([k, n]) => `<li><b>${igAngka(n)}</b><span>${t('ig.' + k)}</span></li>`).join('');
 
@@ -95,14 +94,14 @@ function renderInstagram() {
 
   document.getElementById('igTrack').innerHTML = igData.posts.map(p => `
     <a class="ig-kartu" href="${igEsc(p.link)}" target="_blank" rel="noopener" title="${t('ig.lihat')}">
-      <span class="ig-kartu__kepala">${kepalaKartu}<small>${igEsc(igWaktu(p.waktu))}</small></span>
-        <span class="ig-kartu__ikon">${IG_IKON}</span>
-      </span>
       <span class="ig-kartu__media">
         <img src="${igEsc(p.gambar)}" alt="${igEsc(p.teks.slice(0, 120))}" loading="lazy" width="400" height="500">
         ${p.video ? `<span class="ig-kartu__jenis">${IG_PUTAR}</span>` : p.album ? `<span class="ig-kartu__jenis">${IG_ALBUM}</span>` : ''}
       </span>
-      ${p.teks ? `<span class="ig-kartu__teks">${igEsc(p.teks)}</span>` : ''}
+      <span class="ig-kartu__isi">
+        <span class="ig-kartu__teks">${igEsc(p.teks)}</span>
+        <span class="ig-kartu__kaki"><small>${igEsc(igWaktu(p.waktu))}</small><span class="ig-kartu__ikon">${IG_IKON}</span></span>
+      </span>
     </a>`).join('');
 
   bagian.querySelectorAll('[data-ig-geser]').forEach(btn => {
