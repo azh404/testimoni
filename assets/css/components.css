@@ -645,30 +645,15 @@ body.cari-terbuka { overflow: hidden; }
 /* Baris ikon sosmed tanpa teks (YouTube, TikTok, LinkedIn) */
 .footer__sosmed {
   display: grid;
-  grid-template-columns: 44px;   /* satu kolom, berbaris ke bawah (HP: sebaris, lihat di bawah) */
-  gap: 10px;
+  grid-template-columns: 32px;   /* logo saja, berbaris ke bawah (HP: sebaris) */
+  gap: var(--sp-4);
 }
-.footer__sosmed a {
-  width: 44px; height: 44px;
-  display: grid; place-items: center;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, .06);
-  border: 1px solid rgba(255, 255, 255, .1);
-  transition: transform var(--transition), background-color var(--transition);
-}
-.footer__sosmed a:hover { transform: translateY(-3px); background: rgba(255, 255, 255, .14); }
-.footer__sosmed svg { width: 24px; height: 24px; }
+.footer__sosmed a { width: 32px; height: 32px; }
 @media (max-width: 640px) {
-  .footer__sosmed { grid-template-columns: repeat(7, 44px); gap: 8px; }
+  .footer__sosmed { grid-template-columns: repeat(7, 32px); gap: var(--sp-4); }
 }
 @media (max-width: 380px) {
-  .footer__sosmed { grid-template-columns: repeat(7, 40px); gap: 6px; }
-  .footer__sosmed a { width: 40px; height: 40px; }
-}
-
-@media (max-width: 640px) {
-  .footer__logo img { width: 76px; }
-  .footer__icons--label { grid-template-columns: 1fr 1fr; }
+  .footer__sosmed { gap: var(--sp-3); }
 }
 
 /* =========================================
