@@ -182,7 +182,7 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   semua foto utama produk sudah transparan.
 - Menu HP: `.nav-toggle` z-index 2 agar tombol ✕ tampil di atas panel menu.
 - Beranda dibuat "lebih ramai" (6 Okt 2026, permintaan pengguna): urutan Hero → strip angka
-  (merek/model/kategori dihitung dari data, + "Jakarta Kantor Pusat") → "Produk Kami" 3 panel merek (desain dari slide pengguna:
+  (merek/model/kategori dihitung dari data, + "Jakarta Kantor Pusat") → "Produk Kami" (9 Okt: KINI hanya judul + 3 kartu LOGO merek Zoomlion/EAVision/VectorAgr → halaman merek, `.merek-beranda`; 3 panel besar di bawah ini DIHAPUS karena "terlalu besar melebihi hero"; dulu: 3 panel merek, desain dari slide pengguna:
   kiri putih→hijau + judul "Agricultural Equipment" + badge Zoomlion + foto traktor dalam lingkaran, tengah EAVision
   ala banner resmi: judul HTML "EAVISION EA-J150 [2025] Agricultural Drone" (#3D4A7A) di atas langit + foto
   `hero/eavision-j150-panel.webp` (dari gambar pengguna, "Learn More" dihapus, tinggi 440px), kanan putih→kuning lembut (7 Okt, menggantikan kuning penuh #F9B812 yang "tidak menyatu"; ditolak: navy, putih→biru muda, jingga emas) logo berwarna `logo-vector.png` + auto
