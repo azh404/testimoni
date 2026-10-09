@@ -2612,3 +2612,12 @@ a.produk-card:hover .produk-card__body::after { background: #8DC63F; color: #fff
   .ig-geser__btn--kiri { left: -10px; }
   .ig-geser__btn--kanan { right: -10px; }
 }
+
+/* Feed Instagram: latar ABU LEMBUT (9 Okt, dipilih dari navy/abu/hijau) agar terpisah jelas dari footer gelap */
+.ig-beranda { background: #F4F6F8; color: var(--color-dark); border-top: 1px solid #E6EAEE; }
+.ig-beranda__kepala h2 { color: var(--color-dark); }
+.ig-beranda__kepala p { color: var(--color-body); }
+.ig-profil__nama b, .ig-profil__angka b { color: var(--color-dark); }
+.ig-profil__nama span, .ig-profil__angka span { color: var(--color-muted); }
+.ig-kartu { box-shadow: 0 6px 18px rgba(18, 58, 107, .10); border: 1px solid #E6EAEE; }
+.ig-geser__btn { box-shadow: 0 4px 14px rgba(18, 58, 107, .18); }
