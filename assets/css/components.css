@@ -262,7 +262,7 @@
 
 .footer__grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  grid-template-columns: 1.5fr 1fr 1fr;
   gap: var(--sp-6);
   padding-bottom: var(--sp-7);
 }
@@ -626,37 +626,17 @@ body.cari-terbuka { overflow: hidden; }
 .footer__info a { color: inherit; }
 .footer__info a:hover { color: var(--color-white); }
 
-.footer__icons--label {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--sp-3);
-}
-.footer__icons--label a {
-  display: flex;
-  align-items: center;
-  gap: var(--sp-3);
-  width: auto;
-  height: auto;
-  color: rgba(255, 255, 255, 0.78);
-  font-size: 0.9rem;
-}
-.footer__icons--label a:hover { color: var(--color-white); transform: translateX(3px); }
-.footer__icons--label svg { width: 26px; height: 26px; flex-shrink: 0; }
-/* Baris ikon sosmed tanpa teks (YouTube, TikTok, LinkedIn) */
+/* Kunjungi Kami: di kolom pertama, di bawah alamat/jam (pilihan D, 9 Okt) — logo saja, satu baris */
+.footer__kunjungi { margin-top: var(--sp-5); }
+.footer__kunjungi .footer__title { margin-bottom: var(--sp-3); }
 .footer__sosmed {
-  display: grid;
-  grid-template-columns: 24px;   /* logo saja, berbaris ke bawah, rata kiri (HP: sebaris) */
-  gap: var(--sp-3);              /* sama dengan jarak link .footer__seo → tiap logo segaris dengan link Jelajahi */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
 }
-.footer__sosmed a { width: 24px; height: 24px; display: grid; place-items: center; }
-.footer__sosmed svg { width: 24px; height: 24px; }
-@media (max-width: 640px) {
-  .footer__sosmed { grid-template-columns: repeat(7, 28px); gap: var(--sp-4); }
-  .footer__sosmed a, .footer__sosmed svg { width: 28px; height: 28px; }
-}
-@media (max-width: 380px) {
-  .footer__sosmed { gap: var(--sp-3); }
-}
+.footer__sosmed a { width: 26px; height: 26px; display: grid; place-items: center; }
+.footer__sosmed svg { width: 26px; height: 26px; }
 
 /* =========================================
    FORM LEADS (leads.js)
