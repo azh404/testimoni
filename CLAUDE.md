@@ -192,6 +192,7 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   halaman merek tetap mendukung `?kategori=<id>`) → Keunggulan → banner ajakan konsultasi (WA/kalkulator/
   bandingkan) → Sektor → Mitra. (Bagian "Cara Pembelian" 4 langkah DIHAPUS 7 Okt atas permintaan pengguna;
   CSS `.beli` & kunci `beli.*` masih ada tapi tidak dipakai. Artikel juga tidak tampil di beranda.)
+  Showcase dibuat RINGKAS (9 Okt, "kebesaran"): blok CSS "Showcase beranda lebih ringkas" di akhir pages.css (panggung maks 980px, foto maks 400px, judul/spek/tombol/thumbnail lebih kecil; tinggi laptop 1179→862px).
   Latar Showcase (7 Okt) ikut merek unit yang tampil: `.showcase[data-brand]` hijau/biru muda/kuning lembut
   (diset di beranda.js); ditolak: hijau tetap, navy, hijau→biru. Tab drone: "Drone EAVision" & "Drone VectorAgr"
   (nama tab opsional = elemen ke-3 di BERANDA_SHOWCASE; drone VectorAgr ditambahkan 7 Okt).
