@@ -54,9 +54,9 @@ const COMPANY = {
     googleMaps: "https://g.page/r/CX_ykRcjTf7sEBM",
     ulasan:     "https://g.page/r/CX_ykRcjTf7sEBM/review",
     /* Isi alamat akun; "#" = ikon disembunyikan */
-    youtube:   "#",
-    tiktok:    "#",
-    linkedin:  "#",
+    youtube:   "https://www.youtube.com/@dass.agriculture",
+    tiktok:    "https://www.tiktok.com/@dass.agriculture",
+    linkedin:  "https://www.linkedin.com/company/pt-dass/",
     facebook:  "#"
   }
 };
