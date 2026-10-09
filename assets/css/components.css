@@ -1053,3 +1053,19 @@ a.fr__baris:hover { color: #fff; }
   .fr__daftar { font-size: .8rem; gap: 8px; }
   .fr__bawah { flex-direction: column; align-items: center; text-align: center; }
 }
+
+/* =========================================
+   NAVBAR SOLID PUTIH (9 Okt, pilihan A): menggantikan navbar transparan & blok logo navy miring
+   ========================================= */
+.header { background: #fff; border-bottom: 1px solid #E8ECEF; }
+.header::before,
+.header.is-scrolled::before { background-color: #fff; -webkit-backdrop-filter: none; backdrop-filter: none; }
+.header.is-scrolled { box-shadow: 0 2px 14px rgba(10, 22, 40, .08); border-bottom-color: #E8ECEF; }
+.header .brand { padding-right: 0; }
+.header .brand::before { display: none; }
+.header .brand__logo { filter: none; }
+.header .header__inner .brand__logo { height: 44px; }
+@media (max-width: 992px) {
+  .header .brand { padding-right: 0; }
+  .header .header__inner .brand__logo { height: 38px; }
+}
