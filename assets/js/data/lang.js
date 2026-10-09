@@ -131,7 +131,7 @@ const TEKS = {
   'mitra.judul': { id: 'Membangun Kemitraan Strategis Berkelanjutan', en: 'Building Sustainable Strategic Partnerships', zh: '建立可持续的战略合作伙伴关系' },
   'mitra.desc': { id: 'Peluang Kemitraan Strategis Terbuka Lebar! Bergabunglah bersama jaringan kami sebagai mitra bisnis agrikultur, jasa mekanisasi, atau dealer resmi di seluruh Indonesia.', en: 'Strategic partnership opportunities are wide open! Join our network as an agribusiness partner, mechanisation service provider, or authorised dealer across Indonesia.', zh: '战略合作机会广泛开放！欢迎以农业企业伙伴、机械化服务商或授权经销商的身份加入我们遍布印尼的网络。' },
   'ig.judul': { id: 'Ikuti Kami di Instagram', en: 'Follow Us on Instagram', zh: '在 Instagram 关注我们' },
-  'ig.desc': { id: 'Kabar terbaru unit, kegiatan di lapangan, dan tips mekanisasi pertanian dari tim DASS.', en: 'The latest on our machines, field activities and farm mechanisation tips from the DASS team.', zh: '来自 DASS 团队的最新机型动态、田间活动与农业机械化小贴士。' },
+  'ig.desc': { id: 'Lihat unit Zoomlion, EAVision, dan VectorAgr beraksi di lahan, lengkap dengan info produk dan tips praktis dari tim DASS.', en: 'See Zoomlion, EAVision and VectorAgr machines in action in the field, along with product updates and practical tips from the DASS team.', zh: '看中联重科、EAVision 和 VectorAgr 设备在田间作业，并获取 DASS 团队的产品资讯与实用技巧。' },
   'ig.ikuti': { id: 'Ikuti', en: 'Follow', zh: '关注' },
   'ig.pengikut': { id: 'pengikut', en: 'followers', zh: '粉丝' },
   'ig.mengikuti': { id: 'mengikuti', en: 'following', zh: '关注' },
