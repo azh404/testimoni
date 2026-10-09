@@ -258,7 +258,7 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   `anthropic-ai/sdk` + guzzle di `api/vendor/`, di-commit karena pengguna upload lewat File Manager) → Claude `claude-opus-5-5`,
   effort low, maxTokens 2000, `fallbacks: 'default'` (beta server-side-fallback-2026-07-01), system = instruksi + `api/data/pengetahuan.txt`
   (cache). Pengetahuan dibuat ulang: `node tools/buat-pengetahuan-chatbot.js` (produk, FAQ, artikel, kontak) — jalankan setelah data berubah.
-  Kunci API HANYA di `api/config.php` di Hostinger (contoh: `api/config.contoh.php`, di .gitignore). Batas: 30 pesan/IP/jam, 1500/hari
+  Kunci API HANYA di `api/config.php` di Hostinger (contoh: `api/config.contoh.php`, di .gitignore). Batas: 15 pesan/IP/jam, 300/hari (10 Okt, diperketat atas permintaan)
   (`api/data/batas.json`, IP di-hash). Aturan bot: tanpa harga/stok/janji kirim, tanpa klaim servis/sparepart/garansi, hanya dari pengetahuan.
   Maskot = gambar dari pengguna (anime, pria berkacamata, kemeja navy logo DASS; asli di foto-baru/maskot-asisten-dass.jpg,
   DIBALIK horizontal karena logo di baju terbalik) → `assets/images/chatbot/maskot-avatar.webp` 256px: dipakai di tombol (bergoyang

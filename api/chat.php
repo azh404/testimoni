@@ -32,8 +32,8 @@ if ($apiKey === '' || str_contains($apiKey, 'ISI_')) {
     balas(503, ['error' => 'belum_diatur', 'jawaban' => $PESAN_GAGAL]);
 }
 $asalDiizinkan = $config['izin_asal'] ?? ['https://dass.co.id', 'https://www.dass.co.id'];
-$batasPerJam   = (int) ($config['batas_per_jam'] ?? 30);    // pesan per pengunjung (IP) per jam
-$batasPerHari  = (int) ($config['batas_harian'] ?? 1500);   // pesan seluruh website per hari (rem biaya)
+$batasPerJam   = (int) ($config['batas_per_jam'] ?? 15);    // pesan per pengunjung (IP) per jam
+$batasPerHari  = (int) ($config['batas_harian'] ?? 300);   // pesan seluruh website per hari (rem biaya)
 $model         = (string) ($config['model'] ?? 'claude-opus-5-5');
 
 /* --- Hanya POST dari website sendiri --- */
