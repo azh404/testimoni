@@ -53,9 +53,11 @@ const COMPANY = {
     /* Google Business Profile: halaman di Google Maps & link minta ulasan */
     googleMaps: "https://g.page/r/CX_ykRcjTf7sEBM",
     ulasan:     "https://g.page/r/CX_ykRcjTf7sEBM/review",
-    facebook:  "#",
+    /* Isi alamat akun; "#" = ikon disembunyikan */
+    youtube:   "#",
+    tiktok:    "#",
     linkedin:  "#",
-    youtube:   "#"
+    facebook:  "#"
   }
 };
 

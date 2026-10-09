@@ -37,7 +37,7 @@ Baca ini dulu sebelum mengerjakan apa pun. Perbarui file ini bila ada keputusan 
   `traktor-kebun-sawit`, `combine-harvester-padi`, `drone-pertanian-sawah`),
   `produk/*.html` (62 halaman detail), `artikel/*.html`, `pages/produk/<brand>.html`.
 - Footer 4 kolom (desain baru 6 Okt 2026, garis aksen hijau→biru di atas): logo `logo-dass-putih.png` + nama +
-  tagline + alamat/WA/jam berikon hijau | Hubungi Kami (ikon + label: Email, WhatsApp, Google Maps, Instagram) | Jelajahi (9 link: 3 jual-*, combine padi, kebun sawit, drone sawah, panen tebu & pengering gabah (zoomlion ?kategori=), auto steering VectorAgr; label ringkas profesional 8 Okt) |
+  tagline + alamat/WA/jam berikon hijau | Kunjungi Kami (9 Okt, dulu "Hubungi Kami"; ikon + label: Email, WhatsApp, Google Maps, Instagram + baris ikon saja YouTube/TikTok/LinkedIn dari `COMPANY.sosmed`, "#" = tersembunyi) | Jelajahi (9 link: 3 jual-*, combine padi, kebun sawit, drone sawah, panen tebu & pengering gabah (zoomlion ?kategori=), auto steering VectorAgr; label ringkas profesional 8 Okt) |
   Panduan (kalkulator, bandingkan, kamus, FAQ); bar bawah hanya "© tahun PT DASS" di tengah.
 - `partials/navbar.txt` & `footer.txt` (isi HTML) dimuat oleh `main.js` (`{{base}}` = `data-base`).
   Sengaja `.txt`: Live Server VS Code menyisipkan script ke file `.html` dan memotong akhirnya.

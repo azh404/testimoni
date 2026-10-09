@@ -642,6 +642,9 @@ body.cari-terbuka { overflow: hidden; }
 }
 .footer__icons--label a:hover { color: var(--color-white); transform: translateX(3px); }
 .footer__icons--label svg { width: 26px; height: 26px; flex-shrink: 0; }
+/* Baris ikon sosmed tanpa teks (YouTube, TikTok, LinkedIn) */
+.footer__sosmed { margin-top: var(--sp-5); gap: var(--sp-4); }
+.footer__sosmed a { width: 34px; height: 34px; }
 
 @media (max-width: 640px) {
   .footer__logo img { width: 76px; }
