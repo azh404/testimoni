@@ -173,6 +173,8 @@ const TEKS = {
   'footer.alamat':      { id: 'Alamat',            en: 'Address',          zh: '地址' },
   'footer.kantorPusat': { id: 'Kantor Pusat:',     en: 'Head Office:',     zh: '总部：' },
   'footer.tagline':     { id: 'Distributor resmi Zoomlion, EAVision, dan VectorAgr.', en: 'Official distributor of Zoomlion, EAVision, and VectorAgr.', zh: 'Zoomlion、EAVision 和 VectorAgr 官方经销商。' },
+  'footer.hubungi':    { id: 'Hubungi Kami',      en: 'Contact Us',       zh: '联系我们' },
+  'footer.perusahaan': { id: 'Perusahaan',        en: 'Company',          zh: '公司' },
   'footer.kontak':      { id: 'Kunjungi Kami',     en: 'Visit Us',         zh: '关注我们' },
   'footer.tanya':       { id: 'Punya Pertanyaan?', en: 'Have a Question?', zh: '有疑问吗？' },
   'footer.tanyaDesc': {
